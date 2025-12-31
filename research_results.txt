@@ -1,0 +1,120 @@
+﻿======================================================================
+COMPREHENSIVE STRATEGY RESEARCH
+Testing Multiple Strategies Across All Symbols
+======================================================================
+
+Available Symbols:
+  FOREX_MAJOR: EURUSD, GBPUSD, USDCAD, USDCHF, USDJPY... (7 total)
+  FOREX_MINOR: USDCNH, USDDKK, USDHKD, USDHUF, USDMXN... (47 total)
+  CRYPTO: NETH25Cash, BTCEUR, BTCGBP, ETHEUR, ETHGBP... (8 total)
+  INDICES: GER40Cash, JP225Cash, UK100Cash, US30Cash, US500Cash... (9 total)
+  COMMODITIES: BRENTCash, OILCash, GSOIL-JAN26, OIL-FEB26, OILMn-FEB26... (11 total)
+
+Testing 7 symbols: ['EURUSD', 'GBPUSD', 'USDJPY', 'AUDUSD', 'USDCAD', 'GOLD', 'BTCUSD']
+
+==================================================
+TESTING: EURUSD
+==================================================
+
+==================================================
+TESTING: GBPUSD
+==================================================
+
+==================================================
+TESTING: USDJPY
+==================================================
+
+  ** EMA_Crossover_9_21 **
+     Signals: 31
+     Win Rate: 64.5%
+     Expectancy: 0.53R
+     Profit Factor: 2.94
+     Total R: 16.3
+
+==================================================
+TESTING: AUDUSD
+==================================================
+
+==================================================
+TESTING: USDCAD
+==================================================
+
+  ** EMA_Crossover_9_21 **
+     Signals: 30
+     Win Rate: 53.3%
+     Expectancy: 0.45R
+     Profit Factor: 2.62
+     Total R: 13.6
+
+  ** EMA_Pullback **
+     Signals: 107
+     Win Rate: 55.1%
+     Expectancy: 0.39R
+     Profit Factor: 2.66
+     Total R: 41.6
+
+==================================================
+TESTING: GOLD
+==================================================
+
+  ** EMA_Pullback **
+     Signals: 133
+     Win Rate: 57.9%
+     Expectancy: 0.60R
+     Profit Factor: 2.66
+     Total R: 80.0
+
+==================================================
+TESTING: BTCUSD
+==================================================
+
+  ** BB_MeanReversion **
+     Signals: 31
+     Win Rate: 51.6%
+     Expectancy: 0.70R
+     Profit Factor: 2.21
+     Total R: 21.6
+
+======================================================================
+STRATEGY RESEARCH RESULTS
+======================================================================
+
+TOP 10 PROFITABLE STRATEGIES:
+----------------------------------------------------------------------
+Rank  Symbol     Strategy             Signals  Win%     Expect   PF      
+----------------------------------------------------------------------
+1     BTCUSD     BB_MeanReversion     31       51.6     0.70     2.21    
+2     GOLD       EMA_Pullback         133      57.9     0.60     2.66    
+3     USDJPY     EMA_Crossover_9_21   31       64.5     0.53     2.94    
+4     USDCAD     EMA_Crossover_9_21   30       53.3     0.45     2.62    
+5     USDCAD     EMA_Pullback         107      55.1     0.39     2.66    
+6     EURUSD     EMA_Pullback         113      51.3     0.15     1.46    
+7     EURUSD     EMA_Crossover_9_21   30       53.3     0.15     1.40    
+8     GOLD       BB_MeanReversion     38       63.2     0.12     1.22    
+9     EURUSD     BB_MeanReversion     32       56.2     0.09     1.19    
+10    USDJPY     Momentum_Breakout    39       56.4     0.09     1.72    
+
+
+BEST STRATEGY BY SYMBOL:
+----------------------------------------------------------------------
+  BTCUSD: BB_MeanReversion | Win: 51.6% | Exp: 0.70R | Signals: 31
+  GOLD: EMA_Pullback | Win: 57.9% | Exp: 0.60R | Signals: 133
+  USDJPY: EMA_Crossover_9_21 | Win: 64.5% | Exp: 0.53R | Signals: 31
+  USDCAD: EMA_Crossover_9_21 | Win: 53.3% | Exp: 0.45R | Signals: 30
+  EURUSD: EMA_Pullback | Win: 51.3% | Exp: 0.15R | Signals: 113
+  GBPUSD: Momentum_Breakout | Win: 41.5% | Exp: 0.01R | Signals: 41
+
+
+OVERALL FINDINGS:
+----------------------------------------------------------------------
+Total combinations tested: 28
+Profitable combinations: 13
+Unprofitable combinations: 15
+
+BEST OVERALL: BTCUSD + BB_MeanReversion
+   Win Rate: 51.6%
+   Expectancy: 0.70R per trade
+   Profit Factor: 2.21
+   Sample Size: 31 trades
+
+RECOMMENDATION: Deploy this strategy configuration!

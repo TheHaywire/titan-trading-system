@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+websockets
+MetaTrader5
+pandas
+requests
+ta
+numpy
+schedule
+google-generativeai
+python-dotenv

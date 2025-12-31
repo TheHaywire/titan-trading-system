@@ -1,0 +1,13 @@
+@echo off
+echo Starting Titan Algo System...
+
+start cmd /k "cd backend && uvicorn app:app --reload --host 0.0.0.0 --port 8000"
+echo Backend started on port 8000...
+
+timeout /t 3
+
+start cmd /k "cd frontend && npm run dev"
+echo Frontend started...
+
+echo System is coming online...
+pause

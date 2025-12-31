@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1a1f2e 0%, #111827 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05);
+        }
+
+        .header {
+            padding: 32px 32px 24px;
+            background: rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .symbol {
+            font-size: 36px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .badge {
+            padding: 6px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-buy {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(5, 150, 105, 0.15));
+            color: #34d399;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+        }
+
+        .badge-sell {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.25), rgba(220, 38, 38, 0.15));
+            color: #f87171;
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.2);
+        }
+
+        .timestamp {
+            font-size: 12px;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        .content {
+            padding: 32px;
+        }
+
+        .price-box {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .price-label {
+            font-size: 11px;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .price-value {
+            font-size: 42px;
+            font-weight: 300;
+            color: #ffffff;
+            letter-spacing: -1px;
+        }
+
+        /* QUANT CARD */
+        .quant-card {
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.12), rgba(99, 102, 241, 0.08));
+            border: 1px solid rgba(79, 70, 229, 0.3);
+            padding: 24px;
+            border-radius: 14px;
+            margin-bottom: 24px;
+        }
+
+        .quant-title {
+            font-size: 13px;
+            color: #818cf8;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            letter-spacing: 1.2px;
+        }
+
+        .quant-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .quant-metric {
+            background: rgba(0, 0, 0, 0.25);
+            padding: 14px;
+            border-radius: 10px;
+        }
+
+        .metric-label {
+            font-size: 10px;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 6px;
+        }
+
+        .metric-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .metric-unit {
+            font-size: 14px;
+            color: #6b7280;
+            margin-left: 4px;
+        }
+
+        .explanation {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #d1d5db;
+            padding: 16px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            border-left: 3px solid #818cf8;
+        }
+
+        .explanation strong {
+            color: #ffffff;
+        }
+
+        /* AI CARD */
+        .ai-card {
+            background: linear-gradient(145deg, rgba(59, 130, 246, 0.12), rgba(139, 92, 246, 0.08));
+            border: 1px solid rgba(96, 165, 250, 0.25);
+            padding: 24px;
+            border-radius: 14px;
+            margin-bottom: 24px;
+        }
+
+        .ai-title {
+            font-size: 12px;
+            color: #60a5fa;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .ai-text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #d1d5db;
+            font-style: italic;
+        }
+
+        .trade-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .trade-item {
+            background: rgba(0, 0, 0, 0.25);
+            padding: 14px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .trade-label {
+            font-size: 10px;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 6px;
+        }
+
+        .trade-val {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .val-green {
+            color: #34d399;
+        }
+
+        .val-red {
+            color: #f87171;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #4b5563;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .footer strong {
+            color: #6b7280;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="top-row">
+                <div class="symbol">{{ symbol }}</div>
+                <div
+                    class="badge {{ 'badge-sell' if action == 'SELL' else 'badge-buy' if action == 'BUY' else 'badge-neutral' }}">
+                    {{ action }}
+                </div>
+            </div>
+            <div class="timestamp">{{ time }}</div>
+        </div>
+
+        <div class="content">
+            <div class="price-box">
+                <div class="price-label">Entry Price</div>
+                <div class="price-value">{{ price }}</div>
+            </div>
+
+            {% if z_score %}
+            <!-- QUANTITATIVE ANALYSIS CARD -->
+            <div class="quant-card">
+                <div class="quant-title">📊 Quantitative Analysis</div>
+                <div class="quant-grid">
+                    <div class="quant-metric">
+                        <div class="metric-label">Z-Score</div>
+                        <div class="metric-value">{{ z_score }}<span class="metric-unit">σ</span></div>
+                    </div>
+                    <div class="quant-metric">
+                        <div class="metric-label">Half-Life</div>
+                        <div class="metric-value">{{ half_life }}<span class="metric-unit">bars</span></div>
+                    </div>
+                    <div class="quant-metric">
+                        <div class="metric-label">Fair Value</div>
+                        <div class="metric-value">{{ fair_value }}</div>
+                    </div>
+                    <div class="quant-metric">
+                        <div class="metric-label">Probability</div>
+                        <div class="metric-value">{{ probability }}<span class="metric-unit">%</span></div>
+                    </div>
+                </div>
+                <div class="explanation">
+                    <strong>Why this trade?</strong> {{ quant_reason }}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if ai_summary %}
+            <!-- AI INSIGHT CARD -->
+            <div class="ai-card">
+                <div class="ai-title">✨ Titan AI Insight</div>
+                <div class="ai-text">"{{ ai_summary }}"</div>
+
+                {% if ai_tp1 %}
+                <div class="trade-grid">
+                    <div class="trade-item">
+                        <div class="trade-label">Target (TP1)</div>
+                        <div class="trade-val val-green">{{ ai_tp1 }}</div>
+                    </div>
+                    <div class="trade-item">
+                        <div class="trade-label">Invalidation (SL)</div>
+                        <div class="trade-val val-red">{{ ai_sl }}</div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            <div style="font-size: 13px; color: #6b7280; text-align: center; margin-top: 20px;">
+                Strategy: <strong style="color: #9ca3af;">{{ strategy }}</strong>
+            </div>
+        </div>
+
+        <div class="footer">
+            <strong>Titan Quantitative System</strong> • Powered by Statistical Arbitrage
+        </div>
+    </div>
+</body>
+
+</html>
