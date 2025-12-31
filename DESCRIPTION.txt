@@ -1,0 +1,1 @@
+Professional algorithmic trading system for MetaTrader 5. Features proven RSI/EMA strategies, dynamic position sizing, circuit breaker protection, and auto break-even. Production-ready with SQLite logging and Telegram alerts.

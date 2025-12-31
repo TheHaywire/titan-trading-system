@@ -1,10 +1,15 @@
-# Titan Trading System
-
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![MetaTrader 5](https://img.shields.io/badge/MetaTrader-5-green.svg)](https://www.metatrader5.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A professional algorithmic trading system for MetaTrader 5 with multiple automated strategies, risk management, and real-time monitoring.
+
+## 📚 Documentation
+
+- **[Getting Started](docs/wiki/Getting-Started.md)** - Installation and setup guide
+- **[Architecture](docs/wiki/Architecture.md)** - System design and components
+- **[Trading Strategies](docs/wiki/Trading-Strategies.md)** - How the bot trades
+- **[Risk Management](docs/wiki/Risk-Management.md)** - Safety features
 
 ## 🚀 Features
 
@@ -63,11 +68,11 @@ TELEGRAM_CHAT_ID=your_chat_id
 ## 🎮 Quick Start
 
 ```bash
-# Run the robust trading bot
-python -m titan_system.robust_bot
+# Run the production bot (recommended)
+python -m titan_system.titan_production
 
-# Run GOLD scalper
-python -m titan_system.gold_scalper
+# Alternative: Robust bot
+python -m titan_system.robust_bot
 
 # Check account status
 python scripts/status.py
