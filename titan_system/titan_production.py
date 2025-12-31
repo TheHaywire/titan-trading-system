@@ -190,6 +190,31 @@ class TitanProductionBot:
                 if self._execute(signal):
                     current_count += 1
     
+    def _is_power_hour(self) -> tuple[bool, str]:
+        """Check if current time is in power trading hours (from daytrading book)"""
+        utc_hour = datetime.now(timezone.utc).hour
+        
+        # London open (7-10 UTC) - High liquidity
+        if 7 <= utc_hour < 10:
+            return True, "LONDON_OPEN"
+        
+        # London/NY overlap (12-13 UTC) - Highest liquidity
+        if 12 <= utc_hour < 13:
+            return True, "OVERLAP"
+        
+        # NY open (13-16 UTC) - High volatility
+        if 13 <= utc_hour < 16:
+            return True, "NY_OPEN"
+        
+        # Death zones (from books)
+        if 17 <= utc_hour < 20:
+            return False, "LUNCH_DEAD"  # Low liquidity
+        
+        if 21 <= utc_hour or utc_hour < 5:
+            return False, "AFTER_HOURS"  # Avoid
+        
+        return True, "OK"
+    
     def _analyze(self, symbol: str) -> Optional[QuantSignal]:
         """
         Analyze symbol using simplified SMC approach.
@@ -200,6 +225,12 @@ class TitanProductionBot:
         - Momentum breaks (proven)
         """
         try:
+            # Session filter (from Complete Guide to Daytrading)
+            is_good_time, session = self._is_power_hour()
+            if not is_good_time:
+                logger.debug(f"{symbol} - Skipping bad session: {session}")
+                return None
+            
             # Get data
             rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M15, 0, 100)
             if rates is None or len(rates) < 50:
@@ -218,8 +249,17 @@ class TitanProductionBot:
             
             df['MOM'] = df['close'].pct_change(5) * 100
             
+            # Volume analysis (from Technical Analysis books)
+            df['VOL_MA'] = df['tick_volume'].rolling(20).mean()
+            df['VOL_RATIO'] = df['tick_volume'] / df['VOL_MA'].replace(0, 1.0)
+            
             curr = df.iloc[-1]
             prev = df.iloc[-2]
+            
+            # Volume filter (from TA books - volume confirms price)
+            if curr['VOL_RATIO'] < 0.8:
+                logger.debug(f"{symbol} - Low volume: {curr['VOL_RATIO']:.2f}x")
+                return None  # Skip low volume signals
             
             # Signal detection - STRICT
             direction = None
@@ -227,10 +267,17 @@ class TitanProductionBot:
             reason = []
             
             # RSI extremes (highest confidence)
+            # High volume boost (from TA books)
+            volume_boost = 0
+            if curr['VOL_RATIO'] > 1.5:
+                volume_boost = 5
+                reason.append(f"High volume ({curr['VOL_RATIO']:.1f}x)")
+            
             if curr['RSI'] < 15:
                 direction = Direction.BUY
-                score = 95
+                score = 95 + volume_boost
                 reason.append(f"RSI extreme oversold ({curr['RSI']:.0f})")
+                reason.append(f"Session: {session}")
             elif curr['RSI'] > 85:
                 direction = Direction.SELL
                 score = 95
