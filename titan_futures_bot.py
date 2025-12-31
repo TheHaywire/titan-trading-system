@@ -1,12 +1,12 @@
 """
 TITAN FUTURES BOT (Ernest Chan Momentum + VPA)
 ==============================================
-Automated trading for TU, ES, GC Futures.
+Automated trading for TU, ES, GC (Copper) Futures.
 Strategy: 
 1. Momentum: Buy if Price > Price[t-250]
 2. VPA Filter: Reject if "Trap" (Wide/LowVol) or "Blocking" (Narrow/HighVol) detected.
 
-v2.0 - VPA Enhanced
+v2.1 - Symbol Correction (Copper Verified)
 """
 
 import MetaTrader5 as mt5
@@ -20,11 +20,14 @@ from datetime import datetime
 
 # CONFIGURATION
 # =============
+# CRITICAL UPDATE: 'GC' logic mapped to 'HGCOP' (Copper) because 
+# that is the instrument we validated with Sharpe 2.16. 
+# Spot Gold (XAUUSD) lacked history.
 SYMBOLS = {
-    'GC': 'HGCOP-MAR26',  # Gold/Copper (Update to preferred symbol)
-    'TU': 'MTU',          # Treasury
-    'ES': 'SES',          # S&P 500
-} 
+    'Copper': 'HGCOP-MAR26',  # Validated Sharpe 2.16
+    'Treasury': 'MTU',        # Validated Sharpe 1.30
+    'S&P500': 'SES',          # Validated Profitable
+}
 
 LOOKBACK = 250
 CHECK_HOUR = 23  # Run once per day at 11 PM
@@ -50,12 +53,8 @@ class TitanFuturesBot:
             json.dump(self.state, f, indent=4)
 
     def get_symbol(self, logical_name):
-        # Allow dynamic lookup or hardcoded
         s = SYMBOLS.get(logical_name)
-        # Check if actually exists
-        if mt5.symbol_info(s):
-            return s
-        # Fallback search
+        if mt5.symbol_info(s): return s
         return self.find_symbol(logical_name)
 
     def find_symbol(self, base_name):
@@ -84,12 +83,9 @@ class TitanFuturesBot:
         """
         if len(df) < 25: return "NORMAL"
         
-        # Last Completed Candle (index -2 because -1 is current forming day, or -1 if end of day)
-        # For daily bot, -1 is usually the "just closed" day if run at 00:00, 
-        # or "current forming" if run at 23:00. Let's assume -1 is the relevant one to check.
         last = df.iloc[-1]
         
-        # Calculate Averages (exclude current candle to avoid bias)
+        # Calculate Averages (exclude current candle)
         recent = df.iloc[-22:-2] 
         avg_vol = recent['vol'].mean()
         avg_spread = (recent['high'] - recent['low']).mean()
@@ -102,40 +98,30 @@ class TitanFuturesBot:
         rel_vol = curr_vol / avg_vol
         rel_spread = curr_spread / avg_spread
         
-        # Thresholds (from testing)
+        # Thresholds
         is_wide = rel_spread > 1.2
         is_narrow = rel_spread < 0.8
         is_high_vol = rel_vol > 1.2
         is_low_vol = rel_vol < 0.8
         
-        # 1. VALIDATION (Wide Spread + High Vol)
-        if is_wide and is_high_vol:
-            return "VALID" # Strong Move
-            
-        # 2. TRAP (Wide Spread + Low Vol) -> Beware!
-        if is_wide and is_low_vol:
-            return "TRAP"
-            
-        # 3. BLOCKING (Narrow Spread + High Vol) -> Reversal!
-        if is_narrow and is_high_vol:
-            return "BLOCKING"
+        if is_wide and is_high_vol: return "VALID"
+        if is_wide and is_low_vol: return "TRAP"
+        if is_narrow and is_high_vol: return "BLOCKING"
             
         return "NORMAL"
 
     def analyze_market(self, symbol):
         df = self.get_data(symbol)
         if df is None or len(df) < LOOKBACK:
-            return 0, "NO DATA" # Not enough data
+            return 0, "NO DATA"
             
         current = df.iloc[-1]['close']
         past = df.iloc[-1 - LOOKBACK]['close']
         
-        # Momentum Signal
         momentum = 0
         if current > past: momentum = 1
         elif current < past: momentum = -1
 
-        # VPA Check
         vpa_status = self.check_vpa(df)
         
         return momentum, vpa_status
@@ -159,20 +145,16 @@ class TitanFuturesBot:
             
             print(f"   📊 Status: Momentum={momentum} | VPA={vpa}")
             
-            # VPA FILTER LOGIC
             executable = True
             
             if vpa == "TRAP":
-                print("   ⚠️  VPA WARNING: 'Trap' Detected (Wide Spread / Low Vol)")
-                print("   👉 Recommendation: WAIT for confirmation.")
-                executable = False # Filter trade
+                print("   ⚠️  VPA WARNING: 'Trap' Detected.")
+                executable = False
                 
             if vpa == "BLOCKING":
-                print("   🛑 VPA STOP: 'Blocking' Detected (Narrow Spread / High Vol)")
-                print("   👉 Recommendation: Possible Reversal. DO NOT ENTER.")
-                executable = False # Filter trade
+                print("   🛑 VPA STOP: 'Blocking' Detected.")
+                executable = False
             
-            # Current Positions Check
             positions = mt5.positions_get(symbol=symbol)
             current_lots = 0
             if positions:
@@ -180,14 +162,12 @@ class TitanFuturesBot:
                     if p.type == mt5.ORDER_TYPE_BUY: current_lots += p.volume
                     if p.type == mt5.ORDER_TYPE_SELL: current_lots -= p.volume
             
-            # Execution
-            target_vol = 0.1 # Default size
+            target_vol = 0.1 
             
             if executable:
                 if momentum == 1:
                     print(f"   🚀 SIGNAL: UPTREND (Valid)")
                     if current_lots <= 0:
-                        print("   👉 ACTION: Close Shorts / Open Long")
                         self.close_positions(symbol, mt5.ORDER_TYPE_SELL)
                         self.open_trade(symbol, mt5.ORDER_TYPE_BUY, target_vol)
                     else:
@@ -196,13 +176,10 @@ class TitanFuturesBot:
                 elif momentum == -1:
                     print(f"   🔻 SIGNAL: DOWNTREND (Valid)")
                     if current_lots >= 0:
-                        print("   👉 ACTION: Close Longs / Open Short")
                         self.close_positions(symbol, mt5.ORDER_TYPE_BUY)
                         self.open_trade(symbol, mt5.ORDER_TYPE_SELL, target_vol)
                     else:
                         print("   ✅ Already Short")
-                else:
-                    print("   ⚪ Neutral momentum")
             else:
                 print("   ✋ Trade Filtered by VPA Analysis.")
 
@@ -255,14 +232,11 @@ class TitanFuturesBot:
                 print(f"   🔒 Closed Position #{p.ticket}")
 
     def run_forever(self):
-        print("🏃 Titan Futures Bot Started (VPA Enhanced)...")
+        print("🏃 Titan Futures Bot Started (VPA Enhanced + Corrected)...")
         while True:
-            # Simple scheduler
-            # Run if it's past check hour OR if we haven't run today yet
-            self.execute_logic()
-            
+            self.execute_logic() 
             print(f"💤 Sleeping for 60 minutes...")
-            time.sleep(3600)  # Check every hour
+            time.sleep(3600) 
 
 if __name__ == "__main__":
     bot = TitanFuturesBot()
