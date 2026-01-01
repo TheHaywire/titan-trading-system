@@ -1,0 +1,1520 @@
+CHFSGD | Swiss Franc vs Singapore Dollar | Forex\Standard\Exotics\CHFSGD
+EURDKK | Euro vs Danish Krone | Forex\Standard\Exotics\EURDKK
+EURHKD | Euro vs Hong Kong Dollar | Forex\Standard\Exotics\EURHKD
+EURHUF | Euro vs Hungarian Forint | Forex\Standard\Exotics\EURHUF
+EURNOK | Euro vs Norwegian Krone | Forex\Standard\Exotics\EURNOK
+EURPLN | Euro vs Polish Zloty | Forex\Standard\Exotics\EURPLN
+EURSEK | Euro vs Swedish Krona | Forex\Standard\Exotics\EURSEK
+EURSGD | Euro vs Singapore Dollar | Forex\Standard\Exotics\EURSGD
+EURTRY | Euro vs Turkish Lira | Forex\Standard\Exotics\EURTRY
+EURZAR | Euro vs South African Rand | Forex\Standard\Exotics\EURZAR
+GBPDKK | Great Britain Pound vs Danish Krone | Forex\Standard\Exotics\GBPDKK
+GBPNOK | Great Britain Pound vs Norwegian Krone | Forex\Standard\Exotics\GBPNOK
+GBPSEK | Great Britain Pound vs Swedish Krona | Forex\Standard\Exotics\GBPSEK
+GBPSGD | Great Britain Pound vs Singapore Dollar | Forex\Standard\Exotics\GBPSGD
+NZDSGD | New Zealand Dollar vs Singapore Dollar | Forex\Standard\Exotics\NZDSGD
+SGDJPY | Singapore Dollar vs Japanese Yen | Forex\Standard\Exotics\SGDJPY
+USDCNH | US Dollar vs Renminbi | Forex\Standard\Exotics\USDCNH
+USDDKK | US Dollar vs Danish Krone | Forex\Standard\Exotics\USDDKK
+USDHKD | US Dollar vs Hong Kong Dollar | Forex\Standard\Exotics\USDHKD
+USDHUF | US Dollar vs Hungarian Forint | Forex\Standard\Exotics\USDHUF
+USDMXN | US Dollar vs Mexican Peso  | Forex\Standard\Exotics\USDMXN
+USDNOK | US Dollar vs Norwegian Krone | Forex\Standard\Exotics\USDNOK
+USDPLN | US Dollar vs Polish Zloty | Forex\Standard\Exotics\USDPLN
+USDSEK | US Dollar vs Swedish Krona | Forex\Standard\Exotics\USDSEK
+USDSGD | US Dollar vs Singapore Dollar | Forex\Standard\Exotics\USDSGD
+USDTRY | US Dollar vs Turkish Lira | Forex\Standard\Exotics\USDTRY
+USDZAR | US Dollar vs South African Rand | Forex\Standard\Exotics\USDZAR
+CADCHF | Canadian Dollar vs Swiss Franc | Forex\Standard\Majors\CADCHF
+CADJPY | Canadian Dollar vs Japanese Yen | Forex\Standard\Majors\CADJPY
+CHFJPY | Swiss Franc vs Japanese Yen | Forex\Standard\Majors\CHFJPY
+EURCAD | Euro vs Canadian Dollar | Forex\Standard\Majors\EURCAD
+EURCHF | Euro vs Swiss Franc | Forex\Standard\Majors\EURCHF
+EURGBP | Euro vs Great Britain Pound | Forex\Standard\Majors\EURGBP
+EURJPY | Euro vs Japanese Yen | Forex\Standard\Majors\EURJPY
+EURUSD | Euro vs US Dollar | Forex\Standard\Majors\EURUSD
+GBPCAD | Great Britain Pound vs Canadian Dollar | Forex\Standard\Majors\GBPCAD
+GBPCHF | Great Britain Pound vs Swiss Franc | Forex\Standard\Majors\GBPCHF
+GBPJPY | Great Britain Pound vs Japanese Yen | Forex\Standard\Majors\GBPJPY
+GBPUSD | Great Britain Pound vs US Dollar | Forex\Standard\Majors\GBPUSD
+USDCAD | US Dollar vs Canadian Dollar | Forex\Standard\Majors\USDCAD
+USDCHF | US Dollar vs Swiss Franc | Forex\Standard\Majors\USDCHF
+USDJPY | US Dollar vs Japanese Yen | Forex\Standard\Majors\USDJPY
+AUDCAD | Australian Dollar vs Canadian Dollar | Forex\Standard\Minors\AUDCAD
+AUDCHF | Australian Dollar vs Swiss Franc | Forex\Standard\Minors\AUDCHF
+AUDJPY | Australian Dollar vs Japanese Yen | Forex\Standard\Minors\AUDJPY
+AUDNZD | Australian Dollar vs New Zealand Dollar | Forex\Standard\Minors\AUDNZD
+AUDUSD | Australian Dollar vs US Dollar | Forex\Standard\Minors\AUDUSD
+EURAUD | Euro vs Australian Dollar | Forex\Standard\Minors\EURAUD
+EURNZD | Euro vs New Zealand Dollar | Forex\Standard\Minors\EURNZD
+GBPAUD | Great Britain Pound vs Australian Dollar | Forex\Standard\Minors\GBPAUD
+GBPNZD | Great Britain Pound vs New Zealand Dollar | Forex\Standard\Minors\GBPNZD
+NZDCAD | New Zealand Dollar vs Canadian Dollar | Forex\Standard\Minors\NZDCAD
+NZDCHF | New Zealand Dollar vs Swiss Franc | Forex\Standard\Minors\NZDCHF
+NZDJPY | New Zealand Dollar vs Japanese Yen | Forex\Standard\Minors\NZDJPY
+NZDUSD | New Zealand Dollar vs US Dollar | Forex\Standard\Minors\NZDUSD
+CGG | VIRI (VIRI.PA) | Stocks\EU\France\CGG
+Soitec | Soitec SA (SOIT.PA) | Stocks\EU\France\Soitec
+Amplifon | Amplifon SpA (AMPF.MI) | Stocks\EU\Italy\Amplifon
+AnimaHolding | Anima Holding SpA (ANIM.MI) | Stocks\EU\Italy\AnimaHolding
+BrunelloCucinelli | Brunello Cucinelli SpA (BCU.MI) | Stocks\EU\Italy\BrunelloCucinelli
+DiaSorin | DiaSorin SpA (DIAS.MI) | Stocks\EU\Italy\DiaSorin
+Fincantieri | Fincantieri SpA (FCT.MI) | Stocks\EU\Italy\Fincantieri
+Hera | Hera SpA (HRA.MI) | Stocks\EU\Italy\Hera
+Interpump | Interpump Group SpA (ITPG.MI) | Stocks\EU\Italy\Interpump
+JuventusFC | Juventus FC SpA (JUVE.MI) | Stocks\EU\Italy\JuventusFC
+MontedeiPaschi | Banca Monte dei Paschi di Siena SpA (BMPS.MI) | Stocks\EU\Italy\MontedeiPaschi
+Pirelli&C | Pirelli & C SpA (PIRC.MI) | Stocks\EU\Italy\Pirelli&C
+Saras | Saras SpA (SRS.MI) | Stocks\EU\Italy\Saras
+Technogym | Technogym SpA (TGYM.MI) | Stocks\EU\Italy\Technogym
+DuPont | DuPont de Nemours Inc (DD.N) | Stocks\US\DuPont
+Andritz | Andritz AG (ANDR.VI) | Stocks\EU\Austria\Andritz
+CAImmobilien | CA Immobilien Anlagen AG (CAIV.VI) | Stocks\EU\Austria\CAImmobilien
+Immofinanz | CPI Europe AG (CPIE.VI) | Stocks\EU\Austria\Immofinanz
+OMV | OMV AG (OMVV.VI) | Stocks\EU\Austria\OMV
+OesterreichischePost | Oesterreichische Post AG (POST.VI) | Stocks\EU\Austria\OesterreichischePost
+SchoellerBleck | SBO AG (SBOE.VI) | Stocks\EU\Austria\SchoellerBleck
+TelekomAustria | Telekom Austria AG (TELA.VI) | Stocks\EU\Austria\TelekomAustria
+UNIQA | UNIQA Insurance Group AG (UNIQ.VI) | Stocks\EU\Austria\UNIQA
+Verbund | Verbund AG (VERB.VI) | Stocks\EU\Austria\Verbund
+Voestalpine | Voestalpine AG (VOES.VI) | Stocks\EU\Austria\Voestalpine
+WienerBerger | Wienerberger AG (WBSV.VI) | Stocks\EU\Austria\WienerBerger
+ABInbev | Anheuser Busch Inbev NV (ABI.BR) | Stocks\EU\Belgium\ABInbev
+APERAM | Aperam SA (APAM.AS) | Stocks\EU\Belgium\APERAM
+Ackermans | Ackermans & Van Haaren NV (ACKB.BR) | Stocks\EU\Belgium\Ackermans
+Ageas | Ageas SA (AGES.BR) | Stocks\EU\Belgium\Ageas
+Bekaert | NV Bekaert SA (BEKB.BR) | Stocks\EU\Belgium\Bekaert
+Bpost | Bpost SA (BPOST.BR) | Stocks\EU\Belgium\Bpost
+Cofinimmo | Cofinimmo SA (COFB.BR) | Stocks\EU\Belgium\Cofinimmo
+Colruyt | Colruyt Group NV (COLR.BR) | Stocks\EU\Belgium\Colruyt
+Dieteren | D'Ieteren SA (IETB.BR) | Stocks\EU\Belgium\Dieteren
+Engie | Engie SA (ENGIE.PA) | Stocks\EU\Belgium\Engie
+Galapagos | Galapagos NV (GLPG.AS) | Stocks\EU\Belgium\Galapagos
+KBC | KBC Groep NV (KBC.BR) | Stocks\EU\Belgium\KBC
+Ontex | Ontex Group NV (ONTEX.BR) | Stocks\EU\Belgium\Ontex
+Proximus | Proximus NV (PROX.BR) | Stocks\EU\Belgium\Proximus
+Sofina | Sofina SA (SOF.BR) | Stocks\EU\Belgium\Sofina
+Solvay | Solvay SA (SOLB.BR) | Stocks\EU\Belgium\Solvay
+Telenet | Telenet Group Holding NV (TNET.BR) | Stocks\EU\Belgium\Telenet
+TessenderloChemie | Tessenderlo Group NV (TESB.BR) | Stocks\EU\Belgium\TessenderloChemie
+UCB | Ucb SA (UCB.BR) | Stocks\EU\Belgium\UCB
+Umicore | Umicore SA (UMI.BR) | Stocks\EU\Belgium\Umicore
+Cargotec | Hiab Oyj (HIAB.HE) | Stocks\EU\Finland\Cargotec
+Elisa | Elisa Oyj (ELISA.HE) | Stocks\EU\Finland\Elisa
+Fortum | Fortum Oyj (FORTUM.HE) | Stocks\EU\Finland\Fortum
+Huhtamaki | Huhtamaki Oyj (HUH1V.HE) | Stocks\EU\Finland\Huhtamaki
+Kemira | Kemira Oyj (KEMIRA.HE) | Stocks\EU\Finland\Kemira
+Kesko | Kesko Oyj (KESKOB.HE) | Stocks\EU\Finland\Kesko
+Kone | Kone Oyj (KNEBV.HE) | Stocks\EU\Finland\Kone
+Konecranes | Konecranes Abp (KCRA.HE) | Stocks\EU\Finland\Konecranes
+Metsa | Metsa Board Oyj (METSB.HE) | Stocks\EU\Finland\Metsa
+Neste | Neste Oyj (NESTE.HE) | Stocks\EU\Finland\Neste
+Nokia | Nokia Oyj (NOKIA.HE) | Stocks\EU\Finland\Nokia
+Orion | Orion Corp (ORNBV.HE) | Stocks\EU\Finland\Orion
+Outokumpu | Outokumpu Oyj (OUT1V.HE) | Stocks\EU\Finland\Outokumpu
+Sampo | Sampo plc (SAMPO.HE) | Stocks\EU\Finland\Sampo
+Tieto | TietoEVRY Corp (TIETO.HE) | Stocks\EU\Finland\Tieto
+UPM-Kymmene | UPM-Kymmene Oyj (UPM.HE) | Stocks\EU\Finland\UPM-Kymmene
+Valmet | Valmet Oyj (VALMT.HE) | Stocks\EU\Finland\Valmet
+Wartsila | Wartsila Oyj Abp (WRT1V.HE) | Stocks\EU\Finland\Wartsila
+ADP | Aeroports de Paris SA (ADP.PA) | Stocks\EU\France\ADP
+AXA | AXA SA (AXAF.PA) | Stocks\EU\France\AXA
+Accor | Accor SA (ACCP.PA) | Stocks\EU\France\Accor
+AirFrance | Air France KLM SA (AIRF.PA) | Stocks\EU\France\AirFrance
+Alstom | Alstom SA (ALSO.PA) | Stocks\EU\France\Alstom
+Alten | Alten SA (LTEN.PA) | Stocks\EU\France\Alten
+Arkema | Arkema SA (AKE.PA) | Stocks\EU\France\Arkema
+Atos | Atos SE (ATOS.PA) | Stocks\EU\France\Atos
+BIC | Societe BIC SA (BICP.PA) | Stocks\EU\France\BIC
+BNPParibas | BNP Paribas SA (BNPP.PA) | Stocks\EU\France\BNPParibas
+Biomerieux | Biomerieux SA (BIOX.PA) | Stocks\EU\France\Biomerieux
+Bollore | Bollore SE (BOLL.PA) | Stocks\EU\France\Bollore
+Bouygues | Bouygues SA (BOUY.PA) | Stocks\EU\France\Bouygues
+BureauVeritas | Bureau Veritas SA (BVI.PA) | Stocks\EU\France\BureauVeritas
+Capgemini | Capgemini SE (CAPP.PA) | Stocks\EU\France\Capgemini
+Carrefour | Carrefour SA (CARR.PA) | Stocks\EU\France\Carrefour
+Casino | Casino Guichard Perrachon SA (CASP.PA) | Stocks\EU\France\Casino
+ChristianDior | Christian Dior SE (DIOR.PA) | Stocks\EU\France\ChristianDior
+Covivio | Covivio SA (CVO.PA) | Stocks\EU\France\Covivio
+CreditAgric | Credit Agricole SA (CAGR.PA) | Stocks\EU\France\CreditAgric
+Danone | Danone SA (DANO.PA) | Stocks\EU\France\Danone
+DassaultSystem | Dassault Systemes SE (DAST.PA) | Stocks\EU\France\DassaultSystem
+Edenred | Edenred SA (EDEN.PA) | Stocks\EU\France\Edenred
+Eiffage | Eiffage SA (FOUG.PA) | Stocks\EU\France\Eiffage
+Essilor | EssilorLuxottica SA (ESLX.PA) | Stocks\EU\France\Essilor
+Eurazeo | Eurazeo SE (EURA.PA) | Stocks\EU\France\Eurazeo
+EurofinsScientific | Eurofins Scientific SE (EUFI.PA) | Stocks\EU\France\EurofinsScientific
+Eutelsat | Eutelsat Communications SA (ETL.PA) | Stocks\EU\France\Eutelsat
+Faurecia | Forvia SE (FRVIA.PA) | Stocks\EU\France\Faurecia
+Gaztransport&Technigaz | Gaztransport et Technigaz SA (GTT.PA) | Stocks\EU\France\Gaztransport&Technigaz
+Gecina | Gecina SA (GFCP.PA) | Stocks\EU\France\Gecina
+Getlink | Getlink SE (GETP.PA) | Stocks\EU\France\Getlink
+Hermes | Hermes International SCA (HRMS.PA) | Stocks\EU\France\Hermes
+Icade | Icade SA (ICAD.PA) | Stocks\EU\France\Icade
+Imerys | Imerys SA (IMTP.PA) | Stocks\EU\France\Imerys
+Ipsen | Ipsen SA (IPN.PA) | Stocks\EU\France\Ipsen
+Ipsos | Ipsos SA (ISOS.PA) | Stocks\EU\France\Ipsos
+JCDecaux | JCDecaux SA (JCDX.PA) | Stocks\EU\France\JCDecaux
+Kering | Kering SA (PRTP.PA) | Stocks\EU\France\Kering
+KlepierreReit | Klepierre SA (LOIM.PA) | Stocks\EU\France\KlepierreReit
+Korian | Clariane Ord Shs (CLARI.PA) | Stocks\EU\France\Korian
+LVMH | LVMH Moet Hennessy Louis Vuitton SE (LVMH.PA) | Stocks\EU\France\LVMH
+Lagardere | Lagardere SCA (LAGA.PA) | Stocks\EU\France\Lagardere
+Legrand | Legrand SA (LEGD.PA) | Stocks\EU\France\Legrand
+Loreal | L'Oreal SA (OREP.PA) | Stocks\EU\France\Loreal
+Mercialys | Mercialys SA (MERY.PA) | Stocks\EU\France\Mercialys
+Nexans | Nexans SA (NEXS.PA) | Stocks\EU\France\Nexans
+Nexity | Nexity SA (NEXI.PA) | Stocks\EU\France\Nexity
+Orange | Orange SA (ORAN.PA) | Stocks\EU\France\Orange
+PlasticOmnium | Opmobility (OPM.PA) | Stocks\EU\France\PlasticOmnium
+Publicis | Publicis Groupe SA (PUBP.PA) | Stocks\EU\France\Publicis
+RemyCointreau | Remy Cointreau SA (RCOP.PA) | Stocks\EU\France\RemyCointreau
+Renault | Renault SA (RENA.PA) | Stocks\EU\France\Renault
+Rexel | Rexel SA (RXL.PA) | Stocks\EU\France\Rexel
+Rubis | Rubis SCA (RUBF.PA) | Stocks\EU\France\Rubis
+SES | SES SA (SESFd.PA) | Stocks\EU\France\SES
+Safran | Safran SA (SAF.PA) | Stocks\EU\France\Safran
+Sanofi | Sanofi SA (SASY.PA) | Stocks\EU\France\Sanofi
+Scor | Scor SE (SCOR.PA) | Stocks\EU\France\Scor
+SocieteGen | Societe Generale SA (SOGN.PA) | Stocks\EU\France\SocieteGen
+Sodexo | Sodexo SA (EXHO.PA) | Stocks\EU\France\Sodexo
+TechnipFMC | TechnipFMC PLC (FTI.PA) | Stocks\EU\France\TechnipFMC
+Teleperformance | Teleperformance SE (TEPRF.PA) | Stocks\EU\France\Teleperformance
+Thales | Thales SA (TCFP.PA) | Stocks\EU\France\Thales
+Total | TotalEnergies SE (TTEF.PA) | Stocks\EU\France\Total
+Ubisoft | Ubisoft Entertainment SA (UBIP.PA) | Stocks\EU\France\Ubisoft
+Valeo | Valeo SA (VLOF.PA) | Stocks\EU\France\Valeo
+Veolia | Veolia Environnement SA (VIE.PA) | Stocks\EU\France\Veolia
+Vinci | Vinci SA (SGEF.PA) | Stocks\EU\France\Vinci
+Vivendi | Vivendi SA (VIV.PA) | Stocks\EU\France\Vivendi
+Wendel | Wendel SE (MWDP.PA) | Stocks\EU\France\Wendel
+AarealBank | Aareal Bank AG (ARLG.DE) | Stocks\EU\Germany\AarealBank
+Adidas | Adidas AG (ADSGn.DE) | Stocks\EU\Germany\Adidas
+Airbus | Airbus SE (AIR.PA) | Stocks\EU\France\Airbus
+Aixtron | Aixtron SE (AIXGn.DE) | Stocks\EU\Germany\Aixtron
+AllianzAG | Allianz SE (ALVG.DE) | Stocks\EU\Germany\AllianzAG
+Aurubis | Aurubis AG (NAFG.DE) | Stocks\EU\Germany\Aurubis
+BASFAG | BASF SE (BASFn.DE) | Stocks\EU\Germany\BASFAG
+BMW | Bayerische Motoren Werke AG (BMWG.DE) | Stocks\EU\Germany\BMW
+BayerAG | Bayer AG (BAYGn.DE) | Stocks\EU\Germany\BayerAG
+Beiersdorf | Beiersdorf AG (BEIG.DE) | Stocks\EU\Germany\Beiersdorf
+BilfingerBerger | Bilfinger SE (GBFG.DE) | Stocks\EU\Germany\BilfingerBerger
+Brenntag | Brenntag AG (BNRGn.DE) | Stocks\EU\Germany\Brenntag
+CarlZeiss | Carl Zeiss Meditec AG (AFXG.DE) | Stocks\EU\Germany\CarlZeiss
+Ceconomy | Ceconomy AG (CECG.DE) | Stocks\EU\Germany\Ceconomy
+Commerzbank | Commerzbank AG (CBKG.DE) | Stocks\EU\Germany\Commerzbank
+Continental | Continental AG (CONG.DE) | Stocks\EU\Germany\Continental
+DTBoerse | Deutsche Boerse AG (DB1Gn.DE) | Stocks\EU\Germany\DTBoerse
+DTTelekom | Deutsche Telekom AG (DTEGn.DE) | Stocks\EU\Germany\DTTelekom
+Daimler | Mercedes-Benz Group AG (MBGn.DE) | Stocks\EU\Germany\Daimler
+DeutschBank | Deutsche Bank AG (DBKGn.DE) | Stocks\EU\Germany\DeutschBank
+DeutschPost | Deutsche Post AG (DHLn.DE) | Stocks\EU\Germany\DeutschPost
+DeutscheEuroshop | Deutsche Euroshop AG (DEQGn.DE) | Stocks\EU\Germany\DeutscheEuroshop
+Duerr | Duerr AG (DUEG.DE) | Stocks\EU\Germany\Duerr
+E.ON | E.ON SE (EONGn.DE) | Stocks\EU\Germany\E.ON
+Fraport | Fraport AG Frankfurt Airport Services Worldwide (FRAG.DE) | Stocks\EU\Germany\Fraport
+Freenet | freenet AG (FNTGn.DE) | Stocks\EU\Germany\Freenet
+Fresenius | Fresenius SE & Co KGaA (FREG.DE) | Stocks\EU\Germany\Fresenius
+FuchsPetrolub | Fuchs SE (FPE3_p.DE) | Stocks\EU\Germany\FuchsPetrolub
+GEA | GEA Group AG (G1AG.DE) | Stocks\EU\Germany\GEA
+Gerresheimer | Gerresheimer AG (GXIG.DE) | Stocks\EU\Germany\Gerresheimer
+HannoverRe | Hannover Rueck SE (HNRGn.DE) | Stocks\EU\Germany\HannoverRe
+Heidelbergcement | HeidelbergCement AG (HEIG.DE) | Stocks\EU\Germany\Heidelbergcement
+Henkel | Henkel AG & Co KgaA (HNKG.DE) | Stocks\EU\Germany\Henkel
+Hochtief | Hochtief AG (HOTG.DE) | Stocks\EU\Germany\Hochtief
+HugoBoss | Hugo Boss AG (BOSSn.DE) | Stocks\EU\Germany\HugoBoss
+Infineon | Infineon Technologies AG (IFXGn.DE) | Stocks\EU\Germany\Infineon
+Jungheinrich | Jungheinrich AG (JUNG_p.DE) | Stocks\EU\Germany\Jungheinrich
+K&S | K&S AG (SDFGn.DE) | Stocks\EU\Germany\K&S
+Krones | Krones AG (KRNG.DE) | Stocks\EU\Germany\Krones
+LEG | LEG Immobilien AG (LEGn.DE) | Stocks\EU\Germany\LEG
+Lanxess | LANXESS AG (LXSG.DE) | Stocks\EU\Germany\Lanxess
+Leoni | Leoni AG (LEOGn.DE) | Stocks\EU\Germany\Leoni
+Linde | Linde PLC (LIN.OQ) | Stocks\US\Linde
+Lufthansa | Deutsche Lufthansa AG (LHAG.DE) | Stocks\EU\Germany\Lufthansa
+MRG | Muenchener Rueckversicherungs Gesellschaft AG (MUVGn.DE) | Stocks\EU\Germany\MRG
+MTU | MTU Aero Engines AG (MTXGn.DE) | Stocks\EU\Germany\MTU
+Merck | Merck KGaA (MRCG.DE) | Stocks\EU\Germany\Merck
+Morphosys | MorphoSys AG (MORG.DE) | Stocks\EU\Germany\Morphosys
+Nordex | Nordex SE (NDXG.DE) | Stocks\EU\Germany\Nordex
+Norma | Norma Group SE (NOEJ.DE) | Stocks\EU\Germany\Norma
+Pfandbriefbank | Deutsche Pfandbriefbank AG (PBBG.DE) | Stocks\EU\Germany\Pfandbriefbank
+Porsche | Porsche Automobil Holding SE (PSHG_p.DE) | Stocks\EU\Germany\Porsche
+Prosiebensat | Prosiebensat 1 Media SE (PSMGn.DE) | Stocks\EU\Germany\Prosiebensat
+Puma | Puma SE (PUMG.DE) | Stocks\EU\Germany\Puma
+QIEN | Qiagen NV (QIA.DE) | Stocks\EU\Germany\QIEN
+RWE | RWE AG (RWEG.DE) | Stocks\EU\Germany\RWE
+Rational | Rational AG (RAAG.DE) | Stocks\EU\Germany\Rational
+Rheinmetall | Rheinmetall AG (RHMG.DE) | Stocks\EU\Germany\Rheinmetall
+SAP | SAP SE (SAPG.DE) | Stocks\EU\Germany\SAP
+SGL | SGL Carbon SE (SGCG.DE) | Stocks\EU\Germany\SGL
+SMASolar | SMA Solar Technology AG (S92G.DE) | Stocks\EU\Germany\SMASolar
+Salzgitter | Salzgitter AG (SZGG.DE) | Stocks\EU\Germany\Salzgitter
+Siemens | Siemens AG (SIEGn.DE) | Stocks\EU\Germany\Siemens
+Software | Software AG (SOWGn.DE) | Stocks\EU\Germany\Software
+Suedzucker | Suedzucker AG (SZUG.DE) | Stocks\EU\Germany\Suedzucker
+Symrise | Symrise AG (SY1G.DE) | Stocks\EU\Germany\Symrise
+T-Immobilien | TAG Immobilien AG (TEGG.DE) | Stocks\EU\Germany\T-Immobilien
+Thyssenkrupp | Thyssenkrupp AG (TKAG.DE) | Stocks\EU\Germany\Thyssenkrupp
+UnitedInternet | United Internet AG (UTDI.DE) | Stocks\EU\Germany\UnitedInternet
+Volkswagen | Volkswagen AG (VOWG.DE) | Stocks\EU\Germany\Volkswagen
+Vonovia | Vonovia SE (VNAn.DE) | Stocks\EU\Germany\Vonovia
+Wacker | Wacker Chemie AG (WCHG.DE) | Stocks\EU\Germany\Wacker
+Zalando | Zalando SE (ZALG.DE) | Stocks\EU\Germany\Zalando
+EEE | Coca Cola HBC AG (EEEr.AT) | Stocks\EU\Greece\EEE
+Eurobank | Eurobank S.A. (EURBr.AT) | Stocks\EU\Greece\Eurobank
+HTO | Hellenic Telecommunications Organization SA (OTEr.AT) | Stocks\EU\Greece\HTO
+Jumbo | Jumbo SA (BABr.AT) | Stocks\EU\Greece\Jumbo
+Mytilineos | Metlen Energy & Metals PLC (MTLNr.AT) | Stocks\EU\Greece\Mytilineos
+NBG | National Bank of Greece SA (NBGr.AT) | Stocks\EU\Greece\NBG
+OPAP | Greek Organisation of Football Prognostics SA (OPAr.AT) | Stocks\EU\Greece\OPAP
+PPC | Public Power Corporation SA (DEHr.AT) | Stocks\EU\Greece\PPC
+A2A | A2A SpA (A2.MI) | Stocks\EU\Italy\A2A
+Azimut | Azimut Holding SpA (AZMT.MI) | Stocks\EU\Italy\Azimut
+Brembo | Freni Brembo SpA (BRBI.MI) | Stocks\EU\Italy\Brembo
+DeLonghi | De' Longhi SpA (DLG.MI) | Stocks\EU\Italy\DeLonghi
+ERG | ERG SpA (ERG.MI) | Stocks\EU\Italy\ERG
+Enel | Enel SpA (ENEI.MI) | Stocks\EU\Italy\Enel
+Eni | Eni SpA (ENI.MI) | Stocks\EU\Italy\Eni
+Ferrari | Ferrari NV (RACE.MI) | Stocks\EU\Italy\Ferrari
+FinecoBank | FinecoBank Banca Fineco SpA (FBK.MI) | Stocks\EU\Italy\FinecoBank
+Iren | Iren SpA (IREE.MI) | Stocks\EU\Italy\Iren
+Italgas | Italgas SpA (IG.MI) | Stocks\EU\Italy\Italgas
+Leonardo | Leonardo SpA (LDOF.MI) | Stocks\EU\Italy\Leonardo
+Mediaset | MFE-MEDIAFOREUROPE NV (MFEB.MI) | Stocks\EU\Italy\Mediaset
+Mediobanca | Mediobanca Banca di Credito Finanziario SpA (MDBI.MI) | Stocks\EU\Italy\Mediobanca
+Moncler | Moncler SpA (MONC.MI) | Stocks\EU\Italy\Moncler
+Prysmian | Prysmian SpA (PRY.MI) | Stocks\EU\Italy\Prysmian
+Recordati | Recordati Industria Chimica e Farmaceutica SpA (RECI.MI) | Stocks\EU\Italy\Recordati
+STMicroelectronics | STMicroelectronics NV (STMMI.MI) | Stocks\EU\Italy\STMicroelectronics
+Saipem | Saipem SpA (SPMI.MI) | Stocks\EU\Italy\Saipem
+Salvatore | Salvatore Ferragamo SpA (SFER.MI) | Stocks\EU\Italy\Salvatore
+Snam | Snam SpA (SRG.MI) | Stocks\EU\Italy\Snam
+Tenaris | Tenaris SA (TENR.MI) | Stocks\EU\Italy\Tenaris
+Terna | Terna Rete Elettrica Nazionale SpA (TRN.MI) | Stocks\EU\Italy\Terna
+UniCredit | UniCredit SpA (CRDI.MI) | Stocks\EU\Italy\UniCredit
+Unipol | Unipol Gruppo SpA (UNPI.MI) | Stocks\EU\Italy\Unipol
+UnipolSai | UnipolSai Assicurazioni SpA (US.MI) | Stocks\EU\Italy\UnipolSai
+ASM | ASM International NV (ASMI.AS) | Stocks\EU\Netherlands\ASM
+Aegon | Aegon NV (AEGN.AS) | Stocks\EU\Netherlands\Aegon
+Arcadis | Arcadis NV (ARDS.AS) | Stocks\EU\Netherlands\Arcadis
+ArcelorMittal | ArcelorMittal SA (MT.AS) | Stocks\EU\Netherlands\ArcelorMittal
+BAM | Koninklijke BAM Groep NV (BAMN.AS) | Stocks\EU\Netherlands\BAM
+Eurocommercial | Eurocommercial Properties NV (ECMPA.AS) | Stocks\EU\Netherlands\Eurocommercial
+Fugro | Fugro NV (FUGR.AS) | Stocks\EU\Netherlands\Fugro
+Heineken | Heineken NV (HEIN.AS) | Stocks\EU\Netherlands\Heineken
+ING | ING Groep NV (INGA.AS) | Stocks\EU\Netherlands\ING
+KPN | Koninklijke KPN NV (KPN.AS) | Stocks\EU\Netherlands\KPN
+OCI | OCI NV (OCI.AS) | Stocks\EU\Netherlands\OCI
+Philips | Koninklijke Philips NV (PHG.AS) | Stocks\EU\Netherlands\Philips
+PostNL | PostNL NV (PTNL.AS) | Stocks\EU\Netherlands\PostNL
+Relx | Relx PLC (REL.AS) | Stocks\EU\Netherlands\Relx
+SBM | SBM Offshore NV (SBMO.AS) | Stocks\EU\Netherlands\SBM
+TomTom | TomTom NV (TOM2.AS) | Stocks\EU\Netherlands\TomTom
+Vopak | Koninklijke Vopak NV (VOPA.AS) | Stocks\EU\Netherlands\Vopak
+Wereldhave | Wereldhave NV (WEHA.AS) | Stocks\EU\Netherlands\Wereldhave
+Aker | Aker BP ASA (AKRBP.OL) | Stocks\EU\Norway\Aker
+BW | BW LPG Ltd (BWLPG.OL) | Stocks\EU\Norway\BW
+Bakkafrost | P/F Bakkafrost (BAKKA.OL) | Stocks\EU\Norway\Bakkafrost
+DNB | DNB Bank ASA (DNB.OL) | Stocks\EU\Norway\DNB
+DNO | DNO ASA (DNO.OL) | Stocks\EU\Norway\DNO
+Equinor | Equinor ASA (EQNR.OL) | Stocks\EU\Norway\Equinor
+Gjensidige | Gjensidige Forsikring ASA (GJFG.OL) | Stocks\EU\Norway\Gjensidige
+Mowi | Mowi ASA (MOWI.OL) | Stocks\EU\Norway\Mowi
+NorskHydro | Norsk Hydro ASA (NHY.OL) | Stocks\EU\Norway\NorskHydro
+Orkla | Orkla ASA (ORK.OL) | Stocks\EU\Norway\Orkla
+PGS | PGS ASA (PGS.OL) | Stocks\EU\Norway\PGS
+Salmar | SalMar ASA (SALM.OL) | Stocks\EU\Norway\Salmar
+Schibsted | Vend Marketplaces ASA (VENDA.OL) | Stocks\EU\Norway\Schibsted
+Storebrand | Storebrand ASA (STB.OL) | Stocks\EU\Norway\Storebrand
+Subsea | Subsea 7 SA (SUBC.OL) | Stocks\EU\Norway\Subsea
+Telenor | Telenor ASA (TEL.OL) | Stocks\EU\Norway\Telenor
+EDP | EDP Energias de Portugal SA (EDP.LS) | Stocks\EU\Portugal\EDP
+Mota-Engil | Mota Engil SGPS SA (MOTA.LS) | Stocks\EU\Portugal\Mota-Engil
+NOS | NOS SGPS SA (NOS.LS) | Stocks\EU\Portugal\NOS
+Navigator | Navigator Company SA (NVGR.LS) | Stocks\EU\Portugal\Navigator
+Semapa | Semapa Sociedade de Investimento e Gestao SGPS SA (SEM.LS) | Stocks\EU\Portugal\Semapa
+Sonae | Sonae SGPS SA (YSO.LS) | Stocks\EU\Portugal\Sonae
+ACS | ACS Actividades de Construccion y Servicios SA (ACS.MC) | Stocks\EU\Spain\ACS
+Acciona | Acciona SA (ANA.MC) | Stocks\EU\Spain\Acciona
+Acerinox | Acerinox SA (ACX.MC) | Stocks\EU\Spain\Acerinox
+Aena | Aena SME SA (AENA.MC) | Stocks\EU\Spain\Aena
+Almirall | Almirall SA (ALM.MC) | Stocks\EU\Spain\Almirall
+Amadeus | Amadeus IT Group SA (AMA.MC) | Stocks\EU\Spain\Amadeus
+BBVA | Banco Bilbao Vizcaya Argentaria SA (BBVA.MC) | Stocks\EU\Spain\BBVA
+Bankinter | Bankinter SA (BKT.MC) | Stocks\EU\Spain\Bankinter
+Caixabank | Caixabank SA (CABK.MC) | Stocks\EU\Spain\Caixabank
+Cellnex | Cellnex Telecom SA (CLNX.MC) | Stocks\EU\Spain\Cellnex
+EbroFoods | Ebro Foods SA (EBRO.MC) | Stocks\EU\Spain\EbroFoods
+Enagas | Enagas SA (ENAG.MC) | Stocks\EU\Spain\Enagas
+Endesa | Endesa SA (ELE.MC) | Stocks\EU\Spain\Endesa
+Ferrovial | Ferrovial SA (FER.MC) | Stocks\EU\Spain\Ferrovial
+Grifols | Grifols SA (GRLS.MC) | Stocks\EU\Spain\Grifols
+IAG | International Consolidated Airlines Group SA (ICAG.MC) | Stocks\EU\Spain\IAG
+Iberdola | Iberdrola SA (IBE.MC) | Stocks\EU\Spain\Iberdola
+Inditex | Industria de Diseno Textil SA (ITX.MC) | Stocks\EU\Spain\Inditex
+Inmobiliaria | Inmobiliaria Colonial SOCIMI SA (COL.MC) | Stocks\EU\Spain\Inmobiliaria
+Mapfre | Mapfre SA (MAP.MC) | Stocks\EU\Spain\Mapfre
+NaturgyEnergy | Naturgy Energy Group SA (NTGY.MC) | Stocks\EU\Spain\NaturgyEnergy
+Repsol | Repsol SA (REP.MC) | Stocks\EU\Spain\Repsol
+Sacyr | Sacyr SA (SCYR.MC) | Stocks\EU\Spain\Sacyr
+Santander | Banco Santander SA (SAN.MC) | Stocks\EU\Spain\Santander
+Telefonica | Telefonica SA (TEF.MC) | Stocks\EU\Spain\Telefonica
+Viscofan | Viscofan SA (VIS.MC) | Stocks\EU\Spain\Viscofan
+AstraZeneca | AstraZeneca PLC (AZN.ST) | Stocks\EU\Sweden\AstraZeneca
+Autoliv | Autoliv Inc (ALIVsdb.ST) | Stocks\EU\Sweden\Autoliv
+Betsson | Betsson AB (BETSb.ST) | Stocks\EU\Sweden\Betsson
+BillerudKorsnas | BillerudKorsnas AB (BILL.ST) | Stocks\EU\Sweden\BillerudKorsnas
+Boliden | Boliden AB (BOL.ST) | Stocks\EU\Sweden\Boliden
+Castellum | Castellum AB (CAST.ST) | Stocks\EU\Sweden\Castellum
+Electrolux | Electrolux AB (ELUXb.ST) | Stocks\EU\Sweden\Electrolux
+Elekta | Elekta AB (EKTAb.ST) | Stocks\EU\Sweden\Elekta
+Ericsson | Telefonaktiebolaget LM Ericsson (ERICb.ST) | Stocks\EU\Sweden\Ericsson
+Essity | Essity AB  (ESSITYb.ST) | Stocks\EU\Sweden\Essity
+Fabege | Fabege AB (FABG.ST) | Stocks\EU\Sweden\Fabege
+Getinge | Getinge AB (GETIb.ST) | Stocks\EU\Sweden\Getinge
+H&M | H & M Hennes & Mauritz AB (HMb.ST) | Stocks\EU\Sweden\H&M
+Hexagon | Hexagon AB (HEXAb.ST) | Stocks\EU\Sweden\Hexagon
+Holmen | Holmen AB (HOLMb.ST) | Stocks\EU\Sweden\Holmen
+Hufvudstaden | Hufvudstaden AB (HUFVa.ST) | Stocks\EU\Sweden\Hufvudstaden
+Husqvarna | Husqvarna AB (HUSQb.ST) | Stocks\EU\Sweden\Husqvarna
+Industrivarden | Industrivarden AB (INDUa.ST) | Stocks\EU\Sweden\Industrivarden
+IntrumJustitia | Intrum AB (INTRUM.ST) | Stocks\EU\Sweden\IntrumJustitia
+Investor | Investor AB (INVEb.ST) | Stocks\EU\Sweden\Investor
+Kinnevik | Kinnevik AB (KINVb.ST) | Stocks\EU\Sweden\Kinnevik
+Loomis | Loomis AB (LOOMIS.ST) | Stocks\EU\Sweden\Loomis
+Millicom | Millicom International Cellular SA (TIGOsdb.ST) | Stocks\EU\Sweden\Millicom
+ModernTimes | Modern Times Group MTG AB (MTGb.ST) | Stocks\EU\Sweden\ModernTimes
+NCC | NCC AB (NCCb.ST) | Stocks\EU\Sweden\NCC
+Peab | Peab AB (PEABb.ST) | Stocks\EU\Sweden\Peab
+Ratos | Ratos AB (RATOb.ST) | Stocks\EU\Sweden\Ratos
+SCA | Svenska Cellulosa SCA AB (SCAb.ST) | Stocks\EU\Sweden\SCA
+SEB | Skandinaviska Enskilda Banken AB (SEBa.ST) | Stocks\EU\Sweden\SEB
+SKF | AB SKF (SKFb.ST) | Stocks\EU\Sweden\SKF
+SSAB | SSAB AB (SSABb.ST) | Stocks\EU\Sweden\SSAB
+Sandvik | Sandvik AB (SAND.ST) | Stocks\EU\Sweden\Sandvik
+Securitas | Securitas AB (SECUb.ST) | Stocks\EU\Sweden\Securitas
+Skanska | Skanska AB (SKAb.ST) | Stocks\EU\Sweden\Skanska
+Sobi | Swedish Orphan Biovitrum AB (publ) (SOBIV.ST) | Stocks\EU\Sweden\Sobi
+Swedbank | Swedbank AB (SWEDa.ST) | Stocks\EU\Sweden\Swedbank
+Tele2 | Tele2 AB (TEL2b.ST) | Stocks\EU\Sweden\Tele2
+TeliaSonera | Telia Company AB (TELIA.ST) | Stocks\EU\Sweden\TeliaSonera
+Trelleborg | Trelleborg AB (TRELb.ST) | Stocks\EU\Sweden\Trelleborg
+Volvo | Volvo AB (VOLVb.ST) | Stocks\EU\Sweden\Volvo
+ABB | Abb Ltd (ABBN.S) | Stocks\EU\Switzerland\ABB
+AMS | ams AG (AMS.S) | Stocks\EU\Switzerland\AMS
+Adecco | Adecco Group AG (ADEN.S) | Stocks\EU\Switzerland\Adecco
+BBBiotech | BB Biotech AG (BION.S) | Stocks\EU\Switzerland\BBBiotech
+Clariant | Clariant AG (CLN.S) | Stocks\EU\Switzerland\Clariant
+DKSH | DKSH Holding AG (DKSH.S) | Stocks\EU\Switzerland\DKSH
+Dufry | AVOLTA AG (AVOL.S) | Stocks\EU\Switzerland\Dufry
+EMS | Ems Chemie Holding AG (EMSN.S) | Stocks\EU\Switzerland\EMS
+GAM | GAM Holding AG (GAMH.S) | Stocks\EU\Switzerland\GAM
+Givaudan | Givaudan SA (GIVN.S) | Stocks\EU\Switzerland\Givaudan
+Kuehne&Nagel | Kuehne und Nagel International AG (KNIN.S) | Stocks\EU\Switzerland\Kuehne&Nagel
+Logitech | Logitech International SA (LOGN.S) | Stocks\EU\Switzerland\Logitech
+Lonza | Lonza Group AG (LONN.S) | Stocks\EU\Switzerland\Lonza
+Nestle | Nestle SA (NESN.S) | Stocks\EU\Switzerland\Nestle
+Novartis | Novartis AG (NOVN.S) | Stocks\EU\Switzerland\Novartis
+Oerlikon | OC Oerlikon Corporation AG Pfaeffikon (OERL.S) | Stocks\EU\Switzerland\Oerlikon
+Richemont | Compagnie Financiere Richemont SA (CFR.S) | Stocks\EU\Switzerland\Richemont
+Roche | Roche Holding AG (ROG.S) | Stocks\EU\Switzerland\Roche
+SGS | SGS SA (SGSN.S) | Stocks\EU\Switzerland\SGS
+Sika | Sika AG (SIKA.S) | Stocks\EU\Switzerland\Sika
+Sonova | Sonova Holding AG (SOON.S) | Stocks\EU\Switzerland\Sonova
+Swatch | Swatch Group AG (UHR.S) | Stocks\EU\Switzerland\Swatch
+Swisscom | Swisscom AG (SCMN.S) | Stocks\EU\Switzerland\Swisscom
+Temenos | Temenos AG (TEMN.S) | Stocks\EU\Switzerland\Temenos
+UBS | UBS Group AG (UBSG.S) | Stocks\EU\Switzerland\UBS
+3iGroup | 3i Group PLC (III.L) | Stocks\EU\UK\3iGroup
+Admiral | Admiral Group PLC (ADML.L) | Stocks\EU\UK\Admiral
+Antofagasta | Antofagasta PLC (ANTO.L) | Stocks\EU\UK\Antofagasta
+Ashmore | Ashmore Group PLC (ASHM.L) | Stocks\EU\UK\Ashmore
+Ashtead | Ashtead Group PLC (AHT.L) | Stocks\EU\UK\Ashtead
+Aviva | Aviva PLC (AV.L) | Stocks\EU\UK\Aviva
+BAESystems | BAE Systems PLC (BAES.L) | Stocks\EU\UK\BAESystems
+BATobacco | British American Tobacco PLC (BATS.L) | Stocks\EU\UK\BATobacco
+BP | BP PLC (BP.L) | Stocks\EU\UK\BP
+BTGroup | BT Group PLC (BT.L) | Stocks\EU\UK\BTGroup
+Babcock | Babcock International Group PLC (BAB.L) | Stocks\EU\UK\Babcock
+BalfourBeatty | Balfour Beatty PLC (BALF.L) | Stocks\EU\UK\BalfourBeatty
+Barclays | Barclays PLC (BARC.L) | Stocks\EU\UK\Barclays
+Barratt | Barratt Redrow PLC (BTRW.L) | Stocks\EU\UK\Barratt
+Beazley | Beazley PLC (BEZG.L) | Stocks\EU\UK\Beazley
+Bellway | Bellway PLC (BWY.L) | Stocks\EU\UK\Bellway
+BerkeleyGroup | Berkeley Group Holdings PLC (BKGH.L) | Stocks\EU\UK\BerkeleyGroup
+Britvic | Britvic PLC (BVIC.L) | Stocks\EU\UK\Britvic
+Bunzl | Bunzl plc (BNZL.L) | Stocks\EU\UK\Bunzl
+Burberry | Burberry Group PLC (BRBY.L) | Stocks\EU\UK\Burberry
+CRH | CRH PLC (CRH.L) | Stocks\EU\UK\CRH
+CairnEnergy | Capricorn Energy PLC (CNE.L) | Stocks\EU\UK\CairnEnergy
+Capita | Capita PLC (CPI.L) | Stocks\EU\UK\Capita
+Capital&Counties | Shaftesbury Capital Ord Shs (SHCS.L) | Stocks\EU\UK\Capital&Counties
+Carnival | Carnival PLC (CCL.L) | Stocks\EU\UK\Carnival
+Centamin | Centamin PLC (CEY.L) | Stocks\EU\UK\Centamin
+Centrica | Centrica PLC (CNA.L) | Stocks\EU\UK\Centrica
+CloseBrothers | Close Brothers Group PLC (CBRO.L) | Stocks\EU\UK\CloseBrothers
+Compass | Compass Group PLC (CPG.L) | Stocks\EU\UK\Compass
+ConvaTec | ConvaTec Group PLC (CTEC.L) | Stocks\EU\UK\ConvaTec
+CrestNicholson | Crest Nicholson Holdings PLC (CRST.L) | Stocks\EU\UK\CrestNicholson
+Croda | Croda International PLC (CRDA.L) | Stocks\EU\UK\Croda
+DCC | DCC PLC (DCC.L) | Stocks\EU\UK\DCC
+DerwentLondon | Derwent London PLC (DLN.L) | Stocks\EU\UK\DerwentLondon
+Diageo | Diageo PLC (DGE.L) | Stocks\EU\UK\Diageo
+DixonsCarphone | Currys Plc (CURY.L) | Stocks\EU\UK\DixonsCarphone
+Dominos | Domino's Pizza Group PLC (DOM.L) | Stocks\EU\UK\Dominos
+Drax | Drax Group PLC (DRX.L) | Stocks\EU\UK\Drax
+Easyjet | Easyjet PLC (EZJ.L) | Stocks\EU\UK\Easyjet
+Electrocomponents | RS Group PLC (RS1R.L) | Stocks\EU\UK\Electrocomponents
+Essentra | Essentra PLC (ESNT.L) | Stocks\EU\UK\Essentra
+Experian | Experian PLC (EXPN.L) | Stocks\EU\UK\Experian
+Ferguson | Ferguson PLC (FERG.L) | Stocks\EU\UK\Ferguson
+First | FirstGroup PLC (FGP.L) | Stocks\EU\UK\First
+Fresnillo | Fresnillo PLC (FRES.L) | Stocks\EU\UK\Fresnillo
+GSK | GlaxoSmithKline PLC (GSK.L) | Stocks\EU\UK\GSK
+Glencore | Glencore PLC (GLEN.L) | Stocks\EU\UK\Glencore
+GreatPortland | Great Portland Estates PLC (GPEG.L) | Stocks\EU\UK\GreatPortland
+Greencore | Greencore Group PLC (GNC.L) | Stocks\EU\UK\Greencore
+Greggs | Greggs PLC (GRG.L) | Stocks\EU\UK\Greggs
+HSBC | HSBC Holdings PLC (HSBA.L) | Stocks\EU\UK\HSBC
+Halma | Halma PLC (HLMA.L) | Stocks\EU\UK\Halma
+Hargreaves | Hargreaves Lansdown PLC (HRGV.L) | Stocks\EU\UK\Hargreaves
+Hays | Hays PLC (HAYS.L) | Stocks\EU\UK\Hays
+Hikma | Hikma Pharmaceuticals PLC (HIK.L) | Stocks\EU\UK\Hikma
+Hiscox | Hiscox Ltd (HSX.L) | Stocks\EU\UK\Hiscox
+HowdenJoinery | Howden Joinery Group PLC (HWDN.L) | Stocks\EU\UK\HowdenJoinery
+IMI | IMI PLC (IMI.L) | Stocks\EU\UK\IMI
+ITV | ITV PLC (ITV.L) | Stocks\EU\UK\ITV
+Inchcape | Inchcape PLC (INCH.L) | Stocks\EU\UK\Inchcape
+Informa | Informa PLC (INF.L) | Stocks\EU\UK\Informa
+InterContinental | InterContinental Hotels Group PLC (IHG.L) | Stocks\EU\UK\InterContinental
+IntermediateCapital | ICG  PLC (ICGIN.L) | Stocks\EU\UK\IntermediateCapital
+Intertek | Intertek Group PLC (ITRK.L) | Stocks\EU\UK\Intertek
+Investec | Investec PLC (INVP.L) | Stocks\EU\UK\Investec
+JupiterFund | Jupiter Fund Management PLC (JUP.L) | Stocks\EU\UK\JupiterFund
+Kingfisher | Kingfisher PLC (KGF.L) | Stocks\EU\UK\Kingfisher
+LSE | London Stock Exchange Group PLC (LSEG.L) | Stocks\EU\UK\LSE
+Lancashire | Lancashire Holdings Ltd (LRE.L) | Stocks\EU\UK\Lancashire
+Legal&Gen | Legal & General Group PLC (LGEN.L) | Stocks\EU\UK\Legal&Gen
+Lloyds | Lloyds Banking Group PLC (LLOY.L) | Stocks\EU\UK\Lloyds
+ManGroup | Man Group PLC (EMG.L) | Stocks\EU\UK\ManGroup
+Marks&Spen | Marks and Spencer Group PLC (MKS.L) | Stocks\EU\UK\Marks&Spen
+Marstons | Marston's PLC (MARS.L) | Stocks\EU\UK\Marstons
+Mitchells&Butlers | Mitchells & Butlers PLC (MAB.L) | Stocks\EU\UK\Mitchells&Butlers
+Mondi | Mondi PLC (MNDI.L) | Stocks\EU\UK\Mondi
+Moneysupermarket | Moneysupermarket.Com Group PLC (MONY.L) | Stocks\EU\UK\Moneysupermarket
+NationalExpress | Mobico Group PLC (MCG.L) | Stocks\EU\UK\NationalExpress
+Next | Next PLC (NXT.L) | Stocks\EU\UK\Next
+Ocado | Ocado Group PLC (OCDO.L) | Stocks\EU\UK\Ocado
+Pagegroup | Pagegroup PLC (PAGE.L) | Stocks\EU\UK\Pagegroup
+Pearson | Pearson PLC (PSON.L) | Stocks\EU\UK\Pearson
+Pennon | Pennon Group PLC (PNN.L) | Stocks\EU\UK\Pennon
+Persimmon | Persimmon PLC (PSN.L) | Stocks\EU\UK\Persimmon
+Petrofac | Petrofac Ltd (PFC.L) | Stocks\EU\UK\Petrofac
+PetsatHome | Pets at Home Group PLC (PETSP.L) | Stocks\EU\UK\PetsatHome
+PhoenixHoldings | Phoenix Group Holdings PLC (PHNX.L) | Stocks\EU\UK\PhoenixHoldings
+PolymetalInternational | Polymetal International PLC (POLYP.L) | Stocks\EU\UK\PolymetalInternational
+Provident | Vanquis Banking Group PLC (VANQ.L) | Stocks\EU\UK\Provident
+Prudential | Prudential PLC (PRU.L) | Stocks\EU\UK\Prudential
+RITCapital | RIT Capital Partners PLC (RCP.L) | Stocks\EU\UK\RITCapital
+Redrow | Redrow PLC (RDW.L) | Stocks\EU\UK\Redrow
+Renishaw | Renishaw PLC (RSW.L) | Stocks\EU\UK\Renishaw
+Rentokil | Rentokil Initial PLC (RTO.L) | Stocks\EU\UK\Rentokil
+Rightmove | Rightmove PLC (RMV.L) | Stocks\EU\UK\Rightmove
+Rolls-Royce | Rolls-Royce Holdings PLC (RR.L) | Stocks\EU\UK\Rolls-Royce
+Rotork | Rotork PLC (ROR.L) | Stocks\EU\UK\Rotork
+SEGRO | SEGRO PLC (SGRO.L) | Stocks\EU\UK\SEGRO
+SHELL | Royal Dutch Shell PLC (RDSb.L) | Stocks\EU\UK\SHELL
+SSE | SSE PLC (SSE.L) | Stocks\EU\UK\SSE
+Sage | Sage Group PLC (SGE.L) | Stocks\EU\UK\Sage
+Sainsbury | J Sainsbury PLC (SBRY.L) | Stocks\EU\UK\Sainsbury
+Savills | Savills PLC (SVS.L) | Stocks\EU\UK\Savills
+Schroders | Schroders PLC (SDR.L) | Stocks\EU\UK\Schroders
+Serco | Serco Group PLC (SRP.L) | Stocks\EU\UK\Serco
+Shaftesbury | Shaftesbury PLC (SHB.L) | Stocks\EU\UK\Shaftesbury
+Smith | DS Smith PLC (SMDS.L) | Stocks\EU\UK\Smith
+Spectris | Spectris PLC (SXS.L) | Stocks\EU\UK\Spectris
+SpiraxSarco | Spirax-Sarco Engineering PLC (SPX.L) | Stocks\EU\UK\SpiraxSarco
+StdCharter | Standard Chartered PLC (STAN.L) | Stocks\EU\UK\StdCharter
+Tate&Lyle | Tate & Lyle PLC (TATE.L) | Stocks\EU\UK\Tate&Lyle
+Tesco | Tesco PLC (TSCO.L) | Stocks\EU\UK\Tesco
+TravisPerkins | Travis Perkins PLC (TPK.L) | Stocks\EU\UK\TravisPerkins
+Tui | Tui AG (TUI1n.DE) | Stocks\EU\Germany\Tui
+TullowOil | Tullow Oil PLC (TLW.L) | Stocks\EU\UK\TullowOil
+Unilever | Unilever PLC (ULVR.L) | Stocks\EU\UK\Unilever
+Victrex | Victrex PLC (VCTX.L) | Stocks\EU\UK\Victrex
+Vodafone | Vodafone Group PLC (VOD.L) | Stocks\EU\UK\Vodafone
+WHSmith | WH Smith PLC (SMWH.L) | Stocks\EU\UK\WHSmith
+WPP | WPP PLC (WPP.L) | Stocks\EU\UK\WPP
+Weir | Weir Group PLC (WEIR.L) | Stocks\EU\UK\Weir
+Whitbread | Whitbread PLC (WTB.L) | Stocks\EU\UK\Whitbread
+Wood | John Wood Group PLC (WG.L) | Stocks\EU\UK\Wood
+3DSystems | 3D Systems Corp (DDD.N) | Stocks\US\3DSystems
+3MCo | 3M Co (MMM.N) | Stocks\US\3MCo
+ACADIA | ACADIA Pharmaceuticals Inc (ACAD.OQ) | Stocks\US\ACADIA
+AGNC | AGNC Investment Corp (AGNC.OQ) | Stocks\US\AGNC
+AIG | American International Group Inc (AIG.N) | Stocks\US\AIG
+AMC | AMC Networks Inc (AMCX.OQ) | Stocks\US\AMC
+AMEX | American Express Co (AXP.N) | Stocks\US\AMEX
+AT&T | AT&T Inc (T.N) | Stocks\US\AT&T
+AbbVie | AbbVie Inc (ABBV.N) | Stocks\US\AbbVie
+Abbott | Abbott Laboratories (ABT.N) | Stocks\US\Abbott
+AbercFitch | Abercrombie & Fitch Co (ANF.N) | Stocks\US\AbercFitch
+Accenture | Accenture PLC (ACN.N) | Stocks\US\Accenture
+Activision | Activision Blizzard Inc (ATVI.OQ) | Stocks\US\Activision
+Adobe | Adobe Inc (ADBE.OQ) | Stocks\US\Adobe
+AdvMicroDev | Advanced Micro Devices Inc (AMD.OQ) | Stocks\US\AdvMicroDev
+Aes | AES Corp (AES.N) | Stocks\US\Aes
+Aflac | Aflac Inc (AFL.N) | Stocks\US\Aflac
+Agilent | Agilent Technologies Inc (A.N) | Stocks\US\Agilent
+Akamai | Akamai Technologies Inc (AKAM.OQ) | Stocks\US\Akamai
+Albemarle | Albemarle Corp (ALB.N) | Stocks\US\Albemarle
+Alcoa | Alcoa Corp (AA.N) | Stocks\US\Alcoa
+Alibaba | Alibaba Group Holding Ltd (BABA.K) | Stocks\US\Alibaba
+Alliant | Alliant Energy Corp (LNT.OQ) | Stocks\US\Alliant
+Allscripts | Veradigm Inc (MDRX.OQ) | Stocks\US\Allscripts
+Allstate | Allstate Corp (ALL.N) | Stocks\US\Allstate
+Altria | Altria Group Inc (MO.N) | Stocks\US\Altria
+Amazon | Amazon.com Inc (AMZN.OQ) | Stocks\US\Amazon
+Ameren | Ameren Corp (AEE.N) | Stocks\US\Ameren
+AmericanEagle | American Eagle Outfitters Inc (AEO.N) | Stocks\US\AmericanEagle
+AmericanTower | American Tower Corp (AMT.N) | Stocks\US\AmericanTower
+AmerisourceBergen | Cencora Inc (COR.N) | Stocks\US\AmerisourceBergen
+Amgen | Amgen Inc (AMGN.OQ) | Stocks\US\Amgen
+AnnalyCapital | Annaly Capital Management Inc (NLY.N) | Stocks\US\AnnalyCapital
+AnteroResources | Antero Resources Corp (AR.N) | Stocks\US\AnteroResources
+Anthem | Elevance Health Inc (ELV.N) | Stocks\US\Anthem
+Apache | APA Corp (APA.OQ) | Stocks\US\Apache
+Apple | Apple Inc (AAPL.OQ) | Stocks\US\Apple
+AresCapital | Ares Capital Corp (ARCC.OQ) | Stocks\US\AresCapital
+Autodesk | Autodesk Inc (ADSK.OQ) | Stocks\US\Autodesk
+Autozone | Autozone Inc (AZO.N) | Stocks\US\Autozone
+AvisBudget | Avis Budget Group Inc (CAR.OQ) | Stocks\US\AvisBudget
+BRF | BRF SA (BRFS.N) | Stocks\Brazil\BRF
+Baidu | Baidu Inc (BIDU.OQ) | Stocks\US\Baidu
+BakerHughes | Baker Hughes Co (BKR.OQ) | Stocks\US\BakerHughes
+Baxter | Baxter International Inc (BAX.N) | Stocks\US\Baxter
+Biogen | Biogen Inc (BIIB.OQ) | Stocks\US\Biogen
+Biomarin | Biomarin Pharmaceutical Inc (BMRN.OQ) | Stocks\US\Biomarin
+Black&Decker | Stanley Black & Decker Inc (SWK.N) | Stocks\US\Black&Decker
+Blackberry | BlackBerry Ltd (BB.N) | Stocks\US\Blackberry
+Blackrock | BlackRock Inc (BLK.N) | Stocks\US\Blackrock
+Blackstone | Blackstone Group Inc (BX.N) | Stocks\US\Blackstone
+Boeing | Boeing Co (BA.N) | Stocks\US\Boeing
+BofAmerica | Bank of America Corp (BAC.N) | Stocks\US\BofAmerica
+BofNewYork | Bank of New York Mellon Corp (BK.N) | Stocks\US\BofNewYork
+BristolMyer | Bristol-Myers Squibb Co (BMY.N) | Stocks\US\BristolMyer
+Broadcom | Broadcom Inc (AVGO.OQ) | Stocks\US\Broadcom
+Brookdale | Brookdale Senior Living Inc (BKD.N) | Stocks\US\Brookdale
+Brown-Forman | Brown-Forman Corp (BFb.N) | Stocks\US\Brown-Forman
+CBRE | CBRE Group Inc (CBRE.N) | Stocks\US\CBRE
+CFIndustries | CF Industries Holdings Inc (CF.N) | Stocks\US\CFIndustries
+CIENA | Ciena Corp (CIEN.N) | Stocks\US\CIENA
+CME | CME Group Inc (CME.OQ) | Stocks\US\CME
+CMS | CMS Energy Corp (CMS.N) | Stocks\US\CMS
+CNX | CNX Resources Corp (CNX.N) | Stocks\US\CNX
+CSX | CSX Corp (CSX.OQ) | Stocks\US\CSX
+CVS | CVS Health Corp (CVS.N) | Stocks\US\CVS
+Cadence | Cadence Design Systems Inc (CDNS.OQ) | Stocks\US\Cadence
+Campbell | Campbell Soup Co (CPB.OQ) | Stocks\US\Campbell
+CaraTherapeutics | Cara Therapeutics Inc (CARA.O) | Stocks\US\CaraTherapeutics
+Cardinal | Cardinal Health Inc (CAH.N) | Stocks\US\Cardinal
+Caterpillar | Caterpillar Inc (CAT.N) | Stocks\US\Caterpillar
+Cemex | Cemex SAB de CV (CX.N) | Stocks\US\Cemex
+Centene | Centene Corp (CNC.N) | Stocks\US\Centene
+CenterPoint | CenterPoint Energy Inc (CNP.N) | Stocks\US\CenterPoint
+CenturyAluminum | Century Aluminum Co (CENX.OQ) | Stocks\US\CenturyAluminum
+Charter | Charter Communications Inc (CHTR.OQ) | Stocks\US\Charter
+Chevron | Chevron Corp (CVX.N) | Stocks\US\Chevron
+Chipotle | Chipotle Mexican Grill Inc (CMG.N) | Stocks\US\Chipotle
+Chubb | Chubb Ltd (CB.N) | Stocks\US\Chubb
+Cigna | Cigna Corp (CI.N) | Stocks\US\Cigna
+Cintas | Cintas Corp (CTAS.OQ) | Stocks\US\Cintas
+Cisco | Cisco Systems Inc (CSCO.OQ) | Stocks\US\Cisco
+Citigroup | Citigroup Inc (C.N) | Stocks\US\Citigroup
+Coca-Cola | Coca-Cola Co (KO.N) | Stocks\US\Coca-Cola
+Cognex | Cognex Corp (CGNX.OQ) | Stocks\US\Cognex
+Cognizant | Cognizant Technology Solutions Corp (CTSH.OQ) | Stocks\US\Cognizant
+Colgate-Palmolive | Colgate-Palmolive Co (CL.N) | Stocks\US\Colgate-Palmolive
+Comcast | Comcast Corp (CMCSA.OQ) | Stocks\US\Comcast
+Comerica | Comerica Inc (CMA.N) | Stocks\US\Comerica
+Conagra | Conagra Brands Inc (CAG.N) | Stocks\US\Conagra
+ConocoPhil | ConocoPhillips (COP.N) | Stocks\US\ConocoPhil
+ConsolidatedEdison | Consolidated Edison Inc (ED.N) | Stocks\US\ConsolidatedEdison
+Constellation | Constellation Brands Inc (STZ.N) | Stocks\US\Constellation
+Corning | Corning Inc (GLW.N) | Stocks\US\Corning
+Costco | Costco Wholesale Corp (COST.OQ) | Stocks\US\Costco
+Coty | Coty Inc (COTY.N) | Stocks\US\Coty
+CrownCastle | Crown Castle Inc (CCI.N) | Stocks\US\CrownCastle
+DISH | DISH Network Corp (DISH.OQ) | Stocks\US\DISH
+DTE | DTE Energy Co (DTE.N) | Stocks\US\DTE
+DXC | DXC Technology Co (DXC.N) | Stocks\US\DXC
+Danaher | Danaher Corp (DHR.N) | Stocks\US\Danaher
+Deere | Deere & Co (DE.N) | Stocks\US\Deere
+Delta | Delta Air Lines Inc (DAL.N) | Stocks\US\Delta
+Devon | Devon Energy Corp (DVN.N) | Stocks\US\Devon
+DicksSporting | Dick's Sporting Goods Inc (DKS.N) | Stocks\US\DicksSporting
+Discovery | Warner Bros Discovery Inc (WBD.OQ) | Stocks\US\Discovery
+Disney | Walt Disney Co (DIS.N) | Stocks\US\Disney
+Dominion | Dominion Energy Inc (D.N) | Stocks\US\Dominion
+Dropbox | Dropbox Inc (DBX.OQ) | Stocks\US\Dropbox
+Duke | Duke Energy Corp (DUK.N) | Stocks\US\Duke
+EQT | EQT Corp (EQT.N) | Stocks\US\EQT
+EXACT | Exact Sciences Corp (EXAS.O) | Stocks\US\EXACT
+Eaton | Eaton Corporation PLC (ETN.N) | Stocks\US\Eaton
+Ebay | eBay Inc (EBAY.OQ) | Stocks\US\Ebay
+Edison | Edison International (EIX.N) | Stocks\US\Edison
+Edwards | Edwards Lifesciences Corp (EW.N) | Stocks\US\Edwards
+Emerson | Emerson Electric Co (EMR.N) | Stocks\US\Emerson
+EnergyTransfer | Energy Transfer LP (ET.N) | Stocks\US\EnergyTransfer
+EnterpriseProducts | Enterprise Products Partners LP (EPD.N) | Stocks\US\EnterpriseProducts
+EquityResidential | Equity Residential (EQR.N) | Stocks\US\EquityResidential
+Exelon | Exelon Corp (EXC.OQ) | Stocks\US\Exelon
+Expedia | Expedia Group Inc (EXPE.OQ) | Stocks\US\Expedia
+Expeditors | Expeditors International of Washington Inc (EXPD.OQ) | Stocks\US\Expeditors
+ExxonMobil | Exxon Mobil Corp (XOM.N) | Stocks\US\ExxonMobil
+Facebook | META PLATFORMS INC (META.OQ) | Stocks\US\Facebook
+Fastenal | Fastenal Co (FAST.OQ) | Stocks\US\Fastenal
+Fedex | FedEx Corp (FDX.N) | Stocks\US\Fedex
+FirstEnergy | FirstEnergy Corp (FE.N) | Stocks\US\FirstEnergy
+FirstHorizon | First Horizon Corp (FHN.N) | Stocks\US\FirstHorizon
+Fiserv | Fiserv Inc (FISV.OQ) | Stocks\US\Fiserv
+Flex | Flex Ltd (FLEX.OQ) | Stocks\US\Flex
+Ford | Ford Motor Co (F.N) | Stocks\US\Ford
+Fortinet | Fortinet Inc (FTNT.OQ) | Stocks\US\Fortinet
+Fossil | Fossil Group Inc (FOSL.OQ) | Stocks\US\Fossil
+Franklin | Franklin Resources Inc (BEN.N) | Stocks\US\Franklin
+Freeport-McMoRan | Freeport-McMoRan Inc (FCX.N) | Stocks\US\Freeport-McMoRan
+GameStop | GameStop Corp (GME.N) | Stocks\US\GameStop
+Gap | Gap Inc (GAP.N) | Stocks\US\Gap
+GeneralElec | GE Aerospace Trading (GE.N) | Stocks\US\GeneralElec
+GeneralMot | General Motors Co (GM.N) | Stocks\US\GeneralMot
+Gentex | Gentex Corp (GNTX.OQ) | Stocks\US\Gentex
+Genworth | Genworth Financial Inc (GNW.N) | Stocks\US\Genworth
+Gilead | Gilead Sciences Inc (GILD.OQ) | Stocks\US\Gilead
+GoPro | GoPro Inc (GPRO.OQ) | Stocks\US\GoPro
+Golar | Golar LNG Ltd (GLNG.OQ) | Stocks\US\Golar
+GoldmSachs | Goldman Sachs Group Inc (GS.N) | Stocks\US\GoldmSachs
+Goodyear | Goodyear Tire & Rubber Co (GT.OQ) | Stocks\US\Goodyear
+Google | Alphabet Inc (GOOG.OQ) | Stocks\US\Google
+GraphicPackaging | Graphic Packaging Holding Co (GPK.N) | Stocks\US\GraphicPackaging
+Groupon | Groupon Inc (GRPN.OQ) | Stocks\US\Groupon
+H&RBlock | H & R Block Inc (HRB.N) | Stocks\US\H&RBlock
+HP | HP Inc (HPQ.N) | Stocks\US\HP
+Halliburton | Halliburton Co (HAL.N) | Stocks\US\Halliburton
+Hanesbrands | HanesBrands Inc (HBI.N) | Stocks\US\Hanesbrands
+HarleyDav | Harley-Davidson Inc (HOG.N) | Stocks\US\HarleyDav
+Hasbro | Hasbro Inc (HAS.OQ) | Stocks\US\Hasbro
+Hershey | Hershey Co (HSY.N) | Stocks\US\Hershey
+Hess | Hess Corp (HES.N) | Stocks\US\Hess
+Hilton | Hilton Worldwide Holdings Inc (HLT.N) | Stocks\US\Hilton
+Himax | Himax Technologies Inc (HIMX.OQ) | Stocks\US\Himax
+HollyFrontier | HF Sinclair Corp (DINO.N) | Stocks\US\HollyFrontier
+Hologic | Hologic Inc (HOLX.OQ) | Stocks\US\Hologic
+HomeDepot | Home Depot Inc (HD.N) | Stocks\US\HomeDepot
+Honeywell | Honeywell International Inc (HON.OQ) | Stocks\US\Honeywell
+Hormel | Hormel Foods Corp (HRL.N) | Stocks\US\Hormel
+Horton | D.R. Horton Inc (DHI.N) | Stocks\US\Horton
+HostHotels | Host Hotels & Resorts Inc (HST.OQ) | Stocks\US\HostHotels
+Humana | Humana Inc (HUM.N) | Stocks\US\Humana
+Huntington | Huntington Bancshares Inc (HBAN.OQ) | Stocks\US\Huntington
+Huntsman | Huntsman Corp (HUN.N) | Stocks\US\Huntsman
+IBM | International Business Machines Corp (IBM.N) | Stocks\US\IBM
+ICE | Intercontinental Exchange Inc (ICE.N) | Stocks\US\ICE
+ICICI | ICICI Bank Ltd (IBN.N) | Stocks\US\ICICI
+IDEXX | IDEXX Laboratories Inc (IDXX.OQ) | Stocks\US\IDEXX
+IPG | Interpublic Group of Companies Inc (IPG.N) | Stocks\US\IPG
+Illumina | Illumina Inc (ILMN.OQ) | Stocks\US\Illumina
+Incyte | Incyte Corp (INCY.OQ) | Stocks\US\Incyte
+Infosys | Infosys Ltd (INFY.N) | Stocks\US\Infosys
+Intel | Intel Corp (INTC.OQ) | Stocks\US\Intel
+International | International Paper Co (IP.N) | Stocks\US\International
+Intuit | Intuit Inc (INTU.OQ) | Stocks\US\Intuit
+Invesco | Invesco Ltd (IVZ.N) | Stocks\US\Invesco
+IronMountain | Iron Mountain Inc (IRM.N) | Stocks\US\IronMountain
+ItauUnibanco | Itau Unibanco Holding SA (ITUB.N) | Stocks\Brazil\ItauUnibanco
+J&J | Johnson & Johnson (JNJ.N) | Stocks\US\J&J
+JD | JD.com Inc (JD.OQ) | Stocks\US\JD
+JPMorgan | JPMorgan Chase & Co (JPM.N) | Stocks\US\JPMorgan
+JabilCircuit | Jabil Inc (JBL.N) | Stocks\US\JabilCircuit
+Jefferies | Jefferies Financial Group Inc (JEF.N) | Stocks\US\Jefferies
+JetBlueAirways | JetBlue Airways Corp (JBLU.OQ) | Stocks\US\JetBlueAirways
+Juniper | Juniper Networks Inc (JNPR.N) | Stocks\US\Juniper
+KBR | KBR Inc (KBR.N) | Stocks\US\KBR
+Kellogg | Kellanova Ord Shs (K.N) | Stocks\US\Kellogg
+KeyCorp | KeyCorp (KEY.N) | Stocks\US\KeyCorp
+Kimberly-Clark | Kimberly-Clark Corp (KMB.N) | Stocks\US\Kimberly-Clark
+Kimco | Kimco Realty Corp (KIM.N) | Stocks\US\Kimco
+Kirby | Kirby Corp (KEX.N) | Stocks\US\Kirby
+Knight-Swift | Knight-Swift Transportation Holdings Inc (KNX.N) | Stocks\US\Knight-Swift
+Kohls | Kohls Corp (KSS.N) | Stocks\US\Kohls
+Kroger | Kroger Co (KR.N) | Stocks\US\Kroger
+L.V.Sands | Las Vegas Sands Corp (LVS.N) | Stocks\US\L.V.Sands
+LKQ | LKQ Corp (LKQ.OQ) | Stocks\US\LKQ
+Laredo | Laredo Petroleum Inc (LPI.N) | Stocks\US\Laredo
+LendingClub | LendingClub Corp (LC.N) | Stocks\US\LendingClub
+Lennar | Lennar Corp (LEN.N) | Stocks\US\Lennar
+Liberty | Liberty Global PLC (LBTYA.OQ) | Stocks\US\Liberty
+Loews | Loews Corp (L.N) | Stocks\US\Loews
+Lowes | Lowe's Companies Inc (LOW.N) | Stocks\US\Lowes
+Lululemon | Lululemon Athletica Inc (LULU.OQ) | Stocks\US\Lululemon
+LyondellBasell | LyondellBasell Industries NV (LYB.N) | Stocks\US\LyondellBasell
+MFA | MFA Financial Inc (MFA.N) | Stocks\US\MFA
+MGICInvestment | MGIC Investment Corp (MTG.N) | Stocks\US\MGICInvestment
+MGMResorts | MGM Resorts International (MGM.N) | Stocks\US\MGMResorts
+Macys | Macy's Inc (M.N) | Stocks\US\Macys
+MarathonPetroleum | Marathon Petroleum Corp (MPC.N) | Stocks\US\MarathonPetroleum
+Marriott | Marriott International Inc (MAR.OQ) | Stocks\US\Marriott
+Marsh&McLennan | Marsh & McLennan Companies Inc (MMC.N) | Stocks\US\Marsh&McLennan
+Marvell | Marvell Technology Group Ltd (MRVL.OQ) | Stocks\US\Marvell
+Masco | Masco Corp (MAS.N) | Stocks\US\Masco
+Mastercard | Mastercard Inc (MA.N) | Stocks\US\Mastercard
+MatchGroup | Match Group Inc (MTCH.O) | Stocks\US\MatchGroup
+Mattel | Mattel Inc (MAT.OQ) | Stocks\US\Mattel
+McDonalds | Mcdonald's Corp (MCD.N) | Stocks\US\McDonalds
+Medtronic | Medtronic PLC (MDT.N) | Stocks\US\Medtronic
+MelcoResorts | Melco Resorts & Entertainment Ltd (MLCO.OQ) | Stocks\US\MelcoResorts
+Mercadolibre | Mercadolibre Inc (MELI.OQ) | Stocks\US\Mercadolibre
+Merck&Co | Merck & Co Inc (MRK.N) | Stocks\US\Merck&Co
+Metlife | MetLife Inc (MET.N) | Stocks\US\Metlife
+Micron | Micron Technology Inc (MU.OQ) | Stocks\US\Micron
+Microsoft | Microsoft Corp (MSFT.OQ) | Stocks\US\Microsoft
+Mondelez | Mondelez International Inc (MDLZ.OQ) | Stocks\US\Mondelez
+Monster | Monster Beverage Corp (MNST.OQ) | Stocks\US\Monster
+Moodys | Moody's Corp (MCO.N) | Stocks\US\Moodys
+MorganStanl | Morgan Stanley (MS.N) | Stocks\US\MorganStanl
+Mosaic | Mosaic Co (MOS.N) | Stocks\US\Mosaic
+Motorola | Motorola Solutions Inc (MSI.N) | Stocks\US\Motorola
+Msci | MSCI Inc (MSCI.N) | Stocks\US\Msci
+MurphyOil | Murphy Oil Corp (MUR.N) | Stocks\US\MurphyOil
+NRG | NRG Energy Inc (NRG.N) | Stocks\US\NRG
+NXP | NXP Semiconductors NV (NXPI.OQ) | Stocks\US\NXP
+NYBancorp | Flagstar Bank National Association Inc (FLG.N) | Stocks\US\NYBancorp
+Nabors | Nabors Industries Ltd (NBR.N) | Stocks\US\Nabors
+Nasdaq | Nasdaq Inc (NDAQ.OQ) | Stocks\US\Nasdaq
+NetApp | NetApp Inc (NTAP.OQ) | Stocks\US\NetApp
+NetEase | NetEase Inc (NTES.OQ) | Stocks\US\NetEase
+Netflix | Netflix Inc (NFLX.OQ) | Stocks\US\Netflix
+Newell | Newell Brands Inc (NWL.OQ) | Stocks\US\Newell
+Newmont | Newmont Corporation (NEM.N) | Stocks\US\Newmont
+NewsCorp | News Corp (NWSA.OQ) | Stocks\US\NewsCorp
+NextEra | Nextera Energy Inc (NEE.N) | Stocks\US\NextEra
+NiSource | NiSource Inc (NI.N) | Stocks\US\NiSource
+Nike | Nike Inc (NKE.N) | Stocks\US\Nike
+Northern | Northern Trust Corp (NTRS.OQ) | Stocks\US\Northern
+Northrop | Northrop Grumman Corp (NOC.N) | Stocks\US\Northrop
+Nucor | Nucor Corp (NUE.N) | Stocks\US\Nucor
+Nvidia | NVIDIA Corp (NVDA.OQ) | Stocks\US\Nvidia
+ON-Semiconductor | ON Semiconductor Corp (ON.OQ) | Stocks\US\ON-Semiconductor
+ONEOK | ONEOK Inc (OKE.N) | Stocks\US\ONEOK
+Occidental | Occidental Petroleum Corp (OXY.N) | Stocks\US\Occidental
+OfficeDepot | ODP Corp (ODP.OQ) | Stocks\US\OfficeDepot
+OgeEnergy | OGE Energy Corp (OGE.N) | Stocks\US\OgeEnergy
+OldRepublic | Old Republic International Corp (ORI.N) | Stocks\US\OldRepublic
+Omnicom | Omnicom Group Inc (OMC.N) | Stocks\US\Omnicom
+OpkoHealth | OPKO Health Inc (OPK.OQ) | Stocks\US\OpkoHealth
+Oracle | Oracle Corp (ORCL.N) | Stocks\US\Oracle
+PACCAR | Paccar Inc (PCAR.OQ) | Stocks\US\PACCAR
+PG&E | PG&E Corp (PCG.N) | Stocks\US\PG&E
+PPL | PPL Corp (PPL.N) | Stocks\US\PPL
+Patterson | Patterson Companies Inc (PDCO.OQ) | Stocks\US\Patterson
+Patterson-UTI | Patterson-UTI Energy Inc (PTEN.OQ) | Stocks\US\Patterson-UTI
+Paychex | Paychex Inc (PAYX.OQ) | Stocks\US\Paychex
+Paypal | PayPal Holdings Inc (PYPL.OQ) | Stocks\US\Paypal
+Pepsico | PepsiCo Inc (PEP.OQ) | Stocks\US\Pepsico
+Perrigo | Perrigo Company PLC (PRGO.N) | Stocks\US\Perrigo
+PetroleoBra | Petroleo Brasileiro SA Petrobras (PBR.N) | Stocks\Brazil\PetroleoBra
+Pfizer | Pfizer Inc (PFE.N) | Stocks\US\Pfizer
+PhilipMorri | Philip Morris International Inc (PM.N) | Stocks\US\PhilipMorri
+Phillips66 | Phillips 66 (PSX.N) | Stocks\US\Phillips66
+PitneyBowes | Pitney Bowes Inc (PBI.N) | Stocks\US\PitneyBowes
+PrincipalFinancial | Principal Financial Group Inc (PFG.OQ) | Stocks\US\PrincipalFinancial
+Procter&Gam | Procter & Gamble Co (PG.N) | Stocks\US\Procter&Gam
+Progressive | Progressive Corp (PGR.N) | Stocks\US\Progressive
+Prologis | Prologis Inc (PLD.N) | Stocks\US\Prologis
+PulteGroup | PulteGroup Inc (PHM.N) | Stocks\US\PulteGroup
+Qorvo | Qorvo Inc (QRVO.OQ) | Stocks\US\Qorvo
+Qualcomm | Qualcomm Inc (QCOM.OQ) | Stocks\US\Qualcomm
+Quest | Quest Diagnostics Inc (DGX.N) | Stocks\US\Quest
+Qurate | QVC Group  Inc (QVCGA.OQ) | Stocks\US\Qurate
+Radian | Radian Group Inc (RDN.N) | Stocks\US\Radian
+RalphLauren | Ralph Lauren Corp (RL.N) | Stocks\US\RalphLauren
+Range | Range Resources Corp (RRC.N) | Stocks\US\Range
+Regeneron | Regeneron Pharmaceuticals Inc (REGN.OQ) | Stocks\US\Regeneron
+Rite-Aid | Rite Aid Corp (RAD.N) | Stocks\US\Rite-Aid
+Rockwell | Rockwell Automation Inc (ROK.N) | Stocks\US\Rockwell
+SLM | SLM Corp (SLM.OQ) | Stocks\US\SLM
+SMEnergy | SM Energy Co (SM.N) | Stocks\US\SMEnergy
+Salesforce | Salesforce.Com Inc (CRM.N) | Stocks\US\Salesforce
+Schlumberger | SLB NV (SLB.N) | Stocks\US\Schlumberger
+Seagate | Seagate Technology PLC (STX.OQ) | Stocks\US\Seagate
+SealedAir | Sealed Air Corp (SEE.N) | Stocks\US\SealedAir
+Sempra | Sempra Energy (SRE.N) | Stocks\US\Sempra
+Signet | Signet Jewelers Ltd (SIG.N) | Stocks\US\Signet
+SiteCenters | Site Centers Corp (SITC.N) | Stocks\US\SiteCenters
+Skyworks | Skyworks Solutions Inc (SWKS.OQ) | Stocks\US\Skyworks
+Snap | Snap Inc (SNAP.N) | Stocks\US\Snap
+Southern | Southern Co (SO.N) | Stocks\US\Southern
+SouthwestAirlines | Southwest Airlines Co (LUV.N) | Stocks\US\SouthwestAirlines
+Splunk | Splunk Inc (SPLK.OQ) | Stocks\US\Splunk
+Sprouts | Sprouts Farmers Market Inc (SFM.OQ) | Stocks\US\Sprouts
+Square | Block Inc (XYZ.N) | Stocks\US\Square
+Starbucks | Starbucks Corp (SBUX.OQ) | Stocks\US\Starbucks
+SteelDynamics | Steel Dynamics Inc (STLD.OQ) | Stocks\US\SteelDynamics
+SunstoneHotel | Sunstone Hotel Investors Inc (SHO.N) | Stocks\US\SunstoneHotel
+Sysco | Sysco Corp (SYY.N) | Stocks\US\Sysco
+T-Mobile | T-Mobile US Inc (TMUS.OQ) | Stocks\US\T-Mobile
+T-Rowe | T. Rowe Price Group Inc (TROW.OQ) | Stocks\US\T-Rowe
+TJX | TJX Companies Inc (TJX.N) | Stocks\US\TJX
+Taiwan-Semiconductor | Taiwan Semiconductor Manufacturing Co Ltd (TSM.N) | Stocks\US\Taiwan-Semiconductor
+Take-Two | Take-Two Interactive Software Inc (TTWO.OQ) | Stocks\US\Take-Two
+Tapestry | Tapestry Inc (TPR.N) | Stocks\US\Tapestry
+Target | Target Corp (TGT.N) | Stocks\US\Target
+Teekay | Teekay Corp (TK.N) | Stocks\US\Teekay
+Tenet | Tenet Healthcare Corp (THC.N) | Stocks\US\Tenet
+Teradyne | Teradyne Inc (TER.OQ) | Stocks\US\Teradyne
+Tesla | Tesla Inc (TSLA.OQ) | Stocks\US\Tesla
+Teva | Teva Pharmaceutical Industries Ltd (TEVA.K) | Stocks\US\Teva
+Transocean | Transocean Ltd (RIG.N) | Stocks\US\Transocean
+Tripadvisor | TripAdvisor Inc (TRIP.OQ) | Stocks\US\Tripadvisor
+Tyson | Tyson Foods Inc (TSN.N) | Stocks\US\Tyson
+UDR | UDR Inc (UDR.N) | Stocks\US\UDR
+UPS | United Parcel Service Inc (UPS.N) | Stocks\US\UPS
+UnitedHealth | UnitedHealth Group Inc (UNH.N) | Stocks\US\UnitedHealth
+UnitedStatesSteel | United States Steel Corp (X.N) | Stocks\US\UnitedStatesSteel
+Urban | Urban Outfitters Inc (URBN.OQ) | Stocks\US\Urban
+VEON | VEON Ltd (VEON.O) | Stocks\US\VEON
+VF | VF Corp (VFC.N) | Stocks\US\VF
+Vale | Vale SA (VALE.N) | Stocks\Brazil\Vale
+Valero | Valero Energy Corp (VLO.N) | Stocks\US\Valero
+Ventas | Ventas Inc (VTR.N) | Stocks\US\Ventas
+Verisign | Verisign Inc (VRSN.OQ) | Stocks\US\Verisign
+Verisk | Verisk Analytics Inc (VRSK.OQ) | Stocks\US\Verisk
+Verizon | Verizon Communications Inc (VZ.N) | Stocks\US\Verizon
+Vertex | Vertex Pharmaceuticals Inc (VRTX.OQ) | Stocks\US\Vertex
+Visa | Visa Inc (V.N) | Stocks\US\Visa
+Vornado | Vornado Realty Trust (VNO.N) | Stocks\US\Vornado
+WalMart | Walmart Inc (WMT.OQ) (WMT.OQ) | Stocks\US\WalMart
+Walgreens | Walgreens Boots Alliance Inc (WBA.OQ) | Stocks\US\Walgreens
+Waste | Waste Management Inc (WM.N) | Stocks\US\Waste
+Weibo | Weibo Corp (WB.OQ) | Stocks\US\Weibo
+WellsFargo | Wells Fargo & Co (WFC.N) | Stocks\US\WellsFargo
+Welltower | Welltower Inc (WELL.N) | Stocks\US\Welltower
+Wendys | Wendys Co (WEN.OQ) | Stocks\US\Wendys
+WesternUni | Western Union Co (WU.N) | Stocks\US\WesternUni
+Weyerhaeuser | Weyerhaeuser Co (WY.N) | Stocks\US\Weyerhaeuser
+Whirlpool | Whirlpool Corp (WHR.N) | Stocks\US\Whirlpool
+Williams | Williams Companies Inc (WMB.N) | Stocks\US\Williams
+Wisconsin | WEC Energy Group Inc (WEC.N) | Stocks\US\Wisconsin
+XcelEnergy | Xcel Energy Inc (XEL.OQ) | Stocks\US\XcelEnergy
+Xerox | Xerox Holdings Corp (XRX.OQ) | Stocks\US\Xerox
+Yandex | Yandex NV (YNDX.OQ) | Stocks\US\Yandex
+YumBrands | Yum! Brands Inc (YUM.N) | Stocks\US\YumBrands
+Zions | Zions Bancorporation NA (ZION.OQ) | Stocks\US\Zions
+Zoetis | Zoetis Inc (ZTS.N) | Stocks\US\Zoetis
+FlutterEntertainment | Flutter Entertainment PLC (FLTRF.L) | Stocks\EU\UK\FlutterEntertainment
+JuliusBaer | Julius Baer Gruppe AG (BAER.S) | Stocks\EU\Switzerland\JuliusBaer
+SwissLife | Swiss Life Holding AG (SLHN.S) | Stocks\EU\Switzerland\SwissLife
+SwissRe | Swiss Re AG (SRENH.S) | Stocks\EU\Switzerland\SwissRe
+ZurichInsurance | Zurich Insurance Group AG (ZURN.S) | Stocks\EU\Switzerland\ZurichInsurance
+ErsteGroupBank | Erste Group Bank AG (ERST.VI) | Stocks\EU\Austria\ErsteGroupBank
+RaiffeisenBank | Raiffeisen Bank International AG (RBIV.VI) | Stocks\EU\Austria\RaiffeisenBank
+BruxellesLambert | Groep Brussel Lambert NV (GBLB.BR) | Stocks\EU\Belgium\BruxellesLambert
+StoraEnso | Stora Enso Oyj (STERV.HE) | Stocks\EU\Finland\StoraEnso
+AirLiquide | Air Liquide SA (AIRP.PA) | Stocks\EU\France\AirLiquide
+CompagnieGenerale | Compagnie Generale des Etablissements Michelin SCA (MICP.PA) | Stocks\EU\France\CompagnieGenerale
+CompagniedeSaintGobain | Compagnie de Saint Gobain SA (SGOB.PA) | Stocks\EU\France\CompagniedeSaintGobain
+PernodRicard | Pernod Ricard SA (PERP.PA) | Stocks\EU\France\PernodRicard
+SchneiderElectric | Schneider Electric SE (SCHN.PA) | Stocks\EU\France\SchneiderElectric
+UnibailRodamco | WFD Unibail Rodamco NV (URW.AS) | Stocks\EU\France\UnibailRodamco
+FreseniusMedical | Fresenius Medical Care AG & Co KGaA (FMEG.DE) | Stocks\EU\Germany\FreseniusMedical
+AssicurazioniGenerali | Generali (GASI.MI) | Stocks\EU\Italy\AssicurazioniGenerali
+BPERBanca | Bper Banca SpA (EMII.MI) | Stocks\EU\Italy\BPERBanca
+BancaGenerali | Banca Generali SpA (BGN.MI) | Stocks\EU\Italy\BancaGenerali
+BancaMediolanum | Banca Mediolanum SpA (BMED.MI) | Stocks\EU\Italy\BancaMediolanum
+BancoBPM | Banco Bpm SpA (BAMI.MI) | Stocks\EU\Italy\BancoBPM
+BuzziUnicem | Buzzi SpA (BZU.MI) | Stocks\EU\Italy\BuzziUnicem
+CNHIndustrial | CNH Industrial NV (CNH.N) | Stocks\US\CNHIndustrial
+DavideCampari | Davide Campari Milano SpA (CPRI.MI) | Stocks\EU\Italy\DavideCampari
+IntesaSanpaolo | Intesa Sanpaolo SpA (ISP.MI) | Stocks\EU\Italy\IntesaSanpaolo
+PosteItaliane | Poste Italiane SpA (PST.MI) | Stocks\EU\Italy\PosteItaliane
+TelecomItalia | Telecom Italia SpA (TLIT.MI) | Stocks\EU\Italy\TelecomItalia
+ABNAMRO | ABN AMRO Bank NV (ABNd.AS) | Stocks\EU\Netherlands\ABNAMRO
+ASMLHolding | ASML Holding NV (ASML.AS) | Stocks\EU\Netherlands\ASMLHolding
+AalbertsIndustries | Aalberts NV (AALB.AS) | Stocks\EU\Netherlands\AalbertsIndustries
+AholdDelhaize | Koninklijke Ahold Delhaize NV (AD.AS) | Stocks\EU\Netherlands\AholdDelhaize
+AkzoNobel | Akzo Nobel NV (AKZO.AS) | Stocks\EU\Netherlands\AkzoNobel
+NNGroup | NN Group NV (NN.AS) | Stocks\EU\Netherlands\NNGroup
+RandstadHolding | Randstad NV (RAND.AS) | Stocks\EU\Netherlands\RandstadHolding
+WoltersKluwer | Wolters Kluwer NV (WLSNc.AS) | Stocks\EU\Netherlands\WoltersKluwer
+AkerSolutions | Aker Solutions ASA (AKSOA.OL) | Stocks\EU\Norway\AkerSolutions
+GoldenOcean | Golden Ocean Group Ltd (GOGL.OL) | Stocks\EU\Norway\GoldenOcean
+GriegSeafood | Grieg Seafood ASA (GSFG.OL) | Stocks\EU\Norway\GriegSeafood
+LeroySeafood | Leroy Seafood Group ASA (LSG.OL) | Stocks\EU\Norway\LeroySeafood
+NorwegianAir | Norwegian Air Shuttle ASA (NAS.OL) | Stocks\EU\Norway\NorwegianAir
+TGSNOPEC | TGS ASA (TGS.OL) | Stocks\EU\Norway\TGSNOPEC
+YaraInternational | Yara International ASA (YAR.OL) | Stocks\EU\Norway\YaraInternational
+BancoComercial | Banco Comercial Portugues SA (BCP.LS) | Stocks\EU\Portugal\BancoComercial
+CorticeiraAmorim | Corticeira Amorim SGPS SA (CORA.LS) | Stocks\EU\Portugal\CorticeiraAmorim
+EDPRenovaveis | EDP Renovaveis SA (EDPR.LS) | Stocks\EU\Portugal\EDPRenovaveis
+GalpEnergia | Galp Energia SGPS SA (GALP.LS) | Stocks\EU\Portugal\GalpEnergia
+JeronimoMartins | Jeronimo Martins SGPS SA (JMT.LS) | Stocks\EU\Portugal\JeronimoMartins
+BancodeSabadell | Banco de Sabadell SA (SABE.MC) | Stocks\EU\Spain\BancodeSabadell
+IndraSistemas | Indra Sistemas SA (IDR.MC) | Stocks\EU\Spain\IndraSistemas
+MeliaHotels | Melia Hotels International SA (MEL.MC) | Stocks\EU\Spain\MeliaHotels
+MerlinProperties | MERLIN Properties SOCIMI SA (MRL.MC) | Stocks\EU\Spain\MerlinProperties
+RedElectrica | Red Electrica Corporacion SA (REDE.MC) | Stocks\EU\Spain\RedElectrica
+TecnicasReunidas | Tecnicas Reunidas SA (TRE.MC) | Stocks\EU\Spain\TecnicasReunidas
+AlfaLaval | Alfa Laval AB (ALFA.ST) | Stocks\EU\Sweden\AlfaLaval
+AssaAbloy | Assa Abloy AB (ASSAb.ST) | Stocks\EU\Sweden\AssaAbloy
+AtlasCopco | Atlas Copco AB (ATCOa.ST) | Stocks\EU\Sweden\AtlasCopco
+NordeaBank | Nordea Bank Abp (NDASE.ST) | Stocks\EU\Sweden\NordeaBank
+SvenskaHandelsbanken | Svenska Handelsbanken AB (SHBa.ST) | Stocks\EU\Sweden\SvenskaHandelsbanken
+AngloAmerican | Anglo American PLC (AAL.L) | Stocks\EU\UK\AngloAmerican
+AssociatedBritishFoods | Associated British Foods PLC (ABF.L) | Stocks\EU\UK\AssociatedBritishFoods
+BHPGroup | BHP Group Ltc (BHPB.L) | Stocks\EU\UK\BHPGroup
+BritishLand | British Land Company PLC (BLND.L) | Stocks\EU\UK\BritishLand
+DirectLine | Direct Line Insurance Group PLC (DLGD.L) | Stocks\EU\UK\DirectLine
+ImperialBrands | Imperial Brands PLC (IMB.L) | Stocks\EU\UK\ImperialBrands
+JohnsonMatthey | Johnson Matthey PLC (JMAT.L) | Stocks\EU\UK\JohnsonMatthey
+LandSecurities | Land Securities Group PLC (LAND.L) | Stocks\EU\UK\LandSecurities
+NationalGrid | National Grid PLC (NG.L) | Stocks\EU\UK\NationalGrid
+ReckittBenckiser | Reckitt Benckiser Group PLC (RKT.L) | Stocks\EU\UK\ReckittBenckiser
+RioTinto | Rio Tinto PLC (RIO.L) | Stocks\EU\UK\RioTinto
+RoyalMail | International Distributions Services PLC (IDSI.L) | Stocks\EU\UK\RoyalMail
+ScottishMortgage | Scottish Mortgage Investment Trust PLC (SMT.L) | Stocks\EU\UK\ScottishMortgage
+SevernTrent | Severn Trent PLC (SVT.L) | Stocks\EU\UK\SevernTrent
+Smith&Nephew | Smith & Nephew PLC (SN.L) | Stocks\EU\UK\Smith&Nephew
+SmithsGroup | Smiths Group PLC (SMIN.L) | Stocks\EU\UK\SmithsGroup
+SmurfitKappa | Smurfit Westrock (SWR.L) | Stocks\EU\UK\SmurfitKappa
+StJames | St. James's Place PLC (SJP.L) | Stocks\EU\UK\StJames
+StandardLife | Abrdn PLC (ABDN.L) | Stocks\EU\UK\StandardLife
+TaylorWimpey | Taylor Wimpey PLC (TW.L) | Stocks\EU\UK\TaylorWimpey
+UnitedUtilities | United Utilities Group PLC (UU.L) | Stocks\EU\UK\UnitedUtilities
+AmericanAirlines | American Airlines Group Inc (AAL.OQ) | Stocks\US\AmericanAirlines
+AmericanElectric | American Electric Power Company Inc (AEP.OQ) | Stocks\US\AmericanElectric
+AnalogDevices | Analog Devices Inc (ADI.OQ) | Stocks\US\AnalogDevices
+AppliedMaterials | Applied Materials Inc (AMAT.OQ) | Stocks\US\AppliedMaterials
+ArcherDaniels | Archer Daniels Midland Co (ADM.N) | Stocks\US\ArcherDaniels
+AutomaticData | Automatic Data Processing Inc (ADP.OQ) | Stocks\US\AutomaticData
+BallCorp | Ball Corp (BALL.N) | Stocks\US\BallCorp
+BerkshireHathaway | Berkshire Hathaway Inc (BRKb.N) | Stocks\US\BerkshireHathaway
+BestBuy | Best Buy Co Inc (BBY.N) | Stocks\US\BestBuy
+BostonProperties | BXP (BXP.N) | Stocks\US\BostonProperties
+BostonScientific | Boston Scientific Corp (BSX.N) | Stocks\US\BostonScientific
+CHRobinson | C.H. Robinson Worldwide Inc (CHRW.OQ) | Stocks\US\CHRobinson
+CabotOil&Gas | Coterra Energy Inc (CTRA.N) | Stocks\US\CabotOil&Gas
+CapitalOne | Capital One Financial Corp (COF.N) | Stocks\US\CapitalOne
+CapriHoldings | Capri Holdings Ltd (CPRI.N) | Stocks\US\CapriHoldings
+CharlesSchwab | Charles Schwab Corp (SCHW.N) | Stocks\US\CharlesSchwab
+CheckPoint | Check Point Software Technologies Ltd (CHKP.OQ) | Stocks\US\CheckPoint
+DentsplySirona | Dentsply Sirona Inc (XRAY.OQ) | Stocks\US\DentsplySirona
+DiscoverFinancial | Discover Financial Services (DFS.N) | Stocks\US\DiscoverFinancial
+DollarGeneral | Dollar General Corp (DG.N) | Stocks\US\DollarGeneral
+DollarTree | Dollar Tree Inc (DLTR.OQ) | Stocks\US\DollarTree
+EOGResources | EOG Resources Inc (EOG.N) | Stocks\US\EOGResources
+ElectronicArts | Electronic Arts Inc (EA.OQ) | Stocks\US\ElectronicArts
+EliLilly | Eli Lilly and Co (LLY.N) | Stocks\US\EliLilly
+FifthThird | Fifth Third Bancorp (FITB.OQ) | Stocks\US\FifthThird
+FootLocker | Foot Locker Inc (FL.N) | Stocks\US\FootLocker
+GeneralDynamics | General Dynamics Corp (GD.N) | Stocks\US\GeneralDynamics
+GeneralMills | General Mills Inc (GIS.N) | Stocks\US\GeneralMills
+HPEnterprise | Hewlett Packard Enterprise Co (HPE.N) | Stocks\US\HPEnterprise
+HartfordFinancial | Hartford Financial Services Group Inc (HIG.N) | Stocks\US\HartfordFinancial
+HenrySchein | Henry Schein Inc (HSIC.OQ) | Stocks\US\HenrySchein
+IntuitiveSurgical | Intuitive Surgical Inc (ISRG.OQ) | Stocks\US\IntuitiveSurgical
+JBHunt | J B Hunt Transport Services Inc (JBHT.OQ) | Stocks\US\JBHunt
+JMSmucker | J M Smucker Co (SJM.N) | Stocks\US\JMSmucker
+JohnsonControls | Johnson Controls International PLC (JCI.N) | Stocks\US\JohnsonControls
+KinderMorgan | Kinder Morgan Inc (KMI.N) | Stocks\US\KinderMorgan
+KraftHeinz | Kraft Heinz Co (KHC.O) | Stocks\US\KraftHeinz
+LBrands | Bath & Body Works Inc (BBWI.N) | Stocks\US\LBrands
+LamResearch | Lam Research Corp (LRCX.OQ) | Stocks\US\LamResearch
+LockheedMartin | Lockheed Martin Corp (LMT.N) | Stocks\US\LockheedMartin
+MarathonOil | Marathon Oil Corp (MRO.N) | Stocks\US\MarathonOil
+MicrochipTechnology | Microchip Technology Inc (MCHP.OQ) | Stocks\US\MicrochipTechnology
+NorfolkSouthern | Norfolk Southern Corp (NSC.N) | Stocks\US\NorfolkSouthern
+NorwegianCruiseLine | Norwegian Cruise Line Holdings Ltd (NCLH.N) | Stocks\US\NorwegianCruiseLine
+OReilly | O'Reilly Automotive Inc (ORLY.OQ) | Stocks\US\OReilly
+OilwellVarco | NOV Inc (NOV.N) | Stocks\US\OilwellVarco
+PNCFinancial | PNC Financial Services Group Inc (PNC.N) | Stocks\US\PNCFinancial
+PrudentialFinancial | Prudential Financial Inc (PRU.N) | Stocks\US\PrudentialFinancial
+PublicService | Public Service Enterprise Group Inc (PEG.N) | Stocks\US\PublicService
+PublicStorage | Public Storage (PSA.N) | Stocks\US\PublicStorage
+RegionsFinancial | Regions Financial Corp (RF.N) | Stocks\US\RegionsFinancial
+RobertHalf | Robert Half International Inc (RHI.N) | Stocks\US\RobertHalf
+RossStores | Ross Stores Inc (ROST.OQ) | Stocks\US\RossStores
+SiriusXM | Sirius XM Holdings Inc (SIRI.OQ) | Stocks\US\SiriusXM
+SouthwesternEnergy | Southwestern Energy Co (SWN.N) | Stocks\US\SouthwesternEnergy
+StateStreet | State Street Corp (STT.N) | Stocks\US\StateStreet
+SynchronyFinancial | Synchrony Financial (SYF.N) | Stocks\US\SynchronyFinancial
+TexasInstruments | Texas Instruments Inc (TXN.OQ) | Stocks\US\TexasInstruments
+TractorSupply | Tractor Supply Co (TSCO.OQ) | Stocks\US\TractorSupply
+TravelersCompanies | Travelers Companies Inc (TRV.N) | Stocks\US\TravelersCompanies
+USBancorp | U.S. Bancorp (USB.N) | Stocks\US\USBancorp
+UltaBeauty | Ulta Beauty Inc (ULTA.OQ) | Stocks\US\UltaBeauty
+UnderArmour | Under Armour Inc (UAA.N) | Stocks\US\UnderArmour
+UnionPacific | Union Pacific Corp (UNP.N) | Stocks\US\UnionPacific
+WesternDigital | Western Digital Corp (WDC.OQ) | Stocks\US\WesternDigital
+WynnResorts | Wynn Resorts Ltd (WYNN.OQ) | Stocks\US\WynnResorts
+UnitedAirlines | United Airlines Holdings Inc (UAL.OQ) | Stocks\US\UnitedAirlines
+KLA | KLA Corp (KLAC.OQ) | Stocks\US\KLA
+PiraeusBank | Piraeus Bank SA (BOPr.AT) | Stocks\EU\Greece\PiraeusBank
+MotorOil | Motor Oil Hellas Corinth Refineries SA (MORr.AT) | Stocks\EU\Greece\MotorOil
+AlphaBank | Alpha Services and Holdings SA (ACBr.AT) | Stocks\EU\Greece\AlphaBank
+FrasersGroup | Frasers Group PLC (FRAS.L) | Stocks\EU\UK\FrasersGroup
+VistryGroup | Vistry Group PLC (VTYV.L) | Stocks\EU\UK\VistryGroup
+NokianTyres | Nokian Tyres plc (TYRES.HE) | Stocks\EU\Finland\NokianTyres
+HealthpeakProperties | Healthpeak Properties Inc (DOC.N) | Stocks\US\HealthpeakProperties
+NortonLifeLock | Gen Digital Inc (GEN.OQ) | Stocks\US\NortonLifeLock
+Trip | Trip.com Group Ltd (TCOM.OQ) | Stocks\US\Trip
+TruistFinancial | Truist Financial Corp (TFC.N) | Stocks\US\TruistFinancial
+ViacomCBS | Paramount Skydance Corp (PSKY.OQ) | Stocks\US\ViacomCBS
+LundinEnergy | Orron Energy AB (ORRON.ST) | Stocks\EU\Sweden\LundinEnergy
+RaytheonTech | Rtx Corp (RTX.N) | Stocks\US\RaytheonTech
+Webuild | Webuild SpA (WBD.MI) | Stocks\EU\Italy\Webuild
+MetsoOutotec | Metso Oyj (METSO.HE) | Stocks\EU\Finland\MetsoOutotec
+NatWest | NatWest Group PLC (NWG.L) | Stocks\EU\UK\NatWest
+Ambev | Ambev SA (ABEV.N) | Stocks\Brazil\Ambev
+BancoBradesco | Banco Bradesco SA (BBD.N) | Stocks\Brazil\BancoBradesco
+Gerdau | Gerdau SA (GGB.N) | Stocks\Brazil\Gerdau
+AgnicoEagleMines | Agnico Eagle Mines Ltd (AEM.N) | Stocks\Canada\AgnicoEagleMines
+AuroraCannabis | Aurora Cannabis Inc (ACB.TO) | Stocks\Canada\AuroraCannabis
+BankofMontreal | Bank of Montreal (BMO.N) | Stocks\Canada\BankofMontreal
+BankofNovaScotia | Bank of Nova Scotia (BNS.N) | Stocks\Canada\BankofNovaScotia
+BarrickGold | Barrick Mining Corp (B.N) | Stocks\Canada\BarrickGold
+BauschHealth | Bausch Health Companies Inc (BHC.N) | Stocks\Canada\BauschHealth
+Brookfield | Brookfield Asset Management Inc (BAM.N) | Stocks\Canada\Brookfield
+CanadianImperialBank | Canadian Imperial Bank of Commerce (CM.N) | Stocks\Canada\CanadianImperialBank
+CanadianNationalRailway | Canadian National Railway Co (CNI.N) | Stocks\Canada\CanadianNationalRailway
+CanadianNaturalResources | Canadian Natural Resources Ltd (CNQ.N) | Stocks\Canada\CanadianNaturalResources
+CanadianPacificRailway | Canadien Pacifique Kansas City Limited (CP.N) | Stocks\Canada\CanadianPacificRailway
+Canopy | Canopy Growth Corp (WEED.TO) | Stocks\Canada\Canopy
+Cronos | Cronos Group Inc (CRON.TO) | Stocks\Canada\Cronos
+Enbridge | Enbridge Inc (ENB.N) | Stocks\Canada\Enbridge
+Franco-Nevada | Franco-Nevada Corp (FNV.N) | Stocks\Canada\Franco-Nevada
+KinrossGold | Kinross Gold Corp (KGC.N) | Stocks\Canada\KinrossGold
+MagnaInternational | Magna International Inc (MGA.N) | Stocks\Canada\MagnaInternational
+Manulife | Manulife Financial Corp (MFC.N) | Stocks\Canada\Manulife
+Nutrien | Nutrien Ltd (NTR.N) | Stocks\Canada\Nutrien
+PembinaPipeline | Pembina Pipeline Corp (PBA.N) | Stocks\Canada\PembinaPipeline
+RBC | Royal Bank of Canada (RY.N) | Stocks\Canada\RBC
+RestaurantBrands | Restaurant Brands International Inc (QSR.N) | Stocks\Canada\RestaurantBrands
+RogersCommunications | Rogers Communications Inc (RCI.N) | Stocks\Canada\RogersCommunications
+SandstormGold | Sandstorm Gold Ltd (SSL.TO) | Stocks\Canada\SandstormGold
+SunLife | Sun Life Financial Inc (SLF.N) | Stocks\Canada\SunLife
+SuncorEnergy | Suncor Energy Inc (SU.N) | Stocks\Canada\SuncorEnergy
+TCEnergy | TC Energy Corp (TRP.N) | Stocks\Canada\TCEnergy
+TeckResources | Teck Resources Ltd (TECK.N) | Stocks\Canada\TeckResources
+Telus | Telus Corp (TU) | Stocks\Canada\Telus
+ThomsonReuters | Thomson Reuters Corp (TRI.N) | Stocks\Canada\ThomsonReuters
+Toronto-Dominion | Toronto-Dominion Bank (TD.N) | Stocks\Canada\Toronto-Dominion
+WasteConnections | Waste Connections Inc (WCN.N) | Stocks\Canada\WasteConnections
+WheatonPreciousMetals | Wheaton Precious Metals Corp (WPM.N) | Stocks\Canada\WheatonPreciousMetals
+AirProductsAndChemicals | Air Products and Chemicals Inc (APD.N) | Stocks\US\AirProductsAndChemicals
+AlignTechnology | Align Technology Inc (ALGN.OQ) | Stocks\US\AlignTechnology
+Aon | Aon PLC (AON.N) | Stocks\US\Aon
+Atlassian | Atlassian Corporation PLC (TEAM.OQ) | Stocks\US\Atlassian
+BectonDickinson | Becton Dickinson and Co (BDX.N) | Stocks\US\BectonDickinson
+BeyondMeat | Beyond Meat Inc (BYND.OQ) | Stocks\US\BeyondMeat
+Booking | Booking Holdings Inc (BKNG.OQ) | Stocks\US\Booking
+Credicorp | Credicorp Ltd (BAP.N) | Stocks\US\Credicorp
+Crowdstrike | Crowdstrike Holdings Inc (CRWD.OQ) | Stocks\US\Crowdstrike
+Cummins | Cummins Inc (CMI.N) | Stocks\US\Cummins
+Dell | Dell Technologies Inc (DELL.N) | Stocks\US\Dell
+DexCom | DexCom Inc (DXCM.OQ) | Stocks\US\DexCom
+Diamondback | Diamondback Energy Inc (FANG.OQ) | Stocks\US\Diamondback
+Dow | Dow Inc (DOW.N) | Stocks\US\Dow
+Ecolab | Ecolab Inc (ECL.N) | Stocks\US\Ecolab
+Enphase | Enphase Energy Inc (ENPH.OQ) | Stocks\US\Enphase
+Entergy | Entergy Corp (ETR.N) | Stocks\US\Entergy
+Equinix | Equinix Inc (EQIX.OQ) | Stocks\US\Equinix
+EssexProperty | Essex Property Trust Inc (ESS.N) | Stocks\US\EssexProperty
+EsteeLauder | Estee Lauder Companies Inc (EL.N) | Stocks\US\EsteeLauder
+Evergy | Evergy Inc (EVRG.N) | Stocks\US\Evergy
+Fidelity | Fidelity National Information Services Inc (FIS.N) | Stocks\US\Fidelity
+Fleetcor | Corpay Inc (CPAY.N) | Stocks\US\Fleetcor
+Garmin | Garmin Ltd (GRMN.N) | Stocks\US\Garmin
+Generac | Generac Holdings Inc (GNRC.N) | Stocks\US\Generac
+GlobalPayments | Global Payments Inc (GPN.N) | Stocks\US\GlobalPayments
+HCA | HCA Healthcare Inc (HCA.N) | Stocks\US\HCA
+IAC | IAC/InterActiveCorp (IAC.OQ) | Stocks\US\IAC
+IllinoisToolWorks | Illinois Tool Works Inc (ITW.N) | Stocks\US\IllinoisToolWorks
+IngersollRand | Ingersoll Rand Inc (IR.N) | Stocks\US\IngersollRand
+L3Harris | L3Harris Technologies Inc (LHX.N) | Stocks\US\L3Harris
+Lyft | Lyft Inc (LYFT.O) | Stocks\US\Lyft
+McKesson | McKesson Corp (MCK.N) | Stocks\US\McKesson
+NovoNordisk | Novo Nordisk A/S (NVO.N) | Stocks\US\NovoNordisk
+Paycom | Paycom Software Inc (PAYC.N) | Stocks\US\Paycom
+Pinduoduo | Pinduoduo Inc (PDD.OQ) | Stocks\US\Pinduoduo
+Pinterest | Pinterest Inc (PINS.K) | Stocks\US\Pinterest
+Roku | Roku Inc (ROKU.OQ) | Stocks\US\Roku
+RoyalCaribbeanCruises | Royal Caribbean Cruises Ltd (RCL.N) | Stocks\US\RoyalCaribbeanCruises
+Ryanair | Ryanair Holdings PLC (RYAAY.OQ) | Stocks\US\Ryanair
+S&P | S&P Global Inc (SPGI.N) | Stocks\US\S&P
+ServiceNow | ServiceNow Inc (NOW.N) | Stocks\US\ServiceNow
+SherwinWilliams | Sherwin-Williams Co (SHW.N) | Stocks\US\SherwinWilliams
+Shopify | Shopify Inc (SHOP.N) | Stocks\Canada\Shopify
+SimonProperty | Simon Property Group Inc (SPG.N) | Stocks\US\SimonProperty
+Sony | Sony Group Corp (SONY.N) | Stocks\US\Sony
+Spotify | Spotify Technology SA (SPOT.N) | Stocks\US\Spotify
+Stryker | Stryker Corp (SYK.N) | Stocks\US\Stryker
+TALEducation | TAL Education Group (TAL.N) | Stocks\US\TALEducation
+ThermoFisher | Thermo Fisher Scientific Inc (TMO.N) | Stocks\US\ThermoFisher
+TradeDesk | Trade Desk Inc (TTD.OQ) | Stocks\US\TradeDesk
+TransDigm | TransDigm Group Inc (TDG.N) | Stocks\US\TransDigm
+Twilio | Twilio Inc (TWLO.N) | Stocks\US\Twilio
+Uber | Uber Technologies Inc (UBER.N) | Stocks\US\Uber
+VirginGalactic | Virgin Galactic Holdings Inc (SPCE.N) | Stocks\US\VirginGalactic
+Vulcan | Vulcan Materials Co (VMC.N) | Stocks\US\Vulcan
+W.R.Berkley | W. R. Berkley Corp (WRB.N) | Stocks\US\W.R.Berkley
+WABTEC | Westinghouse Air Brake Technologies Corp (WAB.N) | Stocks\US\WABTEC
+WWGrainger | W W Grainger Inc (GWW.N) | Stocks\US\WWGrainger
+Waters | Waters Corp (WAT.N) | Stocks\US\Waters
+Westrock | Westrock Co (WRK.N) | Stocks\US\Westrock
+WillisTowersWatson | Willis Towers Watson PLC (WTW.OQ) | Stocks\US\WillisTowersWatson
+Workday | Workday Inc (WDAY.OQ) | Stocks\US\Workday
+Xylem | Xylem Inc (XYL.N) | Stocks\US\Xylem
+Zebra | Zebra Technologies Corp (ZBRA.OQ) | Stocks\US\Zebra
+Zimmer | Zimmer Biomet Holdings Inc (ZBH.N) | Stocks\US\Zimmer
+ZoomVideo | Zoom Video Communications Inc (ZM.OQ) | Stocks\US\ZoomVideo
+AMETEK | AMETEK Inc (AME.N) | Stocks\US\AMETEK
+ANSYS | ANSYS Inc (ANSS.OQ) | Stocks\US\ANSYS
+AOSmith | A. O. Smith Corp (AOS.N) | Stocks\US\AOSmith
+AdvanceAutoParts | Advance Auto Parts Inc (AAP.N) | Stocks\US\AdvanceAutoParts
+AlaskaAir | Alaska Air Group Inc (ALK.N) | Stocks\US\AlaskaAir
+Allegion | Allegion PLC (ALLE.N) | Stocks\US\Allegion
+Alliance | Bread Financial Holdings Inc (BFH.N) | Stocks\US\Alliance
+AmericanWaterWorks | American Water Works Company Inc (AWK.N) | Stocks\US\AmericanWaterWorks
+Ameriprise | Ameriprise Financial Inc (AMP.N) | Stocks\US\Ameriprise
+Amphenol | Amphenol Corp (APH.N) | Stocks\US\Amphenol
+Aptiv | Aptiv PLC (APTV.N) | Stocks\US\Aptiv
+Arista | Arista Networks Inc (ANET.N) | Stocks\US\Arista
+ArthurJGallagher | Arthur J Gallagher & Co (AJG.N) | Stocks\US\ArthurJGallagher
+Assurant | Assurant Inc (AIZ.N) | Stocks\US\Assurant
+AtmosEnergy | Atmos Energy Corp (ATO.N) | Stocks\US\AtmosEnergy
+AveryDennison | Avery Dennison Corp (AVY.N) | Stocks\US\AveryDennison
+BorgWarner | BorgWarner Inc (BWA.N) | Stocks\US\BorgWarner
+Broadridge | Broadridge Financial Solutions Inc (BR.N) | Stocks\US\Broadridge
+CDW | CDW Corp (CDW.OQ) | Stocks\US\CDW
+Carmax | Carmax Inc (KMX.N) | Stocks\US\Carmax
+Carrier | Carrier Global Corp (CARR.N) | Stocks\US\Carrier
+Cboe | Cboe Global Markets Inc (CBOE.Z) | Stocks\US\Cboe
+Celanese | Celanese Corp (CE.N) | Stocks\US\Celanese
+Church&Dwight | Church & Dwight Co Inc (CHD.N) | Stocks\US\Church&Dwight
+CincinnatiFinancial | Cincinnati Financial Corp (CINF.OQ) | Stocks\US\CincinnatiFinancial
+CitizensFinancial | Citizens Financial Group Inc (CFG.N) | Stocks\US\CitizensFinancial
+Clorox | Clorox Co (CLX.N) | Stocks\US\Clorox
+CoStar | CoStar Group Inc (CSGP.OQ) | Stocks\US\CoStar
+Cooper | Cooper Companies Inc (COO.N) | Stocks\US\Cooper
+Copart | Copart Inc (CPRT.OQ) | Stocks\US\Copart
+Corteva | Corteva Inc (CTVA.N) | Stocks\US\Corteva
+DaVita | DaVita Inc (DVA.N) | Stocks\US\DaVita
+DardenRestaurants | Darden Restaurants Inc (DRI.N) | Stocks\US\DardenRestaurants
+Dover | Dover Corp (DOV.N) | Stocks\US\Dover
+EastmanChemical | Eastman Chemical Co (EMN.N) | Stocks\US\EastmanChemical
+Equifax | Equifax Inc (EFX.N) | Stocks\US\Equifax
+EverestRe | Everest Group Ltd (EG.N) | Stocks\US\EverestRe
+Eversource | Eversource Energy (ES.N) | Stocks\US\Eversource
+F5Networks | F5 Networks Inc (FFIV.OQ) | Stocks\US\F5Networks
+FMC | FMC Corp (FMC.N) | Stocks\US\FMC
+Flowserve | Flowserve Corp (FLS.N) | Stocks\US\Flowserve
+Fortive | Fortive Corp (FTV.N) | Stocks\US\Fortive
+FortuneBrands | Fortune Brands Home & Security Inc (FBIN.N) | Stocks\US\FortuneBrands
+Fox | Fox Corp (FOXA.OQ) | Stocks\US\Fox
+Gartner | Gartner Inc (IT.N) | Stocks\US\Gartner
+GenuineParts | Genuine Parts Co (GPC.N) | Stocks\US\GenuineParts
+GlobeLife | Globe Life Inc (GL.N) | Stocks\US\GlobeLife
+HelmerichAndPayne | Helmerich and Payne Inc (HP.N) | Stocks\US\HelmerichAndPayne
+HowmetAerospace | Howmet Aerospace Inc (HWM.N) | Stocks\US\HowmetAerospace
+HuntingtonIngalls | Huntington Ingalls Industries Inc (HII.N) | Stocks\US\HuntingtonIngalls
+IDEX | IDEX Corp (IEX.N) | Stocks\US\IDEX
+IPGPhotonics | IPG Photonics Corp (IPGP.OQ) | Stocks\US\IPGPhotonics
+IQVIA | IQVIA Holdings Inc (IQV.N) | Stocks\US\IQVIA
+InternationalFlavors | International Flavors & Fragrances Inc (IFF.N) | Stocks\US\InternationalFlavors
+JackHenry | Jack Henry & Associates Inc (JKHY.OQ) | Stocks\US\JackHenry
+JacobsEngineering | Jacobs Solutions Group Inc (J.N) | Stocks\US\JacobsEngineering
+KeysightTechnologies | Keysight Technologies Inc (KEYS.N) | Stocks\US\KeysightTechnologies
+LaboratoryCorporation | Laboratory Corporation of America Holdings (LH.N) | Stocks\US\LaboratoryCorporation
+LambWeston | Lamb Weston Holdings Inc (LW.N) | Stocks\US\LambWeston
+Leggett&Platt | Leggett & Platt Inc (LEG.N) | Stocks\US\Leggett&Platt
+Leidos | Leidos Holdings Inc (LDOS.N) | Stocks\US\Leidos
+LincolnNational | Lincoln National Corp (LNC.N) | Stocks\US\LincolnNational
+LiveNation | Live Nation Entertainment Inc (LYV.N) | Stocks\US\LiveNation
+M&T | M&T Bank Corp (MTB.N) | Stocks\US\M&T
+Marketaxess | Marketaxess Holdings Inc (MKTX.OQ) | Stocks\US\Marketaxess
+MartinMarietta | Martin Marietta Materials Inc (MLM.N) | Stocks\US\MartinMarietta
+McCormick | McCormick & Company Inc (MKC.N) | Stocks\US\McCormick
+Mettler-Toledo | Mettler-Toledo International Inc (MTD.N) | Stocks\US\Mettler-Toledo
+Mohawk | Mohawk Industries Inc (MHK.N) | Stocks\US\Mohawk
+MolsonCoors | Molson Coors Beverage Co (TAP.N) | Stocks\US\MolsonCoors
+NVR | NVR Inc (NVR.N) | Stocks\US\NVR
+OldDominion | Old Dominion Freight Line Inc (ODFL.OQ) | Stocks\US\OldDominion
+Otis | Otis Worldwide Corp (OTIS.N) | Stocks\US\Otis
+PPG | PPG Industries Inc (PPG.N) | Stocks\US\PPG
+PVH | PVH Corp (PVH.N) | Stocks\US\PVH
+PackagingCorpofAmerica | Packaging Corp of America (PKG.N) | Stocks\US\PackagingCorpofAmerica
+Parker-Hannifin | Parker-Hannifin Corp (PH.N) | Stocks\US\Parker-Hannifin
+Pentair | Pentair PLC (PNR.N) | Stocks\US\Pentair
+PerkinElmer | Revvity Inc (RVTY.N) | Stocks\US\PerkinElmer
+Pinnacle | Pinnacle West Capital Corp (PNW.N) | Stocks\US\Pinnacle
+Pioneer | Pioneer Natural Resources Co (PXD.N) | Stocks\US\Pioneer
+Quanta | Quanta Services Inc (PWR.N) | Stocks\US\Quanta
+RaymondJames | Raymond James Financial Inc (RJF.N) | Stocks\US\RaymondJames
+RepublicServices | Republic Services Inc (RSG.N) | Stocks\US\RepublicServices
+Resmed | Resmed Inc (RMD.N) | Stocks\US\Resmed
+Rollins | Rollins Inc (ROL.N) | Stocks\US\Rollins
+Roper | Roper Technologies Inc (ROP.N) | Stocks\US\Roper
+SeattleGenetics | Seattle Genetics Inc (SGEN.OQ) | Stocks\US\SeattleGenetics
+Snap-On | Snap-On Inc (SNA.N) | Stocks\US\Snap-On
+Steris | Steris plc (STE.N) | Stocks\US\Steris
+Synopsys | Synopsys Inc (SNPS.OQ) | Stocks\US\Synopsys
+TEConnectivity | TE Connectivity Ltd (TEL.N) | Stocks\US\TEConnectivity
+Teleflex | Teleflex Inc (TFX.N) | Stocks\US\Teleflex
+Textron | Textron Inc (TXT.N) | Stocks\US\Textron
+Trane | Trane Technologies PLC (TT.N) | Stocks\US\Trane
+UnitedRentals | United Rentals Inc (URI.N) | Stocks\US\UnitedRentals
+UniversalHealth | Universal Health Services Inc (UHS.N) | Stocks\US\UniversalHealth
+Unum | Unum Group (UNM.N) | Stocks\US\Unum
+Viatris | Viatris Inc (VTRS.OQ) | Stocks\US\Viatris
+Stellantis | Stellantis NV (STLAM.MI) | Stocks\EU\Italy\Stellantis
+LumenTech | Lumen Technologies Inc (LUMN.N) | Stocks\US\LumenTech
+Holcim | Holcim AG (HOLN.S) | Stocks\EU\Switzerland\Holcim
+Airbnb | Airbnb Inc (ABNB.O) | Stocks\US\Airbnb
+AllyFinancial | Ally Financial Inc (ALLY.N) | Stocks\US\AllyFinancial
+Applovin | Applovin Corp (APP.O) | Stocks\US\Applovin
+AresManagement | Ares Management Corp (ARES.N) | Stocks\US\AresManagement
+Avalonbay | Avalonbay Communities Inc (AVB.N) | Stocks\US\Avalonbay
+Avangrid | Avangrid Inc (AGR.N) | Stocks\US\Avangrid
+Avantor | Avantor Inc (AVTR.N) | Stocks\US\Avantor
+Bill | Bill.com Holdings Inc (BILL.N) | Stocks\US\Bill
+BioNTech | BioNTech SE (BNTX.O) | Stocks\US\BioNTech
+Bumble | Bumble Inc (BMBL.O) | Stocks\US\Bumble
+Catalent | Catalent Inc (CTLT.N) | Stocks\US\Catalent
+CenovusEnergy | Cenovus Energy Inc (CVE.TO) | Stocks\US\CenovusEnergy
+Cheniere | Cheniere Energy Inc (LNG.A) | Stocks\US\Cheniere
+Chesapeake | Expand Energy Corp (EXE.OQ) | Stocks\US\Chesapeake
+Chewy | Chewy Inc (CHWY.N) | Stocks\US\Chewy
+Cloudflare | Cloudflare Inc (NET.N) | Stocks\US\Cloudflare
+Coinbase | Coinbase Global Inc (COIN.O) | Stocks\US\Coinbase
+Crown | Crown Holdings Inc (CCK.N) | Stocks\US\Crown
+Datadog | Datadog Inc (DDOG.OQ) | Stocks\US\Datadog
+DoorDash | DoorDash Inc (DASH.K) | Stocks\US\DoorDash
+DraftKings | DraftKings Inc (DKNG.OQ) | Stocks\US\DraftKings
+ETSY | ETSY Inc (ETSY.N) | Stocks\US\ETSY
+Epam | Epam Systems Inc (EPAM.N) | Stocks\US\Epam
+ExtraSpace | Extra Space Storage Inc (EXR.N) | Stocks\US\ExtraSpace
+FirstSolar | First Solar Inc (FSLR.OQ) | Stocks\US\FirstSolar
+FiveBelow | Five Below Inc (FIVE.OQ) | Stocks\US\FiveBelow
+Globalfoundries | Globalfoundries Inc (GFS.OQ) | Stocks\US\Globalfoundries
+GoDaddy | GoDaddy Inc (GDDY.N) | Stocks\US\GoDaddy
+HubSpot | HubSpot Inc (HUBS.N) | Stocks\US\HubSpot
+Invitation | Invitation Homes Inc (INVH.N) | Stocks\US\Invitation
+KKR&Co | KKR & Co Inc (KKR.N) | Stocks\US\KKR&Co
+KeurigDrPepper | Keurig Dr Pepper Inc (KDP.OQ) | Stocks\US\KeurigDrPepper
+LiAuto | Li Auto Inc. (LI.O) | Stocks\US\LiAuto
+LithiaMotors | Lithia Motors Inc (LAD.N) | Stocks\US\LithiaMotors
+LucidGroup | Lucid Group Inc (LCID.O) | Stocks\US\LucidGroup
+MPLX | MPLX LP (MPLX.N) | Stocks\US\MPLX
+Markel | Markel Corp (MKL.N) | Stocks\US\Markel
+Moderna | Moderna Inc (MRNA.O) | Stocks\US\Moderna
+Molina | Molina Healthcare Inc (MOH.N) | Stocks\US\Molina
+NIO | NIO Inc (NIO) | Stocks\US\NIO
+Novavax | Novavax Inc (NVAX.OQ) | Stocks\US\Novavax
+Okta | Okta Inc (OKTA.OQ) | Stocks\US\Okta
+Ovintiv | Ovintiv Inc (OVV.N) | Stocks\US\Ovintiv
+Palantir | Palantir Technologies Inc (PLTR.K) | Stocks\US\Palantir
+PaloAltoNetworks | Palo Alto Networks Inc (PANW.OQ) | Stocks\US\PaloAltoNetworks
+Peloton | Peloton Interactive Inc (PTON.O) | Stocks\US\Peloton
+PlugPower | Plug Power Inc (PLUG.OQ) | Stocks\US\PlugPower
+PureStorage | Pure Storage Inc (PSTG.N) | Stocks\US\PureStorage
+RealtyIncome | Realty Income Corp (O.N) | Stocks\US\RealtyIncome
+Rivian | Rivian Automotive Inc (RIVN.OQ) | Stocks\US\Rivian
+Robinhood | Robinhood Markets Inc (HOOD.OQ) | Stocks\US\Robinhood
+Roblox | Roblox Corp (RBLX.K) | Stocks\US\Roblox
+RoyaltyPharma | Royalty Pharma PLC (RPRX.OQ) | Stocks\US\RoyaltyPharma
+SBA | SBA Communications Corp (SBAC.OQ) | Stocks\US\SBA
+Snowflake | Snowflake Inc. (SNOW.N) | Stocks\US\Snowflake
+SoFiTechnologies | SoFi Technologies Inc (SOFI.OQ) | Stocks\US\SoFiTechnologies
+SouthernCopper | Southern Copper Corp (SCCO.N) | Stocks\US\SouthernCopper
+StoneCo | StoneCo Ltd (STNE.O) | Stocks\US\StoneCo
+Teledyne | Teledyne Technologies Inc (TDY.N) | Stocks\US\Teledyne
+Trimble | Trimble Inc (TRMB.OQ) | Stocks\US\Trimble
+UiPath | UiPath Inc (PATH.K) | Stocks\US\UiPath
+UnitedTherapeutics | United Therapeutics Corp (UTHR.OQ) | Stocks\US\UnitedTherapeutics
+UnitySoftware | Unity Software Inc (U.N) | Stocks\US\UnitySoftware
+UpstartHoldings | Upstart Holdings Inc (UPST.OQ) | Stocks\US\UpstartHoldings
+VICI | VICI Properties Inc (VICI.N) | Stocks\US\VICI
+VMware | VMware Inc (VMW.N) | Stocks\US\VMware
+Veeva | Veeva Systems Inc (VEEV.N) | Stocks\US\Veeva
+Watsco | Watsco Inc (WSO.N) | Stocks\US\Watsco
+WestPharmaceutical | West Pharmaceutical Services Inc (WST.N) | Stocks\US\WestPharmaceutical
+XpInc | Xp Inc (XP.O) | Stocks\US\XpInc
+Xpeng | Xpeng Inc (XPEV.K) | Stocks\US\Xpeng
+ZillowGroup | Zillow Group Inc (ZG.OQ) | Stocks\US\ZillowGroup
+Zscaler | Zscaler Inc (ZS.OQ) | Stocks\US\Zscaler
+Arch Capital | Arch Capital Group Ltd (ACGL.OQ) | Stocks\US\Arch Capital
+Arm Holdings | Arm Holdings PLC (ARM.OQ) | Stocks\US\Arm Holdings
+Daimler Truck | Daimler Truck Holding AG (DTGGe.DE) | Stocks\EU\Germany\Daimler Truck
+Digital Realty | Digital Realty Trust Inc (DLR.N) | Stocks\US\Digital Realty
+Haleon | Haleon PLC (HLN.L) | Stocks\EU\UK\Haleon
+Kenvue | Kenvue Inc (KVUE.N) | Stocks\US\Kenvue
+Monolithic Power | Monolithic Power Systems Inc (MPWR.OQ) | Stocks\US\Monolithic Power
+Nu Holdings | Nu Holdings Ltd (NU.N) | Stocks\Brazil\Nu Holdings
+Reddit | Reddit Inc (RDDT.N) | Stocks\US\Reddit
+Sea | Sea Ltd (SE.N) | Stocks\US\Sea
+Super Micro Computer | Super Micro Computer Inc (SMCI.OQ) | Stocks\US\Super Micro Computer
+Prosus NV | Prosus NV (PRX.AS) | Stocks\EU\Netherlands\Prosus NV
+On Holding | On Holding AG (ONON.K) | Stocks\US\On Holding
+Sailpoint | Sailpoint (SAIL.OQ) | Stocks\US\Sailpoint
+Figma | Figma (FIG.N) | Stocks\US\Figma
+Firefly Aerospace | Firefly Aerospace (FLY.O) | Stocks\US\Firefly Aerospace
+Klarna | Klarna (KLAR.N) | Stocks\US\Klarna
+NIQ Global Intelligence | NIQ Global Intelligence (NIQ.N) | Stocks\US\NIQ Global Intelligence
+Accelerant Holding | Accelerant Holding (ARX.N) | Stocks\US\Accelerant Holding
+McGraw Hill | McGraw Hill (MH.N) | Stocks\US\McGraw Hill
+Beta Technologies | Beta Technologies Inc (BETA.N) | Stocks\US\Beta Technologies
+Medline | Medline Inc (MDLN.OQ) | Stocks\US\Medline
+AUS200Cash | Australia 200 Index Cash | Derivatives\Cash\Cash Indices\AUS200Cash
+EU50Cash | EU Stocks 50 Index Cash | Derivatives\Cash\Cash Indices\EU50Cash
+FRA40Cash | France 40 Index Cash | Derivatives\Cash\Cash Indices\FRA40Cash
+GER40Cash | Germany 40 Index Cash | Derivatives\Cash\Cash Indices\GER40Cash
+HK50Cash | Hong Kong 50 Index Cash | Derivatives\Cash\Cash Indices\HK50Cash
+IT40Cash | Italy 40 Index Cash | Derivatives\Cash\Cash Indices\IT40Cash
+JP225Cash | Japan 225 Index Cash | Derivatives\Cash\Cash Indices\JP225Cash
+NETH25Cash | Netherlands 25 Index Cash | Derivatives\Cash\Cash Indices\NETH25Cash
+SWI20Cash | Switzerland 20 Index Cash | Derivatives\Cash\Cash Indices\SWI20Cash
+UK100Cash | UK 100 Index Cash | Derivatives\Cash\Cash Indices\UK100Cash
+US100Cash | US 100 Index Cash | Derivatives\Cash\Cash Indices\US100Cash
+US30Cash | Wall Street 30 Index Cash | Derivatives\Cash\Cash Indices\US30Cash
+US500Cash | US 500 Index Cash | Derivatives\Cash\Cash Indices\US500Cash
+CA60Cash | Canada 60 Index Cash | Derivatives\Cash\Cash Indices\CA60Cash
+ChinaHCash | Hong Kong China H-shares Index Cash | Derivatives\Cash\Cash Indices\ChinaHCash
+SA40Cash | South Africa 40 Index Cash | Derivatives\Cash\Cash Indices\SA40Cash
+Sing30Cash | Singapore 30 Index Cash | Derivatives\Cash\Cash Indices\Sing30Cash
+US2000Cash | US 2000 Index Cash | Derivatives\Cash\Cash Indices\US2000Cash
+BRENTCash | BRENT Cash | Derivatives\Cash\Cash Energies\BRENTCash
+NGASCash | Natural Gas Cash | Derivatives\Cash\Cash Energies\NGASCash
+OILCash | WTI Oil Cash | Derivatives\Cash\Cash Energies\OILCash
+GerMid50Cash | Germany Mid 50 Cash | Derivatives\Cash\Cash Indices\GerMid50Cash
+GerTech30Cash | Germany Tech 30 Cash | Derivatives\Cash\Cash Indices\GerTech30Cash
+TaiwanCash | Taiwan Index Cash | Derivatives\Cash\Cash Indices\TaiwanCash
+SpainCash | Spain 35 Index Cash | Derivatives\Cash\Cash Indices\SpainCash
+CHN50Cash | ChinaA50 Index Cash | Derivatives\Cash\Cash Indices\CHN50Cash
+COTTO-MAR26 | US Cotton No.2 Futures March 2026 | Derivatives\Futures\Commodities\COTTO-MAR26
+SUGAR-MAR26 | US Sugar No.11 Futures March 2026 | Derivatives\Futures\Commodities\SUGAR-MAR26
+COFFE-MAR26 | US Coffee Futures March 2026 | Derivatives\Futures\Commodities\COFFE-MAR26
+COCOA-MAR26 | US Cocoa Futures March 2026 | Derivatives\Futures\Commodities\COCOA-MAR26
+WHEAT-MAR26 | US Wheat Futures March 2026 | Derivatives\Futures\Commodities\WHEAT-MAR26
+HGCOP-MAR26 | High Grade Copper Futures March 2026 | Derivatives\Futures\Commodities\HGCOP-MAR26
+CORN-MAR26 | US Corn Futures March 2026 | Derivatives\Futures\Commodities\CORN-MAR26
+PALL-MAR26 | Palladium Futures March 2026 | Derivatives\Futures\Precious Metals\PALL-MAR26
+JP225-MAR26 | Japan 225 Index Futures March 2026 | Derivatives\Futures\Indices\JP225-MAR26
+USDX-MAR26 | US Dollar Index March 2026 | Derivatives\Futures\Indices\USDX-MAR26
+GER40-MAR26 | Germany 40 Index Futures March 2026 | Derivatives\Futures\Indices\GER40-MAR26
+EU50-MAR26 | EU Stocks 50 Index Futures March 2026 | Derivatives\Futures\Indices\EU50-MAR26
+SWI20-MAR26 | Switzerland 20 Index Futures March 2026 | Derivatives\Futures\Indices\SWI20-MAR26
+UK100-MAR26 | UK 100 Index Futures March 2026 | Derivatives\Futures\Indices\UK100-MAR26
+US30-MAR26 | Wall Street 30 Index Futures March 2026 | Derivatives\Futures\Indices\US30-MAR26
+US100-MAR26 | US 100 Index Futures March 2026 | Derivatives\Futures\Indices\US100-MAR26
+US500-MAR26 | US 500 Index Futures March 2026 | Derivatives\Futures\Indices\US500-MAR26
+PLAT-APR26 | Platinum Futures April 2026 | Derivatives\Futures\Precious Metals\PLAT-APR26
+SBEAN-MAR26 | US Soybeans Futures March 2026 | Derivatives\Futures\Commodities\SBEAN-MAR26
+GSOIL-JAN26 | London Gas Oil Futures January 2026 | Derivatives\Futures\Energies\GSOIL-JAN26
+OIL-FEB26 | WTI Oil Futures February 2026 | Derivatives\Futures\Energies\OIL-FEB26
+OILMn-FEB26 | WTI Oil Mini Futures February 2026 | Derivatives\Futures\Energies\OILMn-FEB26
+VIX-JAN26 | Volatility Index Futures (S&P500) January 2026 | Derivatives\Futures\Indices\VIX-JAN26
+FRA40-JAN26 | France 40 Index Futures January 2026 | Derivatives\Futures\Indices\FRA40-JAN26
+NGAS-FEB26 | Natural Gas Futures February 2026 | Derivatives\Futures\Energies\NGAS-FEB26
+BRENT-MAR26 | BRENT Futures March 2026 | Derivatives\Futures\Energies\BRENT-MAR26
+GOLD | GOLD | Derivatives\Spot Metals\GOLD
+SILVER | SILVER | Derivatives\Spot Metals\SILVER
+XAUEUR | Gold vs Euro | Derivatives\Spot Metals\XAUEUR
+XPDUSD | Palladium Spot | Derivatives\Spot Metals\XPDUSD
+XPTUSD | Platinum Spot | Derivatives\Spot Metals\XPTUSD
+GAUCNH | Gold (gram) vs CNH | Derivatives\Spot Metals\GAUCNH
+GAUUSD | Gold (gram) vs USD | Derivatives\Spot Metals\GAUUSD
+XAUCNH | Gold vs CNH | Derivatives\Spot Metals\XAUCNH
+XAUJPY | Gold vs JPY | Derivatives\Spot Metals\XAUJPY
+BCHUSD | BCH vs US Dollar | Cryptocurrencies\Standard\BCHUSD
+BTCUSD | Bitcoin vs US Dollar | Cryptocurrencies\Standard\BTCUSD
+ETHUSD | Ethereum vs US Dollar | Cryptocurrencies\Standard\ETHUSD
+LTCUSD | Litecoin vs US Dollar | Cryptocurrencies\Standard\LTCUSD
+XRPUSD | Ripple vs US Dollar | Cryptocurrencies\Standard\XRPUSD
+AAVEUSD | Aave vs US Dollar | Cryptocurrencies\Standard\AAVEUSD
+ADAUSD | Cardano vs US Dollar | Cryptocurrencies\Standard\ADAUSD
+ALGOUSD | Algorand vs US Dollar | Cryptocurrencies\Standard\ALGOUSD
+AVAXUSD | Avalanche vs US Dollar | Cryptocurrencies\Standard\AVAXUSD
+AXSUSD | Axie Infinity vs US Dollar | Cryptocurrencies\Standard\AXSUSD
+BATUSD | Basic Attention Token vs US Dollar | Cryptocurrencies\Standard\BATUSD
+BTCEUR | Bitcoin vs Euro | Cryptocurrencies\Standard\BTCEUR
+BTCGBP | Bitcoin vs Great Britain Pound | Cryptocurrencies\Standard\BTCGBP
+COMPUSD | Compound vs US Dollar | Cryptocurrencies\Standard\COMPUSD
+ENJUSD | Enjin Coin vs US Dollar | Cryptocurrencies\Standard\ENJUSD
+ETHEUR | Ethereum vs Euro | Cryptocurrencies\Standard\ETHEUR
+ETHGBP | Ethereum vs Great Britain Pound | Cryptocurrencies\Standard\ETHGBP
+FETUSD | Fetch AI vs US Dollar | Cryptocurrencies\Standard\FETUSD
+GRTUSD | The Graph vs US Dollar | Cryptocurrencies\Standard\GRTUSD
+LINKUSD | Chainlink vs US Dollar | Cryptocurrencies\Standard\LINKUSD
+MATICUSD | Polygon vs US Dollar | Cryptocurrencies\Standard\MATICUSD
+SNXUSD | Synthetix Network Token vs US Dollar | Cryptocurrencies\Standard\SNXUSD
+SOLUSD | Solana vs US Dollar | Cryptocurrencies\Standard\SOLUSD
+STORJUSD | Storj vs US Dollar | Cryptocurrencies\Standard\STORJUSD
+SUSHIUSD | SushiSwap vs US Dollar | Cryptocurrencies\Standard\SUSHIUSD
+UMAUSD | UMA vs US Dollar | Cryptocurrencies\Standard\UMAUSD
+UNIUSD | Uniswap vs US Dollar | Cryptocurrencies\Standard\UNIUSD
+XLMUSD | Stellar Lumens vs US Dollar | Cryptocurrencies\Standard\XLMUSD
+ZRXUSD | 0x vs US Dollar | Cryptocurrencies\Standard\ZRXUSD
+1INCHUSD | 1INCH Network vs US Dollar | Cryptocurrencies\Standard\1INCHUSD
+APEUSD | ApeCoin vs US Dollar | Cryptocurrencies\Standard\APEUSD
+APTUSD | Aptos vs US Dollar | Cryptocurrencies\Standard\APTUSD
+ARBUSD | Arbitrum vs US Dollar | Cryptocurrencies\Standard\ARBUSD
+ATOMUSD | Cosmos vs US Dollar | Cryptocurrencies\Standard\ATOMUSD
+BTGUSD | Bitcoin Gold vs US Dollar | Cryptocurrencies\Standard\BTGUSD
+CHZUSD | Chiliz vs US Dollar | Cryptocurrencies\Standard\CHZUSD
+CRVUSD | Curve DAO Token vs US Dollar | Cryptocurrencies\Standard\CRVUSD
+DASHUSD | Dash vs US Dollar | Cryptocurrencies\Standard\DASHUSD
+DOGEUSD | Dogecoin vs US Dollar | Cryptocurrencies\Standard\DOGEUSD
+DOTUSD | Polkadot vs US Dollar | Cryptocurrencies\Standard\DOTUSD
+EGLDUSD | MultiversX vs US Dollar | Cryptocurrencies\Standard\EGLDUSD
+EOSUSD | EOS vs US Dollar | Cryptocurrencies\Standard\EOSUSD
+ETCUSD | Ethereum Classic vs US Dollar | Cryptocurrencies\Standard\ETCUSD
+ETHBTC | Ethereum vs Bitcoin | Cryptocurrencies\Standard\ETHBTC
+FILUSD | Filecoin vs US Dollar | Cryptocurrencies\Standard\FILUSD
+FLOWUSD | Flow vs US Dollar | Cryptocurrencies\Standard\FLOWUSD
+ICPUSD | Internet Computer vs US Dollar | Cryptocurrencies\Standard\ICPUSD
+IMXUSD | Immutable vs US Dollar | Cryptocurrencies\Standard\IMXUSD
+LDOUSD | Lido DAO vs US Dollar | Cryptocurrencies\Standard\LDOUSD
+LRCUSD | Loopring vs US Dollar | Cryptocurrencies\Standard\LRCUSD
+MANAUSD | Decentraland vs US Dollar | Cryptocurrencies\Standard\MANAUSD
+NEARUSD | NEAR Protocol vs US Dollar | Cryptocurrencies\Standard\NEARUSD
+OPUSD | Optimism vs US Dollar | Cryptocurrencies\Standard\OPUSD
+SANDUSD | The Sandbox vs US Dollar | Cryptocurrencies\Standard\SANDUSD
+SHIBUSD | Shiba Inu vs US Dollar | Cryptocurrencies\Standard\SHIBUSD
+STXUSD | Stacks vs US Dollar | Cryptocurrencies\Standard\STXUSD
+XTZUSD | Tezos vs US Dollar | Cryptocurrencies\Standard\XTZUSD
+ZECUSD | Zcash vs US Dollar | Cryptocurrencies\Standard\ZECUSD
+BTCJPY | Bitcoin vs Japanese Yen | Cryptocurrencies\Standard\BTCJPY
+VAULTAUSD | Vaulta (A) vs US Dollar | Cryptocurrencies\Standard\VAULTAUSD
+Adidas_turbo | Adidas AG (ADSGn.DE) | Turbo Stocks\EU\Germany\Adidas_turbo
+BP_turbo | BP PLC (BP.L) | Turbo Stocks\EU\UK\BP_turbo
+Amazon_turbo | Amazon.com Inc (AMZN.OQ) | Turbo Stocks\US\Amazon_turbo
+Apple_turbo | Apple Inc (AAPL.OQ) | Turbo Stocks\US\Apple_turbo
+Facebook_turbo | META PLATFORMS INC (META.OQ) | Turbo Stocks\US\Facebook_turbo
+Google_turbo | Alphabet Inc (GOOG.OQ) | Turbo Stocks\US\Google_turbo
+Microsoft_turbo | Microsoft Corp (MSFT.OQ) | Turbo Stocks\US\Microsoft_turbo
+Alibaba_turbo | Alibaba Group Holding Ltd (BABA.K) | Turbo Stocks\US\Alibaba_turbo
+AMD_turbo | Advanced Micro Devices Inc (AMD.OQ) | Turbo Stocks\US\AMD_turbo
+Netflix_turbo | Netflix Inc (NFLX.OQ) | Turbo Stocks\US\Netflix_turbo
+Nvidia_turbo | NVIDIA Corp (NVDA.OQ) | Turbo Stocks\US\Nvidia_turbo
+Tesla_turbo | Tesla Inc (TSLA.OQ) | Turbo Stocks\US\Tesla_turbo
+ElectricVehicles | Electric Vehicles UST Index (ElectricVehicles) | Thematic Indices\Standard\ElectricVehicles
+Crypto_10 | Crypto 10 Index (Crypto_10) | Thematic Indices\Standard\Crypto_10
+FAANGs_10 | FAANGs 10 Index (FAANGs_10) | Thematic Indices\Standard\FAANGs_10
+Blockchain&NFT | NFT and Blockchain Giants Index  (Blockchain&NFT) | Thematic Indices\Standard\Blockchain&NFT
+ChinaInternet | China Internet Giants Index (ChinaInternet) | Thematic Indices\Standard\ChinaInternet
+AI_INDX | Artificial Intelligence Giants US Index (AI_INDX) | Thematic Indices\Standard\AI_INDX
+Altcoins_INDX | Small Crypto Index | Thematic Indices\Standard\Altcoins_INDX
+HarrisWinners | Harris Winners Giants Index | Thematic Indices\Standard\HarrisWinners
+LATAM_INDX | LatAm Giants Index | Thematic Indices\Standard\LATAM_INDX
+TrumpWinners | Trump Winners Giants Index | Thematic Indices\Standard\TrumpWinners

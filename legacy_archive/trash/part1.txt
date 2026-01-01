@@ -1,0 +1,1030 @@
+
+--- Page 1 ---
+Technical
+Analysis
+FOR
+DUMHIE&
+©
+2ND
+EDITION
+by
+Barbara
+Rockefeller
+WILEY
+Wiley
+Publishing,
+Inc.
+--- Page 2 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 3 ---
+About the Author
+Barbara Rockefeller
+ is a writer specializing in international economics and 
+fi  nance, with a focus on foreign exchange. She also trades in the foreign 
+exchange market. She is the publisher of a daily newsletter on the foreign 
+exchange market, “The Strategic Currency Briefi  ng.” Her newsletter combines 
+technical and fundamental observations. Additionally, she publishes separate 
+daily “Trader’s Advice” reports for spot and futures foreign exchange trad-
+ers. Newsletter subscribers include central banks, investment banks, hedge 
+funds, multinational corporations, investment managers and individuals. 
+Miss Rockefeller also prepares custom charts on a consulting basis for indi-
+viduals and institutions. 
+Before starting the newsletter business, Barbara was in the credit, foreign 
+exchange, and risk-management departments at several U.S. banks, including 
+Citibank and Brown Brothers Harriman. Conventional economic theory failed 
+to generate valid currency forecasts at Brown Brothers, which led her to 
+spearhead  a technical analysis system at Citibank. This decision was in 1980, 
+long before technical analysis went mainstream and at a time when it was 
+considered at least a little crackpot.
+Barbara has a B.A. in Economics from Reed College in Portland, Oregon, and 
+a M.A. in International Affairs from Columbia University. While at Citibank, 
+she traveled the world, training staff and clients on the fundamentals of for-
+eign exchange, international economics, and risk management. Favorite coun-
+try? Turkey. Smartest traders? Hong Kong.
+Barbara is the author of 
+How to Invest Internationally
+, published in Japanese 
+in 1999 (Franklin Covey), 
+CNBC 24/7, Trading Around the Clock, Around the 
+World
+, published in 2000 (John Wiley & Sons), and 
+The Global Trader
+, pub-
+lished in 2001 (John Wiley & Sons). She also writes a monthly column for 
+Currency Trader Magazine
+.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 4 ---
+Dedication
+This book is dedicated to Robert James Deadman, founder of Technical 
+Systems Analysis Group, who taught as much of “the scientifi  c way of thinking” 
+as it’s possible to cram into a “social science” mind, and with endless patience. 
+I also dedicate the book to Alfred A. “Chip” Olbrycht, who forces me to question 
+the easy way and to look at everything a second time, and a third time, too.
+Author’s Acknowledgments
+For Dummies
+ editors Mike Baker and Alissa Schwipps, who caused much 
+suffering. I’m wrung-out, but you, dear reader, have a better book.
+And the usual suspects: Jim Sullivan, head of the Fairfi  eld County Technical 
+Traders’ Club, contributed numerous gentle nudges on perspective as well 
+as how traders really use indicators and think about trading risk. Ed Dobson, 
+founder of Traders Press, and Perry Kaufman, author of Trading Systems and 
+Methods, always generous. Most generous of all over the years is Desmond 
+MacRae, whose ideas I gladly and routinely steal. 
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 5 ---
+Publisher’s Acknowledgments
+We’re proud of this book; please send us your comments at 
+http://dummies.custhelp.com
+. 
+For other comments, please contact our Customer Care Department within the U.S. at 877-762-2974, 
+outside the U.S. at 317-572-3993, or fax 317-572-4002.
+Some of the people who helped bring this book to market include the following:
+Acquisitions, Editorial, and Media 
+Development
+Senior Project Editor: 
+Alissa Schwipps
+(Previous Edition: Mike Baker)
+Acquisitions Editor: 
+Michael Lewis
+Copy Editor: 
+Sarah Westfall
+Assistant Editor:
+ David Lutton
+Technical Editor: 
+Charles LeBeau
+Senior Editorial Manager: 
+Jennifer Ehrlich
+Editorial Assistants:
+ Rachelle Amick, Jennette 
+ElNaggar
+Cover Photo: 
+© iStockphoto.com/Nikada
+Cartoons: 
+Rich Tennant 
+(www.the5thwave.com)
+Composition Services
+Project Coordinator: 
+Sheree Montgomery
+Layout and Graphics: 
+Vida Noffsinger,
+ 
+Lavonne Roberts
+Proofreaders: 
+John Greenough, Lindsay 
+Littrell, Bonnie Mikkelson
+Indexer: 
+Estalita Slivoskey
+Publishing and Editorial for Consumer Dummies
+Diane Graves Steele, 
+Vice President and Publisher, Consumer Dummies
+Kristin Ferguson-Wagstaffe, 
+Product Development Director, Consumer Dummies
+Ensley Eikenburg,
+ Associate Publisher, Travel
+Kelly Regan,
+ Editorial Director, Travel
+Publishing for Technology Dummies
+Andy Cummings,
+ Vice President and Publisher, Dummies Technology/General User
+Composition Services
+Debbie Stailey,
+ Director of Composition Services
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 6 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 7 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 8 ---
+Technical Analysis For Dummies, 2nd Edition 
+xii
+Chapter 2: Uncovering the Essence of Market Movement . . . . . . . . . .23
+The eBay Model of Supply and Demand .....................................................23
+Securities aren’t socks: The demand effect ......................................24
+Creating demand from scratch ..........................................................24
+Identifying Crowd Behavior .........................................................................25
+The individual versus the crowd .......................................................26
+Playing games with traders’ heads ....................................................26
+Figuring Out What’s Normal: Considering the Normal Distribution .......27
+Reverting to the mean .........................................................................27
+Trading mean reversion ......................................................................28
+Identifying and Responding to Crowd Extremes .......................................29
+Breaching the limits: Overbought and oversold ..............................30
+Going against the grain: Retracements .............................................31
+Catch a falling knife: Estimating where 
+and when a retracement will stop ..................................................32
+Big-Picture Crowd Theories .........................................................................34
+The Gann 50 percent retracement .....................................................35
+Magic numbers: “The secret of the universe” ..................................37
+Seeing too many retracements...........................................................38
+Chapter 3: Going with the Flow: Market Sentiment. . . . . . . . . . . . . . . .41
+Defi  ning Market Sentiment ...........................................................................42
+Getting the Low-Down on Volume ...............................................................42
+Leading the way with spikes ..............................................................43
+Tracking on-balance volume ..............................................................43
+Refi  ning volume indicators .................................................................46
+Thinking Outside the Chart ..........................................................................46
+Sampling information about sentiment.............................................47
+Following the earth’s axis: Seasonality and calendar effects .........50
+Blindsiding the Crowd ..................................................................................51
+Considering historic key reversals ....................................................52
+Enduring randomness .........................................................................53
+Remembering the last price ...............................................................53
+Thinking Scientifi
+ cally ...................................................................................54
+Conditions and contingencies ............................................................54
+Sample size ...........................................................................................55
+Par t II: Preparing Your Mind for Technical Analysis ...... 57
+Chapter 4: Using Indicators to Trade Systematically  . . . . . . . . . . . . . .59
+Introducing Indicators ..................................................................................59
+Classifying indicators ..........................................................................60
+Understanding what indicators identify ...........................................60
+Choosing your trading style ...............................................................61
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 9 ---
+xiii
+ Table of Contents
+Examining How Indicators Work .................................................................63
+Finding relevant time frames ..............................................................64
+Heeding indicator signals ...................................................................65
+Establishing Benchmark Levels ...................................................................67
+Choosing Indicators ......................................................................................67
+Optimizing: Putting Indicators to the Test .................................................68
+Constructing a backtest optimization ...............................................69
+Refi  ning a backtest ...............................................................................70
+Fixing the indicator ..............................................................................71
+Applying the indicator again ..............................................................72
+Evaluating the risks of backtesting ....................................................72
+Chapter 5: Managing the Trade . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .75
+Building Trading Rules ..................................................................................75
+Your trading plan outline ....................................................................76
+Common questions and concerns .....................................................77
+Taking Money off the Table: Establishing the Profi
+ t Target ....................78
+Controlling Losses .........................................................................................79
+Using the First Line of Defense: Stop-Loss Orders ....................................80
+Mental stops are hogwash ..................................................................81
+Sorting out the types of stops ............................................................81
+Adjusting Positions .......................................................................................86
+Reducing positions ..............................................................................87
+Adding to positions .............................................................................88
+Applying stops to adjusted positions ...............................................89
+Par t III: Observing Market Behavior ............................ 91
+Chapter 6: Reading Basic Bars: Showing How Security Prices Move  . . .93
+Building Basic Bars ........................................................................................93
+Getting in on the action: The price bar in brief ...............................94
+Setting the tone: The opening price ..................................................96
+Summarizing sentiment: The closing price ......................................98
+Going up: The high.............................................................................101
+Getting to the bottom of it: The low ................................................102
+Putting It All Together: Using Bars to Identify Trends ............................102
+Identifying an uptrend .......................................................................103
+Pinpointing a downtrend ..................................................................104
+Wading through Murky Bar Waters ..........................................................104
+Paying heed to bar series .................................................................105
+Understanding relativity ...................................................................106
+Avoiding misinterpretation ..............................................................107
+Knowing when bar reading doesn’t work .......................................108
+Looking at Data in Different Time Frames ................................................109
+Using daily data ..................................................................................109
+Zooming out to a higher time frame ................................................110
+Zooming in to a shorter time frame .................................................110
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 10 ---
+Technical Analysis For Dummies, 2nd Edition 
+xiv
+Chapter 7: Reading Special Bar Combinations: Small Patterns  . . . .113
+Finding Clues to Trader Sentiment ............................................................114
+Tick and bar placement ....................................................................114
+Types of confi
+ gurations ....................................................................115
+Trading range .....................................................................................116
+Identifying Common Special Bars ..............................................................116
+Closing on a high note .......................................................................117
+Spending the day inside ....................................................................117
+Getting outside for the day ...............................................................118
+Finding the close at the open ...........................................................119
+Decoding Spikes ...........................................................................................119
+Grasping Gaps ..............................................................................................122
+Pinpointing a gap ...............................................................................122
+Using primary gaps to your advantage ...........................................124
+Filling That Gap ............................................................................................128
+Using the Trading Range to Deal with Change Effectively .....................129
+Paying attention to a changing range ..............................................129
+Determining the meaning 
+of a range change ...........................................................................130
+Looking at the average trading range..............................................131
+Chapter 8: Redrawing the Price Bar: Japanese Candlesticks. . . . . .137
+Appreciating the Candlestick Advantage .................................................138
+Dissecting the Anatomy of a Candlestick .................................................138
+Drawing the real body .......................................................................139
+Doing without a real body: The doji ................................................140
+Catching the shadow .........................................................................140
+Sizing Up Emotions ......................................................................................144
+Identifying Special “Emotional Extreme” Candlestick Patterns .............145
+Interpreting candlestick patterns ....................................................145
+Turning to reversal patterns ............................................................147
+Continuation patterns .......................................................................148
+Combining Candlesticks with Other Indicators .......................................150
+Trading on Candlesticks Alone ..................................................................151
+Par  t IV: Finding Pat terns .......................................... 153
+Chapter 9: Seeing Chart Patterns Through a Technical Lens  . . . . . .155
+Introducing Patterns ...................................................................................155
+Got imagination? ................................................................................156
+Coloring inside the lines ...................................................................157
+Cozying Up to Continuation Patterns .......................................................158
+Ascending and descending triangles ...............................................158
+Dead-cat bounce ................................................................................159
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 11 ---
+xv
+ Table of Contents
+Recognizing Classic Reversal Patterns .....................................................160
+Double bottom ...................................................................................160
+Double tops ........................................................................................162
+The ultimate triple top: Head-and-shoulders .................................163
+Evaluating the Measured Move .................................................................165
+Taking dictation from the pattern ...................................................165
+Resuming the trend after retracement ............................................167 
+Measuring from the gap ....................................................................167
+Chapter 10: Drawing Trendlines  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .169
+Looking Closely at a Price Chart ................................................................169
+Following the Rules with Rule-Based Trendlines ....................................170
+Drawing rule-based trendlines .........................................................171
+Using the support line to enter and exit .........................................171
+The other side of the coin: Using resistance to enter and exit ....174
+Fine tuning support and resistance .................................................175
+Playing games with support and resistance lines .........................176
+Drawing Internal Trendlines ......................................................................177
+Rules for drawing a linear regression .............................................178
+Identifying trendedness ....................................................................178
+How to use the linear regression .....................................................180
+Chapter 11: Transforming Channels into Forecasts . . . . . . . . . . . . . . .183
+Diving into Channel-Drawing Basics .........................................................184
+Drawing channels by hand ...............................................................185
+Letting software do the drawing ......................................................187
+Considering the benefi  ts of straight-line channels ........................187
+Delving into the drawbacks of straight-line channels ...................188
+Using channels to make profi  t and avoid loss ...............................188
+Dealing with Breakouts ...............................................................................189
+Distinguishing between false breakouts and the real thing .........189
+Putting breakouts into context ........................................................192
+Riding the Regression Range ......................................................................195
+Introducing the standard error ........................................................195
+Drawing a linear regression channel ...............................................196
+Confi  rming hand-drawn channels ....................................................197
+Sizing up the special features of the linear regression channel ....198
+Discovering the drawbacks of linear regression channels ...........199
+Pivot Point Support and Resistance Channel ..........................................199
+Calculating the fi  rst zone of support and resistance ....................200
+Using pivot support and resistance ................................................201
+Par t V: Flying with Dynamic Analysis ........................ 203
+Chapter 12: Using Dynamic Lines  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .205
+Introducing the Simple Moving Average ..................................................205
+Starting with the crossover rule ......................................................206
+Using the moving average level rule ...............................................209
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 12 ---
+Technical Analysis For Dummies, 2nd Edition 
+xvi
+Dealing with limitations ....................................................................211
+Magic moving average numbers ......................................................213
+Adjusting the Moving Average ...................................................................214
+Getting acquainted with moving average types.............................214
+Choosing a moving average type .....................................................216
+Using Multiple Moving Averages ...............................................................217
+Putting two moving averages into play ...........................................217
+Trying the three-way approach .......................................................219
+Delving into Moving Average Convergence and Divergence .................221
+Calculating convergence and divergence .......................................222
+Creating a decision tool ....................................................................223
+Interpreting the MACD ......................................................................224
+Chapter 13: Measuring Momentum. . . . . . . . . . . . . . . . . . . . . . . . . . . . .227
+Doing the Math: Calculating Momentum ..................................................227
+Using the subtraction method .........................................................228
+Utilizing the rate-of-change method ................................................228
+Adding context: Percentage rate of change....................................230
+Pondering the Trickier Aspects of Momentum ........................................231
+Smoothing price changes..................................................................232
+Filtering momentum ..........................................................................232
+Applying Momentum ...................................................................................233
+Discovering divergence .....................................................................233
+Confi  rming trend indicators .............................................................234
+Determining the Relative Strength Index (RSI) ........................................235
+Calculating the RSI .............................................................................235
+Picturing RSI .......................................................................................236
+Using the Rest of the Price Bar: The Stochastic Oscillator ....................238
+Step 1: Putting a number to the fast stochastic %K ......................239
+Step 2: Refi  ning %K with %D .............................................................240
+Fiddling with the stochastic oscillator on the chart .....................241
+Chapter 14: Estimating Volatility . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .243
+Catching a Slippery Concept ......................................................................243
+How volatility arises ..........................................................................244
+Low volatility with trending .............................................................245
+Low volatility without trending........................................................246
+High volatility with trending .............................................................246
+High volatility without trending .......................................................246
+Measuring Volatility ....................................................................................247
+Tracking the maximum move ...........................................................247
+Considering the standard deviation ................................................248
+Using the average true range indicator...........................................249
+Applying Volatility Measures: Bollinger Bands .......................................250
+Applying Stops with Average True Range Bands ....................................252
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 13 ---
+xvii
+ Table of Contents
+Chapter 15: Ignoring Time: Point-and-Figure Charting  . . . . . . . . . . . .255
+Creating a Point-and-Figure Chart to Visualize What’s Important ........256
+Putting each move into a column ....................................................256
+Dealing with box size .........................................................................257
+Drawing the daily chart .....................................................................259
+Applying Patterns ........................................................................................260
+Support and resistance .....................................................................260
+Double and triple tops and bottoms ...............................................262
+Projecting Prices after a Breakout .............................................................262
+Using vertical price projection.........................................................262
+Applying horizontal projection ........................................................264
+Combining Point-and-Figure Techniques with Other Indicators ...........265
+Chapter 16: Combining Techniques  . . . . . . . . . . . . . . . . . . . . . . . . . . . .267
+Standing the Test of Time: Simple Ideas ...................................................267
+Adding a New Indicator: Introducing Complexity ...................................269
+Choosing a ruling concept ................................................................270
+Studying a case in complexity ..........................................................271
+Expecting a Positive Result ........................................................................276
+Calculating positive expectancy technically ..................................276
+Enhancing positive expectancy by entering 
+gradually and exiting at once .......................................................278
+Evaluating Effi  cient Entries and Ruthless Exits: Setups .........................279
+Starting off early .................................................................................279
+Exiting the setup game ......................................................................280
+Working hard while trading like a pro ............................................280
+Reading promotions carefully ..........................................................281
+Chapter 17: Considering a Trading System  . . . . . . . . . . . . . . . . . . . . . .283
+Defi  ning a Trading System ..........................................................................284
+Meeting the strict requirements ......................................................286
+Finding your place on the spectrum ...............................................287
+Discovering Why Mechanical Systems Fail ..............................................287
+Fooling around with new ideas ........................................................288
+Backtesting until you’re blue in the face ........................................288
+Not knowing your time frame ...........................................................288
+Practicing self sabotage ....................................................................289
+Following Big-Picture Rules ........................................................................290
+Stopping out versus the stop-and-reverse......................................290
+Trading more than one security ......................................................290
+Don’t trade on too little capital ........................................................291
+Buying a Trading System ............................................................................292
+Overcoming phony track records....................................................292
+Looking under the hood ....................................................................293
+Picking the Tool, Not the Security .............................................................293
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 14 ---
+Technical Analysis For Dummies, 2nd Edition 
+xviii
+Par t VI: The Par t of Tens ........................................... 295
+Chapter 18: Ten Secrets of the Top Technical Traders . . . . . . . . . . . .297
+Trust the Chart ............................................................................................297
+Befriend the Trend ......................................................................................298
+Understand That You Make Real Cash Money Only When You Sell .....298
+Take Responsibility .....................................................................................299
+Avoid Euphoria and Despair ......................................................................299
+Focus on Making Money, Not Being Right ................................................300
+Don’t Let a Winning Trade Turn into a Losing Trade .............................300
+Sidestep the Temptation to Curve Fit .......................................................301
+Know When to Hold ‘Em and When to Fold ‘Em ......................................301
+Diversify ........................................................................................................302
+Chapter 19: Ten Rules for Working with Indicators. . . . . . . . . . . . . . .303
+Listen to the Price Bars ..............................................................................303
+Understand Your Indicator ........................................................................304
+Trade What You See ....................................................................................304
+Use Support and Resistance ......................................................................304
+Follow the Breakout Principle ....................................................................305
+Watch for Convergence and Divergence ..................................................305
+Backtest Your Indicators Properly ............................................................305
+Acknowledge That Your Indicator Will Fail .............................................306
+Accept That No Secret Indicators Exist ....................................................306
+Play Favorites ...............................................................................................306
+Chapter 20: Ten Ways the Market Has Changed  . . . . . . . . . . . . . . . . .307
+Technical Analysis Is Universally Accepted ............................................307
+Algorithmic Trading Is on the Rise ............................................................308
+Foreign Exchange Is More Prevalent .........................................................308
+Hard Assets Have Revived Interest ...........................................................309
+Intermarket Trading Is Blooming ...............................................................309
+Leverage Is Dangerous ................................................................................310
+Internationalization Is Becoming More Popular ......................................310
+Hedge Funds and Sovereign Wealth Funds Are the New Big Dogs .......311
+Platforms Are Emerging ..............................................................................312
+Exchange-Traded Funds Have Made Their Mark .....................................312
+Appendix: Additional Resources ................................. 313
+The Bare Minimum ......................................................................................313
+Online resources ................................................................................313
+Charting software ..............................................................................314
+Additional Reading ......................................................................................315
+Index ....................................................................... 317
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 15 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 16 ---
+2
+Technical Analysis For Dummies, 2nd Edition 
+The good news is that 
+For Dummies
+ books are designed so that you can jump 
+in anywhere and get the information you need. Don’t feel that you have to 
+read every chapter — or even the entire chapter. Take advantage of the table 
+of contents and index to find what you’re looking for, and check it out.
+Conventions Used in This Book
+To help you navigate this book, I use the following conventions:
+ ✓ 
+Italic
+ is used for emphasis and to highlight new words or terms that are 
+defined.
+ ✓ 
+Boldfaced
+ text is used to indicate keywords in bulleted lists or the 
+action part of numbered steps.
+ ✓ 
+Monofont
+ is used for Web addresses.
+What You’re Not to Read
+I intend for this book to be a pleasant and practical read so that you can 
+quickly find and absorb the information you want. However, I sometimes 
+couldn’t help going a little bit deeper or relaying information that expands on 
+the basics. You might find this information interesting, but you don’t need it 
+to understand what you came to that section to find.
+When you see a sidebar (a gray-shaded box of text) or text flagged with the 
+Technical Stuff icon, know that the information is optional. You can lead a full 
+and happy life without giving it a glance. (But aren’t you curious? A little?)
+Foolish Assumptions
+Every author must make assumptions about her audience, and I’ve made a 
+few assumptions that may apply to you:
+ ✓ 
+You’ve never put a dime into a security but you plan to; and when you 
+do, you intend not to lose it.
+ ✓ 
+You’re reasonably well versed in the trading game, but you’re looking for 
+new tools to become a more effective trader and improve your profits.
+ ✓ 
+You’re tired of the buy-and-hold approach in which your returns seem 
+unrelated to the supposed quality of the security you bought.
+ ✓ 
+You want to find out how to sell. You know how to buy, but timing your 
+sales ties you up in knots.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 17 ---
+3
+ 
+Introduction
+ ✓ 
+You’ve experienced some setbacks in the market, and you need an 
+approach to make that money back.
+ ✓ 
+You want to know whether technical analysis has any basis in reason 
+and logic — or whether all technical analysts are crackpots.
+If any of these descriptions fits the bill, then you’ve picked up the right book.
+How This Book Is Organized
+I’ve arranged 
+Technical Analysis For Dummies 
+into six parts. Parts I and II 
+introduce you to the field of technical analysis, and Parts III through V intro-
+duce you to nuts and bolts — the indicators. What’s that leave? The famous 
+For Dummies
+ Part of Tens — Part VI.
+Part I: Defining Technical Analysis
+The point of technical analysis is to help you observe prices in a new way 
+and to make trading decisions based on reasonable expectations about 
+where “the market” is going to take the price. This part shows you how to 
+view security prices as the outcome of crowd psychology.
+Part II: Preparing Your Mind 
+for Technical Analysis
+Before you plunge into risking hard-earned cash on securities trading, you have 
+to realize that it’s not the security that counts; it’s the trade. Each trade has two 
+parts — the price analysis and 
+you. 
+Price analysis tools are called 
+indicators,
+ and 
+you have to select the indicators that match your personality and preference 
+for risk. But most people don’t know their risk preference when they start out 
+in securities trading (which changes over time, anyway), so you have a chicken-
+and-egg situation. By studying the kinds of profit and loss outcomes that each 
+type of indicator delivers, you can figure out your risk preferences.
+Part III: Observing Market Behavior
+The price bar and its placement on the chart deliver a ton of information 
+about market sentiment. It doesn’t take much practice to start reading the 
+mind of the market by looking at bars and small patterns. The payoff is cold, 
+hard cash, but you have to be patient, imaginative, and thoughtful.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 18 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 19 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 20 ---
+6
+Technical Analysis For Dummies, 2nd Edition 
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 21 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 22 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 23 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 24 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 25 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 26 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 27 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 28 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 29 ---
+15
+ Chapter 1: Opening the Technical Analysis Toolbox
+Taking a Closer Look at the Many 
+Faces of Trendedness
+Trend
+ means different things to different people. Trend is such a wide and 
+flexible concept that a large variety of definitions is possible. In fact, to be 
+pragmatic, you can say that a trend is a price move that your indicator identi-
+fies. In other words, you can define trend according to technical measures 
+that appeal to your sense of logic and what works for you. In this book, defi-
+nitions of trendedness are spread out under various technique headings so 
+that you can choose which definition of trendedness suits your personality 
+and trading style.
+Quantifying trendedness
+Creating a chart like the one in Figure 1-1 is easy. To illustrate classic trend 
+behavior, I could’ve taken any security out of thousands in my database and 
+found some period of time over which the security’s price looked like this 
+chart. However, I could have also found many time periods when this same 
+security was not trending. In fact, some securities are frequently in a trend-
+ing mode, others seldom trend, or their trends are short lived. To complicate 
+matters, some securities exhibit a “habit” of tidy trending while others trend 
+in a sloppy way (with high variability around the average).
+Charles Dow may have started the ball rolling in technical analysis over 100 
+years ago, but in the grand scheme of things, we’re still in frontier days. Ask 
+a group of technical traders, “What percentage of time are securities trend-
+ing and what percentage of the time are they nontrending?” and you will get 
+a different answer from each person. Each technical analyst has a different 
+idea about the percentage of time securities are trending based on his own 
+personal definition of trendedness and the time frame he looks at.
+Choosing a definition
+No single definition of trendedness is the universal gold standard on which 
+everyone agrees, so it’s hardly surprising that no one can say, “Securities are 
+trended 
+x 
+percent of the time.” Just about any generalization about trended-
+ness can be demonstrated — or rebutted.
+For example, I trade foreign exchange, and in my experience, the pound, the 
+euro, and the yen are trended about 60 percent of the time. I say that because 
+60 percent of the time, I can identify a directional bias by using 
+my
+ tools on 
+my
+ time frames. However, someone else may say currencies are trended only 
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 30 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 31 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 32 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 33 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 34 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 35 ---
+21
+ Chapter 1: Opening the Technical Analysis Toolbox
+Technical analysis
+Technical analysis is the broadest of the terms. It covers hand-drawn lines 
+as well as grand theories of price cycles. In short, technical analysis is a term 
+encompassing all the tricks and techniques.
+Technical analysis is not confined to just math-based techniques, as some 
+folks may think. Using math is a breakthrough and a curse. Math may out-
+perform human judgment and the human eye, as many an optical illusion 
+has proved, but it’s not true that numbers never lie. Numbers lie all the time 
+in price analysis! You can have a textbook-perfect trend with ten confirming 
+indicators, and it can still run into a brick wall — really bad news that trashes 
+the price of the security. Math can never overcome the inconvenient fact that 
+fresh news, which no one can predict, may overwhelm any price trend.
+Keeping your bulls and bears straight: 
+A word about words
+A 
+bullish market
+ is one that is rising, and a 
+bearish market
+ is one that is falling. A 
+bull
+ is an 
+optimist who thinks prices will rise; a 
+bear
+ is a 
+pessimist who thinks prices will fall. Bull and 
+bear are oversimplifications. But those words 
+are commonly used in discussing securities 
+markets. Accept them. The word 
+bull
+ applies 
+to the long-term holder as well as the in-and-
+out quick-trade artist. The point is that bull and 
+bear, or bullish and bearish, are useful short-
+hand words that summarize market players and 
+market sentiment as either positive and optimis-
+tic (prices will rise) or negative and pessimistic 
+(prices will fall).
+A lot of people don’t like those words, finding 
+them to be coarse, undignified, and often inac-
+curate. When you buy a security for an expected 
+long-term holding period, you feel positive about 
+the security, but the word 
+bullish
+ sounds emo-
+tional and doesn’t describe the deeply intellec-
+tual process you went through in selecting that 
+particular security. When you sell a security, you 
+may not appreciate being named a bear. You 
+may not have had a negative attitude toward that 
+security — you just wanted the money from the 
+sale for some other purpose.
+Some critics complain that technical analysis 
+uses far too much jargon that is not intuitively 
+obvious, and sometimes just plain ridiculous 
+(although bull and bear are not confined to 
+technical analysis). The only answer is that 
+every field has its lingo, and I introduce it as 
+gently as possible. When you take a course in 
+cooking, you have to understand the meaning of 
+sauté,
+ 
+blanch,
+ and 
+braise. 
+The lingo of techni-
+cal analysis is no more difficult or silly than the 
+lingo of fine cooking.
+But it does have some additional problems. Not 
+everybody agrees on word usage. A 
+bearish 
+market
+ is one in which prices are falling. It rises 
+to the status of 
+bear market
+ (no -
+ish
+) when it 
+has fallen by 20 percent or more from a peak for 
+a sustained period. A 
+bull market
+ is one that has 
+risen at least 20 percent for a sustained period 
+from a major low. Some writers, even experts, 
+call 
+any 
+big move a bull or bear market when 
+they should use a more-careful phrase, such as 
+“the market has a bullish tone.” In short, market 
+commentators are prone to exaggeration and 
+sloppy use of language. Be aware of this short-
+coming. Check the facts before you go bulling 
+or bearing your way through the market.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 36 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 37 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 38 ---
+24
+Part I: Defining Technical Analysis 
+Securities aren’t socks: The demand effect
+Securities are different from cars, bread, and socks. You don’t buy a security 
+for the joy of owning it and using it. You can’t drive it, eat it, or wear it. Aside 
+from getting a dividend or coupon payment, the only reason to buy a security 
+is to sell it again, preferably for more than you paid for it. Unless you’re a 
+merchant, you hardly ever buy anything with the idea of selling it again — 
+except securities.
+In standard economic thinking, the law of supply and demand states that 
+demand for an item depends on its price, which is a function of scarcity. If 
+something is rare, it’s expensive. At higher and higher prices, demand falls 
+off. At some point, the high price induces suppliers to produce more of the 
+thing, whereupon the price falls. 
+Equilibrium
+ consists of demanders and sup-
+pliers finding the mix of quantity and price that both parties find acceptable. 
+This process is called 
+price discovery,
+ and it can take time.
+In contrast, in securities trading, the pricing process is like the pricing pro-
+cess in an auction. For one thing, prices move a lot faster. Plus, in an auction 
+(such as the online auctioneer eBay), demand for the item often rises as the 
+price rises. If you ever participated in an auction, you probably paid more for 
+something than you should have. But you just couldn’t let the other guy win, 
+right? Every time someone else outbids you, you want the item more than 
+ever and become determined to be the winner. The intrinsic value of the item 
+doesn’t matter. Sound familiar? You may even have an object or two in the 
+hall closet you’re ashamed of having bought at an auction. I certainly do.
+In an auction (whether live or online), what gets your blood running is that 
+someone else also wants to buy the item in question. Visible demand begets 
+more demand. Auction economics are contrary to what traditional econom-
+ics teaches — that demand will 
+decrease
+ as the price rises. In the auction 
+situation, demand 
+increases
+ as the price rises. The item may or may not be 
+actually scarce in the real world. It doesn’t matter.
+The immediacy of the auction is what skews prices, sometimes to absurd 
+levels. Later, when suppliers see the high prices, they may indeed be able 
+to find or produce more of the item — but by then, the specific demand 
+dynamic of that one auction is gone.
+Creating demand from scratch
+When you are wearing your investor hat, you may buy stocks and bonds 
+chiefly to get the dividend or the interest rate coupon, with capital gain on 
+the price a secondary consideration. When you are wearing your trader hat, 
+you buy a security because you think the price will rise. You decide to sell 
+because you have a profit that meets your needs or because you have taken 
+an intolerable loss. You seldom think about the true supply of the security.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 39 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 40 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 41 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 42 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 43 ---
+29
+ Chapter 2: Uncovering the Essence of Market Movement
+Does this sound too good to be true? Well, it is. Mean-reversion trading 
+ideas have the appearance of applying basic statistical concepts to securi-
+ties prices to derive trading rules, but mean-reversion trading faces severe 
+obstacles, such as:
+ ✓ 
+What is the ideal lookback period to determine the average? Say, for 
+example, that Blue Widget stock over the past two years averaged $20 — 
+but that $20 average incorporates a few abnormal prices like $1 and $40. 
+An average can disguise multiple deviations that have already occurred.
+ ✓ 
+Is it true that securities prices are normally distributed? Statisticians 
+say that securities prices are not actually normally distributed — they 
+just look that way sometimes. In technical analysis, your primary goal 
+is to determine whether your security exhibits a price trend. You also 
+want to know how strong the trend is and whether it might be ending 
+soon. To accept the assumption that the distribution of prices will be 
+normal is the same thing as saying that you know in advance where the 
+price trend will end — at or near the price represented by the average 
+plus one standard deviation. If the price goes higher than the price that 
+one standard deviation dictates, the trading rule embedded in the mean-
+reversion trading technique would have you sell.
+  You consider the security “overpriced” on a statistical basis. And yet 
+you can’t be sure that the other traders in the market performed exactly 
+the same analysis as you did. Even if they are using the mean-reversion 
+concept, maybe they used a different lookback period to calculate the 
+average. Because the other traders in this security don’t see the security 
+as overpriced, they may keep buying, and buying, and buying — push-
+ing the price to the equivalent of the guy in the room standing 7 feet 10 
+inches. The opposite is true, too. The mean-reversion process would not 
+identify the situation where the price keeps going to zero.
+Identifying and Responding 
+to Crowd Extremes
+Statistical analysis cannot capture the nuances of crowd behavior. One way to 
+get a handle on crowd behavior is to master the key terms referring to crowd 
+behavior. These terms range from general trading-lore descriptions to words 
+that are specific to technical analysis. Notice that most of the lingo applies to 
+crowd extremes. These words and phrases, whether old news or brand-new to 
+you, are important as you navigate the technical trading waters.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 44 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 45 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 46 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 47 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 48 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 49 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 50 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 51 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 52 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 53 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 54 ---
+40
+Part I: Defining Technical Analysis 
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 55 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 56 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/

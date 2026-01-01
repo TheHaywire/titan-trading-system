@@ -1,0 +1,569 @@
+
+--- Page 295 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 296 ---
+282
+Part V: Flying with Dynamic Analysis 
+ ✓ 
+If trading discipline is a problem for you, trading psychologists and 
+coaches can help — but discipline is a set of personal habits that you 
+can’t acquire from anyone else — you can only build it internally. The 
+heart of “trading like a pro” is the trading discipline, not the indicator.
+Some reputable technical traders offer follow-along setup trading in seminars 
+or online, for a fee, in which you can see the price action on the chart and 
+hear the trader’s commentary every few minutes. What you find out from par-
+ticipating in such a training course has less to do with identifying the setup 
+and more to do with sharing the pro’s attitude toward exploiting a promising 
+situation, but knowing how to retreat from a loser — without regret.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 297 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 298 ---
+284
+Part V: Flying with Dynamic Analysis 
+Next, consider that
+ you
+ change. Your risk appetite changes. Your patience in 
+dealing with complexity may go down (or up). Finally, the market changes. By 
+this I mean that until traders can make indicators instantly adaptive to chang-
+ing volatility, the human mind is still a faster and more accurate computer 
+than a computer. Where robots do excel is in speed of execution, which can 
+be critical in trading on news releases and in arbitrage models.
+Having just poured cold water on the idea of building a system, why include 
+this chapter at all? Two reasons. First, building a system forces you to exam-
+ine indicator effectiveness and reliability in a strict and fact-based way. It 
+also opens the door to refining your money-management rules, which often 
+yields as much or more profit than replacing indicators or adjusting indicator 
+parameters. Second, the process is a scientific one. You create a hypothesis, 
+you test it, and you get results that can be evaluated to refine the hypothesis 
+for another round of tests. The scientific process is disciplined. If you aren’t 
+scientifically trained or oriented, having a system is invaluable to help you 
+discard sloppy thinking, unwarranted assumptions, and general bias.
+Defining a Trading System
+The term 
+trading system
+ has different meanings to different people. 
+Systematic 
+trading 
+can be as simple as a single indicator and a stop-loss rule (for more 
+on these topics see Chapters 4 and 16). In fact, most folks in the technical 
+analysis field now refer to any trading regime as a 
+system,
+ even when it 
+doesn’t meet the strict requirement of full automation. In this chapter, I 
+speak of a 
+trading system
+ in the strictest sense — every decision is dictated in 
+advance by the indicators and trading rules that you set down.
+A trading system is built, block by block, by accumulating trading rules to 
+convert indicators or other data inputs into buy/sell signals. A trading system 
+becomes a robot when it executes the trades as well as determines them. 
+These decisions include position size and other aspects of the trading plan. 
+Instead of laboriously figuring out how many shares of Blue Widget to buy or 
+sell depending on your changing risk preference and market volatility (see 
+Chapter 16), the machine does it for you. Instead of selecting from among a 
+menu of indicators and trading rules to reenter after a stop or target is hit, 
+the machine does it for you.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 299 ---
+285
+ Chapter 17: Considering a Trading System
+Super systems
+Algorithmic trading is the fusion of technical 
+analysis with efficient order entry, and banks 
+and fund managers initially used this method 
+to get an advantage in execution speed. One 
+subset consists of “high-frequency” traders 
+whose machines can place trades at literally 
+the speed of light (or just under it), whereas the 
+human trader may take as long as five or ten 
+seconds to make a trading decision after the 
+release of news or the appearance of a trading 
+opportunity.
+Information input needs to be as fast as output 
+(the trade orders). Data and news vendors, for 
+a special price, make information available to 
+big institutions fractionally faster than to the 
+general public, too. The innate fairness of this 
+fact is under question today. Algo trading may 
+account for as much as 75 percent of all securi-
+ties trading in the U.S. Does this mean the trad-
+ing game is rigged against the little guy? If you 
+want to do lightning-fast arbitrage, yes. If you 
+are trend-following, maybe not. You can find 
+any number of equally valid ways to trade the 
+same security.
+The same problems arise in algo trading as in 
+any system. Computer programming is deeply 
+specific. If the program fails to include every 
+contingency, it doesn’t have a brain that auto-
+matically falls back to some kind of default 
+mode. Data errors caused a “flash crash” in 
+May 2010, when the Dow fell 998 in under an 
+hour and some $40 stocks were priced at $1. 
+Experts doubt that this type of occurrence due 
+to data error is the last.
+When a trade goes bad in some unprecedented 
+way, humans have a fallback — they exit. But 
+computers don’t watch TV or read newspa-
+pers, so if the trade goes bad, it may have no 
+programmed instructions on what to do until 
+after the event starts being reflected in prices. 
+Markets are notoriously slow to respond to 
+event shocks. This is one time the human is 
+faster.
+The idea of automating trading is not innately 
+wrong. After all, the equivalent of robots can fly 
+an airplane and even land it. But the mechani-
+cal and electronic contingency planning under-
+lying avionics is vast and has taken decades, 
+and superlative as it is, would still not be able 
+to land a very large plane on the Hudson River 
+after a bird strike. At a guess, engineers are 
+working on it.
+Algo trading is newer and presumably less far 
+advanced than avionics, although the big insti-
+tutions aren’t disclosing information on their 
+top-secret systems. We can draw inferences, 
+though. First, big institutions have made big 
+investments in algo trading that are deliver-
+ing a big payoff. In theory, you could duplicate 
+the effort in every way except high-frequency 
+trading (unless you’re willing also to pay for 
+advance information) and market making — 
+offering a two-way price to any comer for any 
+size trade.
+The second deduction is that vendors of auto-
+mated systems or robots have almost certainly 
+not put hundreds of million of dollars into the 
+design. If they had, they wouldn’t be promot-
+ing it to you for $500 or $5,000. It would literally 
+be worth more than that. If the system were a 
+fabulous design, they would sell it to a big insti-
+tution for millions. A third flaw in retail-level 
+systems and robots is that the designer has 
+embedded into it his own trading philosophy, 
+by which I mean choice of indicators and risk 
+appetite. Risk appetite is deeply personal, as I 
+discuss in Chapter 16. The robot designer may 
+be willing to lose, say, $3 in an $8 initial buy 
+whereas your stop would be half that, or $1.50. 
+Buying somebody else’s system is always going 
+to disappoint.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 300 ---
+286
+Part V: Flying with Dynamic Analysis 
+Meeting the strict requirements
+A trading system is a 
+mechanical
+ 
+trading system 
+when it dictates every single 
+decision, leaving no latitude for the operator to inject a subjective decision. 
+Definitions for a mechanical trading system vary, but most systems designers 
+would agree on the bare minimum:
+ ✓ 
+You backtested every indicator and combination of indicators over a 
+large set of historical data and have determined that the indicator set 
+generates a favorable gain-loss ratio.
+ ✓ 
+The system contains enough trading rules so that whatever the con-
+tingency, you never need to make a judgment call. You have already 
+provided directions ahead of time. As noted in a previous section, this 
+really cannot be done in full. Why? Because of what Nassim Nicholas 
+Taleb named black swans — highly improbable events. Do traders ever 
+get a 
+new
+ black swan? In other words, an event shock of a type never 
+seen before? Maybe not. Human history is a long affair and perhaps 
+nothing is ever really new. But programming every contingency into 
+trading rules is a vast and probably impossible task.
+ ✓ 
+You follow the system without fail and without overriding the signals 
+by using judgment. You take every trade that the system gives you, if 
+only because you never know which signal is the one that’ll generate the 
+juicy profit. And in most systems, the successful backtest track record 
+depends on those big profits to offset many small losses.
+Meeting the designers
+Books, articles, and Web sites abound on the 
+topic of technical trading systems, but who are 
+these gurus and system designers behind it 
+all? Usually they’re self-trained “experts” (and 
+a surprising number are drop-outs). They have 
+mastered one or more of the software pack-
+ages designed solely for technical analysis. 
+Sometimes they program their own software. 
+System designers are college math professors, 
+engineers, medical doctors, economists, histo-
+rians, musicians, and practitioners of dozens of 
+other lines of work. They run the gamut from bril-
+liant, insightful, and inspiring to self-important, 
+argumentative, and petty (just like any other field).
+System designers are usually adept at math and 
+computer programming, although often they’re 
+not very good traders, as they themselves may 
+admit. This reality isn’t really surprising because 
+math and computer programming are com-
+plex and intricate, while trading can be mind-
+bogglingly simple. Some designers start with 
+programming and apply it to markets. Some start 
+with markets and use programming as a tool. It’s 
+amusing and intriguing that many technical trad-
+ers barely passed high school algebra but take 
+home high six-figure profits, while many know-
+it-all system designers barely scrape by.
+Why pay attention to system designers if they’re 
+not successful traders? Because you never 
+know when you’ll get a “Eureka!” moment and 
+discover one indicator or one rule that makes all 
+the difference to your own trading performance.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 301 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 302 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 303 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 304 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 305 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 306 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 307 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 308 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 309 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 310 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 311 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 312 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 313 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 314 ---
+300
+Part VI: The Part of Tens 
+rules that impart discipline to every trading decision in a conscious effort to 
+overcome the emotions that accompany trading. Trading is a business, and 
+business should be conducted in a nonemotional manner.
+Focus on Making Money, 
+Not Being Right
+When you ask brokers and advisors for the single biggest character flaw of 
+their customers, they all say the same thing, “The customer would rather be 
+right than make money.” One case stands out: Refusing to take a loss. Either 
+the trader didn’t have a stop-loss rule in the first place (a situation you can 
+avoid by checking out Chapter 5), or he refused to obey it. To take a loss says 
+to him that he’s wrong about the direction of the security, and he takes it as a 
+personal affront.
+Some people have an unusually hard time facing losses, and because they 
+can’t take a small loss, they end up taking big ones, which only reinforces the 
+fear and loathing of loss. Soon you’re not trading systematically, but on emo-
+tion — and worse, the single emotion of fearing losses. If you start falling into 
+this morass, stop trading. Develop a different trading plan that is designed to 
+takes fewer losses.
+Don’t Let a Winning Trade 
+Turn into a Losing Trade
+You can have a fine trading system with excellent indicators properly back-
+tested for the securities you’re trading but still be a lousy trader if you don’t 
+have sensible trading rules. A good trader differentiates between indicators 
+(which only indicate; see Chapter 4) and trading and money-management 
+rules (which manage the risk; see Chapter 5).
+How can a winning trade turn into a losing trade? Many ways, including
+ ✓ 
+Failure to use a stop-loss.
+ ✓ 
+Adjusting perception of risk while the trade is in progress by look-
+ing at a new indicator that’s not backtested and not part of the trad-
+ing plan. 
+It’s okay to use a new indicator in mid-trade if you’re sure of 
+what the new indicator really means, but not if it’s only a wild guess, or 
+worse, the advice of some guru.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 315 ---
+301
+ Chapter 18: Ten Secrets of the Top Technical Traders
+ ✓ 
+Tricking yourself into thinking that the market “owes” you the high-
+est price it already attained.
+ Your indicators tell you that the price is 
+not likely to go back to the old high but that’s the amount of money you 
+want to make. You’re trying to tell the market what to do, which never 
+works. This is how you start to see what you want to see on the chart 
+rather than what’s there — in other words, wishful thinking.
+Following your trading plan takes guts. Quantify the amount of loss before 
+placing the trade and accept the losses that do occur (and they will!). Eat 
+your spinach — take the darn loss and move on. This principle is trader 
+discipline, and if you don’t have it, you will not be a successful trader.
+Sidestep the Temptation to Curve Fit
+Just because an indicator “fits” your chart of historical data doesn’t make 
+it a workable indicator for the future. 
+Curve-fitting
+ refers to backtesting your 
+indicators on historical data to see which parameters would have worked 
+the best (see Chapter 4). A good technical trader doesn’t curve fit but rather 
+backtests indicators by using realistic assumptions. If you overanalyze indi-
+cators so that they’re a perfect fit for the past, they almost certainly fail to 
+work in the future.
+Acknowledge that it’s okay to have numerically more losing trades than win-
+ning trades as long as the gain-loss ratio is more than 1:1. In the same vein, if 
+you’re buying someone else’s trading system, be sure that it’s not just some 
+bright idea that would’ve worked in the past but is so complex and detailed 
+that it won’t work on a broader range of conditions.
+Know When to Hold ‘Em 
+and When to Fold ‘Em
+Position sizing is a thorny subject on which statistics experts disagree. Is 
+there a single best portion of your capital stake to bet on any one round of 
+trading? Yes, depending on which theory you accept. You may not want to 
+get into the theoretical discussion of position sizing, but even so, you know 
+that in poker, if you have four aces, you bet more than if you have a pair of 
+sevens.
+Likewise, in securities trading, you need to rely on your indicators to tell you 
+whether you have a good hand and can scale up the amount at risk, or have 
+a dud and may need to tighten stops or even fold. The more confirmation of 
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 316 ---
+302
+Part VI: The Part of Tens 
+a buy/sell signal you can get, the safer it is to place the trade. For example, if 
+you have only one indication that the trend is turning your way, you can bet 
+small, and add to the trade as confirmation comes in from other indicators. 
+Or you can just wait for all the confirmations. Either method is “right,” but 
+only one method is right for 
+you
+ and your risk appetite.
+Diversify
+Diversification reduces risk. The proof of the concept in financial math won its 
+proponents the Nobel prize, but the old adage has been around for centuries: 
+“Don’t put all your eggs in one basket.” In technical trading, diversification 
+applies in two places:
+ ✓ 
+Your choice of indicators:
+ You improve the probability of a buy/sell 
+signal being correct when you use a second, noncorrelated indicator 
+to confirm it. You don’t get confirmation of a buy/sell signal when you 
+consult a second indicator that works on the same principle as the first 
+indicator. Momentum (see Chapter 13) doesn’t confirm relative strength 
+because it adds no new information. Widen your horizon beyond a few 
+indicators, and seek different concept indicators instead of torturing 
+old indicators to come up with better parameters.
+ ✓ 
+Your choice of securities:
+ You reduce risk when you trade two securi-
+ties whose prices move independently from one another. If you trade a 
+technology stock, you achieve no diversification at all by adding another 
+technology stock. Instead, you may get a better balance of risk by adding 
+a stock from a different sector. If you trade metals futures, add some-
+thing from agriculture or finance to get diversification. You can estimate 
+degree of correlation scientifically with a spreadsheet or informally by 
+eye (charting both securities in the same space).
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 317 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 318 ---
+304
+Part VI: The Part of Tens 
+Understand Your Indicator
+Use indicators that make sense to 
+you
+ in terms of crowd behavior. You need 
+to use an indicator that you trust, and you can’t trust an indicator if you don’t 
+understand how it reflects crowd behavior. Don’t use an indicator mechani-
+cally because some self-styled expert says that it has magical properties. The 
+world is full of great indicators. Get your own.
+If math isn’t your strong suit, don’t let it hold you back from using math-
+based indicators. You don’t need to know the math behind an indicator if you 
+understand how it works. Think of technical analysis as a giant department 
+store full of indicators. One department or another has an indicator that can 
+work for you. If you can’t find it, keep looking.
+Trade What You See
+Patterns are indicators, too. Prices never move in a straight line, at least not 
+for long, and patterns can help you identify the next price move. When you 
+see a double bottom, you can feel confident that the right trade is to buy — 
+and this principle is true well over half the time and normally returns a gain 
+of 40 percent. Some patterns are easy to identify and exploit, while others 
+may elude you. If you can’t see it, don’t trade it. Patterns also aid you in 
+seeing a big picture when you change your chart’s time frame (from daily to 
+weekly, for example). Finally, you don’t have to believe in elaborate theories 
+about cycles or Fibonacci numbers to use a Fibonacci retracement pattern. 
+Many experienced traders eschew math-based indicators and use only pat-
+terns, and for this reason alone, it pays to find out how to see patterns.
+Use Support and Resistance
+Support and resistance (see Chapter 10) are valid concepts that all tech-
+nical traders respect. You can pinpoint support and resistance by using 
+any number of techniques, including hand-drawn straight lines or bands 
+and channels created out of statistical measures. Momentum and relative 
+strength indicators can help estimate support and resistance, too. To pre-
+serve capital, always know the support level of your security and get out of 
+Dodge when it’s broken.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 319 ---
+305
+ Chapter 19: Ten Rules for Working with Indicators
+Follow the Breakout Principle
+The breakout concept (which I cover in Chapters 10 through 12) is univer-
+sally recognized and respected. A 
+breakout
+ tells you that the crowd is feeling 
+a burst of energy. Whether you’re entering a new trade or exiting an existing 
+one, trading in the direction of the breakout usually pays. Studying the condi-
+tions under which real breakouts occur is also beneficial so that you don’t 
+get zapped by false breakouts.
+Watch for Convergence and Divergence
+When your indicator diverges from the price, look out. Something’s happen-
+ing. You may or may not be able to find out why, but divergence often spells 
+trouble. Convergence is usually, but not always, comforting. (This rule refers 
+to convergence and divergence of indicators versus price, not the internal 
+dynamics of indicators like the MACD.) For more on convergence and diver-
+gence, check out Chapter 4 and 12.
+If your security is trending upward and the momentum indicator is pointing 
+downward, you have a discrepancy. The uptrend is at risk of pausing, retrac-
+ing, or even reversing. If you’re risk averse, exit. Look for divergence between 
+price and volume, too. Logically, a rising price needs rising volume to be 
+sustained. The most useful divergence is a paradoxical one, where the price 
+is falling but by less than abnormally high volume would suggest. This diver-
+gence may mark the end of a major downtrend and is more reliable than the 
+percentage retracement or round numbers touted by market “experts.”
+Backtest Your Indicators Properly
+You’re free to use the standard indicator parameters in software packages 
+and on Web sites. Experience shows that the standard parameters are useful 
+over large amounts of data and large numbers of securities — that’s why 
+their inventors chose them. For this reason, some traders never feel the need 
+to perform their own backtests. They accept the standard parameters and 
+put their effort into something else, like bar or pattern reading.
+But if you 
+are
+ going to backtest indicators to refine the parameters, do it 
+right. Use a large amount of price history when testing an indicator — and 
+don’t make the indicator fit history so perfectly that the minute you add 
+fresh data, the indicator becomes worthless (a waste of time called 
+curve-
+fitting
+). Observing price behavior and estimating the range of sensible and 
+reasonable parameters is better than finding the perfect number. The perfect 
+number for the future doesn’t exist.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 320 ---
+306
+Part VI: The Part of Tens 
+Acknowledge That Your 
+Indicator Will Fail
+Indicators are often wrong. Support lines break for only a day or two instead of 
+signaling a new trend as a breakout is supposed to. Textbook-perfect confirmed 
+double bottoms fail the very next day instead of delivering that delicious 40 
+percent profit. And moving averages generate whipsaw losses even after you’ve 
+added every clever and refined filter known to man.
+It’s a fact of life — your indicator will fail and you will take losses in technical 
+trading. Don’t take it personally. Indicators are only arithmetic, not magic. 
+You will take losses in winging-it trading, too. Console yourself with know-
+ing that using indicators reduces losses over winging it, but indicators never 
+eliminate all losses.
+Accept That No Secret Indicators Exist
+Technical traders have devised thousands of patterns and math-based indi-
+cators. They can be combined in an infinite variety of ways over an infinite 
+number of time frames with an infinite number of qualifying conditions. So 
+the idea that somebody has discovered a superior combination of indicators 
+is possible. But none of the indicators is a secret, and no indicator combo is 
+going to be right all the time.
+The secret of successful trading doesn’t lie in indicators. Shut your ears to 
+the guy trying to sell you an indicator that “never fails!” Of course it fails. If 
+it never fails, why would he sell it to you? And why should you have to pay 
+for an indicator in the first place? You don’t. Every indicator ever invented is 
+easily available in books, magazines, and on the Internet.
+Play Favorites
+Indicators are addictive. You read about a new indicator that seems so logi-
+cal and appropriate that it becomes your new darling. Suddenly you can 
+apply it everywhere. It’s good to be adaptive and flexible, but remember 
+that the purpose of using indicators is to make money trading, not to get a 
+new vision of how the world works. Always check that your new indicator 
+plays well with your old indicators. You picked your favorite indicators for a 
+good reason — they help you make good (profitable) trading decisions. Keep 
+discovering new indicators, but don’t fall in love unless the new indicator 
+meshes well with the old ones.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/

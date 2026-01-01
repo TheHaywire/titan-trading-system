@@ -1,0 +1,2320 @@
+
+--- Page 321 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 322 ---
+308
+Part VI: The Part of Tens 
+ ✓ 
+The spread of personal computers to almost every home
+ ✓ 
+The Internet
+So pervasive has technical analysis become that today you can find it in 
+social networks like YouTube and Twitter. Someone who mentioned MACD 
+in 1980 may have been considered a nut job; today if you don’t know the 
+term, you’re hopelessly outdated. Note that change in the investor and trader 
+mind-sets are arising from the retail masses and the software geeks and bro-
+kers who serve them, rather than from the academics or the conventional 
+investment management firms. Technical analysis is the tool of a democratic 
+revolution against security market elites. Now the crackpots are the ones 
+denying the usefulness of technical analysis.
+Algorithmic Trading Is on the Rise
+The rise of algorithmic trading is the logical extension of the acceptance of 
+technical analysis. 
+Algorithmic trading
+ is automated order-entry designed in 
+advance by traders employing computer programming but executed entirely 
+by computers. Algo trading is also named 
+robot trading
+ (and the program is 
+named a robot). Algo trading identifies high-probability trades by using indi-
+cator analysis, arbitrage opportunities, intermarket analysis, or some other 
+aspect of price behavior. Traders widely use algorithmic trading in equity 
+and commodity markets, including foreign exchange, and it accounts for a 
+high and rising percentage of total volume.
+A special variety of algo trading is high-frequency trading that seeks to 
+exploit tiny and momentary price gaps identified directly from electronic 
+information, usually price information but also volume and other inputs. 
+Because computer data processing is far faster than human brain data pro-
+cessing, trades can be executed in rapid-fire manner, with hundreds of trades 
+executed in a minute or two.
+Foreign Exchange Is More Prevalent
+Those individuals discouraged by the difficulty of beating the market or even 
+just keeping even in equities are often seduced by the idea that trading for-
+eign exchange (or FX) is somehow easier and, because of the use of leverage, 
+more profitable. Client standards are low because the broker has the right to 
+close any trade the instant it falls to breakeven, thereby preventing a loss the 
+customer may not be able to cover. A trader is allowed to open an account 
+with a small charge (as small as $500) on a credit card and begin trading the 
+same day.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 323 ---
+309
+ Chapter 20: Ten Ways the Market Has Changed
+A new breed of spot FX retail brokers promote the idea that FX trading is an 
+easy way to get rich quick, even though it should be obvious that in all trad-
+ing, the little guy is 
+always
+ up against big institutions with deeper pockets. 
+Having said that, the FX market is the biggest in the world at about $4 trillion 
+per day and operates virtually 24 hours per day, reducing liquidity risk and 
+the ability of any single player to move the market. The FX market is also 
+fairly immune from insider information, and best of all, it is highly trended 
+and thus suitable for technical analysis.
+Hard Assets Have Revived Interest
+Technical analysis can be applied to any security, even when you know abso-
+lutely nothing about the fundamentals. Technical skills encourage traders to 
+feel qualified to foray into hard assets as well as equities.
+Hard assets
+ include precious metals such as gold and industrial metals such 
+as nickel and copper, as well as oil and more perishable commodities like 
+grains, cocoa, and sugar. Interest in hard assets as an investment class 
+waxes and wanes throughout history, but until recently, trading them was 
+too expensive for the average trader to attempt. Now brokers offer mini-
+contracts, exchange-traded funds, and complex structured deals that allow 
+anyone to participate in the hard-asset markets.
+In addition, during the early 2000s, U.S. commodities exchanges modernized 
+the reporting of volume from next day to same day. Commodity traders still 
+don’t get live real-time volume, as on the equity exchanges, but at least they 
+get it before the sun goes down. Volume can be a critical confirming or warning 
+factor.
+Intermarket Trading Is Blooming
+Because you can apply technical analysis to any security, the resulting wide-
+spread embrace of trading multiple asset classes simultaneously has some 
+odd side effects. Big price moves occur without any real connection to the 
+fundamental supply-and-demand dynamics of one security and often without 
+the technical indicators giving the customary signals (such as overbought 
+or oversold) because of a change in either the fundamentals or technicals in 
+another seemingly correlated security. Oil, for example, moves in an inverse 
+correlation with the U.S. dollar, so you can’t look at only your oil price 
+chart — you also have to look at the chart of euro-U.S. dollar exchange rate. 
+Sometimes gold is inversely correlated with the dollar and sometimes with 
+the euro.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 324 ---
+310
+Part VI: The Part of Tens 
+Intermarket trading capability has resulted in some bizarre and frightening 
+outcomes, like the number of barrels of oil referred to in crude oil futures 
+contracts exceeding the number of barrels of oil in existence during the late 
+2000s. The key concept behind intermarket integration is risk appetite and 
+its mirror image, risk aversion. Traders become risk averse when indicators 
+suggest a security is overbought, but now traders become risk averse when 
+some other security’s indicators suggest it is overbought. This factor adds 
+another layer of needed work on top of the chart work you’re doing on your 
+security.
+Leverage Is Dangerous
+When your indicators fall in line one by one to increase your confidence 
+in your trade, you may be tempted to increase your position by borrow-
+ing money to supplement your starting capital. 
+Leverage
+ is the use of debt 
+issued by brokers to traders. In the U.S. equity markets, the most a trader 
+can borrow from the broker is 50 percent of the face amount of the trade, 
+with each broker applying its own standards so that the amount of leverage 
+extended to the trader is often a great deal less. In commodity trading and in 
+some foreign markets, the allowable leverage is a lot higher.
+In foreign exchange, for example, leverage of 100 to 300 times used to be 
+commonplace but was reduced in 2010 to 50 times. Even this reduction in 
+leverage means that the trader with a capital stake deposited at the broker 
+of $10,000 can trade contracts collectively worth $500,000. It should go 
+without saying that trading with such high leverage is seldom a good idea, if 
+only because you may be tempted to ditch your stops or otherwise engage 
+in wishful thinking instead of heeding your trading rules. Technical analysis 
+can’t stand alone without trading rules.
+Internationalization Is Becoming 
+More Popular
+Due to technology, foreign brokers are able to offer the same services as 
+domestic brokers, often at vastly reduced costs, and escaping U.S. regula-
+tions. For example, in 2009, the National Futures Association instituted a new 
+regulation disallowing a foreign exchange trader from creating a hedging 
+position in the same account (in other words, the first position was long a 
+currency and the new position is short to offset — or hedge — the first one). 
+This regulation applies only to U.S. trading accounts and traders can circum-
+vent it by having an account outside the United States.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 325 ---
+311
+ Chapter 20: Ten Ways the Market Has Changed
+Second, internationalization is seen in the form of domestic investors in a 
+country (such as Japan) that is actively seeking higher returns in foreign mar-
+kets and currencies, even when they’re using domestic brokers who now offer 
+special securities with embedded options like limited foreign exchange risk.
+Last but not least, internationalization takes the form of corporations or sov-
+ereigns issuing securities, usually bonds or specialized forms of bonds, in 
+foreign countries in its own currency or the foreign country’s currency. Some 
+of these securities are wildly complicated, such as a bond-like derivative con-
+tract that offers a fixed 8 percent return for five years on a foreign exchange 
+contract of the Brazilian real-Euro cross rate with a 2 percent floor on foreign 
+exchange losses. Eek!
+Internationalization raises market participation and thus liquidity, but also 
+introduces new uncertainties to your comfort level in your technical analysis. 
+New regulations and the existence of these newfangled exotic contracts and 
+blended securities make it very hard to backtest your indicators. Also, you 
+may think that you know where support and resistance lie on your chart, but 
+you will be wrong if some big institution has an options strike price under 
+or over it. Plus, some event in a foreign country can move the price of your 
+security in a new, never-seen-before way.
+Hedge Funds and Sovereign Wealth 
+Funds Are the New Big Dogs
+Hedge funds were invented in the late 1940s and sovereign wealth funds in 
+1953 (Kuwait) but accelerated as a trend around 2000. Both types of funds 
+embrace trading strategies that travel far beyond the buy-and-hold idea, 
+including sophisticated technical analysis applications as well as the following:
+ ✓ 
+Taking short positions to benefit from down markets
+ ✓ 
+Diversifying holdings into asset classes previously dominated by a small 
+group of specialists (such as oil, metals, and agricultural commodities)
+ ✓ 
+Getting into emerging markets
+Hedge funds and sovereign wealth funds are run by well-educated, advanced-
+math managers who question conventional ways of thinking about markets, 
+and in many cases engage in algorithmic trading, including high-frequency 
+trading. They are the big new players or “agents” in many markets. As techni-
+cal analysis-oriented players with deep pockets, they are market leaders and 
+may promote more trendedness and higher volatility, which means that you 
+need to stay on your toes and keep your indicators adaptive.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 326 ---
+312
+Part VI: The Part of Tens 
+Platforms Are Emerging
+A 
+platform
+ is a computer capability upon which software applications can be 
+built. In trading applications, the platform provider offers two-way data trans-
+mission (prices and analysis to the user and trade orders from the user), usu-
+ally with security, storage, and analytical options built in. Some platforms, 
+such as Metatrader, allow open-source contributions from users that are 
+then available to everyone.
+Among the first major trading platforms was TradeStation, which started as 
+a technical analysis software company and transformed itself into a broker 
+that offers live, online technical analysis woven into the order-entry pro-
+cess. Interactive Data is another broker that joined with data and technical 
+analysis vendor eSignal. Instead of doing your chart work on one PC and then 
+switching to the broker’s electronic order-entry Website, you perform all the 
+functions in one space — and with the platform offering you ideas, analysis, 
+and real-time alerts. Anyone can build an automated trading system using an 
+advanced platform — this is, of course, both a curse and an opportunity.
+Exchange-Traded Funds 
+Have Made Their Mark
+Exchange-traded funds (ETF)
+ is a class of investment fund that bundles 
+together related securities and trades like an individual stock on an 
+exchange. An ETF consists of a basket of securities that trades in its own 
+right as a proxy for the collection. For example, the SPDR (“Spider”) 
+exchange-traded fund serves as a proxy for the S&P 500 index.
+From a single ETF in 1993, the range of ETFs expanded to nearly a thousand 
+ETFs in the U.S. alone, with more being created by the month. Most ETFs rep-
+licate the performance of a stock, bond, or commodity market — or take a 
+position that effectively shorts that market. ETFs are an alternative to mutual 
+funds, which create a pool of generally unrelated securities and almost never 
+outperform the market indices. ETFs, while designed to trade at about the 
+same price as the net asset value of its components, are subject to supply and 
+demand of their own, and prices can vary widely from the collective prices of 
+the underlying securities. ETFs sometimes offer double or triple leverage and 
+can trade erratically, which reduces confidence in your technical analysis.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 327 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 328 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 329 ---
+315
+ Appendix: Additional Resources
+Additional Reading
+I like books. Books are the medium through which other traders deliver new 
+ideas and offer guidance on avoiding mistakes. I begin this section with a list 
+of my favorites. I recommend these resources because they are written by or 
+about real traders who suffered through the process of figuring out how to 
+trade profitably. Note that I organize each book section in the order of what I 
+find most important and useful so you can know where to start reading.
+My favorites
+ ✓ 
+How I Made $2,000,000 in the Stock Market,
+ by Nicholas Darvas (Lyle 
+Stuart)
+ ✓ 
+How I Made $1,000,000 Trading Commodities Last Year, 
+by Larry Williams 
+(Windsor Books)
+ ✓ 
+Long-Term Secrets to Short-Term Trading, 
+by Larry Williams (Wiley)
+ ✓ 
+Trader Vic — Methods of a Wall Street Master,
+ by Victor Sperandeo 
+(Wiley)
+ ✓ 
+Evidence-Based Technical Analysis, 
+by David Aronson (Wiley)
+ ✓ 
+Candlestick and Pivot Point Trading Triggers,
+ by John Person (Wiley)
+ ✓ 
+Profitable Candlestick Trading, 
+by Stephen Bigalow (Wiley)
+ ✓ 
+Market Wizards: Interviews with Top Traders,
+ by Jack Schwager 
+(HarperBusiness)
+Encyclopedias
+ ✓ 
+Trading Systems and Methods, 
+by Perry Kaufman (Wiley)
+ ✓ 
+Encyclopedia of Chart Patterns, 
+by Thomas Bulkowski (Wiley)
+ ✓ 
+Encyclopedia of Candlestick Charts,
+ by Thomas Bulkowski (Wiley)
+ ✓ 
+Encyclopedia of Technical Market Indicators,
+ 2nd Edition, by Robert Colby 
+(McGraw-Hill)
+ ✓ 
+Technical Traders Guide to Computer Analysis of the Futures Market, 
+by 
+Charles LeBeau and David Lucas (McGraw-Hill)
+Classics
+ ✓ 
+Technical Analysis of Stock Trends, 
+by Robert Edwards and John Magee 
+(Saint Lucie Press)
+ ✓ 
+Reminiscences of a Stock Operator, 
+by Edwin Lefevre (Wiley)
+ ✓ 
+Extraordinary Popular Delusions and the Madness of Crowds,
+ by Charles 
+Mackay (Harmony Books)
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 330 ---
+316
+Technical Analysis For Dummies, 2nd Edition 
+Special areas
+ ✓ 
+The Definitive Guide to Point and Figure, 
+by Jeremy du Plessis (Harriman 
+House)
+ ✓ 
+New Thinking in Technical Analysis: Trading Models from the Masters
+ by 
+Rick Bensignor (Bloomberg Press)
+ ✓ 
+Bollinger on Bollinger Bands, 
+by John Bollinger (McGraw-Hill)
+ ✓ 
+Beyond Technical Analysis, 
+by Tushar Chande (Wiley)
+ ✓ 
+Street Smarts,
+ by Laurence A. Connors and Linda Bradford Raschke (M. 
+Gordon Publishing Group)
+ ✓ 
+PPS Trading Sytem, 
+by Curtis Arnold (Irwin)
+ ✓ 
+Advanced Swing Trading, 
+by John Crane (Wiley)
+ ✓ 
+The New Science of Technical Analysis, 
+by Thomas DeMark (Wiley)
+ ✓ 
+The Master Swing Trader, 
+by Alan S. Farley (McGraw-Hill)
+ ✓ 
+Price Pattern & Time: Using Gann Theory in Trading Systems, 
+James A. 
+Hyerczyk (Wiley)
+ ✓ 
+Channels & Cycles: A Tribute to J.M. Hurst, 
+by Brian Millard (Traders 
+Press)
+ ✓ 
+Elliott Wave Principle, 
+by Robert Prechter and Alfred Frost (New Classics 
+Library)
+ ✓ 
+Martin Pring on Market Momentum, 
+by Martin Pring (McGraw-Hill)
+ ✓ 
+Steidlmayer on Markets, 
+by J. Peter Steidlmayer (Wiley)
+ ✓ 
+Maximum Adverse Excursion,
+ by John Sweeney (Wiley)
+Money management
+ ✓ 
+When Supertraders Meet Kryptonite,
+ by Art Collins (Traders Press)
+ ✓ 
+Trading for a Living, 
+by Alexander Elder (Wiley)
+ ✓ 
+How To Take a Chance, 
+by Darrell Huff and Irving Geis (W. W. Norton & 
+Company)
+ ✓ 
+A Mathematician Plays the Stock Market, 
+by John Allen Paulos (Basic 
+Books)
+ ✓ 
+Van Tharp’s Definitive Guide to Position Sizing, 
+by Van Tharp 
+(International Institute of Trading Mastery)
+ ✓ 
+The Mathematics of Money Management,
+ by Ralph Vince (Wiley)
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 331 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 332 ---
+318
+Technical Analysis For Dummies, 2nd Edition  
+• B •
+backtesting
+combined indicators, 269
+evaluating risks of, 72–73
+importance of, 288
+indicators, 305
+optimization, 69–70
+refi
+ ning, 70–71
+bandwagon effect, 25
+bar placement, 114–115
+bars (price).  
+See also
+ candlestick charting
+closing price, 98–100
+daily data, 109–110
+defi
+ ned, 94
+down day, 99
+drawing channels, 185–187
+high, 101–102
+identifying downtrends, 104
+identifying uptrends, 103–104
+importance of, 303
+length, 129–130
+low, 102
+nontrending, 15–16, 109
+opening price, 96–98
+overview, 93–96
+reading, 104–108
+time frames, 108–112
+unreadable, 108
+up day, 99
+zooming in/out, 110–112
+bear/bearish, 21, 100
+bearish divergence, 241
+bearish engulfi  ng candlestick pattern, 147
+bearish market, 21
+bearish sentiment, 42
+beating the market, 17–19
+behavior (crowd)
+compared with individual behavior, 26
+estimating retracements, 26
+identifying, 25–27
+overbought, 30–31
+oversold, 30–31
+overview, 29–30
+retracements, 31–32
+behavioral economics, 34
+benchmark levels, establishing, 67
+Bensignor, Rick (author)
+New Thinking in Technical Analysis: 
+Trading Models from the Masters,
+ 316
+best six months rule, 50
+Beyond Technical Analysis
+ (Chande), 316
+Bigalow, Stephen (author)
+Proﬁ  table Candlestick Trading,
+ 315
+big-picture crowd theories
+Elliott Wave principle, 37–38
+Fibonacci sequence of numbers, 37
+Gann 50 percent retracement, 35–36
+magic numbers, 37
+number of retracements, 38–39
+overview, 34–35
+black box, 292
+blowout (blowoff) top/bottom, 194
+Bollinger bands
+combined with P&F charting, 265
+defi
+ ned, 30
+overview, 250–252
+Bollinger, John (fi
+ nancial analyst), 
+250–252, 316
+Bollinger on Bollinger Bands
+ 
+(Bollinger), 316
+book
+conventions, 2
+icons, 4–5
+organization, 3–4
+recommended, 315–316
+bottom patterns
+blowout, 194
+double, 36, 160–162, 262
+shaven, 142
+triple, 262
+bounce, 159
+box
+Darvas, 165
+size of, 257–259
+Breadth indicators, 48
+breakaway gap, 124–125
+breakout principle, 305
+breakouts
+channel-drawing, 185–186, 187, 197–198
+defi  ned, 16–17, 173
+duration, 191–192
+false compared with real, 189–192
+opening range, 268
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 333 ---
+1 319
+ 
+Index
+orderly compared with disorderly trends, 
+192–193
+overview, 65, 189
+projecting prices after, 262–264
+putting into context, 192–195
+transition from orderly to disorderly, 193
+upside, 262
+bubble, linear regression and NASDAQ, 181
+Bulkowski, Tom (author)
+dead-cat bounce pattern, 159–160
+Encyclopedia of Candlestick Charts
+,
+ 152
+Encyclopedia of Chart Patterns,
+ 156, 315
+measured moves, 165–167
+bull/bear ratio, 47
+bull/bullish, 21, 100
+bullish divergence, 241
+bullish engulfi  ng candlestick pattern, 147
+bullish market, 21
+bullish sentiment, 42
+buy and hold policy, 298–299
+buy on open, 97
+buy on the dip, 36, 38, 126
+buy on the rumor, 101
+buying.  
+See also speciﬁ
+ c topics
+overriding indicators, 68
+scale into the trade, 278
+trading systems, 292–293
+• 
+C 
+•
+calculating
+convergence, 222
+divergence, 222
+momentum, 227–231
+percent rate of change, 230–231
+positive expectancy, 276–278
+RSI, 235–236
+calendar effects, 50–51
+calendar stops, 86
+call, 48
+Candlestick and Pivot Point Trading Triggers
+ 
+(Person), 315
+candlestick charting
+anatomy of, 138–143
+combining with other indicators, 150–151
+continuation patterns, 148–149
+evaluating alone, 151–152
+evaluating emotions, 144–145
+interpreting patterns, 145–147
+overview, 137–138
+reversal patterns, 147–148
+Candlestick Charting For Dummies
+ 
+(Rhoads), 137
+capital
+creating, 12
+losses, 79–80
+preserving, 12
+trading on too little, 291–292
+catch a falling knife, 32–34
+CBOE (Chicago Board Options 
+Exchange), 48
+Chaikin, Marc (stockbroker), 46
+Chande, Tushar (author)
+Beyond Technical Analysis,
+ 316
+chandelier exit, 85
+change
+determining meaning of trading range, 
+130–131
+lookback period, 232
+measured move, 165–167
+rate of, 228–231
+smoothing, 232
+changing
+moving average, 214–217
+positions, 30, 86–89
+channels
+defi
+ ned, 184
+disorderly, 192, 193
+drawing by hand, 185–186, 197–198
+drawing with software, 187
+linear regression channels, 196–199
+orderly, 186, 192–193
+overview, 184–185
+parallel lines, 186
+pivot point support, 199–202
+straight-line, 187–188
+swing point, 184
+using, 188
+Channels & Cycles: A Tribute to J.M. Jurst
+ 
+(Millard), 316
+chart indicators
+%D, 238–240
+%K, 238–240
+adding new, 269–275
+applying, 72
+average true range (ATR), 249–250
+backtesting, 305
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 334 ---
+320
+Technical Analysis For Dummies, 2nd Edition  
+chart indicators 
+(continued)
+Breadth, 48
+choosing, 67–68
+classifying, 60
+combining, 269–275
+combining candlesticks with other, 
+150–151
+combining P&F charting techniques with 
+other, 265
+convergence, 66
+crossover signals, 65
+defi  ned, 41, 59
+divergence, 66
+duration of, 191–192
+establishing benchmark levels, 67
+fading trend, 63
+failure of, 306
+fi
+ xing, 71–72
+judgment-based, 60
+math-based, 60
+optimizing, 68–73
+overview, 63–64, 304
+parabolic stop-and-reverse, 84–85, 265
+refi  ning volume, 46
+rules for working with, 303–306
+signals, 65–66
+size of, 191–192
+smoothed, 240
+swing traders, 61–63
+time frames, 64–65
+trading styles, 61–63
+what they identify, 60–61
+chart patterns
+applying, 260–262
+breaking lines, 157–158
+chart, 155–167
+classic reversal patterns, 160–165
+coloring inside lines, 157–158
+continuation, 115, 148–149, 157–160
+dead-cat bounce, 159–160
+double bottoms and tops, 160–163
+hammer, 145–146
+hanging man, 145–146
+head-and-shoulders, 163–165
+importance of, 304
+measured move, 165–167
+measuring from gaps, 167
+overview, 155–156
+pennants and fl
+ ags, 157–158
+practicing reading, 156–157
+resuming trend after retracement, 
+166–167
+reversal, 115, 147–148, 160–165
+shooting star, 147–148
+three black crows, 149
+three white soldiers, 149
+triangles, 158–159, 261
+charting.  
+See also
+ technical analysis
+candlestick, 137–152
+overview, 20
+paths, 14
+software, 314
+trusting charts, 297–298
+Chicago Board Options Exchange 
+(CBOE), 48
+choosing
+box size, 258–259
+indicators, 67–68
+intervals, 111–112
+moving average types, 216–217
+ruling concepts, 270–271
+trading styles, 61–63
+classifying indicators, 60
+clock stops, 86
+close
+after-hours trading, 98–99
+at the high, 117
+at the low, 117
+price bar, 98–100
+closing price, 98–100
+Colby, Robert (author)
+Encyclopedia of Technical Market 
+Indicators,
+ 315
+Collins, Art (author)
+When Supertraders Meet Kryptonite,
+ 316
+coloring inside lines patterns, 157–158
+combinations (special bar)
+close at high/low, 117
+inside day, 117–118
+outside day, 118–119
+spikes, 119–121
+combining
+adding new indicators, 269–275
+candlesticks with other indicators, 
+150–151
+indicators, 269–275
+positive expectancy, 276–279
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 335 ---
+2 321
+ 
+Index
+setups, 279–282
+simple ideas, 267–268
+common gap, 124
+comparative relative strength, 230
+computers. 
+See
+ software
+confi  gurations, 115.  
+See also
+ price 
+bar combinations; special bar 
+combinations
+confi
+ rmation
+defi
+ ned, 42
+hand-drawn channels, 197–198
+trend indicators, 234–235
+confi  rmation line, 161
+congestion, 176
+Connors, Laurence A. (author)
+Street Smarts,
+ 316
+consolidation, 176
+constant, 216
+contingencies, 54–55
+continuation patterns
+ascending/descending triangles, 158–159
+dead-cat bounce, 159–160
+defi
+ ned, 158
+overview, 115, 148–149
+pennants and fl
+ ags, 157–158
+continuation spike, 121
+contraction of bar high-low, 245
+contrarians and cranks, 49
+controlling losses, 79–80
+conventional support and resistance, 
+260–261
+conventions, explained, 2
+convergence.  
+See also
+ MACD (moving 
+average convergence-divergence 
+indicator)
+calculating, 222
+overview, 66, 221
+watching for, 305
+correction. 
+See
+ retracements
+Corrective Wave, 38
+cost of trading
+overtrading, 72
+profi  t slippage, 70–71
+countervailing bars, 105
+Crabel, Toby (commodities trader), 268
+Crane, John (author)
+Advanced Swing Trading,
+ 316
+cranks and contrarians, 49
+creating
+demand, 24–25
+P&F charts, 256–260
+creating capital, 12
+crossover rule, 206–209
+crossover signal, 65
+crowd behavior
+compared with individual behavior, 26
+estimating retracements, 32–33
+identifying, 25–27
+overbought/oversold, 30–31
+overview, 29–30
+retracements, 31–32
+crowd theories
+Elliott Wave principle, 37–38
+Fibonacci sequence of numbers, 37
+Gann 50 percent retracement, 35–36
+magic numbers, 37
+number of retracements, 38–39
+overview, 34–35
+curve-fi  tting, 72, 301
+• 
+D 
+•
+%D, 238–240
+daily chart, drawing, 259–260
+daily data, 109–110
+daily trading range, 116
+Darvas box, 165
+Darvas, Nicholas (author)
+How I Made $2,000,000 in the Stock 
+Market,
+ 315
+data, daily, 109–110
+data collector, 96
+dead-cat bounce, 159–160
+death cross, 214
+declining issues, 48
+defi  ning trading systems, 284–287
+The Deﬁ  nitive Guide to Point and Figure
+ 
+(Plessis), 316
+Deﬁ  nitive Guide to Position Sizing
+ 
+(Tharp), 77
+demand
+creating, 24–25
+effect, 24
+DeMark, Thomas (author)
+The New Science of Technical 
+Analysis,
+ 316
+deviation, 28
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 336 ---
+322
+Technical Analysis For Dummies, 2nd Edition  
+dip, buy on the, 36, 38, 126
+discretion, 289
+disinformation, 26
+disorderly channels, 192, 193
+distribution
+normal, 27–29
+overview, 30, 46
+divergence.  
+See also
+ MACD (moving average 
+convergence-divergence indicator)
+bearish, 241
+bullish, 241
+calculating, 222
+overview, 66, 221, 233–234
+watching for, 305
+diversifi
+ cation
+how much, 77
+importance of, 302
+portfolio optimization and, 290–291
+doji, 140
+Donchian, Richard (commodities and 
+futures trader), 268
+double bottom pattern, 36, 160–162, 262
+double tops pattern, 36, 162–163, 262
+Dow, Charles (journalist), 13–14
+Dow Theory, 13–14
+down day, 99
+downside breakaway gap, 125
+downtrends
+defi
+ ned, 12
+identifying, 104
+dragonfl  y doji, 141
+drawdown, 291–292
+drawing
+channels by hand, 185–186, 197–198
+channels with software, 187
+daily charts, 259–260
+internal trendlines, 177–182
+linear regression channels, 196–197
+linear regression lines, 178
+real body, 138–139
+rule-based trendlines, 171
+duration of indicators, 191–192
+dynamic lines, simple moving average, 
+205–225
+• 
+E 
+•
+earnings, 34
+eBay Model of Supply and Demand, 23–25
+economics (behavioral), 34
+Edwards, Robert (author)
+Technical Analysis of Stock Market Trends,
+ 
+155, 315
+effi  ciency ratio, 216
+Elder, Alexander (author)
+Trading for a Living,
+ 316
+11, as magic number, 37
+Elliott, Ralph Nelson (accountant), 37–38
+Elliott Wave principle, 27, 38
+Elliott Wave Principle
+ (Prechter and 
+Frost), 316
+EMA (exponential moving average), 
+215–216
+emotion
+avoiding, 299–300
+bull and bear sentiments, 42
+daily trading range, 116
+Elliott Wave principle, 38
+evaluating, 144–145
+put/call ratio, 48
+remembering last price, 53–54
+Encyclopedia of Candlestick Charts
+ 
+(Bulkowski), 152
+Encyclopedia of Chart Patterns
+ (Bulkowski), 
+156, 315
+Encyclopedia of Technical Market Indicators
+ 
+(Colby), 315
+engulfi  ng candlestick pattern, 147
+enhancing positive expectancy, 278–279
+EnsignSoftware, 314
+enter a position, 30
+entry.  
+See also
+ managing trades
+chandelier exit, 85
+timing, 12
+environment
+sampling sentiment, 47–49
+seasonality and calendar effects, 50–51
+spikes, 121
+equilibrium, 24
+Equis Metastock software, 314
+eSignal, 314
+establishing
+benchmark levels, 67
+profi  t targets, 78–79
+ETF (exchange-traded funds), 312
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 337 ---
+2 323
+ 
+Index
+evaluating
+emotions, 144–145
+measured move, 165–167
+risks of backtesting, 72–73
+event, 101
+event risk, 101
+Evidence-Based Technical Analysis
+ 
+(Aronson), 315
+exchange-traded funds (ETF), 312
+excursion (maximum adverse), 83, 247
+exhaustion gap, 126
+exit.  
+See also
+ managing trades
+chandelier exit, 85
+timing, 12
+expected rise, 158
+exponent, 215
+exponential moving average (EMA), 
+215–216
+extent fi
+ lters, 209
+Extraordinary Popular Delusions and the 
+Madness of Crowds
+ (Mackay), 315
+extreme sentiment fi
+ lters, 209
+• 
+F 
+•
+fading the trend, 63
+failing indicators, 306
+falling window, 148
+false breakouts
+compared with real breakouts, 189–192
+defi
+ ned, 173
+false signal, 208
+Farley, Alan S. (author)
+The Master Swing Trader,
+ 316
+Fibonacci sequence of numbers, 37
+fi
+ gure charting. 
+See
+ point-and-fi
+ gure (P&F) 
+charting
+fi  lling the gap
+dead-cat bounce pattern, 159–160
+defi
+ ned, 128–129
+rising window continuation pattern, 
+148–149
+fi
+ lters
+defi  ned, 191, 209
+extent, 209
+extreme sentiment, 209
+momentum, 232–233
+time, 209
+fi
+ nding
+the close at open, 119
+orders, 19
+5-day moving average
+overview, 213
+weighing against 20-day, 217–220, 268
+fi  xed fractional position sizing, 78
+fi
+ xing
+indicators, 71–72
+lag, 212–213
+noise, 211–212
+fl
+ ag, 157–158
+folklore
+compared with trading tools, 214
+search for perfect indicator, 68
+testing, 118
+following trends, 298
+forecast, 179
+foreign exchange (FX), prevalence of, 
+308–309
+fractal quality, 64
+Frost, Alfred (author)
+Elliott Wave Principle,
+ 316
+fundamental analysis, 13
+Futures
+ (magazine), 314
+futures market, 88, 258
+FX (foreign exchange), prevalence of, 
+308–309
+• 
+G 
+•
+gambler’s fallacy, 34
+game-playing aspect of trading, 26–27
+Gann 50 percent retracement, 35–36
+gaps
+breakaway, 124–125
+common, 124
+downside breakaway, 125
+exhaustion, 126
+fi  lling, 128–129, 148–149, 159–160
+identifying, 122–123
+island reversal, 126–128
+low-volume securities, 124
+measuring from, 167
+runaway, 125–126
+Geis, Irving (author)
+How To Take a Chance,
+ 316
+Granville, Joe (fi  nancial writer and 
+investment speaker), 43–46
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 338 ---
+324
+Technical Analysis For Dummies, 2nd Edition  
+gravestone doji, 141
+gross move, 247–248
+• 
+H 
+•
+hammer pattern, 145–146
+hand-drawn channels, 185–186, 197–198
+hanging man pattern, 145–146
+harami candlestick, 118, 146–147
+hard assets, 309
+head fake, 252
+head-and-shoulders pattern, 163–165
+hedge funds, 311
+high, 67, 101–102, 117, 260
+high volatility, 244–246
+higher highs, 103
+Hirsch, Jeffrey (stock analyst), 50
+histogram, 224–225
+historic high or low
+overview, 67
+point-and-fi  gure charting, 260
+historic key reversals, 52
+holding period, 248
+maximum adverse excursion, 83
+trading compared with investing, 10
+horizontal price projection, 264
+horizontal support and resistance, 260
+How I Made $1,000,000 Trading 
+Commodities Last Year
+ (Williams), 315
+How I Made $2,000,000 in the Stock Market
+ 
+(Darvas), 315
+How To Take a Chance
+ (Huff and Geis), 316
+Huff, Darrell (author)
+How To Take a Chance,
+ 316
+Hyerczyk, James A. (author)
+Price Pattern & Time: Using Gann Theory 
+in Trading Systems,
+ 316
+• 
+I 
+•
+icons, explained, 4–5
+identifying
+crowd behavior, 25–27
+downtrends, 104
+gaps, 122–123
+special bars, 116–119
+trendedness, 178–180
+trends with price bars, 102–104
+uptrends, 103–104
+illiquidity, 42
+impulse wave, 38
+indicator-based stops, 83–84
+indicators
+%D, 238–240
+%K, 238–240
+adding new, 269–275
+applying, 72
+average true range (ATR), 249–250
+backtesting, 305
+Breadth, 48
+choosing, 67–68
+classifying, 60
+combining, 269–275
+combining candlesticks with other, 150–151
+combining P&F charting techniques with 
+other, 265
+convergence, 66
+crossover signals, 65
+defi  ned, 41, 59
+divergence, 66
+duration of, 191–192
+establishing benchmark levels, 67
+fading trends, 63
+failure of, 306
+fi
+ xing, 71–72
+judgment-based, 60
+math-based, 60
+optimizing, 68–73
+overview, 63–64, 304
+parabolic stop-and-reverse, 84–85, 265
+refi  ning volume, 46
+rules for working with, 303–306
+signals, 65–66
+size of, 191–192
+smoothed, 240
+swing traders, 61–63
+time frames, 64–65
+trading styles, 61–63
+what they identify, 60–61
+individual behavior, 26
+initial risk, 77
+inside day, 117–118
+intermarket trading, 309–310
+internal dynamics of the price, 238
+internal trendlines, 177–182
+internationalization, 310–311
+interpreting candlestick patterns, 145–147
+intervals, 111–112
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 339 ---
+2 325
+ 
+Index
+intraday data, 110–111
+investor, compared with trader, 10
+Investor’s Business Daily,
+ 26
+Investors Intelligence Service, 47
+island reversal, 126–128
+• 
+J 
+•
+January barometer, 50
+joint probability, 55
+judgment-based indicators, 60
+Jurik, Richard (moving average theorist), 216
+• 
+K 
+•
+%K, 238–240
+KAMA (Kaufman’s adaptive moving 
+average), 216
+Kaufman, Perry (computer model 
+developer), 216, 315
+Kaufman’s adaptive moving average 
+(KAMA), 216
+key reversals.  
+See also
+ pivot points
+bar, 190
+historic, 52
+overview, 120
+pivot point defi
+ ned, 42
+knife, catch a falling, 32–34
+• 
+L 
+•
+lag, 212–213
+Lane, George (technical analyst), 238
+last price, remembering, 53–54
+last-three-days rule, 83–84
+LeBeau, Charles (futures industry 
+professional), 85, 315
+Lefevre, Edwain (author)
+Reminiscences of a Stock Operator,
+ 315
+length of price bar, 129–130
+leverage, 310
+linear regression, 181, 195
+linear regression channels, 196–199
+linear regression lines, 177–178
+liquidity, 111, 124
+long shadows, 142–143
+Long-Term Secrets to Short-Term Trading
+ 
+(Williams), 315
+lookback period
+rate of change, 232
+time frame, 64–65
+losses
+controlling, 79–80
+recovering, 12
+trades, 72
+low
+close at, 117
+overview, 102
+low volatility, 245–246
+low-volume securities, 124
+Lucas, David (author)
+Technical Traders Guide to Computer 
+Analysis of the Futures Market,
+ 315
+• 
+M 
+•
+MACD (moving average convergence-
+divergence indicator), 222–225
+Mackay, Charles (author)
+Extraordinary Popular Delusions and the 
+Madness of Crowds,
+ 315
+magazines, 314
+Magee, John (author)
+Technical Analysis of Stock Trends,
+ 
+155, 315
+managing trades
+adjusting positions, 86–89
+controlling losses, 79–80
+establishing profi  t targets, 78–79
+stop-loss orders, 80–86
+trading rules, 75–78
+mania
+fi  nding historic key reversals, 52
+overview, 25
+random events, 53
+rational expectations and, 34
+remembering last price, 53–54
+margin, 88, 278
+market
+bearish, 21
+beating, 17–19
+bullish, 21
+changes in, 307–312
+futures, 88, 258
+market movement
+big-picture crowd theories, 34–39
+crowd extremes, 29–33
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 340 ---
+326
+Technical Analysis For Dummies, 2nd Edition  
+market movement 
+(continued)
+eBay Model of Supply and Demand, 23–25
+identifying crowd behavior, 25–27
+normal distribution, 27–29
+supply and demand model, 23–25
+market sentiment
+blindsiding the crowd, 51–54
+contrarians and cranks, 49
+fi  nding historic key reversals, 52
+overview, 41–42, 46–47
+pattern stop, 84
+random events, 53
+remembering last price, 53–54
+sampling information about, 47–49
+scientifi  c method, 54–56
+seasonality and calendar effects, 50–51
+volume, 42–46
+market timing, 20.  
+See also
+ technical 
+analysis
+Market Wizards: Interviews with Top 
+Traders
+ (Schwager), 315
+mark-to-market, 210
+Martin Pring on Market Momentum
+ 
+(Pring), 316
+marubozu candles, 142
+The Master Swing Trader
+ (Farley), 316
+math margin of error, 178
+math-based indicators, 60
+A Mathematician Plays the Stock Market
+ 
+(Paulos), 316
+The Mathematics of Money Management
+ 
+(Vince), 316
+maximum adverse excursion, 83, 247
+Maximum Adverse Excursion
+ 
+(Sweeney), 316
+maximum favorable excursion, 83, 247
+maximum move, 247–248
+May, sell in, 50
+mean reversion, 28–29
+measured move, 165–167
+measuring
+from the gap, 167
+volatility, 247–250
+mechanical trading system, 286–287
+median price, 199–200, 252
+mental stop, 81
+Metastock software (Equis), 314
+midpoint, 46
+Millard, Brian (author)
+Channels & Cycles: A Tribute to 
+J.M. Jurst,
+ 316
+misinterpretation, avoiding, 107–108
+momentum
+applying, 233–235
+calculating, 227–231
+compared with momentum investing, 230
+confi  rming trend indicators, 234–235
+cycles, 233
+defi
+ ned, 227
+fi
+ ltering, 232–233
+percent rate of change, 230–231
+relative strength index (RSI), 235–238
+smoothing price changes, 232
+stochastic oscillator, 238–242
+momentum investing, compared with 
+momentum, 230
+money fl
+ ow, 46–47
+money management. 
+See
+ trading rule
+money stop, 81–82
+monthly data, 110
+move, 117
+moving average
+adaptive, 215–216
+adjusting, 214–217
+combined with P&F charting, 265
+convergence, 221–225
+crossover rule, 206–209
+defi
+ ned, 205
+divergence, 221–225
+exponential, 215–216
+level rule, 209–210
+limitations of, 211–213
+multiple, 217–220
+9-day exponential, 223
+noise, 211–212
+overview, 205–206, 213
+simple, 214–215
+10-day, 206
+200-day, 214
+types, 214–217
+weighted and exponential, 215–216
+whipsaw, 208–209
+moving average convergence-divergence 
+indicator (MACD), 222–225
+moving-average stop, 84
+mutual funds, 47, 97, 312
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 341 ---
+2 327
+ 
+Index
+• 
+N 
+•
+nature, Fibonacci sequence in, 37
+neckline, 163, 163–166
+NeoTicker, 314
+The New Science of Technical Analysis
+ 
+(DeMark), 316
+New Thinking in Technical Analysis: 
+Trading Models from the Masters
+ 
+(Bensignor), 316
+news
+bandwagon effect, 25
+breakaway gap, 124–125
+9-day exponential moving average, 223
+Ninja Trader, 314
+Nison, Steve (candlestick trainer), 137
+noise
+defi
+ ned, 196
+fi
+ xing, 211–212
+moving average, 211–212
+outliers, 196
+nontrending price bar, 15–16, 109
+normal distribution
+overview, 27–29
+reversion to the mean, 27–28
+trading mean reversion, 28–29
+• 
+O 
+•
+OBV (on-balance volume), 43–46
+OHLC (open-high-low-close component of 
+price bar), 94
+1-2-3 method, 175–176
+one-hour trade, 10–11
+O’Neil, William (entrepreneur and 
+stockbroker), 26, 230
+online resources, 313–314
+open, buy on, 97
+open-close combo position, 131
+open-high-low-close component of price 
+bar (OHLC), 94
+opening price, 96–98
+opening range breakout, 268
+optimist. 
+See
+ bull/bullish
+optimization
+backtest, 69–70
+indicator, 68–73
+portfolio, 290–291
+options, 48
+orderly channels, 186, 192–193
+orderly trends
+defi
+ ned, 192
+transitions, 193
+orders
+fi
+ nding, 19
+stop-loss, 31, 80–86
+organization of this book, 3–4
+oscillators, 66, 238–242
+outliers
+defi  ned, 196, 207
+10-day moving average, 206
+outside day, 118–119
+overbought, 30–31, 236–237, 239
+overnight position, 100
+override, 68, 270, 289
+oversold, 30–31, 237
+overtrading, 72
+• 
+P 
+•
+P&F charting
+applying patterns, 260–262
+combining with other indicators, 265
+creating charts, 256–260
+overview, 255
+panic
+fi  nding historic key reversals, 52
+overview, 25
+random events, 53
+rational expectations, 34
+remembering last price, 53–54
+parabolic stop-and-reverse indicator, 
+84–85, 265
+parallel support/resistance lines, 186
+paths, charting, 14
+pattern stops, 84
+patterns
+applying, 260–262
+breaking lines, 157–158
+chart, 155–167
+classic reversal patterns, 160–165
+coloring inside lines, 157–158
+continuation, 115, 148–149, 157–160
+dead-cat bounce, 159–160
+double bottoms and tops, 160–163
+hammer, 145–146
+hanging man, 145–146
+head-and-shoulders, 163–165
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 342 ---
+328
+Technical Analysis For Dummies, 2nd Edition  
+patterns 
+(continued)
+importance of, 304
+measured move, 165–167
+measuring from gaps, 167
+overview, 155–156
+pennants and fl
+ ags, 157–158
+practicing reading, 156–157
+resuming trend after retracement, 
+166–167
+reversal, 115, 147–148, 160–165
+shooting star, 147–148
+three black crows, 149
+three white soldiers, 149
+triangles, 158–159, 261
+Paulos, John Allen (author)
+A Mathematician Plays the Stock 
+Market,
+ 316
+pennants, 157–158
+percentage
+%D, 238–240
+%K, 238–240
+money stop, 81–82
+percent rate of change, 230–231
+Person, John (author)
+Candlestick and Pivot Point Trading 
+Triggers,
+ 315
+pessimist. 
+See
+ bear/bearish
+phony track records, 292–293
+pi, 37
+picking time frames, 16
+picturing RSI, 236–238
+pivot point support, 199–202
+pivot points, 42. 
+See also 
+key reversals
+platforms, 312
+Plessis, Jeremy du (author)
+The Deﬁ  nitive Guide to Point and 
+Figure,
+ 316
+point-and-fi  gure (P&F) charting
+applying patterns, 260–262
+combining with other indicators, 265
+creating charts, 256–260
+overview, 255
+portfolio optimization, 290–291
+position sizing, 301–302
+position squaring, 31
+positions
+adding to, 88
+adjusting, 30, 86–89
+applying stops to adjusted, 89
+open-close combo, 131
+overnight, 100
+reducing, 87
+positive expectancy, 276–279
+PPS Trading System
+ (Arnold), 158, 316
+Prechter, Robert (stock market analyst), 
+38, 316
+pregnant candlestick. 
+See
+ harami 
+candlestick
+preponderance, 107
+preserving capital, 12
+President’s Third Year calendar effects, 51
+price.  
+See also
+ volatility
+discovery, 24
+internal dynamics of, 238
+measured move, 165–167
+median, 199–200, 252
+opening, 96–98
+projecting after breakouts, 262–264
+remembering last in manias and panics, 
+53–54
+signifi
+ cant, 255
+spike, 53
+trend, 247
+trends, 13–14
+price bar combinations
+gaps, 122–129
+overview, 113
+special bars, 116–119
+spikes, 119–121
+trader sentiment, 114–116
+trading range, 129–135
+price bars.  
+See also
+ candlestick charting
+closing price, 98–100
+daily data, 109–110
+defi
+ ned, 94
+down day, 99
+drawing channels, 185–187
+high, 101–102
+identifying downtrends, 104
+identifying uptrends, 103–104
+importance of, 303
+length, 129–130
+low, 102
+nontrending, 15–16, 109
+opening price, 96–98
+overview, 93–96
+reading, 104–108
+time frames, 108–112
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 343 ---
+2 329
+ 
+Index
+unreadable, 108
+up day, 99
+zooming in/out, 110–112
+price charts, trendlines on, 169–170
+Price Pattern & Time: Using Gann Theory in 
+Trading Systems
+ (Hyerczyk), 316
+price smoothing. 
+See
+ moving average
+Pring, Martin (author)
+Martin Pring on Market Momentum,
+ 316
+probability, 55
+profi  t targets, establishing, 78–79
+Proﬁ  table Candlestick Trading
+ 
+(Bigalow), 315
+projecting prices after breakouts, 262–264
+promotions, 281–282
+protective stop, 31, 80–86
+pullback, 126, 161, 176.  
+See also
+ 
+retracements
+put/call ratio, 48
+pyramiding, 88
+• 
+Q 
+•
+quantifying trendedness, 15–16
+• 
+R 
+•
+Raff, Gilbert (Raff Regression Channel 
+developer), 198
+Raff Regression Channel, 198
+random events, 53
+range
+contraction of, 129–130
+defi
+ ned, 183
+expansion of, 129–130
+range-trading, 60
+Raschke, Linda Bradford (author)
+Street Smarts,
+ 316
+rate-of-change, 228–231.  
+See also
+ 
+momentum
+rational expectations, 34
+reading price bars, 104–108
+real body, 138–139
+realized gain, 210
+recovering losses, 12
+rectangle, 165–166
+reducing positions, 87
+refi
+ ning
+backtesting, 70–71
+volume indicators, 46
+regression
+confi  rming hand-drawn channels, 197–198
+linear regression channel, 196–197, 
+198–199
+pivot point support, 199–202
+resistance channel, 199–202
+standard error, 195–196
+Relative Strength Index (RSI), 235–238
+relativity, 106–107
+reliability quotient, 56
+Reminiscences of a Stock Operator
+ 
+(Lefevre), 315
+resistance
+conventional, 260–261
+horizontal, 260
+overview, 174–175
+resistance channel, 19–202
+resistance lines, 175–177, 186
+resources
+books, 315–316
+charting software, 314
+online, 313–314
+responsibility, assuming, 299
+retracements
+defi
+ ned, 60
+estimating, 32–33
+Gann 50 percent retracement, 35–36
+overview, 31–32
+resuming trend after, 166–167
+30-percent retracement rule, 33
+reversal patterns
+candlestick charting, 147–148
+double bottom, 160–162
+double tops, 162–163
+head-and-shoulders, 163–165
+overview, 115
+triple top, 163–165
+reversal point, 14
+reversion to the mean, 27–28
+reward, 82
+Rhoads, Russell (author)
+Candlestick Charting For Dummies,
+ 137
+rising window pattern, 148–149
+risk management.  
+See also
+ trading rule
+at close, 100
+evaluating risks of backtesting, 72–73
+initial risk, 77
+risk-reward ratio, 82–83
+robo-trading, 283
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 344 ---
+330
+Technical Analysis For Dummies, 2nd Edition  
+robust rule, 72
+RSI (Relative Strength Index), 235–238
+rule-based trendlines, 170–177
+rumor, buy on, 101
+runaway gap, 125–126
+• 
+S 
+•
+sample size, 55–56
+sanity check, 188
+scalability, 293
+scale into the trade, 278
+scaling in/out, 87
+scanning, 293–294
+Schwager, Jack (author)
+Market Wizards: Interviews with Top 
+Traders,
+ 315
+screens. 
+See
+ fi
+ lters
+seasonality, 50–51
+secondary trend. 
+See
+ retracements
+securities
+low-volume, 124
+thinly traded, 124
+trading multiple, 290–291
+selecting
+box sixe, 258–259
+indicators, 67–68
+intervals, 111–112
+moving average types, 216–217
+ruling concepts, 270–271
+trading styles, 61–63
+selecting time frames, 16
+self-sabotage, 289–290
+sell on the news, 98, 101
+sell short, 238
+selling. 
+See speciﬁ
+ c topics
+sell-on-open order, 98
+sentiment (market)
+blindsiding the crowd, 51–54
+contrarians and cranks, 49
+fi  nding historic key reversals, 52
+overview, 41–42, 46–47
+pattern stop, 84
+random events, 53
+remembering last price, 53–54
+sampling information about, 47–49
+scientifi  c method, 54–56
+seasonality and calendar effects, 50–51
+volume, 42–46
+setup trading
+drawbacks, 281
+exiting, 280
+overview, 151, 279–282
+reading promotions, 281–282
+shadows (candlestick charting)
+long, 142–143
+overview, 138
+shaven top/bottom, 142
+shooting star pattern, 147–148
+shoulders. 
+See
+ head-and-shoulders pattern
+signals (indicator), 65–66
+signifi  cant high, 106
+signifi  cant prices, 255
+simple moving average (SMA), 214–215
+size
+box, 257–259
+of indicators, 191–192
+position, 301–302
+sample, 55–56
+slippage, 70-71
+SMA (simple moving average), 214–215
+smart money, 45
+smoothed indicator, 240
+smoothing constant, 216
+smoothing price changes, 232
+software
+black box trading system, 292
+channel-drawing, 187
+charting, 314
+drawbacks to backtesting, 72–73
+drawing channels with, 187
+Equis Metastock, 314
+scanning, 293–294
+sovereign wealth, 311
+special bar combinations
+close at high/low, 117
+inside day, 117–118
+outside day, 118–119
+spikes, 119–121
+special bars, identifying, 116–119
+special features, regression range, 198
+Sperandeo, Victor (author)
+Trader Vic: Methods of a Wall Street 
+Master,
+ 158, 175–176, 315
+spikes, 43, 119–121, 191
+squaring (position), 31
+squeeze, 251, 265
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 345 ---
+3 331
+ 
+Index
+standard deviation, 28, 248–249.  
+See also
+ 
+Bollinger Bands
+standard error channels, 196–199
+Steidlmayer, J. Peter (author)
+Steidlmayer on Markets,
+ 316
+Steidlmayer on Markets
+ (Steidlmayer), 316
+stochastic oscillator, 238–242
+Stock Trader’s Almanac,
+ 50
+stop-and-reverse
+compared with stopping out, 290
+defi
+ ned, 208
+stop-loss order, 31, 80–86
+stopping out, compared with stop-and-
+reverse, 290
+stops
+applying to adjusted positions, 89
+calendar, 86
+clock, 86
+indicator-based, 83–84
+mental, 81
+money, 81–82
+moving-average, 84
+overview, 97
+pattern, 84
+time, 86
+trailing, 83
+straight-line channels, 187–188
+Street Smarts
+ (Connors and Raschke), 316
+subtraction method of calculating 
+momentum, 228
+super systems, 285
+supply and demand, eBay Model of, 23–25
+support
+conventional, 260–261
+horizontal, 260
+support lines
+fi  ne tuning, 175–177
+overview, 171–173
+parallel, 186
+support, resistance and, 304
+Sweeney, John (maximum adverse 
+excursion theorist), 83, 316
+swing bar, 121
+swing point, 184
+swing trader, 61–63
+systematic trading, 284
+system-testing. 
+See
+ backtesting
+• 
+T 
+•
+tails, 28
+take-profi  t rule, 78–79
+TC2000 (Worden), 314
+technical analysis.  
+See also
+ 
+speciﬁ
+ c topics
+overview, 9–12, 21–22
+reliability of, 16–17
+scope of, 20–22
+universal acceptance of, 307–308
+Technical Analysis of Stock Trends
+ 
+(Edwards and Magee), 155, 315
+Technical Analysis of Stocks and 
+Commodities
+ (magazine), 314
+Technical Traders Guide to Computer 
+Analysis of the Futures Market
+ (LeBeau 
+and Lucas), 315
+technical trading, 11
+10-day moving average, 206
+test of support, 172
+Tharp, Van (traders coach), 77, 316
+thinly traded securities, 124
+30-percent retracement rule, 33
+Thomson Financial seasonality tracker, 50
+three black crows pattern, 149
+three white soldiers pattern, 149
+throwbacks, 161.  
+See also
+ retracements
+tick placement, 114–115
+ticks, 94
+time fi
+ lters, 209
+time frames
+importance of knowing, 288
+indicators and, 64–65
+picking, 16
+price bars in, 108–112
+time stops, 86
+time-series forecast, 179
+timing
+importance of, 11–12
+market, 20
+Timing the Market
+ (Arnold), 158
+too far, 30
+tools, 22
+top patterns
+blowout, 194
+double, 36, 162–163, 262
+reversal patterns, 160–165
+shaven, 142
+track records, phony, 292–293
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 346 ---
+332
+Technical Analysis For Dummies, 2nd Edition  
+tracking maximum move, 247–248
+trade management
+adjusting positions, 86–89
+controlling losses, 79–80
+establishing profi  t targets, 78–79
+stop-loss orders, 80–86
+trading rules, 75–78
+Trader Vic: Methods of a Wall Street Master
+ 
+(Sperandeo), 158, 175–176, 315
+traders
+compared with investor, 10
+defi
+ ned, 10
+sentiment, 114–116
+swing, 61–63
+trades
+losing, 72
+one-hour, 10–11
+scale into, 278
+TradeStation, 312, 314
+trading
+action, 94
+after-hours, 98–99
+algorithmic, 283, 308
+choosing styles, 61–63
+game-playing aspect of, 26–27
+importance of patterns, 304
+intermarket, 309–310
+losses, 12, 79–80
+mean reversion, 28–29
+more than one security, 290–291
+overtrading, 72
+robo-trading, 283
+setup, 151, 279–282
+systematic, 284
+technical, 11
+on too little capital, 291–292
+trading diary, 289–290
+Trading for a Living
+ (Elder), 316
+trading range
+average, 131–135
+daily, 116
+meaning of changes in, 130–131
+overview, 116, 129
+range contraction, 129–130
+range expansion, 129–130
+trading rule
+black box systems, 292
+establishing, 75–78
+trading systems
+buying, 292–293
+considerations, 290–292
+defi
+ ned, 284–287
+designers of, 286
+failures of mechanical, 287–290
+overview, 283–284
+scanning, 293–294
+super systems, 285
+Trading Systems Analysis Group 
+(TSAG), 118
+Trading Systems and Methods
+ 
+(Kaufman), 315
+trailing stops, 83
+training courses, 282
+trend following
+Dow Theory, 13–14
+resuming after retracement, 166–167
+trend indicators, confi
+ rming, 234–235
+trendedness
+identifying, 178–180
+quantifying, 15–16
+trend-following, 20, 61–63.  
+See also
+ 
+technical analysis
+trending
+high volatility with, 246
+high volatility without, 246
+low volatility with, 245
+low volatility without, 246
+trendlines
+defi
+ ned, 169
+drawing internal, 177–182
+on price charts, 169–170
+rule-based, 170–177
+trends.  
+See also
+ trendedness
+charting paths, 14
+fading, 63
+following, 298
+identifying with price bars, 102–104
+maximum move, 247–248
+orderly, 192–193
+overview, 12
+prices, 13–14
+resuming after retracement, 166–167
+triangles
+ascending/descending, 158–159
+defi
+ ned, 261
+triple bottom, 262
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 347 ---
+3 333
+ 
+Index
+triple top
+point-and-fi  gure charting, 262
+reversal patterns, 163–165
+trust fund manager, 299
+trusting charts, 297–298
+TSAG (Trading Systems Analysis 
+Group), 118
+Turtle rule, 291
+20-day moving average
+overview, 213
+volatility, 250
+weighing against 5-day, 217–220, 268
+twin bottom, 162
+200-day moving average, 214
+2-percent stop rule
+adding to position, 88
+adjusting to new position, 89
+compared with indicator stops, 85
+overview, 81–82
+• 
+U 
+•
+unreadable price bar, 108
+unrealized gain, 210
+up day, 99
+upside breakouts, 262
+uptrends
+defi
+ ned, 12
+identifying, 103–104
+• 
+V 
+•
+Van Tharp’s Deﬁ  nitive Guide to Position 
+Sizing
+ (Tharp), 316
+variance, 243–245
+verifying volume, 190–191
+vertical price projection, 262–264
+Vince, Ralph (computer trading systems 
+expert), 78, 316
+VIX (volatility index), 49
+volatility
+average true range (ATR) bands, 252–253
+Bollinger Bands, 250–252
+defi  ned, 193, 243
+high with trending, 246
+high without trending, 246
+low with trending, 245
+low without trending, 246
+measuring, 247–250
+overview, 243–244
+stability of, 244–245
+standard deviation, 248–249
+volatility index (VIX), 49
+volatility trend, 247
+volume
+defi
+ ned, 95
+exhaustion gaps, 126
+fi
+ lters, 209
+on-balance (OBV), 43–46
+overview, 42–43
+refi  ning indicators, 46
+relationship with trading range, 130
+spikes, 43, 191
+verifying, 190–191
+• 
+W 
+•
+walking up/down band, 251
+Wall Street Journal,
+ 13
+Web sites, 313–314
+weekly data, 110
+weighted moving average (WMA), 215
+When Supertraders Meet Kryptonite
+ 
+(Collins), 316
+whipsaw, 208–209
+white real body, 139
+Wilder, J. Welles, Jr. (technical trader), 
+84–85, 134, 235
+Wilder’s average true range (ATR), 133–135
+Williams %K indicator, 238–240
+Williams, Larry (commodities and stock 
+trader), 238, 315
+WMA (weighted moving average), 215
+Worden’s TC2000 software, 314
+• 
+Z 
+•
+zero
+MACD histogram indicator, 222–225
+smoothing constant, 216
+zero line, 233
+zero sum game, 95
+zooming in/out, 110–112
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 348 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 349 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/

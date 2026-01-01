@@ -1,0 +1,267 @@
+
+--- Page 267 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 268 ---
+254
+Part V: Flying with Dynamic Analysis 
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 269 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 270 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 271 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 272 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 273 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 274 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 275 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 276 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 277 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 278 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 279 ---
+265
+ Chapter 15: Ignoring Time: Point-and-Figure Charting
+Combining Point-and-Figure Techniques 
+with Other Indicators
+The innate simplicity of point-and-figure charting is appealing, but you can 
+add value to decision making by speeding up the buy/sell signal or seeking 
+confirmation or lack of confirmation from other indicators. Because other 
+indicators are time based, how can this merger be done?
+Here’s how you can use point-and-figure charting along with other indicators 
+I mention in this book:
+ ✓ 
+Moving averages:
+ You use the price at the center of each column in 
+calculating a moving average in P&F charts, instead of the usual method 
+of averaging prices over a fixed number of periods. Thus you are using 
+the average price per reversal. If the moving average shows that you had 
+a downtrend and now you get a new column of Xs that rises over the 
+moving average, you have more confidence that the Xs really do imply a 
+rising trend and thus a safer buy signal.
+ ✓ 
+Parabolic stop-and-reverse indicator:
+ The parabolic stop-and-reverse 
+(SAR) indicator delivers a speedier reversal than waiting for a new column 
+of Xs or Os. (See Chapter 5.) The parabolic SAR has the advantage of tight-
+ening your stop as the momentum of a price move decelerates.
+ ✓ 
+Bollinger bands:
+ Data displayed in the P&F format can’t display momen-
+tum and thus overbought or oversold, a shortcoming that can be 
+partly addressed by applying Bollinger bands (see Chapter 14). If your 
+columns of Xs persist in pressing against the top of the band and some-
+times breaking it, you have confirmation of the uptrend. When the next 
+column of Os crosses the centerline (a simple moving average) to the 
+downside, you expect a swing all the way to the bottom band.
+ 
+ Finally, Bollinger bands are wide apart when volatility is high, and they 
+“squeeze” narrower as volatility dissipates and prices become con-
+gested. In a congestion, P&F prices are in a series of short columns that 
+you can’t trust to deliver a reliable buy-or-sell signal. When you see the 
+short columns together with the narrow Bollinger band, you can guess 
+that the market is fickle — it’s not trending, and you should go find 
+something else to trade.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 280 ---
+266
+Part V: Flying with Dynamic Analysis 
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 281 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 282 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 283 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 284 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 285 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 286 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 287 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 288 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 289 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 290 ---
+276
+Part V: Flying with Dynamic Analysis 
+Expecting a Positive Result
+The main reason to add bothersome complexity is to improve gains or 
+reduce losses, or both. But you need to have some idea that the overall con-
+ditions are right to make any trade in the first place. This section can help 
+you do just that.
+Calculating positive expectancy 
+technically
+The first question to ask yourself is whether the security in front of you right 
+now offers an opportunity to make a profit. As statisticians say, you want to have 
+a positive expectancy
+ 
+that a gain is possible. Not every security offers a profit 
+potential. If it is range-trading sideways with low volatility (see Chapter 14), 
+profit potential is low unless you know how to trade options.
+In general terms, a positive-expectancy trade is one that
+ ✓ 
+Displays a bar configuration or pattern that generates profits a high 
+percentage of the time
+ ✓ 
+Has multiple confirming indicators, as discussed in the “Adding a New 
+Indicator: Introducing Complexity” section earlier in the chapter
+ ✓ 
+Offers an obvious exit, like a spike high or the downside break of a 
+support line that occurs before your stop-loss kicks in
+Think of the trade as a 
+process
+ in which the evidence mounts that the indicators 
+are correct. Don’t neglect the configuration of the price bars themselves and 
+obvious patterns. See Figure 16-5 and take a look at the following numbered list 
+that corresponds to the numbers on the chart:
+ 
+1. The price puts in three days of higher highs and higher lows, and then 
+rises above a resistance line (see Chapter 10).
+ 
+2. The price gaps to the upside (see Chapter 7).
+ 
+3. At the same time, the price crosses above the 20-day simple moving 
+average inside the Bollinger band (Chapter 14).
+ 
+4. A few days later, the relative strength indicator in the top window 
+crosses the buy/sell line to the upside.
+ 
+5. A few days later, the MACD in the bottom window crosses its buy/sell 
+line to the upside, confirming RSI.
+ 
+6. Finally, the price breaks out above the Bollinger band top, a continua-
+tion signal that suggests the trend will keep going up.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 291 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 292 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 293 ---
+279
+ Chapter 16: Combining Techniques
+Notice that you scaled into the trade but exited all at once. This chart doesn’t 
+show a trailing stop-loss line, but in practice, this trend was fairly long last-
+ing, and a trailing stop, if hit, would still have resulted in a nice gain.
+Evaluating Efficient Entries 
+and Ruthless Exits: Setups
+Setup trading is a form of swing trading that’s very popular today. A 
+setup
+ is 
+a particular configuration of bars, usually with one or two other confirming 
+conditions like a pattern or an indicator, that delivers an expected outcome 
+in a high proportion of trades. The opening range breakout I describe in the 
+“Standing the Test of Time: Simple Ideas” section earlier in the chapter is an 
+excellent example of a setup. Candlestick trading can be considered setup 
+trading, too (see Chapter 8).
+Setups usually have catchy names (like 
+pinball 
+and 
+coiled spring
+). Do these 
+setups work? If you identify the setup correctly, yes, the price does often 
+behave in the predicted manner. Unfortunately, statistics on exactly what 
+percentage of the time they do work don’t exist, but experienced setup trad-
+ers say that setups work often enough that early entry gives you an edge.
+Each setup identifies a specific market condition that can be explained in 
+terms of market psychology. Setup analysis is promiscuous, borrowing from 
+bar reading, pattern identification, and indicators. Setups are effective tools 
+when you can read the supply and demand dynamics on the chart — you 
+can imagine what traders must be thinking, such as the predictable burst of 
+buying after a test of support. In general, you’re counting on the normal swing 
+of Newtonian action-reaction and the principles of support and resistance.
+One benefit of setup trading is that you can be out of the market until you 
+spot a setup situation. You take no risk when you’re out of the market. Some 
+setup trades are intraday, where you enter and exit the trade on the same 
+day. Other setup trades are more long lasting because they lead to authentic 
+trends that you stick to until your exit rules or stop is hit. In the next section, 
+I describe some aspects of trading setups.
+Starting off early
+A setup identifies the conditions that precede and accompany a price move, 
+giving you a head start in entering a trade. When you correctly identify the 
+setup, the price goes in your direction immediately. And when a strong move 
+begins, the first few days can account for 25 percent or more of the total 
+move. That’s the thrust or impulse aspect of new moves.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 294 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/

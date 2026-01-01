@@ -1,0 +1,537 @@
+
+--- Page 57 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 58 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 59 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 60 ---
+46
+Part I: Defining Technical Analysis 
+Truth to tell, though, no indicator works all the time, and this one doesn’t, 
+either. The OBV indicator didn’t forecast Pivot Day 2 on Figure 3-1, although 
+it did fall right afterward. Therefore, you’d have to say it was not leading this 
+time, but rather 
+coincidental.
+ Even OBV inventor Granville famously missed 
+a major bull market that started in 1982, and then persisted in saying it was 
+a false bull for the next 14 years. However, OBV correctly predicted the 
+crash of October, 1987 — in August, two months early. So you can see that 
+Granville’s personal woes with forecasting do not detract from the usefulness 
+of his indicator, even if it can be tricky to apply.
+Refining volume indicators
+As noted in the section “Tracking on-balance volume” earlier in the chapter, 
+the OBV indicator attributes 
+all 
+the day’s volume to buying. This is not realis-
+tic. It makes more sense to attribute only a portion of the volume to the price 
+rise, rather than the whole kit and caboodle.
+A technical analyst named Marc Chaikin figured that a more representative 
+amount would be the percentage equivalent of the price that is above the 
+midpoint of the day. You calculate a 
+midpoint 
+as the high of the day plus the 
+low of the day divided by two. Chaikin’s version of accumulation and distri-
+bution is more refined than OBV.
+If a security closes above its daily midpoint, bullish sentiment ruled. The 
+close over the midpoint defines 
+accumulation,
+ referring to buyers being will-
+ing to pay higher prices to get sellers to part with the security. The closer the 
+closing price is to the high, the more bullish it was. If the price closed right 
+at the high, then you say that 100 percent of the volume can be attributed to 
+bullish sentiment.
+Conversely, 
+distribution
+ is the term for sellers willing to accept lower prices 
+in order to induce buyers to buy. Lower prices imply bearish sentiment. 
+Distribution is calculated the same way as accumulation — a close below the 
+price midpoint means distribution. The closer the closing price is to the low, 
+the more distribution existed. If the close is exactly at the midpoint, then the 
+indicator has the same value as yesterday — and you have no reason to add 
+or subtract volume from the running total.
+Thinking Outside the Chart
+You may have the inside scoop on the best stock ever, but if the entire 
+market has a case of the collywobbles, your best-ever stock is likely to fall, 
+too. Conversely, when the market is in a manic phase, even the worst of 
+stocks gets a boost (hence the old saying, “A rising tide lifts all boats”). This 
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 61 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 62 ---
+48
+Part I: Defining Technical Analysis 
+Following the money: Breadth indicators
+Breadth indicators
+ measure the degree of participation by traders in the over-
+all market represented by an index, such as the Dow or S&P 500. You can 
+track the breadth indicators to get a feel for market sentiment.
+Breadth indicators include
+ ✓ 
+Ratio of advancing to declining issues:
+ This indicator measures the 
+mood of the market. Stocks that are reaching a higher price today than 
+yesterday are called 
+advancing issues.
+ Stocks that are reaching lower 
+prices are called 
+declining issues.
+ When advancers outnumber decliners, 
+money is flowing into the market. Bulls are beating bears. Sentiment is 
+favorable. When the rally starts getting tired, the number of advancing 
+issues declines while the number of falling issues rises.
+ 
+ If you subtract declining issues from advancing ones, you get the 
+advance/decline
+ 
+line. 
+In the same vein, if you divide advancing issues by 
+declining issues, you get the 
+advance/decline
+ 
+ratio,
+ abbreviated A/D.
+ ✓ 
+Difference between issues making new highs and new lows:
+ The logic 
+is the same as in the advance/decline indicator. If more stocks in an 
+index are closing at higher prices than the period before, bullishness 
+is on the rise. When a higher number are putting in new lows, supply is 
+overwhelming demand and the mood must be bearish.
+Following the betting: Options
+The Chicago Board Options Exchange (CBOE) is the venue for options trad-
+ing in equity indices like the S&P and NASDAQ indices. The CBOE publishes 
+the ratio of puts to calls. Here’s what you need to know about puts and calls 
+when gathering info about sentiment:
+ ✓ 
+Put:
+ This term refers to the right to sell at a set price in the future. 
+Traders who buy puts are bears (pessimists) who think the index won’t 
+reach their set price.
+ ✓ 
+Call:
+ A call is the right to buy at a set price in the future. Traders who 
+buy calls are bulls (optimists) who think they’ll profit when the market 
+rises to and beyond their set price.
+Accordingly, the 
+put/call ratio 
+is an indicator of whether sentiment is bear-
+ish or bullish. A high put/call ratio means bears are winning. Recognize that 
+an extreme of emotion like this is usually wrong, and marks a turning point. 
+You should start planning to do the opposite. The same line of thinking holds 
+true for a low put/call ratio: When emotions are running strongly optimistic, 
+watch out for an opportunity to take advantage of a change.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 63 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 64 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 65 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 66 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 67 ---
+53
+ Chapter 3: Going with the Flow: Market Sentiment
+So how can one or two random prices turn into a key reversal when other 
+prices, whether random or on trend, don’t? Nobody knows. But as a practi-
+cal matter, if you follow your risk management principles, you don’t need an 
+answer to this question.
+Enduring randomness
+Technical traders acknowledge that random events can and do cause the 
+occasional wild price departure from the norm, but the acknowledgement 
+doesn’t alter the expectation that prices will behave normally. For example, 
+you sometimes see a price spike so big that you don’t know how to interpret 
+it (as you can see in Chapter 7). Often you never find out why such a bizarre 
+price occurred.
+A 
+price spike
+ is the equivalent of a tornado in weather forecasting. You know 
+the conditions that cause tornadoes — you just don’t know exactly when an 
+actual tornado will develop.
+Although nature may not be able to deliver a tornado in Alaska in January, 
+the equivalent does happen in markets. Sudden cataclysmic events aren’t as 
+rare as you may imagine. Who would have thought that the S&P 500 could 
+fall more than 20 percent in a single day? Most market observers used to say 
+it was impossible. But that’s exactly what happened on Black Monday, 1987. 
+Most market tornadoes, like Black Monday, give plenty of technical warnings 
+ahead of time. The problem is that traders often have those same warnings 
+and don’t get a Black Monday. This is an inconvenient fact of life that you 
+have to accept.
+Spikes are both a problem and an opportunity. If you know why a spike is 
+occurring because you are well informed about world events and market 
+chatter in response to the world events, you may chose to ride it out. But to 
+exit on fear of randomness is okay, too. You take no risk when you are out of 
+the market. Nowhere is it written that you must have a position in the market 
+at all times.
+Remembering the last price
+Market panics and crashes on the scale of 1929, 1987, and 2000 are historic 
+events outside the purview of the crowd’s normal trading process. In normal 
+trading, you can assume that a wildly erratic price has a low probability of 
+occurring. But you can’t attach a specific probability statistic to an event of 
+historic proportions — partly because those events are so rare.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 68 ---
+54
+Part I: Defining Technical Analysis 
+In weather forecasting, a low-probability event (like a tornado) that happens 
+today doesn’t change the probabilities of the usual high-probability events 
+happening next week or next year. But in markets, a low-probability event 
+does change the odds for the next period analysis because traders 
+remember.
+When you are performing technical analysis on your securities, you count on 
+traders to remember the last prices and to form their trading plans on those 
+prices. The next price is normally dependent on preceding prices, and most 
+technical analysis programs allow you to project out a trendline (like a linear 
+regression line, for example).
+But one or two really big abnormal prices can sometimes upset the apple 
+cart and determining which way the crowd will jump is sometimes just a 
+coin toss. This analogy raises the issue of the reliability of indicators, which 
+I describe in Chapter 4. They’re essentially forecasting tools that depend on 
+past behaviors to predict future behaviors, but they often fail near really big 
+key reversals. Technical analysis is not science, as its inability to capture 
+historic key reversals ahead of time demonstrates. In other words, having the 
+best technical tools on the planet will not save you from a market tornado.
+Thinking Scientifically
+Even the best indicator fails to work all the time. In fact, some of the best 
+indicators work less than 50 percent of the time, and that’s when conditions 
+are normal! Critics use this awful statistic to say that technical analysis is a 
+waste of time. This harsh opinion results from a failure to appreciate the ben-
+efits of risk management embedded in the technical trading style.
+You may think that it’s overkill to discuss scientific method, but I can practi-
+cally guarantee that this section will have a big payoff for you. That’s because 
+you’re sure to see enticing advertisements for software or trading programs 
+that are “scientific” and “objective.” Well, all math is “scientific” and “objec-
+tive” — but that doesn’t mean you can use it to make money, and it certainly 
+doesn’t mean that using it will help you escape the next market tornado.
+Conditions and contingencies
+When you hear someone say, “Blue Widget has a 75 percent chance of rising,” 
+you can assume that three out of the last four times the technical method was 
+applied, the security rose. The unspoken assumption is that conditions didn’t 
+change. But the market is not a laboratory. Of course conditions changed!
+Your forecast needs to be qualified because of the thousands of factors that 
+may come along and influence the price. 
+Contingencies
+ are things that are 
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 69 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 70 ---
+56
+Part I: Defining Technical Analysis 
+Your price data seldom presents you with 30 cases, let alone 200. Why 
+should you accept less? The answer is that you’re using a technical analysis 
+method that works across a wide range of securities and time frames, even if 
+you don’t have enough cases in this specific security.
+For example, when you have a support line (which I describe in Chapter 10) 
+and your price breaks it to the downside, that’s a sell signal. Over the past 
+100 years, technical analysts have used the break of a support line hundreds 
+of thousands of times, maybe millions, and it worked. Using this method was 
+the correct trading decision in the majority of a very large number of cases. 
+Still, choosing to use the break of a support line as a signal doesn’t work 
+every time. A support line break is an example of a technical forecast that has 
+a high probability in the context of many different contingencies and over 
+many sets of conditions.
+Other techniques are less reliable. You may think it would be wonderful to 
+have a list of techniques with their 
+reliability quotient,
+ which is a ranking of 
+how often they’re right. Some writers and software vendors claim that their 
+techniques are “over 75 percent correct.” This lofty proclamation is hardly 
+ever true. For one thing, the vendors aren’t considering new contingencies 
+and conditions. Markets are dynamic. Something that worked 75 percent of 
+the time in the past may work only 65 percent of the time in the future, or 
+some other percentage of the time, including zero — which is precisely what 
+happens during manias and panics.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 71 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 72 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 73 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 74 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 75 ---
+61
+ Chapter 4: Using Indicators to Trade Systematically
+ ✓ 
+A trend is beginning (moving average crossover or pattern breakout).
+ ✓ 
+A trend is strong or weak (slope of linear regression or moving average).
+ ✓ 
+A trend is retracing but will likely resume (relative strength index).
+ ✓ 
+A trend is ending and may reverse (momentum, moving average cross-
+over, or pattern breakout).
+ ✓ 
+A price is range-trading (slope of linear regression or moving average).
+Each indicator works best in one situation and less well in others. Technical 
+traders argue the merits and drawbacks of indicators in each situation, and 
+if you ask ten technical traders to list their top indicator for each task, you’ll 
+get ten entirely different lists. To a certain extent, the indicator you choose 
+for each task depends on the security and also on the analytical time frame.
+Choosing your trading style
+Unless you’re trading setups, which I describe in Chapter 16, the trend is 
+always the focus. In a perfect world, you first determine whether your secu-
+rity is trending or range-trading sideways, and then you apply the appropri-
+ate indicator. In practice, you can’t always classify price moves as trending or 
+not trending in a neat and tidy way. Besides, prices usually have an identifi-
+able range, whether they’re trending or not. In addition, retracements always 
+create doubt — you find yourself wondering, “Is it a momentary correction or 
+a reversal?”
+Generally, traders tend to have one of the following two personal trading 
+styles and the style dictates the holding period:
+ ✓ 
+Trend-followers:
+ Traders who like to identify trends may wait out 
+retracements and sideways range-trading situations until they resolve 
+back into a trend. Other trend followers use information from momen-
+tum indicators to modify their positions, for instance by taking some 
+profit when the security becomes overbought or oversold even though 
+the trend is just pausing. They expect it to continue. (See Chapter 2 for 
+a definition of overbought and oversold and Chapter 13 for overbought 
+and oversold indicators.) Figure 4-1 illustrates a trend, complete with 
+minor retracements, and shows how a trend-following trader makes 
+decisions.
+ ✓ 
+Swing traders:
+ These folks operate whether a trend is present or not. 
+Swing trading
+ is buying at relative lows and selling at relative highs, 
+regardless of whether the price is trending. Swing trading is more flex-
+ible than trend-following, because you can apply the techniques under 
+different market conditions. However, the drawback to swing trading is 
+that it requires more frequent trading and the profit on each leg of the 
+trade tends to be smaller than in a single trend-following trade.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 76 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 77 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 78 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 79 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 80 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 81 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 82 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 83 ---
+69
+ Chapter 4: Using Indicators to Trade Systematically
+Optimization is a necessary evil because when you’re starting out to trade a 
+new security, you don’t know which indicators to use or which parameters 
+to put into the indicators. In keeping with the empirical approach, try various 
+indicators and different parameters in the indicators to see what works.
+I say that optimization is evil because common sense tells you that condi-
+tions are never exactly the same and what worked on historical data may not 
+work in the future. Backtests to find good indicators and optimum param-
+eters give you a sense of accuracy and reliability that is almost always mis-
+leading. Keep reading for more on optimization.
+Constructing a backtest optimization
+Backtesting is a valuable exercise that delivers a measure of how well an indi-
+cator parameter might work — in a situation where you have no other evi-
+dence that the indicator will work at all. Backtesting is better than eyeballing 
+multiple versions of the indicator on a chart.
+A popular place to start backtesting indicators on your security is the simple 
+moving average crossover. The goal of the backtest is to find 
+x,
+ which is the 
+number of days in the moving average that would generate the best profit by 
+using a crossover rule (See Chapter 12). Here’s the formal hypothesis: “If you 
+buy XYZ stock every time the price crosses above the 
+x
+-day moving average 
+and sell it every time the price crosses below the 
+x
+-day moving average, it’ll 
+consistently and reliably be a profitable trading rule.”
+Just about every software package allows you to search for the optimum 
+moving average and will deliver the results in minutes. In this case, I ordered 
+the software to test every moving average from 10 to 50 days over the past 
+1,000 days to see which moving average would have delivered the most profit 
+on XYZ stock (the name is withheld to protect the innocent). I also ordered a 
+buy-only strategy, although you can also test for additional gains from going 
+short (to sell today without owning the security and buy it back later after 
+the price has fallen). You can see the top-three best results in Table 4-1.
+ Table 4-1  Results of Simple Moving Average 
+ Crossover Backtest on XYZ Stock
+Number of Days in 
+Moving Average
+Average Profit/Loss Percent Gain Number 
+of Trades
+10
+$1.56
+68.60%
+178
+31
+$3.02
+59.34%
+32
+35
+$3.32
+61.69%
+47
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 84 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 85 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 86 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 87 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 88 ---
+74
+Part II: Preparing Your Mind for Technical Analysis 
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 89 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 90 ---
+76
+Part II: Preparing Your Mind for Technical Analysis 
+indicators have a buy/sell trading rule already embedded in them, as I describe 
+in each of the chapters about indicators (see Chapters 6 through 17).
+But technical trading is a mindset that goes beyond using indicators. Trading 
+rules improve your trading performance by refining the buy/sell signals you 
+get from indicators. Trading rules tend to be more complex and contain more 
+conditions than raw indicators, such as “buy after the first 45 minutes if 
+x
+ and 
+y
+ also occur” or “sell half the position when 
+z
+ occurs.”
+Your overall goal should be to get the highest return for the lowest risk. How 
+can you accomplish this? You start with a plan.
+Your trading plan outline
+You may think that you can do it the easy way, by having a technical expert 
+send you a newsletter or a password to a technical Web site that gives you 
+the magic trade of the day. The expert may even explain and illustrate the 
+technique. But when it fails — and they always fail at some point — you end 
+up poorer and probably pretty mad at the charlatan who sold you a trading 
+program based on MACD, the stochastic oscillator, or something else you 
+could have done yourself without paying a big subscription fee. You may 
+even walk away saying technical analysis is hokum.
+The fault lies not in the “magic” indicator but in the trader, or rather the trad-
+er’s lack of a trading plan. Good trading isn’t about the securities you trade 
+or about indicators. It’s about planning the trade in full ahead of time and fol-
+lowing the plan. Strictly speaking, managing the trade isn’t exclusive to tech-
+nical analysis. But all successful technical traders manage their trades.
+At each step you have to decide which indicators or combinations of indica-
+tors to follow, and your exact specifications for them. Here’s what your indi-
+cators and rules need to do:
+ 1. Determine the current trend.
+ 2. Establish the rules for opening a position.
+ 3. Manage the money at risk by scaling up or down.
+ 4. Establish the rules for closing a position — set stops and targets.
+ 5. Establish a reentry rule after being stopped or after the target is hit.
+The technical trader plans the trade from entry to exit. This is the opposite 
+of traditional investing, where you buy a security for an indefinite period of 
+time and seldom establish in advance the level at which you will sell. But if 
+you want to increase your stake or preserve capital, it’s when you sell that 
+counts. You sell for one of three reasons — you met a profit target, you met a 
+loss limit, or you chose to increase or decrease the risk of the trade.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 91 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/

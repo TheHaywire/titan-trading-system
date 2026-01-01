@@ -1,0 +1,568 @@
+
+--- Page 155 ---
+141
+ Chapter 8: Redrawing the Price Bar: Japanese Candlesticks
+ ✓ 
+The real body is a doji.
+ ✓ 
+The shadow is missing.
+ ✓ 
+The shadow is extremely long.
+Want to know more about interpreting shadows in these three situations? 
+Keep reading.
+Shadows in the doji bar
+In many instances, the doji is just a plain one with ordinary, same-size shad-
+ows, as shown in Figure 8-2. However, the two most useful types of doji bars, 
+also shown in Figure 8-2, are the following:
+ ✓ 
+Dragonfly doji: 
+Look for the long, lower shadow that means the open, 
+high, and close were the same or nearly the same. Sellers were trying to 
+push the price down and succeeded in making a low — but they didn’t 
+succeed in getting it to close there. Because the close was back up at or 
+near the open, buyers must have emerged before the end of trading and 
+bought enough to move the close to the high or nearly to the high.
+ 
+ How you interpret the dragonfly depends on what bar patterns precede 
+it. Your options include the following:
+ • If the price move is a downtrend, the dragonfly may mean that 
+buyers are emerging and the downtrend may be ending.
+ • If the dragonfly appears after a series of uptrending bars, buyers 
+failed to push the price over the open to a new high while sellers 
+succeeded in getting a low, so the uptrend may be in trouble.
+ ✓ 
+Gravestone doji: 
+Take a look at that long upper shadow in Figure 8-2. 
+This bar, the exact opposite of the dragonfly, is formed when the open, 
+low, and close are the same or nearly the same, but a high creates a long 
+upper shadow. Although buyers succeeded in pushing the price to a 
+high over the open, by the end of the day the bears were fighting back 
+and pushed the price back to close near the open and the low. This push 
+is a failed effort at a rally, but you can interpret the bar best in the con-
+text of the other bars that precede it:
+ 
+• If the gravestone bar appears after a series of uptrending bars, 
+buyers failed to get the close at the high. Sellers dominated and 
+the uptrend is at risk of ending.
+ 
+• If the price move is a downtrend, the gravestone doji may mean 
+that buyers are emerging and the downtrend may be ending.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 156 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 157 ---
+143
+ Chapter 8: Redrawing the Price Bar: Japanese Candlesticks
+ ✓ 
+Long upper shadow:
+ The high of the day came well above both the open 
+and the close, whether the real body is black or white. Here’s how you 
+can interpret a really long upper shadow:
+ • If the price series is in an uptrend, the long upper shadow is a 
+failure to close near the high. If the uptrend is nearing a resistance 
+level (see Chapter 10 for a discussion of resistance), the long 
+upper shadow may signal a weakening of the uptrend. If a long 
+upper shadow follows a doji bar indicating indecisiveness, you 
+should worry that the uptrend may be over.
+ • If the price series is on a downtrend, the long upper shadow sug-
+gests that some market participants are buying at higher levels. 
+Especially if a long upper shadow follows a doji bar, you should 
+wonder if the downtrend might be ending.
+ ✓ 
+Long lower shadow:
+ A long lower shadow means that the low of the day 
+came well under both the open and the close, whether the real body is 
+black or white. Here’s what that means in the technical analysis world:
+ 
+• If the price series is trending down, the long lower shadow is a 
+failure to close near the low. If the downtrend is nearing a support 
+level (see Chapter 10), the long lower shadow may signal a weaken-
+ing or an end of the downtrend.
+ 
+• If the price series is trending up, the long lower shadow suggests 
+that traders were not willing to keep buying at the high levels right 
+up to the close. They were exiting under the high, and therefore 
+think that new highs are not warranted. This signal can be a warn-
+ing sign of the trend decelerating or ending.
+ 
+Figure 8-4:
+ 
+Very long 
+shadows.
+ 
+LONG UPPER SHADOW LONG LOWER SHADOW
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 158 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 159 ---
+145
+ Chapter 8: Redrawing the Price Bar: Japanese Candlesticks
+who were going to buy have just done so in one last burst, and the price may 
+have formed a resistance level at the top of the bar (the close, in this case).
+If the long bar were a black bar, denoting that the close was lower than the 
+open, you would find it easy to deduce that the up move might be ending. 
+A long black bar implies panic selling. But to interpret the white bar as an 
+ending burst in an uptrend is more subtle. In fact, an expert in reading stan-
+dard bars would see the same thing. Candlesticks just make it easier, espe-
+cially for traders just starting our or who prefer simplicity.
+Identifying Special “Emotional Extreme” 
+Candlestick Patterns
+Dozens of possible bar placement combinations and permutations are pos-
+sible. In this section, I cover several of the most popular patterns and how 
+you can tell the difference between them. These special “emotional extreme” 
+candlestick patterns are unique to candlestick analysis and do not appear in 
+the standard bar pattern analysis I discuss in Chapter 9.
+Interpreting candlestick patterns
+Two similar candlesticks or candlestick patterns often have the exact oppo-
+site interpretation, depending on where they fall in a series. You have to 
+memorize the exact patterns to avoid getting confused. I selected just two of 
+the many candlestick patterns to illustrate how tricky some candlestick inter-
+pretation can get.
+Hammer and hanging man
+Both of these candlestick types have a small real body and only one shadow — a 
+long lower shadow. While similar, noticing their differences is crucial to your 
+interpretation. The long shadow of the hammer extends to the downside off a 
+white body, while the long shadow of the hanging man extends to the down-
+side off a body that is either black or white. See Figure 8-6 for an exact image. 
+How can it be a hanging man if the body is white? You can tell from the place-
+ment among the rising and then falling bars on either side.
+You’d think that the white-body version would automatically be a bullish 
+indicator and the black-body version a bearish one, but interpreting this can-
+dlestick depends on its placement on the chart, regardless of the real-body 
+color. If the candlestick appears in a downtrend, for example, it marks the 
+likely end of the trend even if the real body is white.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 160 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 161 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 162 ---
+148
+Part III: Observing Market Behavior 
+failure of the trend — a failure to close near the high. The addition of the doji 
+bar indicates traders were already becoming indecisive the day before.
+ 
+Figure 8-8:
+ 
+Reversal 
+patterns.
+ 
+BEARISH ENGULFING CANDLESTICK
+SHOOTING STAR
+(TWO BARS)
+Continuation patterns
+Candlestick patterns are most often used to identify reversals (see preced-
+ing section), but continuation patterns do exist. As the name suggests, a 
+continuation pattern gives you confirmation that the trend in place will likely 
+continue. This section covers three continuation patterns you may see while 
+candlestick charting.
+Rising window
+Rising window
+ is the term for a gap, in this case, an upward gap. (A down-
+ward gap is a 
+falling window.
+) You can get more into gaps in Chapter 7.
+In Figure 8-9, the gap separates two white candlesticks, which are themselves 
+bullish. The next bar doesn’t “fill the gap” (called “closing the window.”) The 
+gap between the two price bars is confirmation of the existing trend, and the 
+market’s refusal the following day to go back and fill the gap is further confir-
+mation that the trend is okay.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 163 ---
+149
+ Chapter 8: Redrawing the Price Bar: Japanese Candlesticks
+ 
+Figure 8-9:
+ 
+Continuation 
+patterns.
+ 
+RISING WINDOW
+THREE WHITE SOLDIERS
+GAP
+THREE BLACK CROWS
+Three white soldiers
+The second exhibit in Figure 8-9 is of 
+three white soldiers.
+ In this pattern, what 
+you need to note are the three large white candlesticks in a row. Seeing the 
+close consistently over the open for three days confirms that the price series 
+is in an uptrend, and the size of the bars indicates its robustness.
+Three black crows
+Three black crows is the upside-down mirror image of three white soldiers, 
+only with black real bodies. In this pattern (refer to Figure 8-9), you have 
+three periods of the close under the open and lower each time, with the bars 
+fairly sizeable. The price series is now in a downtrend.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 164 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 165 ---
+151
+ Chapter 8: Redrawing the Price Bar: Japanese Candlesticks
+traders’ decision to keep taking the price up. In this occasion, the doji wasn’t 
+a reversal indicator, at least not for the next day. After the two white candles 
+comes a bearish engulfing candle, a reversal warning that this up move may 
+be ending. The engulfing candle alerts you to watch the next day’s activity, 
+especially the open, with an eagle eye.
+You can also use candlesticks to confirm relative strength, momentum, and 
+many other indicators. Check out Chapter 13 for details on relative strength 
+and momentum. Note that in Japan, a favorite indicator to use with candle-
+sticks is the moving average, which I cover in Chapter 12.
+Some traders use specific candlesticks to identify 
+set-ups,
+ or a pattern config-
+uration that is believed to have a high probability of delivering a specific out-
+come. Say that after a long series of falling bars, you see a doji bar (indicating 
+indecisiveness) or a harami that closes near the upper end of the previous 
+candle — and then a bullish engulfing candlestick. At the same time, another 
+indicator like the stochastic oscillator or relative strength index shows the 
+security to be deeply oversold. This scenario is a high-probability trade set-
+up, which means to get out the big guns because you want to buy! You can 
+find many resources out there, including in print and online, for great ways 
+to combine candlesticks with other indicators. I recommend books and Web 
+work by John Person (pivot points and candlesticks) and Stephen Bigalow.
+Trading on Candlesticks Alone
+Reading candlesticks is like reading standard bars — endlessly fascinating, 
+even addictive. But be aware that all bar reading takes practice. Some spe-
+cific bars and patterns of bars are well known — and thus likely to get the 
+expected response from market participants. But to do a good job interpret-
+ing candlesticks, you need to understand the dynamic and complex relation-
+ships of many patterns all at once, like juggling six oranges rather than three.
+As with standard bar interpretation, the predictive power of a particular bar 
+or pattern of bars may be limited to the next day or next few days. If you’re 
+a swing trader, candlesticks are going to be of more interest to you than if 
+you’re a position trader with a very long holding period (weeks and months).
+Like all technical indicators, candlesticks work only some of the time to 
+deliver the expected outcome. Evaluating candlesticks alone, without con-
+firmation from other indicators, is a daunting task. First, you have to define, 
+carefully, what each candlestick looks like. As noted in the section “Harami” 
+in this chapter, a harami (for example) can be bullish or bearish, depending 
+on the other bars around it.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 166 ---
+152
+Part III: Observing Market Behavior 
+Tom Bulkowski took on the task of measuring the predictive value of candle-
+sticks in his book 
+Encyclopedia of Candlestick Charts 
+(published by Wiley). 
+Carefully defining each candlestick and set of candlestick patterns for a total 
+of 103, Bulkowski ran them through a gigantic database of 500 U.S. equities 
+over ten years and found that 69 percent of the candles delivered the outcome 
+expected, such as continuing higher closes following “three white soldiers.” 
+Bulkowski tested 412 combinations of the 103 candlestick patterns and found 
+that only 100 candles or patterns got the expected outcome, or 24 percent.
+Wait — it gets worse. In statistics, you need a bare minimum of 30 to 40 
+instances of a pattern occurring to see whether it delivers the expected out-
+come. But Bulkowski found that patterns meeting his definitions didn’t occur 
+all that often. In fact, only 10 percent were found a sufficient number of times 
+to “qualify” for workability testing. In short, you find only 10 percent of the can-
+dles in sufficient number, and these candles work as expected only 60 percent 
+of the time. Refining the criteria further to a 66 percent success rate, meaning 
+that the candle works as advertised in two out of three trades, only 6 percent 
+of candles (or 13 candles total) are what Bulkowski calls “investment grade.” 
+These candles include some that I describe in this chapter, including the bear-
+ish doji star, bearish engulfing candle, and rising and falling windows.
+Bulkowski’s findings don’t mean that you cannot find a specific candlestick 
+that works (say) most of the time in your security. A higher incidence of 
+success in candle-reading may be due to other traders in the same security 
+seeing the same candlestick pattern and believing it will work — and so it 
+does. In foreign exchange trading, for example, the hammer, shooting star, 
+and engulfing bull or engulfing bear candles work nearly all the time.
+A qualification of the Bulkowski study is that it was applied to U.S. equities, 
+not commodities or other securities, and over a specific ten-year period. Still, 
+the study confirms what you already knew — no technical indicator works all 
+the time. That doesn’t mean specific candlesticks won’t work for you, espe-
+cially if you add confirming indicators like the MACD. This only emphasizes 
+once again that chart-reading is an art.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 167 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 168 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 169 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 170 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 171 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 172 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 173 ---
+159
+ Chapter 9: Seeing Chart Patterns Through a Technical Lens
+ 
+Figure 9-3:
+ 
+Ascending 
+and 
+descending 
+triangles.
+ 
+ASCENDING TRIANGLE
+DESCENDING TRIANGLE
+A descending triangle is the mirror image of the ascending triangle. The impor-
+tant point is that in this case, the price is failing to make new lows in the pre-
+vailing downtrend. You wonder if the trend is failing. But if you can still draw a 
+line along the series of lower highs, it would be a mistake to buy at this point — 
+the probability is high that the downtrend is going to continue.
+Dead-cat bounce
+A dead-cat bounce is a peculiar continuation pattern that looks like a rever-
+sal at the beginning, with a sizeable upward retracement of a down move, 
+but then fades back to the same downward direction. Note that a dead-cat 
+bounce occurs only in down moves and no equivalent named pattern exists 
+for a parallel sequence of events in an up move.
+The dead-cat pattern starts off with a negative fundamental event that triggers 
+a massive down move. The average size of the down move is 25 percent — 
+but the price can shoot down by 70 percent or more in only a few days. The 
+bounce
+ is an upward retracement that may make you think the drop is over. 
+The pattern includes a breakaway downside gap about 80 percent of the 
+time, and sometimes the bounce upward fills part of the gap. (See Chapter 7 
+for a discussion of gaps.) Many traders mistakenly think that if a gap is filled, 
+even partly, the preceding move has ended. The dead-cat bounce is one of 
+the patterns that disproves that idea — by the end of six months after the 
+gap, only 54 percent of price moves had fully closed the gap in the Bulkowski 
+study, which found 244 versions of the dead-cat bounce pattern in 500 stocks 
+between 1991 and 1996. See Figure 9-4.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 174 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 175 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 176 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 177 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 178 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 179 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 180 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 181 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 182 ---
+168
+Part IV: Finding Patterns 
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 183 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 184 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 185 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 186 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 187 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 188 ---
+174
+Part IV: Finding Patterns 
+The other side of the coin: Using 
+resistance to enter and exit
+Resistance 
+is the mirror image of support: A line drawn along a series of highs 
+marks where buyers resist buying more — the price is too high for them. 
+Traders expect sellers to emerge at the resistance line (taking profit). You 
+may be wondering why you should care about resistance lines if all you ever 
+do is buy securities. As a buyer, the only trendline you care about is the sup-
+port line. But you should care about identifying a downtrend using the resis-
+tance line for two reasons:
+ ✓ 
+When a downtrend ends, the next move may be an uptrend.
+ You want 
+to get in on the action as early as possible, so you care when a down-
+trend is broken to the upside. The breakout is an important clue that an 
+uptrend may be starting and you should start paying attention.
+ ✓ 
+You may someday do the unimaginable — sell short.
+ If you have been 
+trading exclusively in the U.S. stock market, chances are you’re not 
+familiar with 
+initiating a short position,
+ or selling a security first and 
+buying it back later after its price has fallen. Commodity traders, on the 
+other hand, are familiar with the practice. After all, we’re striving to be 
+emotionally neutral about whether prices are rising or falling. Why not 
+profit symmetrically? To make a profit only when a price is rising is to 
+lose 50 percent of the opportunity presented by trend-following.
+Figure 10-2 shows two resistance lines drawn according to the rule. The 
+uppermost line correctly advised shorting this security at the third touch of 
+the line. The price falls off the cliff. But the price never returns to this first 
+resistance line. Instead you get the opportunity to draw a new resistance line 
+a few months later.
+An experienced trader would probably see the new line as an opportunity to 
+increase his short position. A long-only trader would be watching this second 
+resistance line for the opportunity to buy the security — with a holding period 
+that lasts only until the price nears the topmost resistance line, where it will 
+face (you guessed it) resistance. Note that selling this security on the third 
+touch of resistance and covering the short position when the price breaks the 
+second resistance line would have given you a return of 20 percent.
+The logic for trading using resistance lines is the same as for the support line 
+(see the preceding section), but in reverse. The more times the high-of-the-
+day touches the resistance line and doesn’t cross it, the more confidence 
+you have that it is a valid description of the trend. This is called a 
+test of 
+resistance
+ and encourages sellers of the security to sell more after the price 
+passes the test. Fresh selling constitutes supply of the security and is called 
+distribution. 
+Those who own the security are reluctant to hold it after resis-
+tance was proved to resist an effort to break above it. They’re willing to sell 
+their inventory at increasingly lower prices.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 189 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 190 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 191 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 192 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 193 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 194 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 195 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 196 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 197 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 198 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 199 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 200 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 201 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 202 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/

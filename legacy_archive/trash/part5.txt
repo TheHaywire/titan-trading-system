@@ -1,0 +1,536 @@
+
+--- Page 203 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 204 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 205 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 206 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 207 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 208 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 209 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 210 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 211 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 212 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 213 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 214 ---
+200
+Part IV: Finding Patterns 
+median price (the numerical average of the high, low, and close). Other trad-
+ers cook up yet more definitions. Today, the median price version is prob-
+ably the most accepted. Keep reading for more handy tips on pivot points.
+Calculating the first zone of 
+support and resistance
+The logic of the pivot point is that after a trend pauses, you need a breakout 
+that’s a significant distance from the median price to decide whether the old 
+trend will resume or a reversal is really at hand. So you start with the median 
+price and to that you add a factor to get upside resistance, and you subtract 
+a factor to get downside support.
+To calculate the first (inner) line of resistance, multiply the pivot point value 
+by two and, from that number, subtract the low of the pivot day. This is named 
+R1. To calculate the first (inner) line of support, or S1, multiply the pivot value 
+by two and, from that number, subtract the high of the pivot day. This proce-
+dure sounds like a lot of arithmetic, but don’t sweat it. It’s easy enough to do 
+in a spreadsheet or by hand, and many trading platforms offer it as a standard 
+option. Plus, the procedure itself is quite sensible — you use a multiple of the 
+median price to estimate a range going forward that subtracts the high and 
+the low to yield a norm. Any price higher or lower would be an extreme. If the 
+upcoming price breaks the horizontal support and resistance lines calculated 
+this way, the direction of the breakout is your clue that the trend is truly over.
+You can create a series of pivot support and resistance lines according to 
+these formulas or some variation of them:
+Pivot Point = (High + Close + Low)/3Support 1 = 2 
+×
+ Pivot – High
+Support 2 = Pivot – (R1 – S1)
+Support 3 = Low – 2 
+×
+ (High – Pivot)
+Resistance 1 = 2 
+×
+ Pivot – Low
+Resistance 2 = Pivot + (R1 – S1)
+Resistance 3 = High + 2 
+×
+ (Pivot – Low)
+In Figure 11-6, R3 is very close to the highest high and S3, while higher 
+than the recent lowest low, meets the hand-drawn support line connecting 
+two lows. Pivot point analysis has become very popular in recent years. 
+Advocates say that by projecting out a reasonable range to the next few 
+days, you can easily see a breakout, and pivot points are therefore predictive 
+instead of lagging, like every other indicator. This is not, strictly speaking, 
+accurate. Any band or channel has predictive value in the sense that upcom-
+ing prices, if they are normal, will remain within the band or channel and a 
+violation of the channel top or bottom constitutes a breakout. What is valu-
+able about pivot points is that when many market participants are looking at 
+the same lines, you can expect price movement at exactly those lines.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 215 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 216 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 217 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 218 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 219 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 220 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 221 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 222 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 223 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 224 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 225 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 226 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 227 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 228 ---
+214
+Part V: Flying with Dynamic Analysis 
+Adjusting the Moving Average
+You can adjust the moving average to make it track current prices more 
+closely without sacrificing all the benefits of the averaging process. Keep 
+reading this section to find out how.
+Getting acquainted with 
+moving average types
+Moving averages are often abbreviated. You may see SMA and wonder what 
+that
+ is. SMA stands for the 
+simple moving average
+ (and you feel like an idiot 
+after you figure it out). Likewise, the moving averages I cover in the following 
+Folklore versus trading tools
+You see reports that Blue Widget stock just sur-
+passed its 50-day moving average, or its 200-
+day moving average, or that its 50-day moving 
+average crossed its 200-day moving average, a 
+so-called “golden cross.” This type of informa-
+tion may or may not be interesting and useful. 
+Maybe the price had been within a few pennies 
+of the 200-day moving average for months on 
+end, and just managed to inch over it. Why is 
+this news?
+Without a context, a price crossing a moving 
+average of a fixed number of days is just 
+another statistic. Because of research by tech-
+nical trader Richard Donchian, the 5-day and 
+20-day moving averages became popular, and 
+that makes sense — 5 days is a week and 20 
+days is (roughly) a month. But 50 days and 200 
+days are just round numbers unrelated to the 
+calendar (the number of business days in a year 
+is about 240). And as I note in this chapter, the 
+best number of days to put in a moving aver-
+age is the 
+smallest
+ number that still generates 
+as few whipsaws as possible. By choosing a 
+number as high as 50 or 200 days, you’re con-
+demning yourself to an inefficient parameter 
+practically by definition.
+But that would be to mistake a barometer of the 
+environment for a trading tool. If you’re looking 
+for an indicator to describe the general tone of 
+a security or market index, the 200-day moving 
+average is pretty good — mostly because it 
+is
+ 
+in vogue. To use a fixed number like 50 or 200 
+makes sense only if everyone else is looking at 
+the same number, and increasingly, they are. 
+Even people who profess to dislike and distrust 
+technical analysis give credence to the 200-day 
+moving average.
+But what 
+exactly 
+does it mean? Well, the 200-
+day moving average doesn’t have a proven 
+meaning. A security whose price falls below 
+the 200-day moving average has fallen out of 
+favor with traders, and one whose price is in the 
+process of crossing above the 200-day moving 
+average is back in favor. The financial press 
+sometimes reports a “death cross,” or the 
+50-day moving average crossing below the 200-
+day. 
+Death cross
+ is a semantically loaded term 
+that has no statistical basis for reliably predict-
+ing outcomes. This technical jargon example 
+is an instance where language influences the 
+outcome far more than the event the language 
+is purportedly describing.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 229 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 230 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 231 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 232 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 233 ---
+219
+ Chapter 12: Using Dynamic Lines
+ ✓ 
+You can 
+see
+ the crossover and don’t have to calculate the numerical 
+value of the moving average every day, which is a nuisance. You still 
+may want to add a filter, such as waiting a day or two after the crossover 
+to put on the trade or qualifying the crossover by a percentage amount.
+ ✓ 
+The two moving average crossover is more reliable than the single 
+moving average in that it is less sensitive. It lags more (see the section 
+“Fixing lag” earlier in this chapter), but is wrong less often. You’re swap-
+ping risk for return, as usual.
+ ✓ 
+You have fewer trades and therefore lower brokerage expense. In the 
+crossover of the moving average and price, you have ten trades (five in 
+and five out), whereas in the level rule and two moving average cross-
+over, you have six.
+Table 12-3 Hypothetical Profit from the Two Moving 
+ Average Crossover Rule
+No. of 
+Days
+Action Price Profit Buy-and-
+Hold
+25 
+days
+Buy
+Sell
+$70.61
+$74.20 $3.59
+$70.61
+43 
+days
+Sell
+Buy
+$74.20
+$66.60 $7.60
+29 
+days
+Buy
+Mark-to-
+market
+$66.60
+$80.72 $14.12 $80.72
+Total $25.31 (36%) $10.11 (14%)
+Trying the three-way approach
+If two moving averages are good, three must be better. For example, you 
+could plot the 5-day, 10-day, and 20-day moving averages on a chart, and you 
+would consider a buy/sell signal to be confirmed only when both the 5-day 
+and
+ the 10-day cross the 20-day moving average. If you’re always a buyer and 
+never a short-seller, you can add a qualification that a sell signal occurs when 
+the 5-day moving average crosses 
+either
+ of the other two moving averages.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 234 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 235 ---
+221
+ Chapter 12: Using Dynamic Lines
+Delving into Moving Average 
+Convergence and Divergence
+When the price crosses over a moving average, or one moving average 
+crosses over another, you have a chart event with an embedded trading deci-
+sion. But the crossover is a blunt instrument. You can often see a crossover 
+coming, but if you’re following rule-based discipline, you’re twiddling your 
+thumbs waiting for the actual crossover.
+If you look at any two moving average crossovers, you see that at a turning 
+point, the short moving average converges to the price and the long-term 
+moving average converges, a bit later, to the short-term one. By the time the 
+crossover actually occurs, the price peak (or trough) has already passed.
+Similarly, after a crossover, the two moving averages diverge from one 
+another. Wouldn’t it be nice to quantify the convergence and divergence? 
+Then you’d have a measure of market sentiment. You could say that senti-
+ment is turning against the current trend when the moving averages are con-
+verging and market sentiment is confirming the current trend as the moving 
+averages diverge.
+Here are the convergence and divergence basics you need to know:
+ ✓ 
+Convergence:
+ When two moving averages converge, the trend may be 
+coming to an end. Convergence is therefore an early warning. Because 
+moving averages are always lagging indicators, measuring convergence 
+is a way of anticipating a crossover.
+ 
+ At a peak, one way to look at the convergence is to say that short-term 
+demand is faltering — traders are failing to produce new higher closes. 
+The trend is still in place, as shown by the long-term moving average. At 
+a price bottom, you can interpret the short-term moving average falling 
+at a lesser pace as selling interest (supply) falters.
+ ✓ 
+Divergence:
+ Conversely, when you can see a lot of daylight between 
+two moving averages, they’re diverging, and that means the trend is safe 
+from a crossover, at least for another few periods. In practice, abnor-
+mally wide divergence tends not to be sustainable and can be a warning 
+of prices having reached an extreme ahead of reversing.
+To get the ins and outs on how to calculate and use convergence and diver-
+gence to maximize your trading, check out the following sections.
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 236 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 237 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 238 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 239 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 240 ---
+226
+Part V: Flying with Dynamic Analysis 
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 241 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 242 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 243 ---
+229
+ Chapter 13: Measuring Momentum
+Note that on Day 6, assuming the same $1 rise, the following calculation is true:
+Momentum = $16 – $11 = $5
+On Day 6, the momentum indicator starts going sideways. The price still rose 
+$1 on Day 6, but momentum didn’t change. The price is still rising, but the 
+momentum value didn’t change.
+Utilizing the rate-of-change method
+In practice, what I present as momentum is really what math nit-pickers call 
+rate of change.
+ The actual momentum indicator most technical traders use 
+and software packages offer is calculated differently from the subtraction 
+method outlined in the earlier section, “Using the subtraction method.”
+Here’s how you calculate the rate of change:
+ 
+1. Divide today’s close by the close five days ago.
+ 2. Multiply that number by 100.
+  M = (Price Today/Price Five Days Ago) x100
+  M = (15/10) x 100 = 150
+The result is information presented as a ratio (times 100) rather than the 
+simple difference between the two prices. If today’s price is equal to the price 
+five days ago, the centerline now reads 100, meaning that the new price is 
+equal to 100 percent of the price five days ago, which is the same as saying 
+that there is zero change between the two prices.
+Stop and think about the arithmetic for minute. Imagine that a price is rising 
+at the same pace every day, say $1, and you’re using a five-day indicator. On 
+Day 6, if you use the rate-of-change division method, the price today is $16 
+and the price five days ago was $11, so your calculation would look like:
+M = (16/11) x 100 = 145.45
+It now appears that momentum is moving down. In the subtraction method of 
+calculating momentum section example, you see a flat line at the zero level. 
+In the rate-of-change method, you get a 
+drop
+ from 150 to 145, showing that 
+even though momentum is changing at a constant rate ($1 per day), it isn’t 
+accelerating.
+ 
+   
+   
+    
+    www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 244 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 245 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 246 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 247 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 248 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 249 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 250 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 251 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 252 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 253 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 254 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 255 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 256 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 257 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 258 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 259 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 260 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 261 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 262 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 263 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 264 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 265 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
+--- Page 266 ---
+www.it-ebooks.info
+|||||||||||||||||||||||||||||||||||||||||||||||||
+http://itbookshub.com/
