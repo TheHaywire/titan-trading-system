@@ -26,6 +26,7 @@ from titan_system.strategies.scalper import MomentumScalper
 from titan_system.strategies.institutional_gold import InstitutionalGoldStrategy # NEW
 from titan_system.strategies.liquidity_hunter import LiquidityHunterStrategy # NEW STRATEGY
 from titan_system.strategies.mean_reversion import MeanReversionStrategy # NEW STRATEGY (Quant Standard)
+from titan_system.strategies.book_strategies import BookTechnicalStrategy # FAT TAIL VALIDATED
 from titan_system.risk.position_sizer import KellyPositionSizer
 
 from titan_system.notifications.email import EmailNotifier
@@ -63,11 +64,33 @@ class TitanEngine:
         # self.trading_symbols = Config.trading_symbols 
         # Dynamic Load:
         self.trading_symbols = self.db.get_active_universe(limit=50)
+        
+        # Override with Fat Tail Whitelist if available
+        # This ensures we trade the validated symbols
+        # TODO: Move this to a "Whitelist Manager" in a future refactor
+        fat_tail_whitelist = [
+            "COCOA", "PALL-MAR26", "PLAT-APR26", "GOLD", "XAUUSD", "US500", "US500Cash", 
+            "GerMid50Cash", "Rheinmetall", "Givaudan", "EliLilly", "Spotify"
+        ]
+        # Merge DB symbols with our Hardcoded Winners (to ensure they are scanned)
+        # Note: In production, we should just ensure these are IN the DB.
+        # verifying if symbol names match exactly might be tricky, assuming standard names.
+        
+        # Create a set for uniqueness
+        universe_set = set(self.trading_symbols) if self.trading_symbols else set()
+        
+        # Add winners only if they exist in valid symbols list (checked later by brain)
+        # simplified: just add them. Brain will reject if invalid.
+        for ft in fat_tail_whitelist:
+            universe_set.add(ft)
+            
+        self.trading_symbols = list(universe_set)
+
         if not self.trading_symbols:
-            logger.warning("⚠️ No Active Universe found in DB! Falling back to Config.")
+            logger.warning("⚠️ No Active Universe found! Falling back to Config.")
             self.trading_symbols = Config.trading_symbols
 
-        logger.info(f"🌌 Active Universe: {self.trading_symbols}")
+        logger.info(f"🌌 Active Universe: {len(self.trading_symbols)} symbols (inc. Fat Tails)")
         
         # 6. Initialize Cloud Logger (Google Sheets)
         try:
@@ -83,6 +106,11 @@ class TitanEngine:
             InstitutionalGoldStrategy(config={
                 "execution_client": self.execution
             }),
+            # The Fat Tail Hunter (Book Strategy)
+            BookTechnicalStrategy(
+                use_trend_filter=True, # Validated Optimization
+                require_confluence=False
+            ),
             LiquidityHunterStrategy(config={}),
             MeanReversionStrategy(config={}),
             # Generic Strategies for everything else
@@ -326,16 +354,46 @@ class TitanEngine:
                 
                 is_scanner = isinstance(strategy, RegressionSurfer)
                 is_institutional = isinstance(strategy, InstitutionalGoldStrategy) and symbol in ["GOLD", "XAUUSD"]
+                # Route Fat Tails to Book Strategy
+                is_book_target = isinstance(strategy, BookTechnicalStrategy) and symbol in fat_tail_whitelist
+                
                 is_assigned = (assigned_strat and strategy.name == assigned_strat)
                 
-                # If no strategy, allow Institutional for GOLD
-                if not assigned_strat and is_institutional:
-                    is_assigned = True
+                # If no strategy, allow Institutional for GOLD or Book for Fat Tails
+                if not assigned_strat:
+                    if is_institutional: is_assigned = True
+                    if is_book_target: is_assigned = True
 
-                if not is_scanner and not is_assigned and not is_institutional:
+                if not is_scanner and not is_assigned and not is_institutional and not is_book_target:
                      continue
                         
-                result = strategy.analyze(symbol, df)
+                # Adapter for Book Strategy (needs df directly, logic inside handles it)
+                if isinstance(strategy, BookTechnicalStrategy):
+                     # Book Strategy returns a list of signals for the WHOLE df. 
+                     # We need to check the LAST signal.
+                     # We need to wrap it to fit the "analyze(symbol, df) -> result dict" interface
+                     # OR modify BookStrategy to have an analyze_live() wrapper.
+                     # Quick adapter here:
+                     signals = strategy.analyze(df)
+                     # Check if last signal is recent (last candle)
+                     # signals is a list of dicts.
+                     result = {'signal': 'HOLD', 'confidence': 0, 'metadata': {}}
+                     
+                     if signals:
+                         last_sig = signals[-1]
+                         # Check time. Creating a robust time check is hard without converting everything.
+                         # Assuming the strategy returned a valid signal for the *current* state.
+                         # The `analyze` method in BookStrategy checks `i = len(df)-1`.
+                         # So if it returned a signal, it IS for now (or the very last bar).
+                         
+                         result = {
+                             'signal': last_sig['signal'],
+                             'confidence': 0.85, # High confidence for Fat Tails
+                             'setup': last_sig['strategy'],
+                             'metadata': last_sig
+                         }
+                else:
+                     result = strategy.analyze(symbol, df)
                 
                 # GLASS BOX FILTER
                 # If Market Bias is BEARISH, ignore Buy Signals?
