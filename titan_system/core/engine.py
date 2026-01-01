@@ -27,9 +27,10 @@ from titan_system.strategies.institutional_gold import InstitutionalGoldStrategy
 from titan_system.strategies.liquidity_hunter import LiquidityHunterStrategy # NEW STRATEGY
 from titan_system.strategies.mean_reversion import MeanReversionStrategy # NEW STRATEGY (Quant Standard)
 from titan_system.strategies.book_strategies import BookTechnicalStrategy # FAT TAIL VALIDATED
-from titan_system.risk.position_sizer import KellyPositionSizer
+from titan_system.risk.allocation import AllocationAgent
 from titan_system.risk.kill_switch import KillSwitch, check_kill_switch_conditions
 from titan_system.core.symbol_mapper import mapper
+from titan_system.core.performance_monitor import PerformanceOptimizer
 
 from titan_system.notifications.email import EmailNotifier
 from titan_system.notifications.telegram_bot import TelegramNotifier
@@ -104,6 +105,18 @@ class TitanEngine:
                 logger.warning(f"❌ Could not resolve {s_req} on this broker. Skipping.")
             
         self.trading_symbols = list(universe_set)
+        
+        # 5.b Self-Audit (Blacklist Enforcement)
+        try:
+             optimizer = PerformanceOptimizer()
+             blacklist = optimizer.run_audit(threshold_expectancy=-100.0, min_trades=5)
+             if blacklist:
+                 before_count = len(self.trading_symbols)
+                 self.trading_symbols = [s for s in self.trading_symbols if s not in blacklist]
+                 after_count = len(self.trading_symbols)
+                 logger.warning(f"🛡️ Self-Audit: Blacklisted {before_count - after_count} symbols (Account Killers).")
+        except Exception as e:
+             logger.error(f"Performance audit failed: {e}")
 
         if not self.trading_symbols:
             logger.warning("⚠️ No Active Universe found! Falling back to Config.")
@@ -147,7 +160,7 @@ class TitanEngine:
         ]
         
         self.running = False
-        self.position_sizer = KellyPositionSizer(max_risk_pct=2.0, kelly_fraction=0.5)
+        self.allocator = AllocationAgent(risk_per_trade=0.015, max_total_exposure=0.10)
         self.last_analysis_time = 0
         self.last_report_date = None
         self.scan_results = {} # For API/Dashboard
@@ -493,32 +506,30 @@ class TitanEngine:
                 metrics = best_result.get('metrics', {})
                 z_score = metrics.get('z_score', 0)
                 
-                # Estimate win probability from Z-Score
-                win_prob = self.position_sizer.estimate_win_probability(z_score) if z_score else 0.6
+                # Estimate lot size using Allocation Agent (EPIC-07 Phase 2)
+                # confidence is scale 0-1 from score
+                confidence = market_state.get('score', 50) / 100.0
                 
-                # Calculate SL/TP based on volatility
-                std_dev = metrics.get('std_dev', 0)
-                entry_price = market_state.get('prices', {}).get('current', 0)
-                
+                # Use a default 50 pip SL for distance calculation if std_dev not available
+                sl_pips = 50
                 if std_dev and entry_price:
-                    # SL at 1 std dev, TP at 2 std dev (risk-reward ratio)
-                    stop_loss = entry_price - std_dev if best_result['signal'] == 'BUY' else entry_price + std_dev
-                    take_profit = entry_price + (2 * std_dev) if best_result['signal'] == 'BUY' else entry_price - (2 * std_dev)
-                    
-                    # Calculate optimal lot size
-                    lot_size = self.position_sizer.calculate_position_size(
-                        equity=equity,
-                        symbol=symbol,
-                        entry_price=entry_price,
-                        stop_loss=stop_loss,
-                        win_probability=win_prob,
-                        win_loss_ratio=2.0  # Our TP is 2x our SL
-                    )
-                else:
-                    # Fallback to conservative default
-                    lot_size = 0.01
-                    stop_loss = None
-                    take_profit = None
+                    point = mt5.symbol_info(symbol).point
+                    sl_pips = abs(entry_price - (entry_price - std_dev)) / (point * 10)
+
+                lot_size = self.allocator.calculate_lots(
+                    symbol=symbol,
+                    signal_confidence=confidence,
+                    stop_loss_pips=sl_pips
+                )
+                
+                # Fallback safeguard
+                if lot_size < 0.01:
+                    logger.info(f"  ⚠️ lot_size too small ({lot_size}). Skipping execution.")
+                    continue
+                
+                win_prob = confidence # Map confidence to win_prob for logging
+                stop_loss = None # Will be calculated by execution.py
+                take_profit = None
                 
                 # Execute
                 logger.info(f"  🚀 Executing {best_result['signal']} on {symbol} | Lot: {lot_size} | Win Prob: {win_prob*100:.0f}%")
