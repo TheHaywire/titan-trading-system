@@ -54,17 +54,16 @@
 
 ### 🧠 STRATEGY: Trading Logic & Research
 
-- **Status**: 🚧 In Progress (80%) ⬆️ **+30% from Expectancy Tool**
+- **Status**: ✅ Complete (100%)
 - **Owner**: Education Lead
 - **Deliverables**:
   - [x] R:R ratio framework (2:1, 3:1 targets)
   - [x] Expectancy formulas + examples
-  - [x] Win rate vs R:R analysis
+  - [x] Win rate vs R:R matrix (`docs/institutional/EDGE_MATRIX.md`)
   - [x] Institutional risk philosophy doc
-  - [x] **Expectancy Calculator Tool** ✨ NEW
+  - [x] **Expectancy Calculator Tool** (`scripts/expectancy_calculator.py`)
 - **Docs**: [📄 Section 03](docs/institutional/SECTION_03_TRADING_CONCEPTS.md)
-- **Implementation**: `scripts/expectancy_calculator.py`
-- **Next Milestone**: Integrated win rate optimization dashboard
+- **Next Milestone**: Real-time performance alerting.
 
 #### [Section 04] Instrument Universe & Symbol Catalog
 - **Status**: ✅ Complete (100%)
@@ -78,15 +77,15 @@
 - **Next Milestone**: Automated daily property refresh script
 
 #### [Section 06] Strategy Library & Research Process
-- **Status**: 🚧 In Progress (55%)
+- **Status**: ✅ Complete (100%)
 - **Owner**: Head of Research
 - **Deliverables**:
   - [x] Strategy catalog (BookTechnical, InstitutionalGold)
+  - [x] Formal hypothesis documentation (`docs/institutional/STRATEGY_HYPOTHESES.md`)
+  - [x] Multi-agent architecture design (Prediction vs Allocation)
   - [x] Research workflow (idea → backtest → live)
-  - [ ] Multi-agent architecture (prediction vs allocation)
-  - [ ] Formal hypothesis documentation per strategy
 - **Docs**: [📄 Section 06](docs/institutional/SECTION_06_STRATEGY_LIBRARY.md)
-- **Next Milestone**: Document 5 strategy hypotheses with statistical validation
+- **Next Milestone**: Implement Multi-Agent Logic in `engine.py`.
 
 ---
 
