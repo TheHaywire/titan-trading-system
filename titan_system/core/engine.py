@@ -28,6 +28,7 @@ from titan_system.strategies.liquidity_hunter import LiquidityHunterStrategy # N
 from titan_system.strategies.mean_reversion import MeanReversionStrategy # NEW STRATEGY (Quant Standard)
 from titan_system.strategies.book_strategies import BookTechnicalStrategy # FAT TAIL VALIDATED
 from titan_system.risk.position_sizer import KellyPositionSizer
+from titan_system.risk.kill_switch import KillSwitch, check_kill_switch_conditions
 
 from titan_system.notifications.email import EmailNotifier
 from titan_system.notifications.telegram_bot import TelegramNotifier
@@ -48,10 +49,20 @@ class TitanEngine:
         self.notifier = EmailNotifier()
         self.telegram = TelegramNotifier()
         
-        # 2. Risk Management (Circuit Breaker)
+        # Attach notifiers to kill switch
+        self.kill_switch.email = self.notifier
+        self.kill_switch.telegram = self.telegram
+        
+        # 2. Risk Management (Circuit Breaker + Kill Switch)
         self.circuit_breaker = CircuitBreaker(
             max_daily_loss_percent=Config.max_daily_loss_percent,
             auto_reset_daily=True
+        )
+        
+        # NEW: 3-Tier Kill Switch for emergency stops
+        self.kill_switch = KillSwitch(
+            email_notifier=None,  # Will init below
+            telegram_notifier=None
         )
         
         # 3. Initialize Execution Interface
@@ -228,6 +239,12 @@ class TitanEngine:
             summary = self.execution.get_account_summary()
             if summary:
                 logger.info(f"💓 Heartbeat | Equity: {summary['equity']} | Positions: {len(self.execution.get_positions())}")
+                
+                # Check kill switch auto-triggers
+                account_info = mt5.account_info()
+                if account_info:
+                    session_health = {"ping_ms": 100}  # TODO: Real ping monitoring
+                    check_kill_switch_conditions(self.kill_switch, account_info, session_health)
         
         # Check for Daily Report (at 23:59)
         current_time = datetime.datetime.now()
@@ -440,6 +457,12 @@ class TitanEngine:
             # 4. Execute Best Signal
             if best_result['signal'] in ['BUY', 'SELL']:
                 logger.info(f"  ⚡ SIGNAL DETECTED for {symbol}: {best_result['signal']} via {best_result['strategy']}")
+                
+                # Kill Switch Check FIRST
+                can_trade, block_reason = self.kill_switch.can_trade(symbol)
+                if not can_trade:
+                    logger.warning(f"  🛑 Trade Blocked by Kill Switch: {block_reason}")
+                    continue
                 
                 # Risk Check
                 account_info = self.execution.get_account_info()
