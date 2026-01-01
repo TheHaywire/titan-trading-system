@@ -95,25 +95,43 @@ if __name__ == "__main__":
             print(f"- {ac}: {info['count']} symbols.")
         
         # Output for README generation
-        print("\nSaving markdown summary...")
+        print("\nSaving comprehensive markdown catalog...")
         with open('docs/institutional/BROKER_SYMBOL_CATALOG.md', 'w', encoding='utf-8') as f:
-            f.write("# Broker Symbol Catalog (Institutional)\n\n")
-            f.write(f"**Scan Date**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
-            f.write("## Universe Summary\n\n")
+            f.write("# 📑 Complete Broker Symbol Catalog (Institutional)\n\n")
+            f.write(f"**Last Sync Date**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+            f.write(f"**Total Symbols**: {len(df)}\n")
+            f.write(f"**Tradeable Symbols**: {len(tradeable)}\n\n")
+            
+            f.write("## 📊 Asset Class Summary\n\n")
             f.write("| Asset Class | Count | Examples |\n")
             f.write("|-------------|-------|----------|\n")
             for ac, info in summary.items():
                 examples_str = ", ".join(info['examples']).replace("|", "\\|")
                 f.write(f"| {ac} | {info['count']} | {examples_str} |\n")
             
-            f.write("\n## Top Tradeable Instruments (Properties)\n\n")
-            # Select some representative majors
-            majors = ["EURUSD", "GBPUSD", "USDJPY", "GOLD", "XAUUSD", "US100", "BTCUSD"]
-            sample = df[df['name'].isin(majors)]
+            f.write("\n---\n\n")
             
-            f.write("| Symbol | Contract Size | Tick Size | Swap Long | Swap Short |\n")
-            f.write("|--------|---------------|-----------|-----------|------------|\n")
-            for _, row in sample.iterrows():
-                f.write(f"| {row['name']} | {row['contract_size']} | {row['tick_size']} | {row['swap_long']} | {row['swap_short']} |\n")
+            # Iterate through each asset class and create a section
+            for ac in sorted(df['asset_class'].unique()):
+                class_df = df[df['asset_class'] == ac]
+                f.write(f"## {ac} ({len(class_df)} Symbols)\n\n")
+                
+                # Use a collapsible section for large datasets (e.g., Stocks)
+                is_large = len(class_df) > 50
+                if is_large:
+                    f.write("<details>\n<summary>Click to expand full list</summary>\n\n")
+                
+                f.write("| Symbol | Description | Contract | Tick Size | Swap L/S | Trade Mode |\n")
+                f.write("|--------|-------------|----------|-----------|----------|------------|\n")
+                
+                for _, row in class_df.iterrows():
+                    # Clean up description for markdown table
+                    desc = str(row['description']).replace("|", "\\|")
+                    f.write(f"| {row['name']} | {desc} | {row['contract_size']} | {row['tick_size']} | {row['swap_long']}/{row['swap_short']} | {row['trade_mode']} |\n")
+                
+                if is_large:
+                    f.write("\n</details>\n\n")
+                else:
+                    f.write("\n")
             
-            f.write("\n\n*Full catalog available in `data/broker_universe_raw.csv`*")
+            f.write("\n\n*Full raw data available in `data/broker_universe_raw.csv`*")
