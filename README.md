@@ -10,6 +10,9 @@ A professional algorithmic trading system for MetaTrader 5 with multiple automat
 - **[Architecture](docs/wiki/Architecture.md)** - System design and components
 - **[Trading Strategies](docs/wiki/Trading-Strategies.md)** - How the bot trades
 - **[Risk Management](docs/wiki/Risk-Management.md)** - Safety features
+- **[⚠️ FAT TAIL REPORT (New)](docs/FAT_TAIL_OPPORTUNITIES.md)** - Validated Profitable Assets (H1)
+- **[⚠️ OPTIMIZATION REPORT (New)](docs/OPTIMIZATION_REPORT.md)** - Proven Statistical Edge
+- **[Project Roadmap](PROJECT_BOARD.md)** - Active Tasks
 
 ## 🚀 Features
 
