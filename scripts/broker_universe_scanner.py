@@ -83,7 +83,8 @@ if __name__ == "__main__":
         df.to_csv('data/broker_universe_raw.csv', index=False, encoding='utf-8')
         
         # Save a clean JSON of tradeable symbols
-        tradeable = df[df['trade_mode'] == 0] # 0 = FULL access
+        # trade_mode: 0=Disabled, 1=Long, 2=Short, 3=Close, 4=Full
+        tradeable = df[df['trade_mode'] != 0] 
         tradeable_list = tradeable.to_dict(orient='records')
         with open('data/tradeable_universe.json', 'w', encoding='utf-8') as f:
             json.dump(tradeable_list, f, indent=4)

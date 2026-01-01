@@ -29,6 +29,7 @@ from titan_system.strategies.mean_reversion import MeanReversionStrategy # NEW S
 from titan_system.strategies.book_strategies import BookTechnicalStrategy # FAT TAIL VALIDATED
 from titan_system.risk.position_sizer import KellyPositionSizer
 from titan_system.risk.kill_switch import KillSwitch, check_kill_switch_conditions
+from titan_system.core.symbol_mapper import mapper
 
 from titan_system.notifications.email import EmailNotifier
 from titan_system.notifications.telegram_bot import TelegramNotifier
@@ -45,6 +46,18 @@ class TitanEngine:
         # 1. Initialize Memory (DB)
         self.db = Database(Config.db_path)
         
+        # 2. Risk Management (Circuit Breaker + Kill Switch)
+        self.circuit_breaker = CircuitBreaker(
+            max_daily_loss_percent=Config.max_daily_loss_percent,
+            auto_reset_daily=True
+        )
+        
+        # NEW: 3-Tier Kill Switch (Must init before attaching notifiers)
+        self.kill_switch = KillSwitch(
+            email_notifier=None, 
+            telegram_notifier=None
+        )
+
         # Initialize Notifiers
         self.notifier = EmailNotifier()
         self.telegram = TelegramNotifier()
@@ -52,18 +65,6 @@ class TitanEngine:
         # Attach notifiers to kill switch
         self.kill_switch.email = self.notifier
         self.kill_switch.telegram = self.telegram
-        
-        # 2. Risk Management (Circuit Breaker + Kill Switch)
-        self.circuit_breaker = CircuitBreaker(
-            max_daily_loss_percent=Config.max_daily_loss_percent,
-            auto_reset_daily=True
-        )
-        
-        # NEW: 3-Tier Kill Switch for emergency stops
-        self.kill_switch = KillSwitch(
-            email_notifier=None,  # Will init below
-            telegram_notifier=None
-        )
         
         # 3. Initialize Execution Interface
         self.execution = MT5Execution(Config)
@@ -87,13 +88,20 @@ class TitanEngine:
         # Note: In production, we should just ensure these are IN the DB.
         # verifying if symbol names match exactly might be tricky, assuming standard names.
         
-        # Create a set for uniqueness
-        universe_set = set(self.trading_symbols) if self.trading_symbols else set()
+        # Create a set for uniqueness and resolve broker names
+        universe_set = set()
         
-        # Add winners only if they exist in valid symbols list (checked later by brain)
-        # simplified: just add them. Brain will reject if invalid.
-        for ft in fat_tail_whitelist:
-            universe_set.add(ft)
+        # Add winners and resolve them (e.g. "GOLD" -> "XAUUSD" if needed)
+        symbols_to_resolve = (self.trading_symbols or []) + fat_tail_whitelist
+        
+        for s_req in symbols_to_resolve:
+            sym, method = mapper.resolve(s_req)
+            if sym:
+                if method != "Exact Match":
+                    logger.info(f"🔄 Resolved Broker Symbol: {s_req} -> {sym} ({method})")
+                universe_set.add(sym)
+            else:
+                logger.warning(f"❌ Could not resolve {s_req} on this broker. Skipping.")
             
         self.trading_symbols = list(universe_set)
 

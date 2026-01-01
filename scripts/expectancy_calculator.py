@@ -7,7 +7,11 @@ import pandas as pd
 import numpy as np
 import sys
 import os
+# Ensure root is in path
+sys.path.append(os.getcwd())
+
 from datetime import datetime
+from titan_system.core.symbol_mapper import mapper
 
 def calculate_expectancy(trades_df):
     """
@@ -244,6 +248,13 @@ def main():
     
     # Normalize column names
     trades_df = trades_df.rename(columns={profit_col: 'profit', symbol_col: 'symbol'})
+    
+    # NEW: Resolve symbol aliases via SymbolMapper
+    def resolve_log_symbol(s):
+        res, _ = mapper.resolve(str(s))
+        return res if res else s
+    
+    trades_df['symbol'] = trades_df['symbol'].apply(resolve_log_symbol)
     
     print(f"✅ Loaded {len(trades_df)} trades")
     
