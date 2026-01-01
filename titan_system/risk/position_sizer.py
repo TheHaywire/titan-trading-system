@@ -1,83 +1,93 @@
-
-import numpy as np
 import logging
+import math
 
-logger = logging.getLogger("Titan.PositionSizer")
+logger = logging.getLogger("Titan.Risk.PositionSizer")
 
-class KellyPositionSizer:
+class InstitutionalPositionSizer:
     """
-    Implements Kelly Criterion for optimal position sizing.
+    Institutional Grade Position Sizing.
     
-    Kelly Formula: f* = (p * b - q) / b
-    Where:
-    - p = probability of win
-    - q = probability of loss (1-p)
-    - b = win/loss ratio (average win / average loss)
-    
-    We use a conservative "Half Kelly" to reduce volatility.
+    Philosophy:
+    - IGNORE Margin. Focus on Risk Capital.
+    - 1% Risk = The amount we are willing to lose if SL is hit.
+    - Lot Size = Risk_Amount / (SL_Distance_Points * Tick_Value_Per_Point)
     """
     
-    def __init__(self, max_risk_pct=2.0, kelly_fraction=0.5):
-        """
-        Args:
-            max_risk_pct: Maximum risk per trade as % of equity (default 2%)
-            kelly_fraction: Fraction of Kelly to use (0.5 = Half Kelly)
-        """
+    def __init__(self, max_risk_pct=1.0):
         self.max_risk_pct = max_risk_pct
-        self.kelly_fraction = kelly_fraction
-        
-    def calculate_position_size(self, equity: float, symbol: str, entry_price: float, stop_loss: float, risk_pct: float = 1.0) -> float:
-        """
-        Calculates position size based on Fixed Fractional Risk.
-        Risk = Equity * (Risk_Pct / 100)
-        Lot Size = Risk / (SL_Distance * Tick_Value)
-        """
-        if equity <= 0 or entry_price <= 0 or stop_loss <= 0:
-            return 0.01
 
-        risk_amount = equity * (risk_pct / 100.0)
-        price_diff = abs(entry_price - stop_loss)
-        
-        # Standard Lot Value approximation (Need precise TickValue from MT5 ideally)
-        # Gold/Forex Standard Lot = 100,000 units. 
-        # For XAUUSD: 1 pip (0.10) = $10 per lot.
-        # For EURUSD: 1 pip (0.0001) = $10 per lot.
-        
-        # Determine pip value roughly
-        if "XAU" in symbol or "GOLD" in symbol:
-             # Points difference. XAU 1.0 move = $100 per lot
-             # If SL is $2.0 away. Loss per lot = $200.
-             loss_per_lot = price_diff * 100 
-        elif "JPY" in symbol:
-             loss_per_lot = (price_diff / 0.01) * 10 # Approx
-        else:
-             # Standard Forex (0.0001)
-             loss_per_lot = (price_diff / 0.0001) * 10 
-             
-        if loss_per_lot == 0: return 0.01
-        
-        lots = risk_amount / loss_per_lot
-        return round(max(0.01, lots), 2)
-    
-    def estimate_win_probability(self, z_score: float) -> float:
+    def calculate_lots(self, account_equity, symbol_info, sl_price, entry_price):
         """
-        Estimate win probability based on Z-Score.
+        Calculate precise lot size based on account risk and broker contract specs.
         
-        Statistical theory: 
-        - Z > 2.0: ~95% confidence of reversion (mean reversion trade)
-        - Z > 1.0: ~68% confidence
+        Args:
+            account_equity (float): Current Account Equity
+            symbol_info (MT5.SymbolInfo): symbol_info object from MT5
+            sl_price (float): Stop Loss Price
+            entry_price (float): Entry Price
+            
+        Returns:
+            float: Safe lot size rounded to broker step
         """
-        abs_z = abs(z_score)
+        if account_equity <= 0:
+            logger.error("Equity is 0 or negative. Cannot size position.")
+            return 0.0
+
+        # 1. Determine Risk Capital ($)
+        risk_capital = account_equity * (self.max_risk_pct / 100.0)
         
-        if abs_z >= 3.0:
-            return 0.99  # Very high confidence
-        elif abs_z >= 2.5:
-            return 0.95
-        elif abs_z >= 2.0:
-            return 0.85
-        elif abs_z >= 1.5:
-            return 0.70
-        elif abs_z >= 1.0:
-            return 0.60
-        else:
-            return 0.55  # Near 50-50
+        # 2. Determine Stop Loss Distance
+        # We need the distance in PRICE first
+        price_dist = abs(entry_price - sl_price)
+        
+        if price_dist == 0:
+            logger.error(f"SL Distance is 0 for {symbol_info.name}. Unsafe.")
+            return 0.0
+            
+        # 3. Calculate Value per Lot for this Distance
+        # Math:
+        # Profit = (Price_Diff / Point) * Tick_Value * Volume
+        # We want Profit = -Risk_Capital
+        # Risk_Capital = (Price_Diff / Point) * Tick_Value * Volume
+        # Volume = Risk_Capital / ((Price_Diff / Point) * Tick_Value)
+        
+        if symbol_info.point == 0 or symbol_info.trade_tick_value == 0:
+            logger.error(f"Invalid Symbol Specs for {symbol_info.name}: Point={symbol_info.point}, TickVal={symbol_info.trade_tick_value}")
+            return 0.0
+            
+        # Note: trade_tick_value is "Calculated tick value for a position" (usually for 1 lot?)
+        # Let's assume standard MT5 behavior: trade_tick_value is for 1 lot movement of trade_tick_size
+        
+        # Adjust for Tick Size if needed (Tick Value is usually per Tick Size, not per Point)
+        # But commonly in FX: Point=0.00001, TickSize=0.00001
+        # In Indices: Point=0.01, TickSize=0.01
+        
+        ticks_at_risk = price_dist / symbol_info.trade_tick_size
+        value_per_lot_at_risk = ticks_at_risk * symbol_info.trade_tick_value
+        
+        if value_per_lot_at_risk == 0:
+            return 0.0
+            
+        raw_lots = risk_capital / value_per_lot_at_risk
+        
+        # 4. Normalize to Broker Limits
+        step = symbol_info.volume_step
+        min_vol = symbol_info.volume_min
+        max_vol = symbol_info.volume_max
+        
+        # Round down to nearest step to be safe
+        lots = math.floor(raw_lots / step) * step
+        
+        # Clamp
+        final_lots = max(min_vol, min(lots, max_vol))
+        
+        # Formating constraint (round to correct decimals to avoid 0.010000001)
+        decimals = 0
+        if "." in str(step):
+            decimals = len(str(step).split(".")[1].rstrip("0"))
+        
+        final_lots = round(final_lots, decimals)
+        
+        logger.info(f"Sizing {symbol_info.name}: Equity=${account_equity:.0f}, Risk=${risk_capital:.2f}, Dist={price_dist:.4f}, RawLots={raw_lots:.4f} -> {final_lots}")
+        
+        return final_lots

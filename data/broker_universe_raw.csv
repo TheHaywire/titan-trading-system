@@ -1446,13 +1446,13 @@ AAVEUSD,Cryptocurrencies\Standard\AAVEUSD,Aave vs US Dollar,,USD,USD,USD,2,0.01,
 ADAUSD,Cryptocurrencies\Standard\ADAUSD,Cardano vs US Dollar,,USD,USD,USD,5,1e-05,1e-05,0.01,1000.0,0.09,3000.0,0.01,268,-31.31,-31.31,0.0,0.0,4,2,Cryptocurrencies
 ALGOUSD,Cryptocurrencies\Standard\ALGOUSD,Algorand vs US Dollar,,USD,USD,USD,5,1e-05,1e-05,0.01,1000.0,0.24,3000.0,0.01,403,-9.45,-9.45,0.0,0.0,4,2,Cryptocurrencies
 AVAXUSD,Cryptocurrencies\Standard\AVAXUSD,Avalanche vs US Dollar,,USD,USD,USD,2,0.01,0.01,0.1,10.0,0.13,7000.0,0.01,13,-1.02,-1.02,0.0,0.0,4,2,Cryptocurrencies
-AXSUSD,Cryptocurrencies\Standard\AXSUSD,Axie Infinity vs US Dollar,,USD,USD,USD,2,0.01,0.01,1.0,100.0,0.06,1000.0,0.01,5,-0.07,-0.07,0.0,0.0,4,2,Cryptocurrencies
-BATUSD,Cryptocurrencies\Standard\BATUSD,Basic Attention Token vs US Dollar,,USD,USD,USD,5,1e-05,1e-05,0.01,1000.0,0.19,3000.0,0.01,554,-18.26,-18.26,0.0,0.0,4,2,Cryptocurrencies
+AXSUSD,Cryptocurrencies\Standard\AXSUSD,Axie Infinity vs US Dollar,,USD,USD,USD,2,0.01,0.01,1.0,100.0,0.06,1000.0,0.01,4,-0.07,-0.07,0.0,0.0,4,2,Cryptocurrencies
+BATUSD,Cryptocurrencies\Standard\BATUSD,Basic Attention Token vs US Dollar,,USD,USD,USD,5,1e-05,1e-05,0.01,1000.0,0.19,3000.0,0.01,564,-18.26,-18.26,0.0,0.0,4,2,Cryptocurrencies
 BTCEUR,Cryptocurrencies\Standard\BTCEUR,Bitcoin vs Euro,,EUR,EUR,EUR,2,0.01,0.01,0.01,1.0,0.01,30.0,0.01,19500,-6281.54,-6281.54,0.0,0.0,4,2,Cryptocurrencies
 BTCGBP,Cryptocurrencies\Standard\BTCGBP,Bitcoin vs Great Britain Pound,,GBP,GBP,GBP,2,0.01,0.01,0.01,1.0,0.01,30.0,0.01,21500,-5498.79,-5498.79,0.0,0.0,4,2,Cryptocurrencies
 COMPUSD,Cryptocurrencies\Standard\COMPUSD,Compound vs US Dollar,,USD,USD,USD,2,0.01,0.01,0.1,10.0,0.08,1600.0,0.01,79,-2.03,-2.03,0.0,0.0,4,2,Cryptocurrencies
-ENJUSD,Cryptocurrencies\Standard\ENJUSD,Enjin Coin vs US Dollar,,USD,USD,USD,5,1e-05,1e-05,0.01,1000.0,0.15,1600.0,0.01,54,-2.33,-2.33,0.0,0.0,4,2,Cryptocurrencies
-ETHEUR,Cryptocurrencies\Standard\ETHEUR,Ethereum vs Euro,,EUR,EUR,EUR,2,0.01,0.01,0.01,1.0,0.02,400.0,0.01,1543,-211.98,-211.98,0.0,0.0,4,2,Cryptocurrencies
+ENJUSD,Cryptocurrencies\Standard\ENJUSD,Enjin Coin vs US Dollar,,USD,USD,USD,5,1e-05,1e-05,0.01,1000.0,0.15,1600.0,0.01,52,-2.33,-2.33,0.0,0.0,4,2,Cryptocurrencies
+ETHEUR,Cryptocurrencies\Standard\ETHEUR,Ethereum vs Euro,,EUR,EUR,EUR,2,0.01,0.01,0.01,1.0,0.02,400.0,0.01,1541,-211.98,-211.98,0.0,0.0,4,2,Cryptocurrencies
 ETHGBP,Cryptocurrencies\Standard\ETHGBP,Ethereum vs Great Britain Pound,,GBP,GBP,GBP,2,0.01,0.01,0.01,1.0,0.01,400.0,0.01,1300,-185.56,-185.56,0.0,0.0,4,2,Cryptocurrencies
 FETUSD,Cryptocurrencies\Standard\FETUSD,Fetch AI vs US Dollar,,USD,USD,USD,5,1e-05,1e-05,0.01,1000.0,0.07,1600.0,0.01,916,-17.58,-17.58,0.0,0.0,3,2,Cryptocurrencies
 GRTUSD,Cryptocurrencies\Standard\GRTUSD,The Graph vs US Dollar,,USD,USD,USD,5,1e-05,1e-05,0.01,1000.0,0.28,7000.0,0.01,84,-3.15,-3.15,0.0,0.0,4,2,Cryptocurrencies
@@ -1468,22 +1468,22 @@ XLMUSD,Cryptocurrencies\Standard\XLMUSD,Stellar Lumens vs US Dollar,,USD,USD,USD
 ZRXUSD,Cryptocurrencies\Standard\ZRXUSD,0x vs US Dollar,,USD,USD,USD,5,1e-05,1e-05,0.01,1000.0,0.14,3000.0,0.01,479,-10.13,-10.13,0.0,0.0,4,2,Cryptocurrencies
 1INCHUSD,Cryptocurrencies\Standard\1INCHUSD,1INCH Network vs US Dollar,,USD,USD,USD,3,0.001,0.001,10.0,10000.0,0.01,100.0,0.01,4,-0.13,-0.13,0.0,0.0,4,2,Cryptocurrencies
 APEUSD,Cryptocurrencies\Standard\APEUSD,ApeCoin vs US Dollar,,USD,USD,USD,3,0.001,0.001,1.0,1000.0,0.04,100.0,0.01,8,-0.17,-0.17,0.0,0.0,4,2,Cryptocurrencies
-APTUSD,Cryptocurrencies\Standard\APTUSD,Aptos vs US Dollar,,USD,USD,USD,4,0.0001,0.0001,0.01,100.0,0.05,500.0,0.01,725,-13.37,-13.37,0.0,0.0,4,2,Cryptocurrencies
+APTUSD,Cryptocurrencies\Standard\APTUSD,Aptos vs US Dollar,,USD,USD,USD,4,0.0001,0.0001,0.01,100.0,0.05,500.0,0.01,735,-13.37,-13.37,0.0,0.0,4,2,Cryptocurrencies
 ARBUSD,Cryptocurrencies\Standard\ARBUSD,Arbitrum vs US Dollar,,USD,USD,USD,4,0.0001,0.0001,0.1,1000.0,0.03,500.0,0.01,73,-1.58,-1.58,0.0,0.0,4,2,Cryptocurrencies
 ATOMUSD,Cryptocurrencies\Standard\ATOMUSD,Cosmos vs US Dollar,,USD,USD,USD,3,0.001,0.001,0.1,100.0,0.05,500.0,0.01,31,-1.65,-1.65,0.0,0.0,4,2,Cryptocurrencies
 BTGUSD,Cryptocurrencies\Standard\BTGUSD,Bitcoin Gold vs US Dollar,,USD,USD,USD,4,0.0001,0.0001,0.1,1000.0,0.01,22.0,0.01,371,-169.49,-169.49,0.0,0.0,4,2,Cryptocurrencies
 CHZUSD,Cryptocurrencies\Standard\CHZUSD,Chiliz vs US Dollar,,USD,USD,USD,4,0.0001,0.0001,1.0,10000.0,0.06,500.0,0.01,13,-0.3,-0.3,0.0,0.0,4,2,Cryptocurrencies
 CRVUSD,Cryptocurrencies\Standard\CRVUSD,Curve DAO Token vs US Dollar,,USD,USD,USD,3,0.001,0.001,1.0,1000.0,0.09,500.0,0.01,11,-0.3,-0.3,0.0,0.0,4,2,Cryptocurrencies
 DASHUSD,Cryptocurrencies\Standard\DASHUSD,Dash vs US Dollar,,USD,USD,USD,2,0.01,0.01,1.0,100.0,0.02,100.0,0.01,102,-3.33,-3.33,0.0,0.0,4,2,Cryptocurrencies
-DOGEUSD,Cryptocurrencies\Standard\DOGEUSD,Dogecoin vs US Dollar,,USD,USD,USD,5,1e-05,1e-05,0.1,10000.0,0.06,500.0,0.01,150,-11.02,-11.02,0.0,0.0,4,2,Cryptocurrencies
+DOGEUSD,Cryptocurrencies\Standard\DOGEUSD,Dogecoin vs US Dollar,,USD,USD,USD,5,1e-05,1e-05,0.1,10000.0,0.06,500.0,0.01,153,-11.02,-11.02,0.0,0.0,4,2,Cryptocurrencies
 DOTUSD,Cryptocurrencies\Standard\DOTUSD,Polkadot vs US Dollar,,USD,USD,USD,3,0.001,0.001,0.1,100.0,0.06,800.0,0.01,17,-1.53,-1.53,0.0,0.0,4,2,Cryptocurrencies
 EGLDUSD,Cryptocurrencies\Standard\EGLDUSD,MultiversX vs US Dollar,,USD,USD,USD,2,0.01,0.01,1.0,100.0,0.01,100.0,0.01,26,-0.55,-0.55,0.0,0.0,4,2,Cryptocurrencies
 EOSUSD,Cryptocurrencies\Standard\EOSUSD,EOS vs US Dollar,,USD,USD,USD,3,0.001,0.001,1.0,1000.0,0.06,500.0,0.01,19,-0.63,-0.63,0.0,0.0,0,2,Cryptocurrencies
-ETCUSD,Cryptocurrencies\Standard\ETCUSD,Ethereum Classic vs US Dollar,,USD,USD,USD,2,0.01,0.01,1.0,100.0,0.02,200.0,0.01,15,-1.03,-1.03,0.0,0.0,4,2,Cryptocurrencies
+ETCUSD,Cryptocurrencies\Standard\ETCUSD,Ethereum Classic vs US Dollar,,USD,USD,USD,2,0.01,0.01,1.0,100.0,0.02,200.0,0.01,16,-1.03,-1.03,0.0,0.0,4,2,Cryptocurrencies
 ETHBTC,Cryptocurrencies\Standard\ETHBTC,Ethereum vs Bitcoin,,USD,USD,USD,5,1e-05,1e-05,1.0,100000.0,0.01,43.0,0.01,17,-2.81,-2.81,0.0,0.0,4,2,Cryptocurrencies
-FILUSD,Cryptocurrencies\Standard\FILUSD,Filecoin vs US Dollar,,USD,USD,USD,3,0.001,0.001,1.0,1000.0,0.01,100.0,0.01,18,-1.1,-1.1,0.0,0.0,4,2,Cryptocurrencies
+FILUSD,Cryptocurrencies\Standard\FILUSD,Filecoin vs US Dollar,,USD,USD,USD,3,0.001,0.001,1.0,1000.0,0.01,100.0,0.01,19,-1.1,-1.1,0.0,0.0,4,2,Cryptocurrencies
 FLOWUSD,Cryptocurrencies\Standard\FLOWUSD,Flow vs US Dollar,,USD,USD,USD,3,0.001,0.001,1.0,1000.0,0.06,500.0,0.01,7,-0.15,-0.15,0.0,0.0,3,2,Cryptocurrencies
-ICPUSD,Cryptocurrencies\Standard\ICPUSD,Internet Computer vs US Dollar,,USD,USD,USD,3,0.001,0.001,1.0,1000.0,0.01,100.0,0.01,57,-2.55,-2.55,0.0,0.0,4,2,Cryptocurrencies
+ICPUSD,Cryptocurrencies\Standard\ICPUSD,Internet Computer vs US Dollar,,USD,USD,USD,3,0.001,0.001,1.0,1000.0,0.01,100.0,0.01,58,-2.55,-2.55,0.0,0.0,4,2,Cryptocurrencies
 IMXUSD,Cryptocurrencies\Standard\IMXUSD,Immutable vs US Dollar,,USD,USD,USD,3,0.001,0.001,1.0,1000.0,0.03,500.0,0.01,10,-0.19,-0.19,0.0,0.0,4,2,Cryptocurrencies
 LDOUSD,Cryptocurrencies\Standard\LDOUSD,Lido DAO vs US Dollar,,USD,USD,USD,3,0.001,0.001,1.0,1000.0,0.02,200.0,0.01,21,-0.45,-0.45,0.0,0.0,4,2,Cryptocurrencies
 LRCUSD,Cryptocurrencies\Standard\LRCUSD,Loopring vs US Dollar,,USD,USD,USD,4,0.0001,0.0001,1.0,10000.0,0.02,200.0,0.01,18,-0.49,-0.49,0.0,0.0,4,2,Cryptocurrencies

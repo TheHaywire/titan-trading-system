@@ -68,3 +68,18 @@ class TradeHistory(Base):
 
     def __repr__(self):
         return f"<Trade({self.id}, {self.direction} @ {self.entry_price}, profit={self.profit})>"
+
+class StrategyAssignment(Base):
+    __tablename__ = "strategy_assignments"
+
+    symbol = Column(String, primary_key=True, index=True)
+    strategy_name = Column(String, nullable=False)
+    # Configuration parameters encoded as JSON string or individual columns
+    # keeping it simple for now
+    config_json = Column(String, nullable=True) 
+    
+    active = Column(Integer, default=1)
+    last_updated = Column(DateTime, default=datetime.utcnow)
+
+    def __repr__(self):
+        return f"<StrategyAssignment(symbol='{self.symbol}', strategy='{self.strategy_name}')>"
