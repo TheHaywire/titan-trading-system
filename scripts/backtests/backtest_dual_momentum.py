@@ -273,11 +273,11 @@ def run_comprehensive_backtest():
     start_date = datetime(2015, 1, 1)
     end_date = datetime(2024, 12, 31)
     
-    # Symbols to test
+    # Symbols to test (using broker's actual symbol names)
     symbols = [
-        ("XAUUSD", "Gold"),
+        ("GOLD", "Gold"),
         ("BTCUSD", "Bitcoin"),
-        ("US500", "S&P 500")
+        ("US500Cash", "S&P 500")
     ]
     
     results = {}

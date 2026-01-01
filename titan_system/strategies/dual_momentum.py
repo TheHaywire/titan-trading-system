@@ -26,11 +26,11 @@ class DualMomentumStrategy:
     Rebalance: Monthly
     """
     
-    def __init__(self, lookback_days=252, benchmark_symbol="US500"):
+    def __init__(self, lookback_days=252, benchmark_symbol="US500Cash"):
         """
         Args:
             lookback_days: 252 trading days = ~12 months
-            benchmark_symbol: Comparison asset (default: S&P 500)
+            benchmark_symbol: Comparison asset (default: S&P 500 Cash)
         """
         self.name = "DualMomentum"
         self.lookback_days = lookback_days
