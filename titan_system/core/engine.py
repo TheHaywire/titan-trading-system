@@ -31,6 +31,7 @@ from titan_system.risk.allocation import AllocationAgent
 from titan_system.risk.kill_switch import KillSwitch, check_kill_switch_conditions
 from titan_system.core.symbol_mapper import mapper
 from titan_system.core.performance_monitor import PerformanceOptimizer
+from titan_system.core.manager import TradeManager
 
 from titan_system.notifications.email import EmailNotifier
 from titan_system.notifications.telegram_bot import TelegramNotifier
@@ -72,6 +73,9 @@ class TitanEngine:
         
         # 4. Initialize The Brain (Market Analyzer)
         self.brain = MarketAnalyzer(self.execution)
+        
+        # 4.b Initialize Trade Manager (Lifecycle)
+        self.manager = TradeManager(self.execution)
 
         # 5. Load Universe DO NOT USE CONFIG
         # self.trading_symbols = Config.trading_symbols 
@@ -332,8 +336,8 @@ class TitanEngine:
     async def run_analysis_cycle(self):
         logger.info("🔎 Starting Market Analysis Cycle...")
         
-        current_scan = {"Detailed Analysis": []}
-        
+        # 0. Manage Active Trades (Partial Profits & Break-even)
+        self.manager.manage_active_trades()
         
         current_scan = {"Detailed Analysis": []}
         

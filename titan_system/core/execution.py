@@ -363,6 +363,80 @@ class MT5Execution:
             "comment": comment,
             "strategy_name": "TrendSurfer" # Hardcoded for now
         }
+
+    def modify_position(self, ticket, sl=None, tp=None):
+        """
+        Modifies an existing position's SL and TP.
+        Used for Break-Even and Trailing Stop logic.
+        """
+        if not self.connected: return False
+
+        # Get existing position to keep price/symbol
+        positions = mt5.positions_get(ticket=ticket)
+        if not positions:
+            logger.warning(f"⚠️ Position {ticket} not found for modification.")
+            return False
+        
+        pos = positions[0]
+        
+        # Prepare request
+        request = {
+            "action": mt5.TRADE_ACTION_SLTP,
+            "symbol": pos.symbol,
+            "position": ticket,
+            "sl": float(sl) if sl is not None else pos.sl,
+            "tp": float(tp) if tp is not None else pos.tp,
+        }
+
+        result = mt5.order_send(request)
+        if result.retcode != mt5.TRADE_RETCODE_DONE:
+            logger.error(f"❌ Failed to modify position {ticket}: {result.retcode} ({result.comment})")
+            return False
+            
+        logger.info(f"✅ Modified Position {ticket}: SL={sl}, TP={tp}")
+        return True
+
+    def close_partial(self, ticket, volume_to_close):
+        """
+        Closes a portion of an existing position.
+        Used for 'Seed Money' profit locking (Section 11/12).
+        """
+        if not self.connected: return False
+
+        positions = mt5.positions_get(ticket=ticket)
+        if not positions:
+            logger.warning(f"⚠️ Position {ticket} not found for partial close.")
+            return False
+            
+        pos = positions[0]
+        symbol = pos.symbol
+        
+        # Determine closing side
+        order_type = mt5.ORDER_TYPE_SELL if pos.type == mt5.POSITION_TYPE_BUY else mt5.ORDER_TYPE_BUY
+        price = mt5.symbol_info_tick(symbol).bid if order_type == mt5.ORDER_TYPE_SELL else mt5.symbol_info_tick(symbol).ask
+
+        # Prepare request
+        request = {
+            "action": mt5.TRADE_ACTION_DEAL,
+            "symbol": symbol,
+            "volume": float(volume_to_close),
+            "type": order_type,
+            "position": ticket,
+            "price": price,
+            "deviation": 20,
+            "magic": 234000,
+            "comment": "Titan-PartialClose",
+            "type_time": mt5.ORDER_TIME_GTC,
+            "type_filling": mt5.ORDER_FILLING_IOC,
+        }
+
+        result = mt5.order_send(request)
+        if result.retcode != mt5.TRADE_RETCODE_DONE:
+            logger.error(f"❌ Failed to partial close {ticket}: {result.retcode} ({result.comment})")
+            return False
+            
+        logger.info(f"✅ Partial Close {ticket}: {volume_to_close} lots closed.")
+        return True
     
     def _log_tca_execution(self, ticket, symbol, side, expected_price, fill_price, slippage_pips, expected_spread, actual_spread, latency_ms):
         """Log successful execution TCA metrics to Google Sheets."""
