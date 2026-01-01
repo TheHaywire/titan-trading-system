@@ -121,11 +121,25 @@ class MT5Execution:
         return [pos._asdict() for pos in positions]
 
     def get_data(self, symbol, timeframe, n_candles):
-        """Fetch raw candles as DataFrame."""
+        """Fetch raw candles as DataFrame with Latency Monitoring."""
         if not self.connected: return None
         
+        # Latency Monitoring: Start
+        start_time = time.time()
+        
         rates = mt5.copy_rates_from_pos(symbol, timeframe, 0, n_candles)
+        
+        # Latency Monitoring: End
+        ipc_rtt = (time.time() - start_time) * 1000
+        if ipc_rtt > 50:
+            logger.warning(f"🐢 High IPC Latency detected for {symbol}: {ipc_rtt:.2f}ms")
+
         if rates is None or len(rates) == 0:
+            err = mt5.last_error()
+            if err[0] == 10027: # Trade Closed / Market Closed
+                logger.debug(f"ℹ️ {symbol}: Market currently closed (Error 10027).")
+            else:
+                logger.warning(f"⚠️ {symbol}: Failed to fetch data. Error: {err}")
             return None
             
         # Convert to DataFrame
@@ -137,6 +151,8 @@ class MT5Execution:
             df['volume'] = df['tick_volume']
         elif 'real_volume' in df.columns:
             df['volume'] = df['real_volume']
+        
+        return df
         
     def normalize_volume(self, symbol: str, volume: float) -> float:
         """
