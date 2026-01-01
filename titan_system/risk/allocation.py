@@ -21,7 +21,7 @@ class AllocationAgent:
         self.max_total_exposure = max_total_exposure
         self.quant = InstitutionalQuant()
 
-    def calculate_lots(self, symbol, signal_confidence, stop_loss_pips):
+    def calculate_lots(self, symbol, signal_confidence, stop_loss_pips, scaling_multiplier=1.0):
         """
         Determines lot size using a multi-step institutional process.
         """
@@ -35,9 +35,15 @@ class AllocationAgent:
             return 0.0
 
         # 1. Base Risk Amount (Percentage of Equity)
-        # We scale base risk by Signal Confidence (0.0 to 1.0)
-        actual_risk_pct = self.risk_per_trade * signal_confidence
+        # We scale base risk by Signal Confidence and the Alpha scaling factor
+        actual_risk_pct = self.risk_per_trade * signal_confidence * scaling_multiplier
         risk_amount_usd = equity * actual_risk_pct
+        
+        # 1.b Drawdown Protection (Preserve Capital)
+        # If equity is below balance, we are in a drawdown. Reduce risk by 30%.
+        if equity < acc.balance:
+            logger.info(f"📉 Drawdown detected (Eq: {equity:.2f} < Bal: {acc.balance:.2f}). Reducing risk by 30%.")
+            risk_amount_usd *= 0.70
         
         # 2. Lot Size based on Stop Loss distance
         # LotSize = RiskAmount / (SL_Pips * PipValue)

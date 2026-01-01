@@ -32,6 +32,7 @@ from titan_system.risk.kill_switch import KillSwitch, check_kill_switch_conditio
 from titan_system.core.symbol_mapper import mapper
 from titan_system.core.performance_monitor import PerformanceOptimizer
 from titan_system.core.manager import TradeManager
+from titan_system.core.alpha_optimizer import AlphaOptimizer
 
 from titan_system.notifications.email import EmailNotifier
 from titan_system.notifications.telegram_bot import TelegramNotifier
@@ -76,6 +77,9 @@ class TitanEngine:
         
         # 4.b Initialize Trade Manager (Lifecycle)
         self.manager = TradeManager(self.execution)
+        
+        # 4.c Initialize Alpha Optimizer (Regime-to-Strategy)
+        self.alpha_opt = AlphaOptimizer()
 
         # 5. Load Universe DO NOT USE CONFIG
         # self.trading_symbols = Config.trading_symbols 
@@ -383,23 +387,16 @@ class TitanEngine:
             df = self.execution.get_data(symbol, mt5.TIMEFRAME_H1, 300)
             if df is None: continue
 
-            # NEW: Strategy Routing
-            # Query DB for assigned strategy? 
-            # Optimization: Load mapping once at start of cycle or cache it.
-            # For now, we iterate all loaded strategies but check names?
-            # Or simplier: Just run all, but weigh/filter by what DB says?
-            # "Professional" implies strict adherence. 
+            # 0. ALPHA OPTIMIZATION: Dynamic Case Assignment
+            # Aligns the system with the best strategy for the current regime
+            dynamic_strat = self.alpha_opt.determine_best_strategy(symbol, market_state)
             
-            # Let's get the assigned strategy from DB (or cache)
-            assigned_strat, strat_score = self.db.get_assigned_strategy(symbol) 
-            
-            # SAFEGUARD: Only trade if backtest was profitable or near breakeven
-            # Relaxed filter to allow "slightly negative" strategies to run live (Market regime might differ)
-            current_score = strat_score if strat_score is not None else -999.0
-            
-            if current_score <= -1.0 and assigned_strat != "HOLD":
-                 logger.info(f"  🚫 {symbol}: Strategy {assigned_strat} skipped (Poor Expectancy: {current_score:.2f}%)")
-                 continue
+            if dynamic_strat == "HOLD":
+                logger.info(f"  💤 {symbol}: Alpha Optimizer suggests HOLD (Low Volatility/Choppy)")
+                continue
+                
+            # If dynamic_strat is available, we use it as the target
+            assigned_strat = dynamic_strat
             
             for strategy in self.strategies:
                 # ROUTING LOGIC:
@@ -422,33 +419,24 @@ class TitanEngine:
                 if not is_scanner and not is_assigned and not is_institutional and not is_book_target:
                      continue
                         
-                # Adapter for Book Strategy (needs df directly, logic inside handles it)
+                # Adapter for Book Strategy (needs df directly...)
                 if isinstance(strategy, BookTechnicalStrategy):
-                     # Book Strategy returns a list of signals for the WHOLE df. 
-                     # We need to check the LAST signal.
-                     # We need to wrap it to fit the "analyze(symbol, df) -> result dict" interface
-                     # OR modify BookStrategy to have an analyze_live() wrapper.
-                     # Quick adapter here:
-                     signals = strategy.analyze(df)
-                     # Check if last signal is recent (last candle)
-                     # signals is a list of dicts.
-                     result = {'signal': 'HOLD', 'confidence': 0, 'metadata': {}}
-                     
-                     if signals:
-                         last_sig = signals[-1]
-                         # Check time. Creating a robust time check is hard without converting everything.
-                         # Assuming the strategy returned a valid signal for the *current* state.
-                         # The `analyze` method in BookStrategy checks `i = len(df)-1`.
-                         # So if it returned a signal, it IS for now (or the very last bar).
-                         
-                         result = {
-                             'signal': last_sig['signal'],
-                             'confidence': 0.85, # High confidence for Fat Tails
-                             'setup': last_sig['strategy'],
-                             'metadata': last_sig
-                         }
+                    signals = strategy.analyze(df)
+                    result = {'signal': 'HOLD', 'confidence': 0, 'metadata': {}}
+                    
+                    if signals:
+                        last_sig = signals[-1]
+                        result = {
+                            'signal': last_sig['signal'],
+                            'confidence': 0.85, 
+                            'setup': last_sig['strategy'],
+                            'metadata': last_sig,
+                            'metrics': {
+                                'std_dev': df['close'].rolling(20).std().iloc[-1]
+                            }
+                        }
                 else:
-                     result = strategy.analyze(symbol, df)
+                    result = strategy.analyze(symbol, df)
                 
                 # GLASS BOX FILTER
                 # If Market Bias is BEARISH, ignore Buy Signals?
@@ -520,7 +508,8 @@ class TitanEngine:
                 
                 # Get metrics for position sizing
                 metrics = best_result.get('metrics', {})
-                z_score = metrics.get('z_score', 0)
+                std_dev = metrics.get('std_dev')
+                entry_price = metrics.get('expected_price') or market_state['prices']['current']
                 
                 # Estimate lot size using Allocation Agent (EPIC-07 Phase 2)
                 # confidence is scale 0-1 from score
@@ -530,12 +519,17 @@ class TitanEngine:
                 sl_pips = 50
                 if std_dev and entry_price:
                     point = mt5.symbol_info(symbol).point
-                    sl_pips = abs(entry_price - (entry_price - std_dev)) / (point * 10)
+                    sl_pips = abs(std_dev * 2.5) / (point * 10) # 2.5 Sigma Stop Loss for Stat Arb
+
+                # Get Scaling Multiplier based on performance (Account Growth Use Case)
+                perf_metrics = self.db.get_symbol_performance(symbol)
+                scaling_mult = self.alpha_opt.get_scaling_multiplier(symbol, perf_metrics)
 
                 lot_size = self.allocator.calculate_lots(
                     symbol=symbol,
                     signal_confidence=confidence,
-                    stop_loss_pips=sl_pips
+                    stop_loss_pips=sl_pips,
+                    scaling_multiplier=scaling_mult
                 )
                 
                 # Fallback safeguard

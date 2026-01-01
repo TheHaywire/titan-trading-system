@@ -225,3 +225,33 @@ class Database:
         conn.commit()
         conn.close()
 
+    def get_symbol_performance(self, symbol: str) -> Dict[str, Any]:
+        """Calculates historical expectancy and win rate for a symbol."""
+        conn = self._get_conn()
+        cursor = conn.cursor()
+        
+        cursor.execute('''
+            SELECT COUNT(*), AVG(profit), SUM(profit)
+            FROM trades
+            WHERE symbol = ? AND profit IS NOT NULL
+        ''', (symbol,))
+        
+        row = cursor.fetchone()
+        
+        if not row or row[0] == 0:
+            conn.close()
+            return {"trade_count": 0, "expectancy": 0.0, "total_pnl": 0.0, "win_rate": 0.0}
+            
+        count, expectancy, total_pnl = row
+        
+        # Calculate win rate
+        cursor.execute('SELECT COUNT(*) FROM trades WHERE symbol = ? AND profit > 0', (symbol,))
+        wins = cursor.fetchone()[0]
+        
+        conn.close()
+        return {
+            "trade_count": count,
+            "expectancy": expectancy if expectancy else 0.0,
+            "total_pnl": total_pnl if total_pnl else 0.0,
+            "win_rate": wins / count if count > 0 else 0.0
+        }

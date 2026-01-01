@@ -201,7 +201,8 @@ class InstitutionalGoldStrategy(BaseStrategy):
                 "metrics": {
                     "rsi": round(mom['rsi'], 2), 
                     "bias": bias,
-                    "zones": len(self.h1_cache['zones'])
+                    "zones": len(self.h1_cache['zones']),
+                    "std_dev": rates['close'].rolling(20).std().iloc[-1]
                 }
             }
 
