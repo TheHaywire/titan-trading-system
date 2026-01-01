@@ -14,6 +14,12 @@ logger = logging.getLogger("Titan.Quant")
 class InstitutionalQuant:
     """Institutional-grade Risk Oversight & Alpha Analytics"""
     
+    def __init__(self, confidence_level=0.95):
+        """
+        confidence_level: VaR confidence (0.95 = 95%, 0.99 = 99%)
+        """
+        self.confidence_level = confidence_level
+    
     def check_exposure_limit(self, current_positions, new_symbol, max_notional_usd=100000):
         """
         Policy enforcement: Blocks trades if notional exposure to a 
