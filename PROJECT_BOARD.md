@@ -66,15 +66,15 @@
 - **Next Milestone**: Publish expectancy calculator tool
 
 #### [Section 04] Instrument Universe & Symbol Catalog
-- **Status**: ✅ Complete (85%)
+- **Status**: ✅ Complete (100%)
 - **Owner**: Universe Manager
 - **Deliverables**:
-  - [x] Asset classes enumerated (FX, indices, commodities, crypto)
-  - [x] Symbol catalog (JSON per symbol)
-  - [x] "Fat Tail" opportunities identified (Top 20 list)
-  - [x] Strategy-symbol assignment rules
-- **Docs**: [📄 FAT_TAIL_OPPORTUNITIES.md](docs/FAT_TAIL_OPPORTUNITIES.md)
-- **Next Milestone**: Quarterly symbol catalog refresh
+  - [x] Asset classes enumerated (Forex, Stocks, Derivatives, Crypto)
+  - [x] Full Broker Scan (1520 Symbols)
+  - [x] Institutional CSV Dataset (Properties mapped)
+  - [x] **Symbol Catalog Document** ✨ NEW
+- **Docs**: [📄 BROKER_SYMBOL_CATALOG.md](docs/institutional/BROKER_SYMBOL_CATALOG.md)
+- **Next Milestone**: Automated daily property refresh script
 
 #### [Section 06] Strategy Library & Research Process
 - **Status**: 🚧 In Progress (55%)
