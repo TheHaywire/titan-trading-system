@@ -28,13 +28,29 @@ After **Deep Optimization & Validation** (`scripts/deep_optimization.py`), we ha
    - **Optimized Params**: Entry=35 days, Exit=10 days
    - **Verdict**: ✅ **STRONG**
 
-### ❌ REJECTED Candidates
+### 📉 The "Deep Reality" (Walk-Forward Analysis)
 
-*   **EURUSD Mean Reversion**: 
-    *   *Initial Matrix*: Sharpe 10.0 (Suspicious)
-    *   *Deep Dive*: **Sharpe 0.30** (Reality)
-    *   *Reason*: Initial test likely had insufficient trade count or data artifact. 
-    *   *Action*: **DROP** from deployment. Forex markets are too efficient for simple BB strategies.
+We stressed-tested the "Golden" strategies using **Walk-Forward Analysis (WFA)** (`scripts/walk_forward_validation.py`) to see if past parameters predict future profits.
+
+*   **Result**: 54% Pass Rate (7/13 Periods).
+*   **The Lesson**: Even the best strategies fail in specific years (e.g., Choppy 2019, 2023).
+*   **Scientific Conclusion**: **Static parameters are fragile.**
+    *   A MACD(8,45) works in 2020 but fails in 2021.
+    *   No single parameter set works in all market conditions.
+
+### ✅ The Solution: Regime-Based Execution
+
+The "Golden Basket" strategies are **valid**, but they cannot run blindly 24/7. They must be gated by a **Regime Filter**.
+
+*   **Action**: We must use the **AlphaOptimizer** (built in Phase 2) to toggle these strategies.
+    *   **Trend Regime** (High Vol): Activate ETH/BTC Trend & Gold Breakout.
+    *   **Chop Regime** (Low Vol): **DISABLE** Trend Strategies (Protect Capital).
+
+**Final Deployment Plan**:
+1.  **Deploy ETH/BTC/GOLD Strategies** as "Alpha Units".
+2.  **Bind them to AlphaOptimizer**: The engine will only fire them when `MarketRegime == TRENDING`.
+
+This is the only way to achieve institutional robustness. The "Holy Grail" is not a strategy, it is **Regime Detection**.
 
 ---
 
