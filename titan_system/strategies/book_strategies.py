@@ -11,9 +11,11 @@ class BookTechnicalStrategy:
     3. Bollinger Band Breakouts (Chapter 14)
     """
 
-    def __init__(self, use_trend_filter=False, require_confluence=False):
+    def __init__(self, use_trend_filter=False, require_confluence=False, trailing_stop_mode=None):
+        self.name = "BookTechnicalStrategy"
         self.use_trend_filter = use_trend_filter
         self.require_confluence = require_confluence
+        self.trailing_stop_mode = trailing_stop_mode # Options: None, 'SMA50'
 
     def calculate_indicators(self, df):
         """
@@ -145,7 +147,9 @@ class BookTechnicalStrategy:
                     'signal': 'BUY',
                     'price': curr['close'],
                     'time': curr['time'],
-                    'comment': 'Volatility Breakout: Close above Upper Bollinger Band'
+                    'comment': 'Volatility Breakout: Close above Upper Bollinger Band',
+                    'exit_mode': self.trailing_stop_mode,
+                    'trail_indicator': 'SMA_50' if self.trailing_stop_mode == 'SMA50' else None
                 })
 
         if prev['close'] >= prev['BB_Lower'] and curr['close'] < curr['BB_Lower']:

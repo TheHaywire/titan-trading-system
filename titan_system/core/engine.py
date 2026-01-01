@@ -109,7 +109,8 @@ class TitanEngine:
             # The Fat Tail Hunter (Book Strategy)
             BookTechnicalStrategy(
                 use_trend_filter=True, # Validated Optimization
-                require_confluence=False
+                require_confluence=False,
+                trailing_stop_mode='SMA50' # Validated: Captures 10x returns
             ),
             LiquidityHunterStrategy(config={}),
             MeanReversionStrategy(config={}),
