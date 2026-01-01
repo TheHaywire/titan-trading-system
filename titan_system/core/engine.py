@@ -166,6 +166,7 @@ class TitanEngine:
         self.running = False
         self.allocator = AllocationAgent(risk_per_trade=0.015, max_total_exposure=0.10)
         self.last_analysis_time = 0
+        self.last_audit_time = time.time()
         self.last_report_date = None
         self.scan_results = {} # For API/Dashboard
 
@@ -339,14 +340,25 @@ class TitanEngine:
         # 0. Manage Active Trades (Partial Profits & Break-even)
         self.manager.manage_active_trades()
         
+        # 0.b Periodic Self-Audit (Every 4 hours)
+        if time.time() - self.last_audit_time > 14400:
+            try:
+                optimizer = PerformanceOptimizer()
+                blacklist = optimizer.run_audit()
+                if blacklist:
+                    self.trading_symbols = [s for s in self.trading_symbols if s not in blacklist]
+                self.last_audit_time = time.time()
+            except Exception as e:
+                logger.error(f"Periodic audit failed: {e}")
+
         current_scan = {"Detailed Analysis": []}
         
-        for symbol in self.trading_symbols:
-            # 1. Get Data & Analyze with The Brain
-            market_state = await self.brain.analyze_symbol(symbol)
-            
+        # 1. Parallel Market Analysis (The Brain)
+        tasks = [self.brain.analyze_symbol(s) for s in self.trading_symbols]
+        market_states = await asyncio.gather(*tasks)
+        
+        for symbol, market_state in zip(self.trading_symbols, market_states):
             if not market_state:
-                logger.warning(f"Could not fetch data for {symbol}")
                 continue
 
             # 2. Analyze with ALL Strategies (Passing Market State if adaptable, or raw DF for now)

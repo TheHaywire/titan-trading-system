@@ -7,7 +7,9 @@ Handles automated trade lifecycle events:
 """
 
 import logging
+import numpy as np
 import MetaTrader5 as mt5
+from titan_system.analytics.indicators import IndicatorFactory
 
 logger = logging.getLogger("Titan.Manager")
 
@@ -30,16 +32,9 @@ class TradeManager:
     def _process_position(self, pos):
         """Evaluates a single position for lifecycle updates."""
         try:
-            # 1. Skip positions not managed by Titan (based on magic number)
+            # 2. Skip positions not managed by Titan (based on magic number)
             # Magic number 234000 is used in execution.py
             if pos.magic != 234000:
-                return
-
-            # 2. Skip positions already in 'Break-Even' or 'Managed' state
-            # We use the comment as a lightweight state machine
-            if "BE" in pos.comment:
-                # Still check for trailing stop if needed
-                # self._handle_trailing_stop(pos)
                 return
 
             # 3. Calculate Risk:Reward Metrics
@@ -47,6 +42,17 @@ class TradeManager:
             current = pos.price_current
             sl = pos.sl
             
+            # State Management: Is it already at Break-Even?
+            # Buffer for BE: sl within 1 or 2 ticks of entry
+            tick_size = mt5.symbol_info(pos.symbol).trade_tick_size
+            is_be = abs(sl - entry) <= (10 * tick_size) # 10 ticks margin for BE
+            
+            # A. If at BE, handle Trailing Stop
+            if is_be:
+                self._handle_trailing_stop(pos)
+                return
+
+            # B. If not at BE, check for 1:1 RR Trigger (Operational Alpha)
             if sl == 0:
                 # No Stop Loss? Cannot calculate RR.
                 return
@@ -61,7 +67,7 @@ class TradeManager:
             else:
                 profit_dist = entry - current
 
-            # 4. Check for 1:1 RR Trigger (Operational Alpha)
+            # 4. Check for 1:1 RR Trigger
             if profit_dist >= risk_dist:
                 self._trigger_lifecycle_alpha(pos)
 
@@ -110,5 +116,34 @@ class TradeManager:
             logger.error(f"❌ Failed to move {pos.ticket} to Break-Even.")
 
     def _handle_trailing_stop(self, pos):
-        """(Future) Implements ATR-based or Candle-based trailing stops."""
-        pass
+        """
+        Implements ATR-based dynamic trailing stops.
+        Active only after position is at Break-Even.
+        """
+        symbol = pos.symbol
+        # 1. Fetch recent data to calculate current ATR
+        df = self.execution.get_data(symbol, mt5.TIMEFRAME_H1, 50)
+        if df is None: return
+        
+        df = IndicatorFactory.calculate_all(df)
+        atr = df['atr'].iloc[-1]
+        
+        if np.isnan(atr): return
+
+        # 2. Calculate New Trailing Stop
+        current_price = pos.price_current
+        trail_dist = atr * 2.0 # 2x ATR Trailing Stop
+        
+        if pos.type == mt5.POSITION_TYPE_BUY:
+            new_sl = current_price - trail_dist
+            # Only move SL UP
+            if new_sl > pos.sl + (mt5.symbol_info(symbol).point * 10):
+                self.execution.modify_position(pos.ticket, sl=new_sl)
+                logger.info(f"📈 Trailing Buy SL Up: {symbol} -> {new_sl:.5f}")
+        else:
+            new_sl = current_price + trail_dist
+            # Only move SL DOWN
+            if new_sl < pos.sl - (mt5.symbol_info(symbol).point * 10) or pos.sl == 0:
+                # Note: BE check handled in _process_position so pos.sl shouldn't be 0
+                self.execution.modify_position(pos.ticket, sl=new_sl)
+                logger.info(f"📉 Trailing Sell SL Down: {symbol} -> {new_sl:.5f}")

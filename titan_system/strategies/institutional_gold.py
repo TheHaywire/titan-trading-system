@@ -150,19 +150,19 @@ class InstitutionalGoldStrategy(BaseStrategy):
                 
                 # Get Prediction
                 probs = self.ai_model.forward(latest_features) # Returns [Buy, Sell, Hold] probs
-                    ai_action = np.argmax(probs)
-                    ai_conf = probs[ai_action]
-                    
-                    # LOG the AI "Thinking"
-                    logger.info(f"🧠 AI Prediction: {['BUY', 'SELL', 'HOLD'][ai_action]} ({ai_conf*100:.1f}%)")
-                    
-                    # 4. Hybrid Logic (AI + Rule Base)
-                    # Implementation: Use AI as the Trigger if High Confidence (>70%)
-                    if ai_conf > 0.7:
-                         if ai_action == 0: # BUY
-                             signal = "BUY"
-                             reason = f"AI Alpha Trigger (Conf: {ai_conf:.2f})"
-                             confidence = ai_conf
+                ai_action = np.argmax(probs)
+                ai_conf = probs[ai_action]
+                
+                # LOG the AI "Thinking"
+                logger.info(f"🧠 AI Prediction: {['BUY', 'SELL', 'HOLD'][ai_action]} ({ai_conf*100:.1f}%)")
+                
+                # 4. Hybrid Logic (AI + Rule Base)
+                # Implementation: Use AI as the Trigger if High Confidence (>70%)
+                if ai_conf > 0.7:
+                     if ai_action == 0: # BUY
+                         signal = "BUY"
+                         reason = f"AI Alpha Trigger (Conf: {ai_conf:.2f})"
+                         confidence = ai_conf
                          elif ai_action == 1: # SELL
                              signal = "SELL"
                              reason = f"AI Alpha Trigger (Conf: {ai_conf:.2f})"
