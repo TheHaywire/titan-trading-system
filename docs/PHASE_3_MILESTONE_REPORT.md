@@ -10,35 +10,31 @@
 
 We just completed the most comprehensive backtest in the project's history, testing **18 strategies** across **11 symbols** and **6 timeframes** (approx. 1,000 combinations).
 
-### 🏆 Top 5 "Golden" Strategies (Sharpe > 1.3)
+### 🏆 Top 3 "Golden" Strategies (Sharpe > 1.3)
 
-These are the only statistically validated strategies that survived realistic spread/commission costs:
+After **Deep Optimization & Validation** (`scripts/deep_optimization.py`), we have refined the list:
 
-1. **ETHUSD × MACD Cross (12/26) [D1]**
-   - **Sharpe**: 1.39
-   - **Return**: +4,369%
-   - **Win Rate**: 52.8%
-   - **Trades**: 53
-   - **Verdict**: 🚀 **DEPLOY** (Best trending crypto strategy)
+1. **ETHUSD × MACD Trend [D1]**
+   - **Optimized Params**: Fast=8, Slow=45, Signal=9
+   - **Sharpe**: **1.30**
+   - **Return**: **+1,530%**
+   - **Verdict**: 🚀 **DEPLOY** (Robust across parameters)
 
-2. **BTCUSD × MACD Cross (12/26) [D1]**
-   - **Sharpe**: 1.30
-   - **Return**: +1,253%
-   - **Win Rate**: 43.3%
-   - **Trades**: 30
-   - **Verdict**: 🚀 **DEPLOY** (Proven trend follower)
+2. **BTCUSD × MACD Trend [D1]**
+   - **Params**: Same as ETH (Correlation is high)
+   - **Verdict**: 🚀 **DEPLOY**
 
-3. **EURUSD × Mean Reversion BB(20, 2.5) [D1]**
-   - **Sharpe**: ~10.0 (Valid, but likely outlier due to low trade count in sample)
-   - **Verdict**: ⚠️ **RE-VERIFY** (Too good to be true?)
+3. **GOLD × Turtle Breakout [D1]**
+   - **Optimized Params**: Entry=35 days, Exit=10 days
+   - **Verdict**: ✅ **STRONG**
 
-4. **GOLD × Turtle Breakout (55/20) [D1]**
-   - **Sharpe**: 1.25
-   - **Verdict**: ✅ **STRONG** (Classic trend following on Gold works)
+### ❌ REJECTED Candidates
 
-5. **GOLD × Channel Breakout [H4]**
-   - **Sharpe**: 1.07
-   - **Verdict**: ✅ **STRONG** (One of the *only* H4 strategies to work)
+*   **EURUSD Mean Reversion**: 
+    *   *Initial Matrix*: Sharpe 10.0 (Suspicious)
+    *   *Deep Dive*: **Sharpe 0.30** (Reality)
+    *   *Reason*: Initial test likely had insufficient trade count or data artifact. 
+    *   *Action*: **DROP** from deployment. Forex markets are too efficient for simple BB strategies.
 
 ---
 
