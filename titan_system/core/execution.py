@@ -261,11 +261,15 @@ class MT5Execution:
             "price": price,
             "sl": float(sl),
             "tp": float(tp),
-            "deviation": 20,
+            "deviation": self.config.MAX_SLIPPAGE_POINTS if hasattr(self.config, 'MAX_SLIPPAGE_POINTS') else 20,
             "magic": 234000,
             "comment": comment,
             "type_time": mt5.ORDER_TIME_GTC,
         }
+        
+        # Policy: Max Deviation Enforcement (EPIC-09)
+        max_allowed_slippage = request["deviation"]
+        logger.debug(f"⚡ [EXECUTION POLICY] Symbol: {symbol} | Max Slippage Allowed: {max_allowed_slippage} points")
         
         # Filling Mode Logic (Robust)
         filling_modes = symbol_info.filling_mode
