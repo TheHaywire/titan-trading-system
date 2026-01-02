@@ -34,7 +34,7 @@ from titan_system.strategies.live_gold_breakout import LiveGoldBreakout
 
 # --- CONFIGURATION ---
 SYMBOLS = ['ETHUSD', 'BTCUSD', 'GOLD']
-TIMEFRAME = mt5.TIMEFRAME_D1
+TIMEFRAME = mt5.TIMEFRAME_M15 # Switched to M15 for Intraday/Scalping
 UPDATE_INTERVAL = 60 # Seconds
 
 # Logging
@@ -44,6 +44,15 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger("TitanEngine")
+
+from titan_system.core.execution import MT5Execution
+
+class SimpleConfig:
+    """Minimal Config for Execution Engine"""
+    max_slippage = 20
+    mt5_login = 0
+    mt5_password = ""
+    mt5_server = ""
 
 # --- ANALYST AGENT (CONTEXT ENGINE) ---
 class AnalystAgent:
@@ -137,38 +146,28 @@ class UniverseScanner:
             
         logger.info(f"Universe Size: {len(candidates)}")
         
-        # Filter 2: Technical Check (ADX & Volume) - The "Qualifying Round"
-        # We process in batches to avoid RAM spikes
-        qualified = []
-        
-        # We just assume Crypto/Forex/Metals for the "Golden Basket" + others
-        # Ideally, we calculate 'IsMoving?'
-        # For Phase 4, let's strictly stick to logic:
-        # We need a list of symbols that HAVE strategies assigned.
-        # But user wants 1500. This implies we apply a GENERIC Strategy (e.g. Trend) to all.
-        
-        self.active_watch_list = candidates # For now, watch all? No, too slow.
-        
-        # Let's select Top 50 by Volatility (ATR %)
+        candidates_to_score = candidates
+        # Limit to 300 to prevent ultra-long scans in Python
+        if len(candidates) > 300:
+             # Heuristic: Prefer USD pairs, Gold, Majors
+             candidates_to_score = [s for s in candidates if "USD" in s or "EUR" in s or "JPY" in s or "GOLD" in s or "XAU" in s][:300]
+
         scored_candidates = []
         
-        for i, sym in enumerate(candidates):
-            if i % 100 == 0: print(f"Scanning {i}/{len(candidates)}...")
+        for i, sym in enumerate(candidates_to_score):
+            if i % 50 == 0: print(f"Scanning {i}/{len(candidates_to_score)}...")
             
-            # Fetch minimal data (20 bars)
+            # Fetch minimal data (Global Trend D1)
             rates = mt5.copy_rates_from_pos(sym, mt5.TIMEFRAME_D1, 0, 20)
             if rates is None or len(rates) < 20: continue
             
             c = pd.Series([x['close'] for x in rates])
-            
-            # Check % Change today
             pct_change = abs((c.iloc[-1] - c.iloc[-2]) / c.iloc[-2])
             
-            if pct_change > 0.005: # > 0.5% move today
+            if pct_change > 0.005: 
                 scored_candidates.append(sym)
                 
-        # Sort by most active?
-        self.active_watch_list = scored_candidates[:50] # Top 50 movers
+        self.active_watch_list = scored_candidates[:50] 
         logger.info(f"Active Watchlist updated: {len(self.active_watch_list)} symbols")
         return self.active_watch_list
 
@@ -178,12 +177,19 @@ class TitanEngine:
         self.mode = mode
         self.analyst = AnalystAgent()
         self.scanner = UniverseScanner()
+        self.config = SimpleConfig()
+        self.exec = MT5Execution(self.config)
+        
+        # Auto-Connect for Live Trading
+        if self.mode == 'live':
+             if self.exec.connect():
+                 logger.info("LIVE EXECUTION CONNECTED")
+             else:
+                 logger.critical("FAILED TO CONNECT FOR LIVE EXECUTION")
         
         self.last_scan_time = 0
-        self.scan_interval = 4 * 3600 # 4 Hours
+        self.scan_interval = 4 * 3600
         
-        # Initialize Strategies (Generic mapping)
-        # We will use "LiveCryptoTrend" logic for generic trend, "GoldBreakout" for generic breakout
         self.generic_trend_strategy = LiveCryptoTrend() 
         self.generic_breakout_strategy = LiveGoldBreakout()
         
@@ -197,6 +203,7 @@ class TitanEngine:
         }
     
     def fetch_data(self, symbol):
+        # Fetching M15 Data now via Engine
         rates = mt5.copy_rates_from_pos(symbol, TIMEFRAME, 0, 300)
         if rates is None: return None
         df = pd.DataFrame(rates)
@@ -222,7 +229,7 @@ class TitanEngine:
                 })
 
     def run_cycle(self):
-        # 0. UNIVERSE SCAN (Every 4 Hours)
+        # 0. UNIVERSE SCAN
         if time.time() - self.last_scan_time > self.scan_interval:
             self.state['status'] = 'SCANNING UNIVERSE...'
             active_symbols = self.scanner.scan_full_universe()
@@ -230,7 +237,6 @@ class TitanEngine:
             self.state['watchlist_size'] = len(active_symbols)
         else:
             active_symbols = self.scanner.active_watch_list
-            # Fail-safe if watchlist empty (first run)
             if not active_symbols:
                  active_symbols = self.scanner.scan_full_universe()
 
@@ -245,35 +251,37 @@ class TitanEngine:
             score, regime = self.analyst.calculate_context_score(df)
             self.state['regimes'][symbol] = {'score': score, 'regime': regime}
             
-            # 3. SELECT STRATEGY DYNAMICALLY
-            # Heuristic: Commodities & Indices -> Breakout. Forex & Crypto -> Trend.
-            
-            strategy = self.generic_trend_strategy # Default
-            
-            # Check for Breakout Candidates (Gold, Silver, Indices)
+            # 3. SELECT STRATEGY
+            strategy = self.generic_trend_strategy 
             if any(x in symbol for x in ['XAU', 'GOLD', 'SILVER', 'XAG', 'US500', 'NAS100', 'GER30', 'GER40', 'JP225']):
                 strategy = self.generic_breakout_strategy
             
-            # Check for Trend Candidates (Crypto pairs usually, and major FX)
-            # Default is Trend, so we leave it.
-
-            
-            if not strategy: continue
-            
-            # Logic: If Score < 40, Force Defensive
-            if score < 40: continue
+            if score < 40: continue # Filters bad context
                 
             # Run Strategy Logic
             decision = strategy.analyze(symbol, df)
             
-            # 4. EXECUTE (Paper Mode Logic)
+            # 4. EXECUTE
             if decision['signal'] in ['BUY', 'SELL']:
                 risk_mult = 1.5 if score >= 80 else 1.0
                 if score < 60: risk_mult = 0.5
                 
                 logger.info(f"SIGNAL: {symbol} {decision['signal']} (Risk: {risk_mult}x) | Reason: {decision['reason']}")
                 
+                if self.mode == 'live':
+                    self.execute_live_trade(symbol, decision['signal'], risk_mult)
+                
         self.state['status'] = f'Active (Monitored: {len(active_symbols)})'
+
+    def execute_live_trade(self, symbol, signal, risk_mult):
+        # Prevent over-trading: Check if position exists
+        existing = [p for p in self.state['positions'] if p['symbol'] == symbol]
+        if existing: return # Setup already active
+        
+        volume = 0.01 # Start small for safety, implies user trusts us to scale later.
+        if risk_mult > 1.0: volume = 0.02
+        
+        self.exec.execute_order(symbol, signal, volume, sl_pips=50, tp_pips=100)
 
     def generate_dashboard(self) -> Layout:
         layout = Layout()
@@ -288,18 +296,17 @@ class TitanEngine:
         
         # Header
         header = Panel(
-            f"[bold cyan]TITAN AUTONOMOUS ENGINE (UNIVERSE MODE)[/bold cyan] | Mode: [yellow]{self.mode.upper()}[/yellow] | Status: {self.state['status']} | Watchlist: {self.state['watchlist_size']}",
+            f"[bold cyan]TITAN AUTONOMOUS ENGINE (M15 SCALPER)[/bold cyan] | Mode: [bold red]{self.mode.upper()}[/bold red] | Status: {self.state['status']} | Watchlist: {self.state['watchlist_size']}",
             style="white on blue"
         )
         layout["header"].update(header)
         
-        # Left: Top Regimes (Show only Top 10 by Score)
+        # Left: Top Regimes
         table_regime = Table(title="Top Opportunities (Context Score)", box=box.SIMPLE)
         table_regime.add_column("Symbol", style="cyan")
         table_regime.add_column("Score", justify="right")
         table_regime.add_column("Regime", style="bold")
         
-        # Sort by score desc
         sorted_regimes = sorted(self.state['regimes'].items(), key=lambda x: x[1]['score'], reverse=True)[:15]
         
         for sym, data in sorted_regimes:
