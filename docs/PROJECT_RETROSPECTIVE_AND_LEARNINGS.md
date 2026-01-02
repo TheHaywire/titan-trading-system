@@ -80,8 +80,36 @@ This document captures the rigorous evolution of the Titan Trading System. We tr
 
 ---
 
+## 📉 Phase 3.5: The "Walk-Forward" Reality Check (Deep Dive)
+**Timeline**: Jan 2, 2026
+
+### ❌ The "Overfitting" Trap
+After finding strategies with **Sharpe 1.30** (ETH Trend) and **Sharpe 1.25** (Gold Breakout) using Grid Search, we felt confident.
+*   **The Flaw**: Standard optimization finds the best parameters for the *entire* history. It "see the future".
+*   **The Test**: We built `scripts/walk_forward_validation.py` to train on Past Data (Year N) and test on Unseen Futures (Year N+1).
+
+### 🧪 The Scientific Results
+| Strategy | Grid Search Sharpe | Walk-Forward Pass Rate | Verdict |
+|:---|:---|:---|:---|
+| **ETH Trend (MACD)** | 1.39 | **54%** (7/13 periods) | **FRAGILE** if static |
+| **Gold Breakout** | 1.25 | **50%** (Coin Flip) | **FRAGILE** if static |
+| **EURUSD Mean Rev** | 0.30 | **N/A** (Failed Baseline) | **UNPROFITABLE** |
+
+### 🧠 The "Regime" Epiphany
+The Walk-Forward analysis didn't show the strategies were "bad"; it showed they were **Regime Dependent**.
+*   **2020/2021 (Crypto Bull)**: MACD Printed Money 🚀
+*   **2019/2023 (Crypto Chop)**: MACD Bleed Money 🩸
+
+**The Pivot**:
+We realized looking for "One Set of Parameters" (e.g., MACD 12/26) that works forever is a **Retail Myth**.
+*   **Institutional Solution**: We must gate strategies with a **Regime Filter**.
+    *   *If Volatility > X*: ENABLE Trend Strategy.
+    *   *If Volatility < X*: ENABLE Mean Reversion / CASH.
+
+---
+
 ## 🛡️ Phase 4: Risk & Operations (Institutional Grade)
-**Timeline**: Late Dec 2025
+**Timeline**: Late Dec 2025 - Jan 2026
 
 ### ❌ The Mistakes
 1.  **Static Position Sizing**: "0.1 lots for everyone".
@@ -94,21 +122,21 @@ This document captures the rigorous evolution of the Titan Trading System. We tr
     *   *Lesson*: Risk should be calculated as `$ Risk`, not `Lot Size`. 1 Lot of Gold != 1 Lot of Euro.
 2.  **The Kill Switch**: Built `titan_system/risk/kill_switch.py`.
     *   *Lesson*: You need a hard, mechanical "circuit breaker" that cuts all power if Drawdown > N% or Connection drops. Do not rely on logic to stop a runaway bot.
-3.  **Allocation Agent**: Built dynamic `AllocationAgent`.
-    *   *Lesson*: Scale UP winners (1.5x) and Scale DOWN losers (0.7x). Don't average down into losers.
+3.  **AlphaOptimizer (The Brain)**: 
+    *   *Lesson*: Strategies are just "Tools". The `AlphaOptimizer` is the "Hand" that picks the tool based on the Regime (Trend/Chop).
+    *   *Action*: We will deploy strategies wrapped in `if regime == 'TREND': run_strategy()`.
 
 ---
 
-## 🏆 The "Golden Basket" (Final Validated Edges)
-After 1,000 simulations, these are the **ONLY** proven edges that survive transaction costs:
+## 🏆 The "Golden Basket" (Final Validated Portfolio)
+After 1,000 simulations and Walk-Forward Stress Testing, we have the **only** deployable logic:
 
-| Asset | Regime | Strategy | Timeframe | Sharpe | Why it works |
-|-------|--------|----------|-----------|--------|--------------|
-| **ETHUSD** | Trend | **MACD Cross (12/26)** | **D1** | **1.39** | Crypto momentum is structural and long-duration. |
-| **BTCUSD** | Trend | **MACD Cross (12/26)** | **D1** | **1.30** | "Digital Gold" narrative drives massive multi-month trends. |
-| **GOLD** | Breakout | **Turtle (55-day)** | **D1** | **1.25** | Gold consolidates tight, then explodes. Fading it is death. |
-| **GOLD** | Breakout | **Keltner Channel** | **H4** | **1.07** | The only intraday (H4) strategy that survives costs. |
-| **EURUSD** | Mean Rev | **Bollinger Bands** | **D1** | **High** | Central banks dampen volatility, keeping it in range. |
+| Asset | Regime | Strategy | Timeframe | Deployment Logic |
+|-------|--------|----------|-----------|------------------|
+| **ETHUSD** | **Trend** | **MACD (8/45/9)** | **D1** | ONLY when Market is Trending (ADX > 20) |
+| **BTCUSD** | **Trend** | **MACD (8/45/9)** | **D1** | ONLY when Market is Trending (ADX > 20) |
+| **GOLD** | **Breakout** | **Donchian (35/10)** | **D1** | ONLY when Volatility is Expanding |
+| **EURUSD** | **Mean Rev** | **REJECTED** | **N/A** | Too efficient/random. Dropped. |
 
 ---
 
@@ -117,7 +145,7 @@ After 1,000 simulations, these are the **ONLY** proven edges that survive transa
 1.  **Don't Scalp.** The broker wins on M5. You win on D1.
 2.  **Respect Costs.** If it doesn't work with 0.1% fees, it doesn't work.
 3.  **Know the Regime.** Don't trend-follow a chopping market.
-4.  **Data is God.** Bad symbols = Bad trades. Verify every tick.
+4.  **Trust WFA.** If it fails Walk-Forward, it's curve-fitted.
 5.  **Survive First.** Architecture (Kill Switches, DBs) > Strategy.
 
 *This document serves as the permanent record of our engineering and research evolution.*
