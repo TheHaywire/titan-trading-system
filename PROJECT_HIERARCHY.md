@@ -1,81 +1,59 @@
-# Institutional Trading System - Project Hierarchy
+# Institutional Trading System - Project Hierarchy (v2.0)
 
-## 🏛️ CATEGORY 1: INFRASTRUCTURE CORE
-**"The Foundation"**
-
-### ✅ [PHASE 0] System Reconnaissance
-- **Subtask**: Deep Broker Scan (Spreads, Leverage, Contract Sizes)
-  - *Output*: `docs/recon/BROKER_MASTER_UNIVERSE.csv`
-- **Subtask**: Architecture Blueprinting
-  - *Output*: `docs/inst_level/INSTITUTIONAL_BLUEPRINT.md`
-
-### ✅ [PHASE 3] Engine Architecture
-- **Subtask**: Single Source of Truth Engine
-  - *Output*: `titan_system/core/production_engine.py`
-- **Subtask**: Configuration Management
-  - *Output*: `titan_system/titan_futures_config.py`
-- **Subtask**: Database Schema (Strategy Routing)
-  - *Output*: `titan_system/data/models.py` (StrategyAssignment Table)
+## 📂 ROOT DIRECTORY
+| File/Folder | Description |
+|---|---|
+| `titan_system/` | **The Core Package**. All production code lives here. |
+| `scripts/` | Utilities for Backtesting, Optimization, and Launching. |
+| `docs/` | Institutional Documentation ("The Bible"). |
+| `data/` | SQLite Databases (`titan.db`, `backtest.db`) and Logs. |
+| `tests/` | Unit and Integration Tests. |
+| `README.md` | The Project Homepage. |
+| `PROJECT_BOARD.md` | Active Sprint & Kanban Board. |
 
 ---
 
-## 🧠 CATEGORY 2: STRATEGY LAB
-**"The Alpha Generators"**
+## 🏛️ PACKAGE: `titan_system/`
 
-### ✅ [PHASE 1] Base Strategy Development
-- **Subtask**: BookTechnicalStrategy Implementation
-  - *Output*: `titan_system/strategies/book_strategies.py`
-- **Subtask**: Technical Indicator Library (MA, RSI, Bollinger)
-  - *Output*: `titan_system/strategies/book_strategies.py`
+### `core/` (The Engine Room)
+- `engine.py`: **Main Event Loop**. Handles Tick stream and orchestration.
+- `data_pipeline.py`: **Data Integrity**. Gap checks and bar alignment.
+- `execution.py`: **MT5 Bridge**. Order placement and management.
 
-### ✅ [PHASE 2] Edge Optimization
-- **Subtask**: "Fat Tail" Discovery (1500+ Symbol Scan)
-  - *Output*: `docs/FAT_TAIL_OPPORTUNITIES.md`
-- **Subtask**: Trend Filter Verification (SMA 200)
-  - *Output*: `docs/OPTIMIZATION_REPORT.md`
-- **Subtask**: "Home Run" Exit Logic (SMA 50 Trailing)
-  - *Output*: `titan_system/core/trade_manager.py`
+### `strategies/` (The Alpha Units)
+- `base.py`: Abstract Base Class for all strategies.
+- `live_crypto_trend.py`: **ETH/BTC Trend** (Regime-Aware).
+- `live_gold_breakout.py`: **Gold Breakout** (Coming soon).
+- `book_strategies.py`: *Legacy/Backtest implementations*.
 
-### 🚧 [PHASE 6] Strategy Validation (Active)
-- **Subtask**: Formal Backtest Suite
-- **Subtask**: Monte Carlo Stress Test
-- **Subtask**: Institutional Gold Strategy Implementation
+### `risk/` (The Shield)
+- `kill_switch.py`: **Circuit Breaker**. Stops trading on Drawdown.
+- `allocation.py`: **Allocation Agent**. Dynamic Sizing & Regime Scaling.
+- `position_sizer.py`: ATR-based risk calculation.
 
----
+### `analytics/` (The Scoreboard)
+- `backtest_logger.py`: Writes results to `backtest_history.db`.
+- `metrics.py`: Sharpe/Sortino calculators.
 
-## 🛡️ CATEGORY 3: RISK CONSTITUTION
-**"The Safeguards"**
-
-### ✅ [PHASE 5] Risk Core Implementation
-- **Subtask**: Institutional Position Sizer (Risk % Model)
-  - *Output*: `titan_system/risk/position_sizer.py`
-- **Subtask**: Leverage Normalization (1:1000 Protection)
-  - *Output*: `titan_system/titan_futures_config.py`
-
-### 📋 [PHASE 8] Advanced Risk (Pending)
-- **Subtask**: Portfolio Correlation Matrix
-- **Subtask**: Volatility-Adjusted Sizing
-- **Subtask**: Black Swan Circuit Breaker
+### `ui/` (The Cockpit)
+- `dashboard.py`: **Rich Terminal UI**. Real-time monitoring.
 
 ---
 
-## 🖥️ CATEGORY 4: OPERATIONS COMMAND
-**"The Cockpit"**
+## 🛠️ UTILITIES: `scripts/`
 
-### 📋 [PHASE 7] Real-Time Monitoring (Pending)
-- **Subtask**: Terminal Dashboard (Rich UI)
-  - *Output*: `titan_system/dashboard/terminal_ui.py`
-- **Subtask**: Deployment Launcher
-  - *Output*: `start_production.py`
-- **Subtask**: Telegram Command Center
+- `walk_forward_validation.py`: **WFA Engine**. Stress tests strategies.
+- `deep_optimization.py`: **Grid Search**. Finds optimal parameters.
+- `comprehensive_matrix_backtest.py`: **The Matrix**. 1,000+ simulation runner.
+- `launch.py`: Production entry point.
 
 ---
 
-## 🔬 CATEGORY 5: QUALITY ASSURANCE
-**"The Audit"**
+## 📚 DOCUMENTATION: `docs/`
 
-### 📋 [PHASE 10] Testing Suite
-- **Subtask**: Unit Tests (PyTest)
-- **Subtask**: Integration Tests (MT5 Bridge)
-- **Subtask**: Paper Trading Logs
+- `INSTITUTIONAL_MASTER_PLAN.md`: The 12-Section Architecture.
+- `PROJECT_RETROSPECTIVE.md`: Lessons Learned & "Why we don't scalp".
+- `research/`: Strategy Database.
+- `institutional/`: Detailed specs for each module.
+
 
