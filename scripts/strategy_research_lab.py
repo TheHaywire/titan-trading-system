@@ -21,6 +21,10 @@ from titan_system.backtest.engine import BacktestEngine
 from titan_system.backtest.strategies_momentum import *
 from titan_system.backtest.strategies_meanreversion import *
 from titan_system.backtest.strategies_breakout import *
+from titan_system.backtest.strategies_smc import *
+from titan_system.backtest.strategies_timebased import *
+from titan_system.backtest.strategies_mtf import *
+from titan_system.backtest.strategies_volatility import *
 
 console = Console()
 
@@ -32,23 +36,35 @@ class StrategyResearchLab:
     """
     
     def __init__(self):
-        # Test configuration
+        # Test configuration - EXPANDED FOR 1000+ TESTS
         self.symbols = [
-            "GER40",
-            "AUDUSD", "USDCAD"
+            # Forex Major Pairs
+            "EURUSD", "GBPUSD", "USDJPY", "AUDUSD", "USDCAD",
+            "USDCHF", "NZDUSD", "EURJPY", "GBPJPY", "EURGBP",
+            # Metals
+            "GOLD", "XAUUSD", "SILVER",
+            # Indices
+            "US100", "US30", "GER40", "UK100", "JPN225",
+            # Crypto
+            "BTCUSD", "ETHUSD"
         ]
         
         self.timeframes = [
+            (mt5.TIMEFRAME_M1, "M1"),
             (mt5.TIMEFRAME_M5, "M5"),
             (mt5.TIMEFRAME_M15, "M15"),
+            (mt5.TIMEFRAME_M30, "M30"),
             (mt5.TIMEFRAME_H1, "H1"),
-            (mt5.TIMEFRAME_H4, "H4")
+            (mt5.TIMEFRAME_H4, "H4"),
+            (mt5.TIMEFRAME_D1, "D1")
         ]
         
-        # Initialize strategies
+        # Initialize strategies with PARAMETER VARIATIONS
         self.momentum_strategies = [
+            # EMA variations
             EMA_Cross_9_21(),
             EMA_Cross_21_50(),
+            
             MACD_Signal(),
             RSI_Momentum(),
             ADX_Trend(),
@@ -64,17 +80,52 @@ class StrategyResearchLab:
         ]
         
         self.breakout_strategies = [
+            # Multiple period variations
+            HighLow_Breakout(10),
             HighLow_Breakout(20),
+            HighLow_Breakout(30),
+            HighLow_Breakout(50),
+            
             ATR_Breakout(),
             BB_Squeeze_Breakout(),
             Volume_Breakout(),
             Opening_Range_Breakout()
         ]
         
+        # NEW CATEGORIES
+        self.smc_strategies = [
+            OrderBlock_Strategy(),
+            FairValueGap_Strategy(),
+            BreakOfStructure_Strategy(),
+            LiquidityGrab_Strategy()
+        ]
+        
+        self.timebased_strategies = [
+            LondonOpen_Breakout(),
+            NewYorkOpen_Breakout(),
+            AsianSession_Range()
+        ]
+        
+        self.mtf_strategies = [
+            H4_Trend_M15_Entry(),
+            Daily_Bias_H1_Entry()
+        ]
+        
+        self.volatility_strategies = [
+            KeltnerChannel_Breakout(),
+            VolatilityContraction_Expansion(),
+            DonchianChannel_Breakout(20),
+            DonchianChannel_Breakout(55)  # Turtle traders period
+        ]
+        
         self.all_strategies = (
             self.momentum_strategies +
             self.meanreversion_strategies +
-            self.breakout_strategies
+            self.breakout_strategies +
+            self.smc_strategies +
+            self.timebased_strategies +
+            self.mtf_strategies +
+            self.volatility_strategies
         )
         
         # Results storage
