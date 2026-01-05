@@ -19,6 +19,7 @@ from rich import box
 
 from titan_system.backtest.engine import BacktestEngine
 from titan_system.backtest.strategies_momentum import *
+from titan_system.backtest.strategies_momentum_extended import *
 from titan_system.backtest.strategies_meanreversion import *
 from titan_system.backtest.strategies_breakout import *
 from titan_system.backtest.strategies_smc import *
@@ -68,7 +69,17 @@ class StrategyResearchLab:
             MACD_Signal(),
             RSI_Momentum(),
             ADX_Trend(),
-            Stochastic_Momentum()
+            Stochastic_Momentum(),
+            
+            # EXTENDED MOMENTUM
+            ParabolicSAR_Strategy(),
+            WilliamsR_Strategy(),
+            ROC_Strategy(),
+            CCI_Strategy(),
+            EMA_Golden_Cross(),
+            MFI_Strategy(),
+            TripleEMA_Strategy(),
+            DMI_Strategy()
         ]
         
         self.meanreversion_strategies = [
