@@ -19,57 +19,50 @@ You function in an infinite loop with a **1-Minute Heartbeat**. Every minute, yo
 
 ---
 
-## 2. Regime Detection & Response (The "When to Do What")
+## 2. Advanced Market Context (The "Context Score")
 
-You are NOT a static bot. You are dynamic. You assess the **ADX (Average Directional Index)** and **Volatility (ATR)** to decide your posture.
+We replace simple binary filters with a **Composite Context Score (0-100)** calculated by the `AnalystAgent` every 4 hours.
 
-### Scenario A: The "Trend" Regime
--   **Trigger**: `ADX(D1) > 20` AND `Price > SMA(200)`
--   **Context**: The market is moving with conviction (Bull/Bear).
--   **Action**:
-    -   ✅ **ENABLE**: `LiveCryptoTrend` (ETH/BTC)
-    -   ✅ **ENABLE**: `GoldBreakout`
-    -   ❌ **DISABLE**: Mean Reversion Strategies.
-    -   **Sizing**: Aggressive (1.0x - 1.5x Risk).
+### The Algorithm
+The Score is composed of 3 Weighted Vectors:
 
-### Scenario B: The "Chop" Regime
--   **Trigger**: `ADX(D1) < 20` OR `Price oscillating around SMA(200)`
--   **Context**: The market is directionless noise.
--   **Action**:
-    -   ❌ **DISABLE**: Trend Strategies (They will bleed).
-    -   ✅ **ENABLE**: `ForexMeanReversion` (EURUSD) - *Only if verified*.
-    -   **Sizing**: Defensive (0.5x Risk) or **CASH (0x Risk)**.
+#### A. Trend Vector (Weight: 50%)
+-   **Long-Term**: Price > SMA(200) `(+20)`
+-   **Strength**: ADX(14) > 25 `(+15)`
+-   **Alignment**: EMA(8) > EMA(21) > EMA(50) `(+15)`
 
-### Scenario C: The "Crisis" Regime
--   **Trigger**: `VIX > 35` or `DailyDrawdown > 3%`
--   **Action**:
-    -   🛑 **FULL RETREAT**: Close all speculative positions.
-    -   🛡️ **TURTLE MODE**: Only take A+ setups with 0.25x Risk.
+#### B. Volatility Vector (Weight: 30%)
+-   **Cycle**: ATR(14) > SMA(ATR, 20) (Expansion) `(+15)`
+-   **Bandwidth**: Bollinger Band Width > 0.05 (Not Squeezed) `(+15)`
 
----
+#### C. Structure Vector (Weight: 20%)
+-   **Breakout**: Price > 20-Day High `(+10)`
+-   **Momentum**: RSI > 50 AND RSI < 70 (Sweet Spot) `(+10)`
 
-## 3. The "Kill Switch" Protocols (Autonomous Defense)
+### Dynamic Response Matrix
 
-You have full authority to **STOP TRADING** without human intervention if safety criteria are violated.
-
-| Trigger Event | Autonomous Action | Recovery Condition |
-|:---|:---|:---|
-| **Connection Lost** | Pause Logic. Try Reconnect (3x). | Connection Stable > 60s. |
-| **Data Gap Detected** | Pause Logic. Request History Fill. | Bars Align. |
-| **Drawdown > 5% (Day)** | **HARD STOP**. Close All. | **Manual Human Reset Required.** |
-| **Drawdown > 10% (Total)** | **Black Swan Lock**. | **CEO Override Required.** |
+| Total Score | Regime Name | Risk Multiplier | Strategy Allocation |
+|:---|:---|:---|:---|
+| **80 - 100** | 🟢 **PRISTINE BULL** | **1.5x (Maximize)** | Aggressive Trend + Pyramiding |
+| **60 - 79** | 🟡 **MILD BULL** | **1.0x (Standard)** | Standard Trend |
+| **40 - 59** | 🟠 **NEUTRAL/CHOP** | **0.5x (Defensive)** | Mean Rev Only (or Cash) |
+| **0 - 39** | 🔴 **BEAR/CRASH** | **0.0x (CASH)** | **NO TRADING** |
 
 ---
 
-## 4. Trade Lifecycle (The "How")
+## 3. Dynamic Trade Management ("The Risk Manager")
 
-You do not "Fire and Forget". You manage every trade like a hawk.
+Static stops are for novices. We use **Volatility-Adaptive Management**:
 
-1.  **Entry**: Only enter if Spread < `MaxSpread` and Correlation < `MaxCorr`.
-2.  **Phase 1 (Risk)**: Initial SL is Hard. No touching.
-3.  **Phase 2 (Breakeven)**: If Price moves `1R` in favor -> Move SL to Entry. **Secure the Bag.**
-4.  **Phase 3 (Profit)**: If Price moves `2R` -> Close 50%. Let runner ride with Trailing Stop.
-5.  **Exit**: Trailing Stop hit or Trend Logic reverses.
+1.  **Breakeven Trigger**:
+    -   *Rule*: `Price > Entry + (1.5 * DailyATR)`
+    -   *Logic*: Secure profit only when price has moved significantly relative to daily noise.
+2.  **Trailing Stop**:
+    -   *Mechanism*: **Chandelier Exit** (`HighestHigh - 3 * ATR`).
+    -   *Logic*: Tights in high volatility, loosens in low volatility.
+3.  **Scale-In (Pyramiding)**:
+    -   *Rule*: If `Score > 85` AND `Profit > 2R`, add 50% size.
+
 
 ---
 

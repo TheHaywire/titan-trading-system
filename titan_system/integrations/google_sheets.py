@@ -57,7 +57,7 @@ class TitanSheets:
             logger.info("✅ Connected to Google Sheets")
             
         except FileNotFoundError:
-            logger.warning(f"❌ Google Credentials file '{self.key_file}' not found. Cloud logging disabled.")
+            # logger.warning(f"❌ Google Credentials file '{self.key_file}' not found. Cloud logging disabled.")
             self.enabled = False
         except Exception as e:
             logger.error(f"Failed to connect to Google Sheets: {e}")

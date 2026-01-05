@@ -269,19 +269,48 @@ class TitanEngine:
                 logger.info(f"SIGNAL: {symbol} {decision['signal']} (Risk: {risk_mult}x) | Reason: {decision['reason']}")
                 
                 if self.mode == 'live':
-                    self.execute_live_trade(symbol, decision['signal'], risk_mult)
+                    self.execute_live_trade(symbol, decision['signal'], risk_mult, df)
                 
         self.state['status'] = f'Active (Monitored: {len(active_symbols)})'
 
-    def execute_live_trade(self, symbol, signal, risk_mult):
+    def execute_live_trade(self, symbol, signal, risk_mult, df):
         # Prevent over-trading: Check if position exists
         existing = [p for p in self.state['positions'] if p['symbol'] == symbol]
         if existing: return # Setup already active
         
-        volume = 0.01 # Start small for safety, implies user trusts us to scale later.
+        # Dynamic Risk Sizing
+        volume = 0.01 
         if risk_mult > 1.0: volume = 0.02
         
-        self.exec.execute_order(symbol, signal, volume, sl_pips=50, tp_pips=100)
+        # ATR Calculation for Dynamic Stops (Critical for Crypto/Indices)
+        try:
+            high = df['high']
+            low = df['low']
+            close = df['close']
+            atr = ta.volatility.AverageTrueRange(high, low, close, window=14).average_true_range().iloc[-1]
+        except:
+             atr = 0
+             
+        # Fallback if ATR invalid
+        if atr == 0:
+            # Fallback to generic pips (dangerous but better than crash)
+            sl_pips = 50 
+            tp_pips = 100
+        else:
+            # Convert ATR to Pips (approximate) or just pass raw price delta?
+            # execute_order takes pips. We should probably overload it or calc price here.
+            # Wait, execute_order calculates SL price based on pips.
+            # We should probably modify execute_order to take raw price delta, OR convert ATR to pips.
+            # Pips = PriceDelta / Point.
+            info = mt5.symbol_info(symbol)
+            if info and info.point > 0:
+                sl_pips = (atr * 2.0) / (info.point * 10) # 2x ATR
+                tp_pips = (atr * 4.0) / (info.point * 10) # 4x ATR
+            else:
+                 sl_pips = 50
+                 tp_pips = 100
+
+        self.exec.execute_order(symbol, signal, volume, sl_pips=sl_pips, tp_pips=tp_pips)
 
     def generate_dashboard(self) -> Layout:
         layout = Layout()
