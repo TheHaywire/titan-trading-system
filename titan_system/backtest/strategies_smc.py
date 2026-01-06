@@ -119,8 +119,8 @@ class BreakOfStructure_Strategy(BaseStrategy):
         df['swing_low'] = (df['low'] < df['low'].shift(1)) & (df['low'] < df['low'].shift(-1))
         
         # Last swing high/low
-        df['last_swing_high'] = df[df['swing_high']]['high'].fillna(method='ffill')
-        df['last_swing_low'] = df[df['swing_low']]['low'].fillna(method='ffill')
+        df['last_swing_high'] = df[df['swing_high']]['high'].ffill()
+        df['last_swing_low'] = df[df['swing_low']]['low'].ffill()
         
         return df
     
