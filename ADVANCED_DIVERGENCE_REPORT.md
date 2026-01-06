@@ -1,0 +1,22 @@
+| TF   | Strategy                       |   Trades | WinRate   |    Sharpe | Return%   | MDD%   |
+|:-----|:-------------------------------|---------:|:----------|----------:|:----------|:-------|
+| H4   | AdvDiv_stoch_any_regular       |       54 | 0.4%      |  -3.75362 | -30.9%    | 35.2%  |
+| H4   | AdvDiv_stoch_any_hidden        |       53 | 0.7%      |   3.34237 | 50.1%     | 18.7%  |
+| H4   | AdvDiv_williams_any_regular    |       54 | 0.4%      |  -3.75362 | -30.9%    | 35.2%  |
+| H4   | AdvDiv_obv_any_regular         |       57 | 0.4%      |  -1.39993 | -11.9%    | 24.1%  |
+| H4   | AdvDiv_rsi_macd_all_regular    |       51 | 0.4%      |  -1.36018 | -12.2%    | 20.4%  |
+| H4   | AdvDiv_rsi_macd_all_hidden     |       43 | 0.7%      |   3.95569 | 48.2%     | 26.0%  |
+| H4   | AdvDiv_macd_ao_all_hidden      |       31 | 0.7%      |   5.00212 | 39.5%     | 19.2%  |
+| H4   | AdvDiv_macd_any_hidden_Vol     |       37 | 0.7%      |   3.09457 | 32.2%     | 18.0%  |
+| H4   | AdvDiv_macd_any_hidden_MTF     |       51 | 0.7%      |   3.26092 | 50.3%     | 12.6%  |
+| H4   | AdvDiv_macd_any_hidden_Vol_MTF |       35 | 0.7%      |   3.16699 | 31.8%     | 17.9%  |
+| D1   | AdvDiv_stoch_any_regular       |        9 | 0.2%      | -10.0701  | -12.2%    | 14.4%  |
+| D1   | AdvDiv_stoch_any_hidden        |        5 | 0.8%      |  13.5718  | 9.6%      | 2.5%   |
+| D1   | AdvDiv_williams_any_regular    |        9 | 0.2%      | -10.0701  | -12.2%    | 14.4%  |
+| D1   | AdvDiv_obv_any_regular         |        8 | 0.4%      |  -1.19486 | -1.3%     | 4.4%   |
+| D1   | AdvDiv_rsi_macd_all_regular    |        8 | 0.1%      | -19.4722  | -15.1%    | 15.1%  |
+| D1   | AdvDiv_rsi_macd_all_hidden     |        3 | 1.0%      | 236.54    | 10.1%     | 0.0%   |
+| D1   | AdvDiv_macd_ao_all_hidden      |        3 | 1.0%      | 116.197   | 9.7%      | 0.0%   |
+| D1   | AdvDiv_macd_any_hidden_Vol     |        3 | 1.0%      | 115.019   | 9.7%      | 0.0%   |
+| D1   | AdvDiv_macd_any_hidden_MTF     |        6 | 0.8%      |  12.1694  | 12.1%     | 3.8%   |
+| D1   | AdvDiv_macd_any_hidden_Vol_MTF |        3 | 1.0%      | 115.019   | 9.7%      | 0.0%   |
