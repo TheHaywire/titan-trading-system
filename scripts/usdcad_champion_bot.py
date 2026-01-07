@@ -18,6 +18,8 @@ import pandas as pd
 import time
 import logging
 from datetime import datetime
+from titan_system.core.memory import MemorySystem
+from titan_system.execution.trade_manager import TradeManager
 
 logging.basicConfig(
     level=logging.INFO,
@@ -49,6 +51,10 @@ class USDCADChampionBot:
         self.last_h4_signal = 0
         self.last_h1_signal = 0
         self.signal_cooldown = 3600  # 1 hour between signals
+        
+        # Persistence
+        self.memory = MemorySystem()
+        self.trade_manager = TradeManager(managed_magics=[123456])
     
     def start(self):
         logger.info("=" * 60)
@@ -88,6 +94,9 @@ class USDCADChampionBot:
                     
                     # Strategy 2: Opening Range Breakout on H1
                     self.check_orb_h1()
+                
+                # Manage existing positions with Tiered logic
+                self.trade_manager.monitor_active_trades()
                 
                 # Status every 5 minutes
                 if cycle % 10 == 0:
@@ -291,6 +300,23 @@ class USDCADChampionBot:
         
         if result.retcode == mt5.TRADE_RETCODE_DONE:
             logger.info(f"[SUCCESS] Trade executed at {result.price:.5f}")
+            
+            # Record in local persistent storage
+            trade_data = {
+                'id': str(result.order),
+                'ticket': result.order,
+                'symbol': self.symbol,
+                'type': direction,
+                'volume': lot_size,
+                'open_price': result.price,
+                'sl': sl,
+                'tp': tp,
+                'open_time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                'magic': 123456,
+                'comment': strategy,
+                'strategy_name': strategy
+            }
+            self.memory.record_trade(trade_data)
             return True
         else:
             logger.error(f"[FAILED] {result.comment}")

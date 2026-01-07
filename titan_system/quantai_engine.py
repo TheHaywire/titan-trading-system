@@ -453,7 +453,24 @@ class QuantAIEngine:
             )
             
             if result:
-                # Record execution
+                # Record in local persistent storage (titan.db)
+                trade_data = {
+                    'id': str(result.order), # Position ID/Ticket
+                    'ticket': result.order,
+                    'symbol': command.symbol,
+                    'type': command.action,
+                    'volume': command.lot_size,
+                    'open_price': result.price,
+                    'sl': result.request.sl,
+                    'tp': result.request.tp,
+                    'open_time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                    'magic': result.request.magic,
+                    'comment': result.request.comment,
+                    'strategy_name': command.state.value
+                }
+                self.memory.record_trade(trade_data)
+
+                # Record execution in orchestrator (throttling)
                 self.orchestrator.record_trade_execution(command.symbol, command.action)
                 
                 # Notify

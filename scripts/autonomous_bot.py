@@ -18,6 +18,8 @@ import pandas as pd
 import time
 import logging
 from datetime import datetime
+from titan_system.core.memory import MemorySystem
+from titan_system.execution.trade_manager import TradeManager
 
 logging.basicConfig(
     level=logging.INFO,
@@ -59,6 +61,10 @@ class AutonomousTradingBot:
         
         # Signal threshold
         self.min_signal_score = 70
+        
+        # Persistence
+        self.memory = MemorySystem()
+        self.trade_manager = TradeManager(managed_magics=[888888])
     
     def start(self):
         logger.info("=" * 60)
@@ -316,6 +322,23 @@ class AutonomousTradingBot:
         if result.retcode == mt5.TRADE_RETCODE_DONE:
             logger.info("[EXECUTED] " + symbol + " " + direction + " " + str(lot_size) + " lots @ " + str(round(result.price, info.digits)))
             logger.info("SL: " + str(round(sl, info.digits)) + " | TP: " + str(round(tp, info.digits)))
+            
+            # Record in local persistent storage
+            trade_data = {
+                'id': str(result.order),
+                'ticket': result.order,
+                'symbol': symbol,
+                'type': direction,
+                'volume': lot_size,
+                'open_price': result.price,
+                'sl': sl,
+                'tp': tp,
+                'open_time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                'magic': 888888,
+                'comment': "Auto_" + direction[:1] + "_" + str(score),
+                'strategy_name': "Autonomous_Signal_Scout"
+            }
+            self.memory.record_trade(trade_data)
             return True
         else:
             logger.error("[FAILED] " + str(result.comment))
@@ -329,7 +352,8 @@ class AutonomousTradingBot:
             return
         
         for pos in positions:
-            self.manage_position(pos)
+            if pos.magic == 888888:
+                self.trade_manager.apply_tier_protection(pos)
     
     def manage_position(self, pos):
         """Manage a single position"""

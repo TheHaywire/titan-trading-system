@@ -203,9 +203,14 @@ class LongTermMemory:
     
     def __init__(self, db_path: str = None):
         if db_path is None:
-            # Default to titan.db in titan_system folder
-            base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-            db_path = os.path.join(base_path, "titan.db")
+            # Default to titan.db in project root /data folder
+            # memory.py is in titan_system/core/
+            root_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+            db_dir = os.path.join(root_path, "data")
+            if not os.path.exists(db_dir):
+                os.makedirs(db_dir, exist_ok=True)
+            db_path = os.path.join(db_dir, "titan.db")
+            logger.info(f"MemorySystem initializing with database at: {db_path}")
         self.db_path = db_path
         self._ensure_tables()
         
@@ -219,7 +224,28 @@ class LongTermMemory:
             with self._get_connection() as conn:
                 cursor = conn.cursor()
                 
-                # Performance summary table
+                # 0. Trades Table (Persistent Record)
+                cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS trades (
+                        id TEXT PRIMARY KEY,
+                        ticket INTEGER,
+                        symbol TEXT,
+                        type TEXT,
+                        volume REAL,
+                        open_price REAL,
+                        sl REAL,
+                        tp REAL,
+                        open_time DATETIME,
+                        close_time DATETIME,
+                        close_price REAL,
+                        profit REAL,
+                        magic INTEGER,
+                        comment TEXT,
+                        strategy_name TEXT
+                    )
+                """)
+
+                # 1. Performance summary table
                 cursor.execute("""
                     CREATE TABLE IF NOT EXISTS symbol_performance (
                         symbol TEXT PRIMARY KEY,
@@ -363,54 +389,96 @@ class LongTermMemory:
             logger.error(f"Failed to get death zones: {e}")
         return death_zones
     
-    def update_from_trade(self, trade_data: Dict):
-        """Update performance stats from a closed trade"""
+    def record_trade(self, trade_data: Dict):
+        """Inserts or updates a trade record and updates cumulative performance stats."""
         try:
-            symbol = trade_data.get('symbol', '')
-            setup_type = trade_data.get('setup_type', 'UNKNOWN')
-            profit = trade_data.get('profit', 0.0)
-            is_win = profit > 0
-            hour = trade_data.get('entry_hour', 12)
-            
             with self._get_connection() as conn:
                 cursor = conn.cursor()
                 
-                # Update symbol performance
-                cursor.execute("""
-                    INSERT INTO symbol_performance (symbol, total_trades, wins, losses, total_profit)
-                    VALUES (?, 1, ?, ?, ?)
-                    ON CONFLICT(symbol) DO UPDATE SET
-                        total_trades = total_trades + 1,
-                        wins = wins + ?,
-                        losses = losses + ?,
-                        total_profit = total_profit + ?,
-                        avg_profit = (total_profit + ?) / (total_trades + 1),
-                        win_rate = (wins + ?) * 1.0 / (total_trades + 1),
-                        last_updated = CURRENT_TIMESTAMP
-                """, (
-                    symbol, 
-                    1 if is_win else 0, 
-                    0 if is_win else 1, 
-                    profit,
-                    1 if is_win else 0,
-                    0 if is_win else 1,
-                    profit,
-                    profit,
-                    1 if is_win else 0
-                ))
+                # 1. Insert/Update individual trade
+                params = (
+                    trade_data.get('id'), trade_data.get('ticket'), trade_data.get('symbol'),
+                    trade_data.get('type'), trade_data.get('volume'), trade_data.get('open_price'),
+                    trade_data.get('sl'), trade_data.get('tp'), trade_data.get('open_time'),
+                    trade_data.get('close_time'), trade_data.get('close_price'), trade_data.get('profit'),
+                    trade_data.get('magic'), trade_data.get('comment'), trade_data.get('strategy_name')
+                )
+                cursor.execute('''
+                INSERT OR REPLACE INTO trades (
+                    id, ticket, symbol, type, volume, open_price, sl, tp, 
+                    open_time, close_time, close_price, profit, magic, comment, strategy_name
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ''', params)
                 
-                # Update hourly performance
-                cursor.execute("""
-                    INSERT INTO hourly_performance (hour, total_trades, wins, total_profit)
-                    VALUES (?, 1, ?, ?)
-                    ON CONFLICT(hour) DO UPDATE SET
-                        total_trades = total_trades + 1,
-                        wins = wins + ?,
-                        total_profit = total_profit + ?
-                """, (hour, 1 if is_win else 0, profit, 1 if is_win else 0, profit))
+                # 2. Update summary statistics if it's a closed trade (has profit)
+                profit = trade_data.get('profit')
+                if profit is not None:
+                    self.update_from_trade(trade_data, connection=conn)
                 
                 conn.commit()
-                logger.debug(f"Updated LongTermMemory from trade: {symbol} ${profit:.2f}")
+                logger.debug(f"Logged trade to database: {trade_data.get('symbol')} ({trade_data.get('ticket')})")
+        except Exception as e:
+            logger.error(f"Failed to record trade to database: {e}")
+
+    def update_from_trade(self, trade_data: Dict, connection=None):
+        """Update cumulative performance stats from a closed trade."""
+        try:
+            symbol = trade_data.get('symbol', '')
+            setup_type = trade_data.get('strategy_name', trade_data.get('setup_type', 'UNKNOWN'))
+            profit = trade_data.get('profit', 0.0)
+            is_win = profit > 0
+            
+            # Parse hour from entry_time if available, else use entry_hour
+            entry_time = trade_data.get('open_time')
+            if isinstance(entry_time, str):
+                try:
+                    hour = datetime.strptime(entry_time, "%Y-%m-%d %H:%M:%S").hour
+                except:
+                    hour = 12
+            else:
+                hour = trade_data.get('entry_hour', 12)
+            
+            conn = connection if connection else self._get_connection()
+            cursor = conn.cursor()
+            
+            # Update symbol performance
+            cursor.execute("""
+                INSERT INTO symbol_performance (symbol, total_trades, wins, losses, total_profit)
+                VALUES (?, 1, ?, ?, ?)
+                ON CONFLICT(symbol) DO UPDATE SET
+                    total_trades = total_trades + 1,
+                    wins = wins + ?,
+                    losses = losses + ?,
+                    total_profit = total_profit + ?,
+                    avg_profit = (total_profit + ?) / (total_trades + 1),
+                    win_rate = (wins + ?) * 1.0 / (total_trades + 1),
+                    last_updated = CURRENT_TIMESTAMP
+            """, (
+                symbol, 
+                1 if is_win else 0, 
+                0 if is_win else 1, 
+                profit,
+                1 if is_win else 0,
+                0 if is_win else 1,
+                profit,
+                profit,
+                1 if is_win else 0
+            ))
+            
+            # Update hourly performance
+            cursor.execute("""
+                INSERT INTO hourly_performance (hour, total_trades, wins, total_profit)
+                VALUES (?, 1, ?, ?)
+                ON CONFLICT(hour) DO UPDATE SET
+                    total_trades = total_trades + 1,
+                    wins = wins + ?,
+                    total_profit = total_profit + ?
+            """, (hour, 1 if is_win else 0, profit, 1 if is_win else 0, profit))
+            
+            if not connection:
+                conn.commit()
+            
+            logger.debug(f"Updated LongTermMemory from trade: {symbol} ${profit:.2f}")
                 
         except Exception as e:
             logger.error(f"Failed to update from trade: {e}")
@@ -562,8 +630,8 @@ class MemorySystem:
     
     def record_trade(self, trade_data: Dict):
         """Record a trade across all memory tiers"""
-        # Update long-term memory
-        self.long_term.update_from_trade(trade_data)
+        # Update long-term memory (Persistent storage + Summaries)
+        self.long_term.record_trade(trade_data)
         
         # Update entity memory
         symbol = trade_data.get('symbol', '')

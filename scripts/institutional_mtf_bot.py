@@ -41,6 +41,8 @@ import numpy as np
 import time
 import logging
 from datetime import datetime
+from titan_system.core.memory import MemorySystem
+from titan_system.execution.trade_manager import TradeManager
 
 logging.basicConfig(
     level=logging.INFO,
@@ -93,6 +95,10 @@ class InstitutionalMTFBot:
         self.adx_trending = 25
         self.rsi_oversold = 30
         self.rsi_overbought = 70
+        
+        # Persistence
+        self.memory = MemorySystem()
+        self.trade_manager = TradeManager(managed_magics=[777777])
         
         # === TRADE MANAGEMENT ===
         self.breakeven_trigger = 1.0
@@ -495,6 +501,23 @@ class InstitutionalMTFBot:
         if result.retcode == mt5.TRADE_RETCODE_DONE:
             logger.info("[EXECUTED] " + str(lot_size) + " lots @ " + str(round(result.price, info.digits)))
             logger.info("SL: " + str(round(sl, info.digits)) + " | TP: " + str(round(tp, info.digits)))
+            
+            # Record in local persistent storage
+            trade_data = {
+                'id': str(result.order),
+                'ticket': result.order,
+                'symbol': symbol,
+                'type': direction,
+                'volume': lot_size,
+                'open_price': result.price,
+                'sl': sl,
+                'tp': tp,
+                'open_time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                'magic': 777777,
+                'comment': "MTF_" + direction[:1] + str(score),
+                'strategy_name': "Institutional_MTF_Confluence"
+            }
+            self.memory.record_trade(trade_data)
             return True
         else:
             logger.error("[FAILED] " + str(result.comment))
@@ -507,7 +530,8 @@ class InstitutionalMTFBot:
             return
         
         for pos in positions:
-            self.manage_position(pos)
+            if pos.magic == 777777:
+                self.trade_manager.apply_tier_protection(pos)
     
     def manage_position(self, pos):
         """BE at 1:1, Trail at 1.5:1+"""
