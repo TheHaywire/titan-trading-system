@@ -14,6 +14,15 @@ from pathlib import Path
 from scipy.signal import argrelextrema
 from collections import defaultdict
 
+# Pattern Recognition
+try:
+    from technical_patterns import detect_candlestick_patterns, detect_chart_patterns, detect_divergences
+except ImportError:
+    # Manual definition if not found (shouldn't happen in our repo)
+    def detect_candlestick_patterns(df): return []
+    def detect_chart_patterns(df): return []
+    def detect_divergences(df): return []
+
 
 class InstitutionalMarketAnalyst:
     """Professional-grade multi-timeframe market analysis engine"""
@@ -40,10 +49,12 @@ class InstitutionalMarketAnalyst:
         '1W': 200,
     }
     
-    def __init__(self, symbol: str):
+    def __init__(self, symbol: str, generate_charts: bool = True):
         self.symbol = symbol
         self.data = {}
         self.analysis = {}
+        self.generate_charts = generate_charts and CHARTS_AVAILABLE
+        self.chart_paths = {}
         
     def initialize_mt5(self):
         """Initialize MT5 connection"""
@@ -319,86 +330,12 @@ class InstitutionalMarketAnalyst:
         return clustered
     
     def _detect_candlestick_patterns(self, df: pd.DataFrame) -> list:
-        """Detect candlestick patterns"""
-        patterns = []
-        
-        if len(df) < 3:
-            return patterns
-        
-        latest = df.iloc[-1]
-        prev = df.iloc[-2]
-        
-        body = abs(latest['close'] - latest['open'])
-        upper_wick = latest['high'] - max(latest['close'], latest['open'])
-        lower_wick = min(latest['close'], latest['open']) - latest['low']
-        candle_range = latest['high'] - latest['low']
-        
-        # Hammer (Bullish Reversal)
-        if lower_wick > (2 * body) and upper_wick < (0.3 * body) and candle_range > 0:
-            if latest['close'] > latest['open']:
-                patterns.append("🔨 HAMMER (Bullish Reversal)")
-        
-        # Shooting Star (Bearish Reversal)
-        if upper_wick > (2 * body) and lower_wick < (0.3 * body) and candle_range > 0:
-            if latest['close'] < latest['open']:
-                patterns.append("⭐ SHOOTING STAR (Bearish Reversal)")
-        
-        # Bullish Engulfing
-        if (prev['close'] < prev['open'] and latest['close'] > latest['open'] and
-            latest['open'] <= prev['close'] and latest['close'] >= prev['open']):
-            patterns.append("📈 BULLISH ENGULFING (Strong Buy)")
-        
-        # Bearish Engulfing
-        if (prev['close'] > prev['open'] and latest['close'] < latest['open'] and
-            latest['open'] >= prev['close'] and latest['close'] <= prev['open']):
-            patterns.append("📉 BEARISH ENGULFING (Strong Sell)")
-        
-        # Doji (Indecision)
-        if body < (0.1 * candle_range):
-            patterns.append("✖️ DOJI (Indecision/Reversal)")
-        
-        return patterns
+        """Detect candlestick patterns using shared module"""
+        return detect_candlestick_patterns(df)
     
     def _detect_chart_patterns(self, df: pd.DataFrame) -> list:
-        """Detect chart patterns"""
-        patterns = []
-        
-        recent = df.tail(50)
-        
-        # Double Top
-        highs_idx = argrelextrema(recent['high'].values, np.greater, order=5)[0]
-        if len(highs_idx) >= 2:
-            last_two_highs = recent['high'].iloc[highs_idx[-2:]].values
-            if abs(last_two_highs[0] - last_two_highs[1]) / last_two_highs[0] < 0.002:  # Within 0.2%
-                patterns.append("📉 DOUBLE TOP (Bearish Reversal)")
-        
-        # Double Bottom
-        lows_idx = argrelextrema(recent['low'].values, np.less, order=5)[0]
-        if len(lows_idx) >= 2:
-            last_two_lows = recent['low'].iloc[lows_idx[-2:]].values
-            if abs(last_two_lows[0] - last_two_lows[1]) / last_two_lows[0] < 0.002:
-                patterns.append("📈 DOUBLE BOTTOM (Bullish Reversal)")
-        
-        # Consolidation / Range
-        recent_range = recent['high'].max() - recent['low'].min()
-        if recent_range / recent['close'].iloc[-1] < 0.015:  # Less than 1.5% range
-            patterns.append("📦 TIGHT CONSOLIDATION (Breakout Pending)")
-        
-        # Pennant/Triangle (Tightening range with higher lows and lower highs)
-        if len(highs_idx) >= 3 and len(lows_idx) >= 3:
-            high_slope = np.polyfit(highs_idx[-3:], recent['high'].iloc[highs_idx[-3:]].values, 1)[0]
-            low_slope = np.polyfit(lows_idx[-3:], recent['low'].iloc[lows_idx[-3:]].values, 1)[0]
-            
-            # Pennant: converging trendlines
-            if high_slope < 0 and low_slope > 0:
-                patterns.append("🚩 PENNANT (Continuation Pattern - Breakout Soon)")
-            # Ascending Triangle
-            elif abs(high_slope) < 0.1 and low_slope > 0:
-                patterns.append("📐 ASCENDING TRIANGLE (Bullish Breakout Expected)")
-            # Descending Triangle
-            elif high_slope < 0 and abs(low_slope) < 0.1:
-                patterns.append("📐 DESCENDING TRIANGLE (Bearish Breakdown Expected)")
-        
+        """Detect chart patterns using shared module"""
+        patterns = detect_chart_patterns(df)
         return patterns if patterns else ["No major patterns detected"]
     
     def _detect_patterns(self, df: pd.DataFrame) -> list:
@@ -408,30 +345,8 @@ class InstitutionalMarketAnalyst:
         return candle_patterns + chart_patterns
     
     def _detect_divergences(self, df: pd.DataFrame) -> list:
-        """Detect price/RSI divergences"""
-        divergences = []
-        
-        recent = df.tail(100)
-        
-        # Find price peaks and RSI peaks
-        price_highs_idx = argrelextrema(recent['close'].values, np.greater, order=5)[0]
-        rsi_highs_idx = argrelextrema(recent['RSI'].values, np.greater, order=5)[0]
-        
-        # Bearish Divergence (price higher high, RSI lower high)
-        if len(price_highs_idx) >= 2 and len(rsi_highs_idx) >= 2:
-            if (recent['close'].iloc[price_highs_idx[-1]] > recent['close'].iloc[price_highs_idx[-2]] and
-                recent['RSI'].iloc[rsi_highs_idx[-1]] < recent['RSI'].iloc[rsi_highs_idx[-2]]):
-                divergences.append("🔴 BEARISH DIVERGENCE (Price HH, RSI LH)")
-        
-        # Bullish Divergence (price lower low, RSI higher low)
-        price_lows_idx = argrelextrema(recent['close'].values, np.less, order=5)[0]
-        rsi_lows_idx = argrelextrema(recent['RSI'].values, np.less, order=5)[0]
-        
-        if len(price_lows_idx) >= 2 and len(rsi_lows_idx) >= 2:
-            if (recent['close'].iloc[price_lows_idx[-1]] < recent['close'].iloc[price_lows_idx[-2]] and
-                recent['RSI'].iloc[rsi_lows_idx[-1]] > recent['RSI'].iloc[rsi_lows_idx[-2]]):
-                divergences.append("🟢 BULLISH DIVERGENCE (Price LL, RSI HL)")
-        
+        """Detect price/RSI divergences using shared module"""
+        divergences = detect_divergences(df)
         return divergences if divergences else ["No divergences detected"]
     
     def _analyze_order_flow(self, df: pd.DataFrame) -> dict:
