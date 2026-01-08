@@ -1,15 +1,19 @@
 """
-INSTITUTIONAL MULTI-TIMEFRAME TRADING BOT
-==========================================
+INSTITUTIONAL MULTI-TIMEFRAME TRADING BOT (REGIME-ENHANCED)
+============================================================
 Professional-grade autonomous trading system with:
 
-1. MULTI-TIMEFRAME ANALYSIS
+1. MARKOV REGIME DETECTION (NEW!)
+   - Detects TRENDING / MEAN_REVERTING / HIGH_VOLATILITY states
+   - Adjusts strategy selection and risk per regime
+
+2. MULTI-TIMEFRAME ANALYSIS
    - H4: Trend direction (Higher timeframe bias)
    - H1: Zone identification (Support/Resistance)
    - M15: Entry timing (Confirmation)
    - M5: Execution (Precise entry)
 
-2. COMPREHENSIVE INDICATORS
+3. COMPREHENSIVE INDICATORS
    - RSI (Momentum oscillator)
    - EMA 9/21/50/200 (Trend structure)
    - ATR (Volatility & position sizing)
@@ -18,15 +22,15 @@ Professional-grade autonomous trading system with:
    - MACD (Momentum confirmation)
    - Volume (Institutional activity)
 
-3. RISK MANAGEMENT
-   - 5% risk per trade
+4. RISK MANAGEMENT
+   - 5% risk per trade (adjusted by regime)
    - Max 2 positions per symbol
    - Max 10 total positions
    - Break-even at 1:1 RR
    - Trailing stop at 1.5:1+ RR
    - Session-based trading (avoid dead zones)
 
-4. CONFLUENCE SCORING
+5. CONFLUENCE SCORING
    - Signals require multiple confirmations
    - Higher scores = higher confidence
    - Only trade Score 75+ setups
@@ -43,6 +47,13 @@ import logging
 from datetime import datetime
 from titan_system.core.memory import MemorySystem
 from titan_system.execution.trade_manager import TradeManager
+
+# Import Regime Detector
+try:
+    from titan_system.analytics.regime_detector import MarkovRegimeSwitcher, MarketRegime
+    REGIME_AVAILABLE = True
+except ImportError:
+    REGIME_AVAILABLE = False
 
 logging.basicConfig(
     level=logging.INFO,
@@ -120,6 +131,15 @@ class InstitutionalMTFBot:
             "london": (7, 16),
             "newyork": (13, 22)
         }
+        
+        # === REGIME DETECTION ===
+        if REGIME_AVAILABLE:
+            self.regime_detector = MarkovRegimeSwitcher()
+            self.regime_fitted = {}
+            self.current_regimes = {}
+            self.regime_update_counter = 0
+        else:
+            self.regime_detector = None
     
     def start(self):
         logger.info("=" * 60)
