@@ -40,6 +40,13 @@ try:
 except ImportError:
     KEY_LEVELS_AVAILABLE = False
 
+# Import Profile Engine for Market/Volume profiles
+try:
+    from titan_system.analytics.profile_engine import ProfileEngine
+    PROFILE_AVAILABLE = True
+except ImportError:
+    PROFILE_AVAILABLE = False
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s [BOT] %(message)s',
@@ -105,6 +112,14 @@ class AutonomousTradingBot:
         else:
             self.key_levels = None
             logger.warning("[LEVELS] Key Levels not available")
+            
+        # Profile Engine (NEW)
+        if PROFILE_AVAILABLE:
+            self.profile_engine = ProfileEngine()
+            logger.info("[PROFILE] Market/Volume Profile engine: ACTIVE")
+        else:
+            self.profile_engine = None
+            logger.warning("[PROFILE] Profile engine not available")
     
     def start(self):
         logger.info("=" * 60)
@@ -390,6 +405,40 @@ class AutonomousTradingBot:
                         reasons.append("[S/R-] Against key level")
             except Exception:
                 pass  # Key levels detection failed, continue without
+                
+        # MARKET PROFILE ADJUSTMENT: Institutional Value context (NEW!)
+        if self.profile_engine and direction:
+            try:
+                p_ctx = self.profile_engine.get_session_context(df, symbol)
+                tp = p_ctx['tpo_profile']
+                vp = p_ctx['volume_profile']
+                curr_p = p_ctx['current_price']
+                
+                # 1. Value Area Context
+                if direction == 'BUY' and curr_p <= tp['val']:
+                    score += 15
+                    reasons.append("[PROFILE+] Buying at Value Area Low")
+                elif direction == 'SELL' and curr_p >= tp['vah']:
+                    score += 15
+                    reasons.append("[PROFILE+] Selling at Value Area High")
+                
+                # 2. POC Context (Institutional acceptance)
+                if abs(curr_p - tp['poc']) / curr_p < 0.001:
+                    score += 10
+                    reasons.append("[PROFILE+] At Market POC")
+                    
+                if abs(curr_p - vp['vpoc']) / curr_p < 0.001:
+                    score += 10
+                    reasons.append("[PROFILE+] At Volume POC")
+                    
+                # 3. Extension Check
+                if direction == 'BUY' and curr_p > tp['vah'] and curr_p > vp['vvah']:
+                    # Overextended, reduce score unless momentum is very high
+                    if curr['RSI'] > 75:
+                        score -= 15
+                        reasons.append("[PROFILE-] Overextended above Value")
+            except Exception:
+                pass
         
         if direction and score >= self.min_signal_score:
             return {
