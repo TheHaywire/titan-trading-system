@@ -33,6 +33,13 @@ try:
 except ImportError:
     TALIB_AVAILABLE = False
 
+# Import Key Levels detector for S/R-aware trading
+try:
+    from titan_system.analytics.key_levels import KeyLevelsDetector
+    KEY_LEVELS_AVAILABLE = True
+except ImportError:
+    KEY_LEVELS_AVAILABLE = False
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s [BOT] %(message)s',
@@ -90,6 +97,14 @@ class AutonomousTradingBot:
             logger.info("[TALIB] TA-Lib indicators: ACTIVE (20x faster)")
         else:
             logger.warning("[TALIB] TA-Lib not available, using manual calculations")
+        
+        # Key Levels Detector (NEW)
+        if KEY_LEVELS_AVAILABLE:
+            self.key_levels = KeyLevelsDetector()
+            logger.info("[LEVELS] Key Levels detector: ACTIVE (S/R aware)")
+        else:
+            self.key_levels = None
+            logger.warning("[LEVELS] Key Levels not available")
     
     def start(self):
         logger.info("=" * 60)
@@ -360,6 +375,21 @@ class AutonomousTradingBot:
                 reasons.append(f"[REGIME-] {detected_strategy_type} not ideal for {current_regime}")
             else:
                 reasons.append(f"[REGIME] {current_regime}")
+        
+        # KEY LEVELS ADJUSTMENT: Boost/penalize based on S/R proximity (NEW!)
+        if self.key_levels and direction:
+            try:
+                level_context = self.key_levels.get_signal_context(df, direction, symbol)
+                if level_context['near_key_level']:
+                    score += level_context['score_adjustment']
+                    if level_context['at_support'] and direction == 'BUY':
+                        reasons.append("[S/R+] At Support level")
+                    elif level_context['at_resistance'] and direction == 'SELL':
+                        reasons.append("[S/R+] At Resistance level")
+                    elif level_context['level_alignment'] == 'against':
+                        reasons.append("[S/R-] Against key level")
+            except Exception:
+                pass  # Key levels detection failed, continue without
         
         if direction and score >= self.min_signal_score:
             return {
