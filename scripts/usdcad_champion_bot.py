@@ -1,6 +1,6 @@
 """
-USDCAD CHAMPION BOT
-===================
+USDCAD CHAMPION BOT (REGIME-ENHANCED)
+======================================
 Deploys the WINNING strategies identified from backtesting:
 
 1. ADX Trend Following on H4 (Sharpe 13.09, Win Rate 76.9%)
@@ -8,6 +8,8 @@ Deploys the WINNING strategies identified from backtesting:
 
 These strategies have been proven to work on historical data with
 statistical significance (p < 0.05).
+
+Now with Markov Regime Detection for adaptive risk management.
 """
 
 import sys, os
@@ -15,11 +17,19 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import MetaTrader5 as mt5
 import pandas as pd
+import numpy as np
 import time
 import logging
 from datetime import datetime
 from titan_system.core.memory import MemorySystem
 from titan_system.execution.trade_manager import TradeManager
+
+# Import Regime Detector
+try:
+    from titan_system.analytics.regime_detector import MarkovRegimeSwitcher, MarketRegime
+    REGIME_AVAILABLE = True
+except ImportError:
+    REGIME_AVAILABLE = False
 
 logging.basicConfig(
     level=logging.INFO,
@@ -55,6 +65,15 @@ class USDCADChampionBot:
         # Persistence
         self.memory = MemorySystem()
         self.trade_manager = TradeManager(managed_magics=[123456])
+        
+        # Regime Detection
+        if REGIME_AVAILABLE:
+            self.regime_detector = MarkovRegimeSwitcher()
+            self.regime_fitted = False
+            self.current_regime = None
+            self.regime_risk_mult = 1.0
+        else:
+            self.regime_detector = None
     
     def start(self):
         logger.info("=" * 60)
