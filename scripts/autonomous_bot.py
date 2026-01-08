@@ -10,7 +10,7 @@ Complete autonomous trading system:
 6. REPEAT continuously
 
 This is YOUR trading assistant running 24/7.
-Now with Markov Regime Detection and Auto-Strategy Selection!
+Now with Markov Regime Detection, Auto-Strategy Selection, and TA-Lib Candlestick Patterns!
 """
 
 import sys, os
@@ -26,6 +26,12 @@ from titan_system.core.memory import MemorySystem
 from titan_system.execution.trade_manager import TradeManager
 from titan_system.analytics.regime_detector import MarkovRegimeSwitcher, MarketRegime
 from titan_system.analytics.auto_strategy import AutoStrategySelector, StrategyType
+
+# Import TA-Lib indicators for 20x faster calculations + candlestick patterns
+try:
+    from titan_system.indicators import TitanIndicators, detect_candlestick_patterns, TALIB_AVAILABLE
+except ImportError:
+    TALIB_AVAILABLE = False
 
 logging.basicConfig(
     level=logging.INFO,
@@ -78,6 +84,12 @@ class AutonomousTradingBot:
         self.regime_fitted = {}  # {symbol: bool}
         self.current_regimes = {}  # {symbol: regime_state}
         self.regime_log_interval = 20  # Log regime every N cycles
+        
+        # TA-Lib Indicators (NEW)
+        if TALIB_AVAILABLE:
+            logger.info("[TALIB] TA-Lib indicators: ACTIVE (20x faster)")
+        else:
+            logger.warning("[TALIB] TA-Lib not available, using manual calculations")
     
     def start(self):
         logger.info("=" * 60)
@@ -185,18 +197,41 @@ class AutonomousTradingBot:
         return signals
     
     def analyze_symbol(self, symbol, df, regime_info=None):
-        """Analyze a symbol and return signal if valid (regime-aware)"""
-        # Calculate indicators
-        df['EMA9'] = df['close'].ewm(span=9).mean()
-        df['EMA21'] = df['close'].ewm(span=21).mean()
+        """Analyze a symbol and return signal if valid (regime-aware, TA-Lib accelerated)"""
         
-        delta = df['close'].diff()
-        gain = delta.where(delta > 0, 0).rolling(14).mean()
-        loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
-        df['RSI'] = 100 - (100 / (1 + gain/loss))
+        # Calculate indicators using TA-Lib if available (20x faster)
+        if TALIB_AVAILABLE:
+            try:
+                ti = TitanIndicators(df)
+                ti.add_momentum()
+                ti.add_trend()
+                ti.add_volatility()
+                df = ti.df
+                # Map to expected column names
+                df['EMA9'] = df['EMA_9']
+                df['EMA21'] = df['EMA_21']
+            except Exception:
+                # Fallback to manual if TA-Lib fails
+                df['EMA9'] = df['close'].ewm(span=9).mean()
+                df['EMA21'] = df['close'].ewm(span=21).mean()
+                delta = df['close'].diff()
+                gain = delta.where(delta > 0, 0).rolling(14).mean()
+                loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+                df['RSI'] = 100 - (100 / (1 + gain/loss))
+        else:
+            # Manual calculation (slower)
+            df['EMA9'] = df['close'].ewm(span=9).mean()
+            df['EMA21'] = df['close'].ewm(span=21).mean()
+            
+            delta = df['close'].diff()
+            gain = delta.where(delta > 0, 0).rolling(14).mean()
+            loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+            df['RSI'] = 100 - (100 / (1 + gain/loss))
         
+        # Additional indicators (always calculate)
         df['MOM'] = df['close'].pct_change(5) * 100
-        df['ATR'] = (df['high'] - df['low']).rolling(14).mean()
+        if 'ATR' not in df.columns:
+            df['ATR'] = (df['high'] - df['low']).rolling(14).mean()
         
         df['HIGH_20'] = df['high'].rolling(20).max()
         df['LOW_20'] = df['low'].rolling(20).min()
@@ -289,6 +324,31 @@ class AutonomousTradingBot:
         elif curr['RANGE_POS'] > 0.8 and direction == "SELL":
             score += 10
             reasons.append("At Range High")
+        
+        # CANDLESTICK PATTERN DETECTION (TA-Lib - NEW!)
+        if TALIB_AVAILABLE:
+            try:
+                patterns = detect_candlestick_patterns(df)
+                bullish_patterns = [p for p in patterns if p.startswith("BULLISH:")]
+                bearish_patterns = [p for p in patterns if p.startswith("BEARISH:")]
+                
+                if bullish_patterns and direction == "BUY":
+                    score += 15
+                    pattern_names = ", ".join([p.split(": ")[1] for p in bullish_patterns[:2]])
+                    reasons.append(f"[CDL] {pattern_names}")
+                elif bearish_patterns and direction == "SELL":
+                    score += 15
+                    pattern_names = ", ".join([p.split(": ")[1] for p in bearish_patterns[:2]])
+                    reasons.append(f"[CDL] {pattern_names}")
+                elif bullish_patterns and direction == "SELL":
+                    # Pattern conflicts with direction - reduce confidence
+                    score -= 10
+                    reasons.append("[CDL] Conflicting bullish pattern")
+                elif bearish_patterns and direction == "BUY":
+                    score -= 10
+                    reasons.append("[CDL] Conflicting bearish pattern")
+            except Exception:
+                pass  # Candlestick detection failed, continue without
         
         # REGIME ADJUSTMENT: Boost/penalize score based on strategy-regime fit
         if detected_strategy_type and regime_info:
