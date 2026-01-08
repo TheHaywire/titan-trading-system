@@ -28,7 +28,7 @@ try:
                 data = json.loads(meta)
                 if isinstance(data, dict) and 'symbol' in data:
                     found_symbols.add(data['symbol'])
-            except:
+            except Exception:
                 pass
         
         # Check message text for typical patterns

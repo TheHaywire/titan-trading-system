@@ -3,11 +3,14 @@ AUTONOMOUS TRADING BOT - Full Professional Scalper
 ===================================================
 Complete autonomous trading system:
 1. SCAN for new high-conviction signals
-2. EXECUTE trades with proper risk (5%)
-3. MANAGE positions (break-even, trailing stops, loss cutting)
-4. REPEAT continuously
+2. DETECT market regime (Trending/Mean-Reverting/High-Vol)
+3. SELECT optimal strategy for current regime
+4. EXECUTE trades with proper risk (adjusted by regime)
+5. MANAGE positions (break-even, trailing stops, loss cutting)
+6. REPEAT continuously
 
 This is YOUR trading assistant running 24/7.
+Now with Markov Regime Detection and Auto-Strategy Selection!
 """
 
 import sys, os
@@ -15,11 +18,14 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import MetaTrader5 as mt5
 import pandas as pd
+import numpy as np
 import time
 import logging
 from datetime import datetime
 from titan_system.core.memory import MemorySystem
 from titan_system.execution.trade_manager import TradeManager
+from titan_system.analytics.regime_detector import MarkovRegimeSwitcher, MarketRegime
+from titan_system.analytics.auto_strategy import AutoStrategySelector, StrategyType
 
 logging.basicConfig(
     level=logging.INFO,
@@ -65,6 +71,13 @@ class AutonomousTradingBot:
         # Persistence
         self.memory = MemorySystem()
         self.trade_manager = TradeManager(managed_magics=[888888])
+        
+        # Regime Detection & Auto-Strategy (NEW)
+        self.regime_detector = MarkovRegimeSwitcher()
+        self.strategy_selector = AutoStrategySelector()
+        self.regime_fitted = {}  # {symbol: bool}
+        self.current_regimes = {}  # {symbol: regime_state}
+        self.regime_log_interval = 20  # Log regime every N cycles
     
     def start(self):
         logger.info("=" * 60)
@@ -117,7 +130,7 @@ class AutonomousTradingBot:
         mt5.shutdown()
     
     def scan_for_signals(self):
-        """Scan all symbols for high-conviction setups"""
+        """Scan all symbols for high-conviction setups with regime awareness"""
         signals = []
         
         for symbol in self.watchlist:
@@ -136,13 +149,31 @@ class AutonomousTradingBot:
                     if now - self.last_signal_time[symbol] < self.signal_cooldown:
                         continue
                 
-                # Get data
-                rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M5, 0, 100)
-                if rates is None or len(rates) < 50:
+                # Get M5 data for signals
+                rates_m5 = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M5, 0, 100)
+                if rates_m5 is None or len(rates_m5) < 50:
                     continue
                 
-                df = pd.DataFrame(rates)
-                signal = self.analyze_symbol(symbol, df)
+                df = pd.DataFrame(rates_m5)
+                
+                # Get H1 data for regime detection
+                rates_h1 = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_H1, 0, 200)
+                regime_info = None
+                if rates_h1 is not None and len(rates_h1) >= 100:
+                    df_h1 = pd.DataFrame(rates_h1)
+                    
+                    # Fit regime model on first call for this symbol
+                    if symbol not in self.regime_fitted:
+                        self.regime_detector.fit(df_h1)
+                        self.regime_fitted[symbol] = True
+                    
+                    # Detect current regime
+                    regime_state = self.regime_detector.detect(df_h1)
+                    self.current_regimes[symbol] = regime_state
+                    regime_info = self.regime_detector.get_strategy_recommendation(regime_state)
+                
+                # Analyze with regime context
+                signal = self.analyze_symbol(symbol, df, regime_info)
                 
                 if signal and signal["score"] >= self.min_signal_score:
                     signals.append(signal)
@@ -153,8 +184,8 @@ class AutonomousTradingBot:
         
         return signals
     
-    def analyze_symbol(self, symbol, df):
-        """Analyze a symbol and return signal if valid"""
+    def analyze_symbol(self, symbol, df, regime_info=None):
+        """Analyze a symbol and return signal if valid (regime-aware)"""
         # Calculate indicators
         df['EMA9'] = df['close'].ewm(span=9).mean()
         df['EMA21'] = df['close'].ewm(span=21).mean()
@@ -174,20 +205,29 @@ class AutonomousTradingBot:
         curr = df.iloc[-1]
         prev = df.iloc[-2]
         
+        # Determine current regime and strategy recommendations
+        current_regime = regime_info.get('regime', 'UNKNOWN') if regime_info else 'UNKNOWN'
+        preferred_strategies = regime_info.get('preferred_strategies', []) if regime_info else []
+        avoid_strategies = regime_info.get('avoid_strategies', []) if regime_info else []
+        regime_risk_mult = regime_info.get('risk_multiplier', 1.0) if regime_info else 1.0
+        
         # Score the setup
         score = 50
         direction = None
         reasons = []
+        detected_strategy_type = None
         
-        # RSI
+        # RSI - Mean Reversion strategy
         if curr['RSI'] < 30:
             score += 25
             direction = "BUY"
             reasons.append("RSI Oversold")
+            detected_strategy_type = "Mean Reversion"
         elif curr['RSI'] > 70:
             score += 25
             direction = "SELL"
             reasons.append("RSI Overbought")
+            detected_strategy_type = "Mean Reversion"
         elif curr['RSI'] < 40:
             score += 10
             if not direction: direction = "BUY"
@@ -197,7 +237,7 @@ class AutonomousTradingBot:
             if not direction: direction = "SELL"
             reasons.append("RSI High")
         
-        # EMA Cross
+        # EMA Cross - Trend Following strategy
         bullish_cross = prev['EMA9'] <= prev['EMA21'] and curr['EMA9'] > curr['EMA21']
         bearish_cross = prev['EMA9'] >= prev['EMA21'] and curr['EMA9'] < curr['EMA21']
         
@@ -205,32 +245,42 @@ class AutonomousTradingBot:
             score += 20
             direction = "BUY"
             reasons.append("Bullish EMA Cross")
+            detected_strategy_type = "Trend Following"
         elif bearish_cross:
             score += 20
             direction = "SELL"
             reasons.append("Bearish EMA Cross")
+            detected_strategy_type = "Trend Following"
         elif curr['EMA9'] > curr['EMA21']:
             score += 10
             if direction != "SELL":
                 direction = "BUY"
             reasons.append("Bullish Trend")
+            if not detected_strategy_type:
+                detected_strategy_type = "Trend Following"
         elif curr['EMA9'] < curr['EMA21']:
             score += 10
             if direction != "BUY":
                 direction = "SELL"
             reasons.append("Bearish Trend")
+            if not detected_strategy_type:
+                detected_strategy_type = "Trend Following"
         
-        # Momentum
+        # Momentum - Momentum strategy
         if curr['MOM'] > 0.3:
             score += 10
             if direction != "SELL":
                 direction = "BUY"
             reasons.append("Bullish Momentum")
+            if not detected_strategy_type:
+                detected_strategy_type = "Momentum"
         elif curr['MOM'] < -0.3:
             score += 10
             if direction != "BUY":
                 direction = "SELL"
             reasons.append("Bearish Momentum")
+            if not detected_strategy_type:
+                detected_strategy_type = "Momentum"
         
         # Range position
         if curr['RANGE_POS'] < 0.2 and direction == "BUY":
@@ -240,6 +290,17 @@ class AutonomousTradingBot:
             score += 10
             reasons.append("At Range High")
         
+        # REGIME ADJUSTMENT: Boost/penalize score based on strategy-regime fit
+        if detected_strategy_type and regime_info:
+            if detected_strategy_type in preferred_strategies:
+                score += 15
+                reasons.append(f"[REGIME+] {detected_strategy_type} preferred in {current_regime}")
+            elif detected_strategy_type in avoid_strategies:
+                score -= 20
+                reasons.append(f"[REGIME-] {detected_strategy_type} not ideal for {current_regime}")
+            else:
+                reasons.append(f"[REGIME] {current_regime}")
+        
         if direction and score >= self.min_signal_score:
             return {
                 "symbol": symbol,
@@ -247,21 +308,28 @@ class AutonomousTradingBot:
                 "score": score,
                 "reasons": reasons,
                 "atr": curr['ATR'],
-                "price": curr['close']
+                "price": curr['close'],
+                "regime": current_regime,
+                "strategy_type": detected_strategy_type,
+                "risk_multiplier": regime_risk_mult
             }
         
         return None
     
     def execute_signal(self, signal):
-        """Execute a trade signal"""
+        """Execute a trade signal with regime-aware risk"""
         symbol = signal["symbol"]
         direction = signal["direction"]
         score = signal["score"]
         atr = signal["atr"]
+        regime = signal.get("regime", "UNKNOWN")
+        strategy_type = signal.get("strategy_type", "Unknown")
+        regime_risk_mult = signal.get("risk_multiplier", 1.0)
         
         logger.info("")
         logger.info("=" * 40)
-        logger.info("[SIGNAL] " + symbol + " " + direction + " (Score: " + str(score) + ")")
+        logger.info(f"[SIGNAL] {symbol} {direction} (Score: {score})")
+        logger.info(f"Strategy: {strategy_type} | Regime: {regime}")
         logger.info("Reasons: " + ", ".join(signal["reasons"]))
         
         # Get symbol info
@@ -272,10 +340,14 @@ class AutonomousTradingBot:
             logger.error("Cannot get symbol info")
             return False
         
-        # Calculate position size (5% risk)
+        # Calculate position size (5% risk, adjusted by regime)
         acc = mt5.account_info()
-        risk_amount = acc.equity * self.risk_percent
+        base_risk = acc.equity * self.risk_percent
+        risk_amount = base_risk * regime_risk_mult  # Apply regime adjustment
         sl_distance = atr * 2
+        
+        if regime_risk_mult != 1.0:
+            logger.info(f"[REGIME] Risk adjusted: {regime_risk_mult:.1f}x (${base_risk:.0f} -> ${risk_amount:.0f})")
         
         # Estimate pip value (rough)
         if "USD" in symbol and symbol.endswith("USD"):

@@ -805,7 +805,7 @@ def analyze_position_full(pos) -> Optional[PositionAnalysis]:
         d1 = pd.DataFrame(mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_D1, 0, 100))
         h4 = pd.DataFrame(mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_H4, 0, 100))
         h1 = pd.DataFrame(mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_H1, 0, 200))
-    except:
+    except Exception:
         return None
     
     if d1.empty or h4.empty:

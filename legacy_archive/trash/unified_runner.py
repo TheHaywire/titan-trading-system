@@ -37,7 +37,7 @@ def kill_all():
             p.terminate() 
             # Force kill on windows often needs taskkill if shell=True
             subprocess.run(f"taskkill /F /T /PID {p.pid}", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        except:
+        except Exception:
             pass
     print("👋 System Offline.")
     sys.exit(0)

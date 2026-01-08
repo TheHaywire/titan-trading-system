@@ -288,7 +288,7 @@ class TitanEngine:
             low = df['low']
             close = df['close']
             atr = ta.volatility.AverageTrueRange(high, low, close, window=14).average_true_range().iloc[-1]
-        except:
+        except Exception:
              atr = 0
              
         # Fallback if ATR invalid

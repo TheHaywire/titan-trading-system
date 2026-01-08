@@ -100,7 +100,7 @@ class TelegramNotifier:
                     if 'trade_setup' in ai_data:
                         ts = ai_data['trade_setup']
                         msg += f"🎯 *Targets*: TP {ts.get('take_profit_1')} | SL {ts.get('stop_loss')}\n"
-                except:
+                except Exception:
                     msg += f"🤖 *AI*: See Dashboard\n"
         
         msg += f"-------------------\n"

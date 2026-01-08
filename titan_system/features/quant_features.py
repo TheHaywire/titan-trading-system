@@ -281,7 +281,7 @@ class TimeSeriesFeatures:
             try:
                 slope, _ = np.polyfit(x, y, 1)
                 return np.clip(slope, 0, 1)
-            except:
+            except Exception:
                 return 0.5
         
         return close.rolling(window, min_periods=window).apply(rs_hurst, raw=True).fillna(0.5)

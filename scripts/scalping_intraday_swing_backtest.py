@@ -49,7 +49,7 @@ def extract_metrics(pf, close, initial_capital=10000):
             'trades': int(n_trades),
             'benchmark': round(benchmark, 2)
         }
-    except:
+    except Exception:
         return None
 
 

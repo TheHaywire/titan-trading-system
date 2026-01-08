@@ -25,9 +25,17 @@ from titan_system.backtest.strategies_batches_4_8 import *
 from titan_system.backtest.strategies_remaining import *
 from titan_system.backtest.strategies_final_batch import *
 from titan_system.backtest.strategies_professional_batch1 import *
+from titan_system.backtest.strategies_professional_batch2 import *
 from titan_system.backtest.strategies_professional_batch3 import *
 from titan_system.backtest.strategies_professional_batch4 import *
 from titan_system.backtest.strategies_professional_batch5 import *
+from titan_system.backtest.strategies_smc import *
+from titan_system.backtest.strategies_indicators_batch2 import *
+from titan_system.backtest.strategies_advanced import *
+from titan_system.backtest.strategies_meanreversion import *
+from titan_system.backtest.strategies_timebased import *
+from titan_system.backtest.strategies_volatility import *
+from titan_system.backtest.strategies_breakout import *
 
 console = Console()
 
@@ -36,14 +44,17 @@ ALL_STRATEGIES = []
 
 # From each module, collect strategy classes
 import inspect
+from titan_system.backtest.strategy_base import BaseStrategy
 
 def get_strategies_from_module(module):
     strategies = []
     for name, obj in inspect.getmembers(module):
-        if inspect.isclass(obj) and hasattr(obj, 'analyze') and name.endswith('_Strategy'):
+        if inspect.isclass(obj) and obj != BaseStrategy and issubclass(obj, BaseStrategy):
             try:
-                strategies.append(obj())
-            except:
+                # Avoid duplicates
+                if obj not in [type(s) for s in ALL_STRATEGIES]:
+                    strategies.append(obj())
+            except Exception:
                 pass
     return strategies
 
@@ -58,10 +69,19 @@ modules = [
     sys.modules['titan_system.backtest.strategies_remaining'],
     sys.modules['titan_system.backtest.strategies_final_batch'],
     sys.modules['titan_system.backtest.strategies_professional_batch1'],
+    sys.modules['titan_system.backtest.strategies_professional_batch2'],
     sys.modules['titan_system.backtest.strategies_professional_batch3'],
     sys.modules['titan_system.backtest.strategies_professional_batch4'],
     sys.modules['titan_system.backtest.strategies_professional_batch5'],
+    sys.modules['titan_system.backtest.strategies_smc'],
+    sys.modules['titan_system.backtest.strategies_indicators_batch2'],
+    sys.modules['titan_system.backtest.strategies_advanced'],
+    sys.modules['titan_system.backtest.strategies_meanreversion'],
+    sys.modules['titan_system.backtest.strategies_timebased'],
+    sys.modules['titan_system.backtest.strategies_volatility'],
+    sys.modules['titan_system.backtest.strategies_breakout'],
 ]
+
 
 for mod in modules:
     ALL_STRATEGIES.extend(get_strategies_from_module(mod))

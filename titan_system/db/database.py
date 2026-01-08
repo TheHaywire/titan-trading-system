@@ -2,23 +2,55 @@
 import sqlite3
 import datetime
 import json
+import threading
 from typing import List, Dict, Any, Optional
 
 class Database:
+    """
+    SQLite Database with SharedConnection pattern.
+    Uses a persistent connection to reduce I/O overhead during high-frequency operations.
+    Thread-safe via threading.Lock.
+    """
+    _instances = {}  # Singleton pattern per db_path
+    _lock = threading.Lock()
+    
+    def __new__(cls, db_path: str):
+        """Singleton per database path to ensure single connection."""
+        with cls._lock:
+            if db_path not in cls._instances:
+                instance = super().__new__(cls)
+                instance._initialized = False
+                cls._instances[db_path] = instance
+            return cls._instances[db_path]
+    
     def __init__(self, db_path: str):
+        if self._initialized:
+            return
         self.db_path = db_path
+        self._conn = None
+        self._write_lock = threading.Lock()
         self._init_db()
+        self._initialized = True
 
     def _get_conn(self):
-        return sqlite3.connect(self.db_path, check_same_thread=False, timeout=30.0)
+        """Get the shared persistent connection, creating if needed."""
+        if self._conn is None:
+            self._conn = sqlite3.connect(
+                self.db_path, 
+                check_same_thread=False, 
+                timeout=30.0,
+                isolation_level='DEFERRED'  # Better for concurrent reads
+            )
+            # Enable WAL mode for better concurrency
+            self._conn.execute('PRAGMA journal_mode=WAL;')
+            self._conn.execute('PRAGMA synchronous=NORMAL;')  # Faster writes, still safe
+            self._conn.execute('PRAGMA cache_size=-64000;')  # 64MB cache
+        return self._conn
 
     def _init_db(self):
         """Initialize the database schema if it doesn't exist."""
         conn = self._get_conn()
         cursor = conn.cursor()
-        
-        # Enable Write-Ahead Logging for concurrency (Fixes 'database locked' errors)
-        cursor.execute('PRAGMA journal_mode=WAL;')
         
         # 1. Trades Table (Persistent Record)
         cursor.execute('''
@@ -92,8 +124,7 @@ class Database:
         ''')
 
         conn.commit()
-        conn.close()
-        print("💾 Storage Layer Initialized (SQLite)")
+        print("Database: Storage Layer Initialized (SQLite + SharedConnection)")
 
     # --- Trade Methods ---
     def record_trade(self, trade_data: Dict[str, Any]):
@@ -116,7 +147,6 @@ class Database:
         ))
         
         conn.commit()
-        conn.close()
 
     def get_trades_today(self) -> List[Dict]:
         """Fetch all trades executed today."""
@@ -133,7 +163,6 @@ class Database:
         for row in rows:
             results.append(dict(zip(columns, row)))
             
-        conn.close()
         return results
 
     # --- Log Methods ---
@@ -150,7 +179,6 @@ class Database:
         ''', (level, component, message, meta_json))
         
         conn.commit()
-        conn.close()
 
     def get_latest_logs(self, limit=50):
         conn = self._get_conn()
@@ -182,7 +210,6 @@ class Database:
         ''', symbol_data_list)
         
         conn.commit()
-        conn.close()
 
     def get_active_universe(self, limit=20) -> List[str]:
         """Returns the top tradable symbols."""
@@ -197,7 +224,6 @@ class Database:
         ''', (limit,))
         
         rows = cursor.fetchall()
-        conn.close()
         return [r[0] for r in rows]
 
     def get_assigned_strategy(self, symbol: str) -> tuple[Optional[str], float]:
@@ -205,7 +231,6 @@ class Database:
         cursor = conn.cursor()
         cursor.execute("SELECT active_strategy, backtest_score FROM market_universe WHERE symbol=?", (symbol,))
         res = cursor.fetchone()
-        conn.close()
         return (res[0], res[1]) if res else (None, 0.0)
 
     def update_symbol_score(self, updates: List[Dict]):
@@ -223,7 +248,6 @@ class Database:
         ''', updates)
         
         conn.commit()
-        conn.close()
 
     def get_symbol_performance(self, symbol: str) -> Dict[str, Any]:
         """Calculates historical expectancy and win rate for a symbol."""
@@ -248,10 +272,19 @@ class Database:
         cursor.execute('SELECT COUNT(*) FROM trades WHERE symbol = ? AND profit > 0', (symbol,))
         wins = cursor.fetchone()[0]
         
-        conn.close()
         return {
             "trade_count": count,
             "expectancy": expectancy if expectancy else 0.0,
             "total_pnl": total_pnl if total_pnl else 0.0,
             "win_rate": wins / count if count > 0 else 0.0
         }
+    
+    def close(self):
+        """Explicitly close the connection (for cleanup)."""
+        if self._conn:
+            self._conn.close()
+            self._conn = None
+    
+    def __del__(self):
+        """Destructor to ensure connection is closed."""
+        self.close()

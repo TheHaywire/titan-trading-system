@@ -68,7 +68,7 @@ class PerformanceOptimizer:
             with open(self.blacklist_path, 'r') as f:
                 try:
                     current_blacklist = json.load(f)
-                except: pass
+                except Exception: pass
                 
         # Merge and Unique
         updated_blacklist = list(set(current_blacklist + new_symbols))

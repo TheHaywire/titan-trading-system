@@ -12,7 +12,12 @@ logger = logging.getLogger("Titan.Execution")
 class MT5Executor:
     """
     Handles interactions with MT5 Terminal, enforcing Risk Checks.
+    Includes Spread Guard with Expansion Detection and Cached News Shield.
     """
+    _news_cache = None  # Class-level cache for news schedule
+    _news_cache_time = None
+    _spread_history = {}  # {symbol: [last N spreads]}
+    
     def __init__(self, risk_engine: RiskEngine = None):
         self.connected = False
         self.risk_engine = risk_engine if risk_engine else RiskEngine()
@@ -61,6 +66,15 @@ class MT5Executor:
             
         current_spread = symbol_info.spread
         
+        # Track spread history for expansion detection
+        if symbol not in MT5Executor._spread_history:
+            MT5Executor._spread_history[symbol] = []
+        
+        spread_hist = MT5Executor._spread_history[symbol]
+        spread_hist.append(current_spread)
+        if len(spread_hist) > 50:  # Keep last 50 readings
+            spread_hist.pop(0)
+        
         # Dynamic spread limits based on instrument type
         if "BTC" in symbol or "ETH" in symbol or "XRP" in symbol:
             max_allowed_spread = 10000  # Crypto has wider spreads
@@ -71,9 +85,20 @@ class MT5Executor:
         else:
             max_allowed_spread = 50  # Forex
         
+        # Hard limit check
         if current_spread > max_allowed_spread:
             logger.warning(f"[SPREAD GUARD] {symbol} spread too high ({current_spread} pts). Max: {max_allowed_spread}. ABORTING.")
             return None
+        
+        # Spread EXPANSION detection (Liquidity Signal)
+        # If current spread is 2x the recent average, it signals potential toxic flow
+        if len(spread_hist) >= 10:
+            avg_spread = sum(spread_hist[:-1]) / (len(spread_hist) - 1)  # Exclude current
+            if avg_spread > 0 and current_spread > avg_spread * 2.0:
+                logger.warning(f"[SPREAD EXPANSION] {symbol} spread expanded 2x (Current: {current_spread}, Avg: {avg_spread:.0f}). Toxic flow risk - ABORTING.")
+                return None
+            elif avg_spread > 0 and current_spread > avg_spread * 1.5:
+                logger.info(f"[SPREAD EXPANSION] {symbol} spread elevated 1.5x (Current: {current_spread}, Avg: {avg_spread:.0f}). Proceeding with caution.")
 
 
         # 0.2 Volatility Targeting (Phase 11)
@@ -142,21 +167,34 @@ class MT5Executor:
     def check_news_shield(self, symbol) -> bool:
         """
         Institutional News Shield: Blocks trades +/- 30 mins from high-impact news.
+        Uses cached schedule to reduce I/O during execution.
         """
         schedule_path = "MACRO_SCHEDULE.json"
-        if not os.path.exists(schedule_path):
-            return True # No schedule, proceed (or log warning)
-
-        try:
-            with open(schedule_path, "r") as f:
-                events = json.load(f)
-        except Exception:
-            return True
-
         now = datetime.now()
         
+        # Check cache (refresh every 5 minutes)
+        if (MT5Executor._news_cache is None or 
+            MT5Executor._news_cache_time is None or
+            (now - MT5Executor._news_cache_time).total_seconds() > 300):
+            
+            if not os.path.exists(schedule_path):
+                MT5Executor._news_cache = []
+                MT5Executor._news_cache_time = now
+                return True
+            
+            try:
+                with open(schedule_path, "r") as f:
+                    MT5Executor._news_cache = json.load(f)
+                    MT5Executor._news_cache_time = now
+                    logger.debug(f"[NEWS SHIELD] Refreshed cache with {len(MT5Executor._news_cache)} events")
+            except Exception:
+                MT5Executor._news_cache = []
+                MT5Executor._news_cache_time = now
+                return True
+        
+        events = MT5Executor._news_cache
+        
         # Determine the currency group for the symbol (e.g. XAUUSD -> USD)
-        # Simplified logic:
         symbol_group = None
         if "USD" in symbol: symbol_group = "USD"
         elif "EUR" in symbol: symbol_group = "EUR"
@@ -168,15 +206,18 @@ class MT5Executor:
         elif "NZD" in symbol: symbol_group = "NZD"
 
         for e in events:
-            if e['impact'] != "HIGH": continue
+            if e.get('impact') != "HIGH": continue
             
             # If the event is for the pair's currency or is a major USD event
-            if e['symbol_group'] == symbol_group or e['symbol_group'] == "USD":
-                event_time = datetime.strptime(e['time_ist'], "%Y-%m-%d %H:%M:%S")
-                diff = abs((event_time - now).total_seconds() / 60)
-                
-                if diff < 30: # Within 30 minutes
-                    return False
+            if e.get('symbol_group') == symbol_group or e.get('symbol_group') == "USD":
+                try:
+                    event_time = datetime.strptime(e['time_ist'], "%Y-%m-%d %H:%M:%S")
+                    diff = abs((event_time - now).total_seconds() / 60)
+                    
+                    if diff < 30:  # Within 30 minutes
+                        return False
+                except Exception:
+                    continue
         
         return True
 

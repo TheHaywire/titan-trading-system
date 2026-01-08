@@ -35,20 +35,20 @@ class Backtester:
         # Safe access attempts based on common VBT versions
         try:
             print(f"Total Trades: {portfolio.trades.count()}")
-        except:
+        except Exception:
             print("Could not get trades count")
 
         try:
              # win_rate might be a property or method, or part of trades
              wr = portfolio.trades.win_rate()
              print(f"Win Rate: {wr:.2%}")
-        except:
+        except Exception:
              print("Could not get win rate")
 
         try:
             sr = portfolio.sharpe_ratio()
             print(f"Sharpe Ratio: {sr:.2f}")
-        except:
+        except Exception:
              print("Could not get Sharpe Ratio")
              
         return portfolio

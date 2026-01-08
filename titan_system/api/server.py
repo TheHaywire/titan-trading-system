@@ -138,7 +138,7 @@ async def websocket_logs(websocket: WebSocket):
     try:
         while True:
             await websocket.receive_text() # Keep alive
-    except:
+    except Exception:
         ws_handler.clients.remove(websocket)
 
 @app.websocket("/ws/market_data")

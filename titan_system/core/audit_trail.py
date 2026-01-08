@@ -26,7 +26,7 @@ class AuditTrail:
             response = self.ntp_client.request('pool.ntp.org', version=3)
             self.offset = response.offset
             logger.info(f"🕒 NTP Time Sync'd. Offset: {self.offset:.4f}s")
-        except:
+        except Exception:
             logger.warning("⚠️ NTP Sync Failed. Using local system time.")
 
     def log_event(self, category, message, data=None):

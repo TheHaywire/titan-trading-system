@@ -58,29 +58,61 @@ class AllocationAgent:
         # Calculation: Lot = USD_Risk / (SL_Distance * TickValue/TickSize)
         raw_lots = risk_amount_usd / (sl_delta * (symbol_info.trade_tick_value / symbol_info.trade_tick_size))
         
-        # 3. Portfolio Constraint (Correlation Check)
-        # If we already have high exposure to a correlated asset, we reduce size.
+        # 3. Portfolio Constraint (Dynamic Correlation Check)
+        # Use actual correlation matrix instead of string matching
         positions = mt5.positions_get()
         if positions:
-            for p in positions:
-                # Simple correlation proxy: Same currency base/quote
-                if p.symbol[:3] == symbol[:3] or p.symbol[3:6] == symbol[3:6]:
-                    logger.info(f"🔗 Correlation detected with {p.symbol}. Reducing {symbol} allocation by 50%.")
-                    raw_lots *= 0.5
-                    break
+            existing_symbols = [p.symbol for p in positions]
+            if existing_symbols and symbol not in existing_symbols:
+                # Calculate actual correlation matrix
+                corr_data = self.quant.calculate_correlation_matrix(
+                    existing_symbols + [symbol], 
+                    lookback=100
+                )
+                
+                if corr_data and 'matrix' in corr_data:
+                    corr_matrix = corr_data['matrix']
+                    
+                    # Check if new symbol is highly correlated with any existing position
+                    for existing_sym in existing_symbols:
+                        if symbol in corr_matrix and existing_sym in corr_matrix.get(symbol, {}):
+                            correlation = abs(corr_matrix[symbol].get(existing_sym, 0))
+                            
+                            if correlation > 0.7:
+                                reduction = 1.0 - (correlation - 0.5)  # Higher corr = bigger reduction
+                                reduction = max(0.3, min(1.0, reduction))  # Cap between 30-100%
+                                logger.info(f"[CORR] {symbol} <-> {existing_sym}: {correlation:.2f}. Reducing allocation to {reduction*100:.0f}%")
+                                raw_lots *= reduction
+                                break
+                            elif correlation > 0.5:
+                                logger.info(f"[CORR] {symbol} <-> {existing_sym}: {correlation:.2f} (moderate, no reduction)")
+                else:
+                    # Fallback to simple check if correlation calc fails
+                    for p in positions:
+                        if p.symbol[:3] == symbol[:3] or p.symbol[3:6] == symbol[3:6]:
+                            logger.info(f"[CORR] Currency match with {p.symbol}. Reducing {symbol} by 50%.")
+                            raw_lots *= 0.5
+                            break
 
-        # 4. VaR Constraint
+        # 4. VaR Constraint (Hard Limit)
         # Check if this new position pushes portfolio VaR > Max Exposure
-        # (Simplified: estimated VaR component)
-        current_var = self.quant.calculate_var(positions).get('total_var_usd', 0)
-        # Estimated additional VaR: Lots * ContractSize * price * vol...
-        # If (current_var + estimate_new_var) / equity > self.max_total_exposure:
-        #    raw_lots *= adjustment_factor
+        if positions:
+            current_var_data = self.quant.calculate_var(positions)
+            current_var_pct = current_var_data.get('var_percentage', 0) / 100
+            
+            # Estimate new position's contribution to VaR
+            # If already near max, scale down
+            if current_var_pct > self.max_total_exposure * 0.8:  # 80% of limit
+                remaining_budget = self.max_total_exposure - current_var_pct
+                scale_factor = remaining_budget / (self.max_total_exposure * 0.2)  # Remaining share of 20%
+                scale_factor = max(0.25, min(1.0, scale_factor))  # Floor at 25%
+                logger.info(f"[VaR] Portfolio at {current_var_pct*100:.1f}% VaR. Scaling new position to {scale_factor*100:.0f}%")
+                raw_lots *= scale_factor
         
         # 5. Institutional Hard Caps
         normalized_lots = self._normalize_lots(symbol, raw_lots)
         
-        logger.info(f"🎯 Allocation: {symbol} | Confidence: {signal_confidence:.2f} | Result: {normalized_lots} Lots")
+        logger.info(f"[ALLOC] {symbol} | Confidence: {signal_confidence:.2f} | Result: {normalized_lots} Lots")
         return normalized_lots
 
     def _normalize_lots(self, symbol, lots):

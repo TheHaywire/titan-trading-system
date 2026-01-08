@@ -154,7 +154,7 @@ class MegaScanner:
             
             return None
             
-        except:
+        except Exception:
             return None
     
     def execute(self, opp: dict) -> bool:

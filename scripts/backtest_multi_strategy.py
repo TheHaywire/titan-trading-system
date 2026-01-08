@@ -498,7 +498,7 @@ def backtest_asian_range_breakout(symbol: str, df: pd.DataFrame) -> List[Trade]:
                     trades.append(trade)
                     break
                     
-        except:
+        except Exception:
             continue
     
     return trades
@@ -655,7 +655,7 @@ def main():
                     sig = "✅ SIG" if is_sig else "❌"
                     logger.info(f"  {'AsianBreakout':18} | {'london':8} | N={result.total_trades:3} | "
                                f"WR={result.win_rate:5.1f}% | Exp={result.expectancy_r:+.2f}R | {sig}")
-            except:
+            except Exception:
                 pass
     
     # Results analysis

@@ -83,7 +83,7 @@ print("⚠️  Wiping existing tabs...")
 # Create a temp tab first.
 try:
     temp = ss.add_worksheet(title="TEMP_BUILD", rows=1, cols=1)
-except:
+except Exception:
     temp = ss.worksheet("TEMP_BUILD")
 
 # Delete all other tabs
@@ -132,7 +132,7 @@ for name, config in SCHEMA.items():
 # Delete temp
 try:
     ss.del_worksheet(temp)
-except:
+except Exception:
     pass
 
 print("✨  Formatting Complete.")

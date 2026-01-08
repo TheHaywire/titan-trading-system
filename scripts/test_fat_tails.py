@@ -23,7 +23,7 @@ def run_optimization_test():
         df_mega = pd.read_csv("mega_backtest_results.csv")
         top_symbols = df_mega.head(20)['symbol'].tolist()
         print(f"Loaded Top 20 Survivors: {top_symbols}")
-    except:
+    except Exception:
         print("Could not load mega_backtest_results.csv, using default list.")
         top_symbols = ["COCOA", "PALL-MAR26", "GerMid50Cash", "US500Cash", "JP225Cash", "Rheinmetall", "Givaudan"]
 

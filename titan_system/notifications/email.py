@@ -66,7 +66,7 @@ class EmailNotifier:
                             ai_data = json.loads(ai_insight)
                         else:
                             ai_data = ai_insight
-                    except:
+                    except Exception:
                         pass
 
             template = self.env.get_template('trade_alert.html')

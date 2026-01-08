@@ -111,7 +111,7 @@ class TitanMonitor:
             for r in rows:
                 try:
                     t = datetime.strptime(r[0], "%Y-%m-%d %H:%M:%S").strftime("%H:%M:%S")
-                except:
+                except Exception:
                     t = str(r[0])[:8]
                 log_text.append(f"[{t}] {r[1].ljust(10)} | {r[2]}\n")
                 
@@ -132,7 +132,7 @@ class TitanMonitor:
                             state = json.load(f)
                     else:
                         state = {}
-                except:
+                except Exception:
                     state = {}
                 
                 layout["header"].update(self.get_header(state))

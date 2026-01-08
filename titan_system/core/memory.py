@@ -433,7 +433,7 @@ class LongTermMemory:
             if isinstance(entry_time, str):
                 try:
                     hour = datetime.strptime(entry_time, "%Y-%m-%d %H:%M:%S").hour
-                except:
+                except Exception:
                     hour = 12
             else:
                 hour = trade_data.get('entry_hour', 12)

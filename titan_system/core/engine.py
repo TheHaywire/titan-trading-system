@@ -229,35 +229,6 @@ class TitanEngine:
             self.execution.shutdown()
             logger.info("💀 Engine Stopped.")
 
-    def get_status(self):
-        """Returns the current system status for the API"""
-        summary = self.execution.get_account_summary() or {}
-        session_status = SessionManager.get_market_status()
-        
-        # Determine aggregate regime from one of the symbols (e.g. EURUSD) or global
-        # For now, simplistic approach
-        regime = {"status": "UNKNOWN", "adx": 0}
-        
-    def get_status(self):
-        """Returns the current system status for the API"""
-        summary = self.execution.get_account_summary() or {}
-        session_status = SessionManager.get_market_status()
-        
-        # Determine aggregate regime from one of the symbols (e.g. EURUSD) or global
-        # For now, simplistic approach
-        regime = {"status": "UNKNOWN", "adx": 0}
-        
-        return {
-            "running": self.running,
-            "connected": self.execution.connected,
-            "equity": summary.get('equity', 0),
-            "balance": summary.get('balance', 0),
-            "open_positions": len(self.execution.get_positions()),
-            "market_scan": self.scan_results,
-            "session": session_status,
-            "regime": regime
-        }
-    
     async def tick(self):
         """One cycle of the engine (every 1 second)"""
         

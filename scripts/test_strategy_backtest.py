@@ -31,13 +31,13 @@ def test_strategy_backtest():
     
     try:
         print(f"Total Trades: {pf.trades.count()}")
-    except:
+    except Exception:
         print("Total Trades: N/A")
         
     try:
         # Try finding win rate in trades object
         print(f"Win Rate: {pf.trades.win_rate():.2%}")
-    except:
+    except Exception:
         print("Win Rate: N/A")
         
     # Print full stats for debugging

@@ -74,7 +74,8 @@ class InstitutionalQuant:
 
     def calculate_var(self, positions):
         """
-        Calculate Value at Risk (VaR) using the Variance/Covariance method.
+        Calculate Modified Value at Risk (MVaR) using Cornish-Fisher Expansion.
+        Accounts for Skewness and Kurtosis (Fat Tails), essential for crypto and gold.
         Estimates the maximum loss over 1 day within a confidence interval.
         """
         if not positions:
@@ -84,31 +85,46 @@ class InstitutionalQuant:
         var_per_symbol = {}
         
         for p in positions:
-            # Fetch historical volatility for the symbol
-            rates = mt5.copy_rates_from_pos(p.symbol, mt5.TIMEFRAME_H1, 0, 100)
+            # Fetch historical data (using 250 bars for better stat distribution)
+            rates = mt5.copy_rates_from_pos(p.symbol, mt5.TIMEFRAME_H1, 0, 250)
             if rates is not None:
                 df = pd.DataFrame(rates)
                 df['returns'] = df['close'].pct_change()
-                volatility = df['returns'].std()
+                returns = df['returns'].dropna()
+                
+                # Basic Stats
+                volatility = returns.std()
+                skew = returns.skew()
+                kurt = returns.kurtosis() # Excess kurtosis
+                
+                # Normal Z-Score
+                z = 1.645 if self.confidence_level == 0.95 else 2.326
+                
+                # Cornish-Fisher Expansion for Adjusted Z
+                # Corrects for non-normality (fat tails)
+                z_cf = (z + 
+                        (1/6)*(z**2 - 1)*skew + 
+                        (1/24)*(z**3 - 3*z)*kurt - 
+                        (1/36)*(2*z**3 - 5*z)*skew**2)
                 
                 # Institutional VaR calculation
                 info = mt5.symbol_info(p.symbol)
-                z_score = 1.645 if self.confidence_level == 0.95 else 2.326
                 
-                # Formula: Lots * ContractSize * CurrentPrice * Volatility * Z-Score
+                # Formula: Lots * ContractSize * CurrentPrice * Volatility * Adjusted Z-Score
                 contract_size = info.trade_contract_size if info else 1
                 notional_value = p.volume * contract_size * p.price_current
                 
-                symbol_var = notional_value * volatility * z_score
+                symbol_var = notional_value * volatility * z_cf
                 var_per_symbol[p.symbol] = symbol_var
         
         total_var = sum(var_per_symbol.values())
-        var_pct = (total_var / total_equity) * 100
+        var_pct = (total_var / total_equity) * 100 if total_equity > 0 else 0
         
         return {
             "total_var_usd": round(total_var, 2),
             "var_percentage": round(var_pct, 2),
-            "symbol_breakdown": {s: round(v, 2) for s,v in var_per_symbol.items()}
+            "symbol_breakdown": {s: round(v, 2) for s,v in var_per_symbol.items()},
+            "method": "Cornish-Fisher (Fat-Tail Adjusted)"
         }
 
     def analyze_concentration_risk(self, positions):

@@ -364,7 +364,7 @@ class TitanProductionV2:
                         expected_r=2.0,
                         reasoning=[f"Gap fill: {gap_pct:.1f}% down", "80% probability"]
                     )
-        except:
+        except Exception:
             pass
         
         return None

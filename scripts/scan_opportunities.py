@@ -34,7 +34,7 @@ def get_h1_trend(symbol):
         if curr9 > curr21 * 1.0001: return "BULLISH"
         if curr9 < curr21 * 0.9999: return "BEARISH"
         return "NEUTRAL"
-    except:
+    except Exception:
         return "NEUTRAL"
 
 def scan_market():

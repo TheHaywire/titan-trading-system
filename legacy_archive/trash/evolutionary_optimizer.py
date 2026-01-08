@@ -36,7 +36,7 @@ class EvolutionaryOptimizer:
         # Simple Fitness: Final Balance
         try:
             return env.balance
-        except:
+        except Exception:
             return 0
 
     def run_generation(self):

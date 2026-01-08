@@ -223,7 +223,7 @@ class RSI_Divergence_MACD_Strategy(BaseStrategy):
             return None
         curr = df.iloc[-1]
         # Bullish divergence: price down, RSI up
-        if curr['price_slope'] < 0 and curr['rsi_slope'] > 0 and curr['macd_histogram'] > 0:
+        if curr['price_slope'] < 0 and curr['rsi_slope'] > 0 and curr['macd_hist'] > 0:
             return {'direction': 'BUY', 'stop_loss': curr['close'] - curr['atr'], 'take_profit': curr['close'] + curr['atr']*3}
         return None
 

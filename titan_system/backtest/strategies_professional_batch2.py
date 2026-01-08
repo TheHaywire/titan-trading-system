@@ -33,7 +33,7 @@ class GarmanKlassVolatility_Strategy(BaseStrategy):
         
         # Trade volatility expansion
         if curr['gk_vol'] > curr['gk_vol_ma'] * 1.3:
-            if curr[close'] > curr['ema21']:
+            if curr['close'] > curr['ema21']:
                 return {
                     'direction': 'BUY',
                     'stop_loss': curr['close'] - curr['atr'] * 2,

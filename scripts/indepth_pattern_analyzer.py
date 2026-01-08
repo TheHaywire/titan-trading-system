@@ -186,7 +186,7 @@ class IndepthAnalyzer:
             if orig_sharpe > 20:
                 console.print(f"[red]WARNING:[/red] Sharpe > 20 is likely a backtest artifact (lookahead or zero-variance).")
                 
-        except:
+        except Exception:
             console.print("[dim]Note: Could not load existing CSV. Running fresh audit...[/dim]")
 
     def run_all(self):

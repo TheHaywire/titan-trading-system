@@ -171,7 +171,7 @@ class MT5Recon:
                     
                     if signal:
                         opportunities.append((symbol, signal))
-            except:
+            except Exception:
                 continue
                 
         if opportunities:

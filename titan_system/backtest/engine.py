@@ -69,11 +69,14 @@ class BacktestEngine:
     Professional backtesting engine.
     """
     
-    def __init__(self, symbol: str, timeframe: int, start_date: datetime, end_date: datetime):
+    def __init__(self, symbol: str, timeframe: int, start_date: datetime, end_date: datetime, 
+                 commission_per_lot: float = 7.0, slippage_pips: float = 2.0):
         self.symbol = symbol
         self.timeframe = timeframe
         self.start_date = start_date
         self.end_date = end_date
+        self.commission_per_lot = commission_per_lot
+        self.slippage_pips = slippage_pips
         self.data = None
         
     def fetch_data(self) -> pd.DataFrame:
@@ -114,6 +117,7 @@ class BacktestEngine:
         
         capital = initial_capital
         equity_curve = [capital]
+        intrabar_equity = [capital]  # Track equity including floating P&L
         trades = []
         position = None
         
@@ -125,6 +129,33 @@ class BacktestEngine:
             current_bar = df.iloc[i]
             current_time = current_bar['time']
             
+            # Calculate intra-bar equity (floating P&L) if we have a position
+            if position:
+                # Use H/L/C to estimate worst-case and best-case equity during bar
+                if position['direction'] == 'BUY':
+                    # For BUY: worst = low, best = high
+                    worst_price = current_bar['low']
+                    best_price = current_bar['high']
+                    close_price = current_bar['close']
+                    
+                    floating_worst = (worst_price - position['entry_price']) * position['size']
+                    floating_best = (best_price - position['entry_price']) * position['size']
+                    floating_close = (close_price - position['entry_price']) * position['size']
+                else:
+                    # For SELL: worst = high, best = low
+                    worst_price = current_bar['high']
+                    best_price = current_bar['low']
+                    close_price = current_bar['close']
+                    
+                    floating_worst = (position['entry_price'] - worst_price) * position['size']
+                    floating_best = (position['entry_price'] - best_price) * position['size']
+                    floating_close = (position['entry_price'] - close_price) * position['size']
+                
+                # Track intra-bar equity at worst point (for accurate drawdown)
+                intrabar_equity.append(capital + floating_worst)
+            else:
+                intrabar_equity.append(capital)
+            
             # Check if we have an open position
             if position:
                 # Check exit conditions
@@ -132,14 +163,34 @@ class BacktestEngine:
                 
                 if exit_signal:
                     # Close position
-                    exit_price = current_bar['close']
+                    exit_price_raw = current_bar['close']
+                    
+                    # Apply slippage on exit
+                    point = 0.0001 # Default, should ideally get from symbol_info
+                    if "JPY" in self.symbol or "XAU" in self.symbol or "BTC" in self.symbol:
+                        point = 0.01
+                    
+                    slippage_impact = self.slippage_pips * point
                     
                     if position['direction'] == 'BUY':
+                        exit_price = exit_price_raw - slippage_impact
                         pips = exit_price - position['entry_price']
                         profit = pips * position['size']
                     else:
+                        exit_price = exit_price_raw + slippage_impact
                         pips = position['entry_price'] - exit_price
                         profit = pips * position['size']
+                    
+                    # Apply commission (per round trip if lot based, or per side)
+                    # Standard MT5 commission is often $7 per lot round turn
+                    commission = position['size'] * (self.commission_per_lot / 100000) # Simplified lot to units
+                    # Wait, size here is likely units or lots? 
+                    # Looking at line 172: size = risk_amount / sl_distance. This is likely units.
+                    # If size is units, 1 lot = 100,000 units.
+                    
+                    # Assuming size is units:
+                    commission_cost = (position['size'] / 100000.0) * self.commission_per_lot
+                    profit -= commission_cost
                     
                     capital += profit
                     
@@ -162,7 +213,10 @@ class BacktestEngine:
                 # Check entry conditions
                 signal = strategy.analyze(df.iloc[:i+1])
                 
-                if signal:
+                if signal and i + 1 < len(df):  # Ensure we have a next bar
+                    # Entry on NEXT bar's open to avoid look-ahead bias
+                    next_bar = df.iloc[i + 1]
+                    
                     # Calculate position size based on risk
                     risk_amount = capital * risk_pct
                     
@@ -171,10 +225,24 @@ class BacktestEngine:
                     sl_distance = atr * 2
                     size = risk_amount / sl_distance if sl_distance > 0 else 1
                     
+                    # Apply slippage on entry
+                    point = 0.0001
+                    if "JPY" in self.symbol or "XAU" in self.symbol or "BTC" in self.symbol:
+                        point = 0.01
+                    
+                    slippage_impact = self.slippage_pips * point
+                    # Use next bar's OPEN (realistic entry after signal bar closes)
+                    entry_price_raw = next_bar['open']
+                    
+                    if signal['direction'] == 'BUY':
+                        entry_price = entry_price_raw + slippage_impact
+                    else:
+                        entry_price = entry_price_raw - slippage_impact
+                        
                     position = {
                         'direction': signal['direction'],
-                        'entry_price': current_bar['close'],
-                        'entry_time': current_time,
+                        'entry_price': entry_price,
+                        'entry_time': next_bar['time'],  # Entry time is next bar
                         'size': size,
                         'sl': signal.get('stop_loss'),
                         'tp': signal.get('take_profit')
@@ -182,13 +250,27 @@ class BacktestEngine:
         
         # Close any remaining position at end
         if position:
-            exit_price = df.iloc[-1]['close']
+            exit_price_raw = df.iloc[-1]['close']
+            
+            # Apply slippage on exit
+            point = 0.0001
+            if "JPY" in self.symbol or "XAU" in self.symbol or "BTC" in self.symbol:
+                point = 0.01
+            
+            slippage_impact = self.slippage_pips * point
+            
             if position['direction'] == 'BUY':
+                exit_price = exit_price_raw - slippage_impact
                 pips = exit_price - position['entry_price']
                 profit = pips * position['size']
             else:
+                exit_price = exit_price_raw + slippage_impact
                 pips = position['entry_price'] - exit_price
                 profit = pips * position['size']
+            
+            # Apply commission
+            commission_cost = (position['size'] / 100000.0) * self.commission_per_lot
+            profit -= commission_cost
             
             capital += profit
             
@@ -206,19 +288,21 @@ class BacktestEngine:
             trades.append(trade)
             equity_curve.append(capital)
         
-        # Calculate metrics
+        # Calculate metrics (use intrabar_equity for accurate drawdown)
         result = self.calculate_metrics(
             strategy_name=strategy.name,
             trades=trades,
             equity_curve=equity_curve,
-            initial_capital=initial_capital
+            initial_capital=initial_capital,
+            intrabar_equity=intrabar_equity
         )
         
         return result
     
     def calculate_metrics(self, strategy_name: str, trades: List[Trade], 
-                         equity_curve: List[float], initial_capital: float) -> BacktestResult:
-        """Calculate performance metrics"""
+                         equity_curve: List[float], initial_capital: float,
+                         intrabar_equity: List[float] = None) -> BacktestResult:
+        """Calculate performance metrics. Uses intrabar_equity for accurate drawdown if provided."""
         
         if len(trades) == 0:
             return BacktestResult(
@@ -258,10 +342,11 @@ class BacktestEngine:
         total_return = final_capital - initial_capital
         total_return_pct = (total_return / initial_capital) * 100
         
-        # Drawdown
-        peak = equity_curve[0]
+        # Drawdown (use intrabar_equity for accurate floating P&L if available)
+        dd_equity = intrabar_equity if intrabar_equity and len(intrabar_equity) > 0 else equity_curve
+        peak = dd_equity[0]
         max_dd = 0
-        for equity in equity_curve:
+        for equity in dd_equity:
             if equity > peak:
                 peak = equity
             dd = peak - equity

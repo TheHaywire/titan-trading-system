@@ -2,12 +2,14 @@
 import logging
 import asyncio
 import pandas as pd
+import numpy as np
 import datetime
 import MetaTrader5 as mt5
 from titan_system.analytics.indicators import IndicatorFactory
 from titan_system.analytics.news import NewsFilter
 from titan_system.analytics.ai_analyst import AIAnalyst
 from titan_system.analytics.sessions import SessionManager
+from titan_system.analytics.regime_detector import MarkovRegimeSwitcher, MarketRegime
 
 logger = logging.getLogger("Titan.MarketState")
 
@@ -20,7 +22,10 @@ class MarketAnalyzer:
         self.execution = execution_client
         self.news = NewsFilter()
         self.ai = AIAnalyst()
-        self.ai_cache = {} # {symbol: {'insight': str, 'time': datetime}}
+        self.ai_cache = {}  # {symbol: {'insight': str, 'time': datetime}}
+        self.score_history = {}  # {symbol: [last N scores]} for Z-score calculation
+        self.regime_detector = MarkovRegimeSwitcher()  # Markov regime switching
+        self.regime_fitted = {}  # {symbol: bool} track if regime model is fitted
 
     async def analyze_symbol(self, symbol: str) -> dict:
         """
@@ -94,6 +99,25 @@ class MarketAnalyzer:
         if h1_state['trend'] == "BULLISH": reasoning.append("Hourly Trend is Up")
         if m5_state['rsi'] < 30: reasoning.append("Short-term Oversold (RSI < 30)")
         if h1_state['volatility'] == "HIGH": reasoning.append("High Volatility Detected")
+        
+        # 6.1 Z-Score Signal Strength (Replaces fixed thresholds)
+        # A score of 70 in a low-volatility regime is different from 70 in high-volatility
+        if symbol not in self.score_history:
+            self.score_history[symbol] = []
+        
+        self.score_history[symbol].append(score)
+        if len(self.score_history[symbol]) > 100:
+            self.score_history[symbol].pop(0)
+        
+        # Calculate Z-Score of current score relative to recent history
+        z_score = 0.0
+        if len(self.score_history[symbol]) >= 20:
+            hist = np.array(self.score_history[symbol])
+            mean_score = np.mean(hist)
+            std_score = np.std(hist)
+            if std_score > 0:
+                z_score = (score - mean_score) / std_score
+                reasoning.append(f"Score Z-Score: {z_score:.2f}")
 
         # 7. AI Insight (Cached 15 mins)
         ai_insight = "AI Loading..."
@@ -149,11 +173,52 @@ class MarketAnalyzer:
             }
         }
 
+        # Determine bias using Z-Score aware thresholds
+        # Standard: > 60 = BULLISH, < 40 = BEARISH, else NEUTRAL
+        # Z-Score Enhanced: If z_score > 1.5, it's a strong signal even if score is moderate
+        if z_score >= 1.5 and score > 50:
+            bias = "BULLISH"
+        elif z_score <= -1.5 and score < 50:
+            bias = "BEARISH"
+        elif score > 60:
+            bias = "BULLISH"
+        elif score < 40:
+            bias = "BEARISH"
+        else:
+            bias = "NEUTRAL"
+        
+        # 9. Markov Regime Detection
+        # Fit model on first call for this symbol
+        if symbol not in self.regime_fitted:
+            if len(data['H1']) >= 100:
+                self.regime_detector.fit(data['H1'])
+                self.regime_fitted[symbol] = True
+        
+        # Detect current regime
+        regime_state = self.regime_detector.detect(data['H1'])
+        regime_info = self.regime_detector.get_strategy_recommendation(regime_state)
+        
+        # Add regime to reasoning
+        if regime_state.regime_change_signal:
+            reasoning.append(f"[REGIME SHIFT] Now in {regime_state.current_regime.value}")
+        else:
+            reasoning.append(f"Regime: {regime_state.current_regime.value} ({regime_state.confidence*100:.0f}% conf)")
+        
         return {
             "symbol": symbol,
-            "score": max(0, min(100, score)), # Clamp 0-100
-            "bias": "BULLISH" if score > 60 else "BEARISH" if score < 40 else "NEUTRAL",
-            "categories": categories, # NEW
+            "score": max(0, min(100, score)),  # Clamp 0-100
+            "z_score": round(z_score, 2),
+            "bias": bias,
+            "regime": {
+                "current": regime_state.current_regime.value,
+                "confidence": round(regime_state.confidence, 2),
+                "duration_bars": regime_state.duration_bars,
+                "regime_change": regime_state.regime_change_signal,
+                "preferred_strategies": regime_info.get('preferred_strategies', []),
+                "avoid_strategies": regime_info.get('avoid_strategies', []),
+                "risk_multiplier": regime_info.get('risk_multiplier', 1.0)
+            },
+            "categories": categories,
             "timeframes": {
                 "M5": m5_state,
                 "H1": h1_state,

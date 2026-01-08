@@ -17,7 +17,7 @@ class SVM_Strategy(BaseStrategy):
     def calculate_indicators(self, df):
         df = add_indicators(df)
         # Simplified SVM-like logic using RSI + MACD
-        df['svm_signal'] = ((df['rsi'] > 50).astype(int) + (df['macd_histogram'] > 0).astype(int))
+        df['svm_signal'] = ((df['rsi'] > 50).astype(int) + (df['macd_hist'] > 0).astype(int))
         return df
     def analyze(self, df):
         if len(df) < 30:
@@ -133,7 +133,7 @@ class KellyCriterion_Strategy(BaseStrategy):
             return None
         curr = df.iloc[-1]
         # Basic entry logic with Kelly-adjusted sizing (would need historical win rate)
-        if curr['rsi'] > 60 and curr['macd_histogram'] > 0:
+        if curr['rsi'] > 60 and curr['macd_hist'] > 0:
             return {'direction': 'BUY', 'stop_loss': curr['close'] - curr['atr'], 'take_profit': curr['close'] + curr['atr']*2}
         return None
 
