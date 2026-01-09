@@ -40,8 +40,7 @@ class BacktestEngine:
 
     def run_backtest(self, start_idx=200, min_score=7):
         """
-        Runs a rolling window backtest.
-        Warning: This is computationally intensive as it runs the analyst logic for each bar.
+        Runs a rolling window backtest with HTF bias filtering.
         """
         print(f"🚀 Starting Backtest for {self.symbol} ({self.tf_str}) | Bars: {self.bars}")
         
@@ -54,16 +53,47 @@ class BacktestEngine:
         df_full = pd.DataFrame(rates)
         df_full['time'] = pd.to_datetime(df_full['time'], unit='s')
         
+        # CRITICAL: Fetch Daily timeframe for TRUE HTF bias
+        daily_rates = mt5.copy_rates_from_pos(self.symbol, mt5.TIMEFRAME_D1, 0, 365)
+        if daily_rates is None or len(daily_rates) < 200:
+            print("❌ Not enough daily data for HTF bias")
+            return
+        
+        df_daily = pd.DataFrame(daily_rates)
+        df_daily['time'] = pd.to_datetime(df_daily['time'], unit='s')
+        df_daily['sma_50'] = df_daily['close'].rolling(window=50).mean()
+        df_daily['sma_200'] = df_daily['close'].rolling(window=200).mean()
+        
         trades = []
         
         # Simulation Loop
         for i in range(start_idx, len(df_full)):
-            # "Look-back" window
-            df_slice = df_full.iloc[i-start_idx:i+1].copy()
+            current_time = df_full['time'].iloc[i]
+            current_price = df_full['close'].iloc[i]
             
-            # Run pattern detection and scoring (Simplified Institutional Logic)
-            # For a real heavy backtest, we'd use a vectorized version of the analyst.
-            # Here we use the shared patterns to find opportunities.
+            # Get HTF bias from Daily timeframe (align by date)
+            daily_row = df_daily[df_daily['time'] <= current_time].iloc[-1] if len(df_daily[df_daily['time'] <= current_time]) > 0 else None
+            
+            if daily_row is None or pd.isna(daily_row['sma_200']) or pd.isna(daily_row['sma_50']):
+                continue
+            
+            # Determine HTF bias from DAILY timeframe
+            daily_close = daily_row['close']
+            daily_sma_50 = daily_row['sma_50']
+            daily_sma_200 = daily_row['sma_200']
+            
+            # STRONG trend = both SMAs aligned + price on right side
+            if daily_close > daily_sma_200 and daily_sma_50 > daily_sma_200:
+                htf_bias = "STRONG_BULLISH"
+            elif daily_close < daily_sma_200 and daily_sma_50 < daily_sma_200:
+                htf_bias = "STRONG_BEARISH"
+            elif daily_close > daily_sma_200:
+                htf_bias = "BULLISH"
+            else:
+                htf_bias = "BEARISH"
+            
+            # "Look-back" window for pattern detection
+            df_slice = df_full.iloc[i-start_idx:i+1].copy()
             
             # 1. Add RSI for patterns
             delta = df_slice['close'].diff()
@@ -81,7 +111,16 @@ class BacktestEngine:
                 entry_time = df_slice['time'].iloc[-1]
                 
                 # Determine direction (heuristic based on first pattern)
-                direction = "BUY" if any(x in patterns[0].upper() for x in ["BULL", "HAMMER", "BOTTOM"]) else "SELL"
+                if patterns:
+                    direction = "BUY" if any(x in patterns[0].upper() for x in ["BULL", "HAMMER", "BOTTOM"]) else "SELL"
+                else:
+                    continue
+                
+                # HTF BIAS FILTER: Only trade with STRONG trends!
+                if "BULLISH" in htf_bias and direction == "SELL":
+                    continue  # Skip counter-trend SELL in uptrend
+                elif "BEARISH" in htf_bias and direction == "BUY":
+                    continue  # Skip counter-trend BUY in downtrend
                 
                 # Dynamic SL/TP (e.g., 2% SL, 4% TP)
                 sl = entry_price * (0.98 if direction == "BUY" else 1.02)
@@ -96,10 +135,11 @@ class BacktestEngine:
                         "direction": direction,
                         "entry": entry_price,
                         "score": score,
+                        "htf_bias": htf_bias,
                         "result": trade_result['status'],
                         "pips": trade_result['profit_pips']
                     })
-                    print(f"🔔 Signal @ {entry_time} | {direction} | Score: {score} | Result: {trade_result['status']}")
+                    print(f"🔔 Signal @ {entry_time} | {direction} ({htf_bias} bias) | Score: {score} | Result: {trade_result['status']}")
 
         self._report_metrics(trades)
 
