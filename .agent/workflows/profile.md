@@ -1,3 +1,7 @@
+---
+description: Generate institutional-grade intelligence report on any symbol
+---
+
 # Symbol Intelligence Profiler
 
 Generate comprehensive deep-dive analysis on any symbol with historical stats, time patterns, volatility profiling, and trading intelligence.
