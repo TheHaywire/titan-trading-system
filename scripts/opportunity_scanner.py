@@ -248,9 +248,27 @@ def main():
             except Exception as exc:
                 print(f"❌ {symbol} generated an exception: {exc}")
                 
-    if not opportunities:
-        print("\n😱 NO OPPORTUNITIES FOUND. Market might be closed or API down.")
-        return
+    # Sort by score for logging
+    opportunities.sort(key=lambda x: x['score'], reverse=True)
+    
+    # Log high-quality setups to performance tracker
+    try:
+        from performance_tracker import PerformanceTracker
+        tracker = PerformanceTracker()
+        for opp in opportunities:
+            if opp['score'] >= 7:
+                # Log to DB
+                tracker.log_setup(
+                    symbol=opp['symbol'],
+                    tf="MTF",
+                    signal="BUY" if "BULLISH" in opp['weekly'] or "BUY" in opp['weekly'] else "SELL",
+                    price=opp['price'],
+                    score=opp['score'],
+                    patterns=opp['reasons'],
+                    tp=opp['price'] * 1.02 # Nominal 2% TP for tracking
+                )
+    except Exception as e:
+        print(f"⚠️ Could not log setups to performance tracker: {e}")
 
     # Generate the grand report
     print("\n📊 Aggregating setup intelligence...")
