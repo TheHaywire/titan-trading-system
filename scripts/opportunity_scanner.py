@@ -280,9 +280,13 @@ def main():
     print("🏆" * 30 + "\n")
     
     # Print summary to console
-    top = opportunities[0]
-    print(f"👑 TOP PICK: {top['symbol']} ({top['score']}/10)")
-    print(f"💬 REASONING: {', '.join(top['reasons'][:2])}")
+    if opportunities:
+        top = opportunities[0]
+        print(f"👑 TOP PICK: {top['symbol']} ({top['score']}/10)")
+        print(f"💬 REASONING: {', '.join(top['reasons'][:2])}")
+    else:
+        print("⚠️  No opportunities found in current market conditions.")
+    
     print(f"\nREPORT_PATH:{final_report}")
 
 if __name__ == "__main__":

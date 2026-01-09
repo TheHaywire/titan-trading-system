@@ -17,11 +17,16 @@ from collections import defaultdict
 # Pattern Recognition
 try:
     from technical_patterns import detect_candlestick_patterns, detect_chart_patterns, detect_divergences
+    from signal_scoring import SignalScore, SignalDimensions, SignalGrade, TradingMode, TradingModeConfig
 except ImportError:
     # Manual definition if not found (shouldn't happen in our repo)
     def detect_candlestick_patterns(df): return []
     def detect_chart_patterns(df): return []
     def detect_divergences(df): return []
+    SignalScore = None  # Will use fallback
+
+# Chart Generation Flag
+CHARTS_AVAILABLE = False  # Set to True if chart generation module is installed
 
 
 class InstitutionalMarketAnalyst:
@@ -440,65 +445,152 @@ class InstitutionalMarketAnalyst:
         return "🟡 TRANSITIONAL"
     
     def _generate_signal(self, df: pd.DataFrame, analysis: dict) -> dict:
-        """Generate trading signal based on analysis"""
+        """Generate trading signal with dimension-based scoring"""
         
         latest = df.iloc[-1]
         rsi = latest['RSI']
         price = latest['close']
         
-        # Signal strength score
-        score = 0
-        reasons = []
+        # Initialize dimension-based scoring
+        dimensions = SignalDimensions()
+        catalysts = []
+        warnings = []
         
-        # Trend alignment
-        if "UPTREND" in analysis['trend']['direction']:
-            score += 2
-            reasons.append("Uptrend confirmed")
-        elif "DOWNTREND" in analysis['trend']['direction']:
-            score -= 2
-            reasons.append("Downtrend confirmed")
+        # DIMENSION 1: Trend Alignment (-2 to +2)
+        trend_dir = analysis['trend']['direction']
+        if "STRONG UPTREND" in trend_dir:
+            dimensions.trend_alignment = +2
+            catalysts.append("Strong uptrend confirmed")
+        elif "WEAK UPTREND" in trend_dir or "UPTREND" in trend_dir:
+            dimensions.trend_alignment = +1
+            catalysts.append("Uptrend confirmed")
+        elif "STRONG DOWNTREND" in trend_dir:
+            dimensions.trend_alignment = -2
+            catalysts.append("Strong downtrend confirmed")
+        elif "WEAK DOWNTREND" in trend_dir or "DOWNTREND" in trend_dir:
+            dimensions.trend_alignment = -1
+            catalysts.append("Downtrend confirmed")
         
-        # MA alignment
+        # MA alignment bonus
         if "PERFECT BULLISH" in analysis['ma_alignment']:
-            score += 2
-            reasons.append("Perfect MA alignment (bullish)")
+            dimensions.trend_alignment = min(2, dimensions.trend_alignment + 1)
+            catalysts.append("Perfect MA alignment (bullish)")
         elif "PERFECT BEARISH" in analysis['ma_alignment']:
-            score -= 2
-            reasons.append("Perfect MA alignment (bearish)")
+            dimensions.trend_alignment = max(-2, dimensions.trend_alignment - 1)
+            catalysts.append("Perfect MA alignment (bearish)")
         
-        # RSI
+        # DIMENSION 2: Location (0 to +2)
+        # Near support/resistance or key fib level
+        if analysis.get('fib_levels'):
+            # Check if price is near a fib level (within 0.5%)
+            for level_name, level_price in analysis['fib_levels'].items():
+                if abs(price - level_price) / price < 0.005:
+                    dimensions.location += 1
+                    catalysts.append(f"Near {level_name} level")
+                    break
+        
+        if analysis.get('support_resistance'):
+            dimensions.location += 1
+            catalysts.append("At key support/resistance zone")
+        
+        dimensions.location = min(2, dimensions.location)
+        
+        # DIMENSION 3: Momentum (-2 to +2)
         if rsi < 30:
-            score += 1
-            reasons.append("RSI oversold")
+            dimensions.momentum = +1
+            catalysts.append("RSI oversold (reversal potential)")
         elif rsi > 70:
-            score -= 1
-            reasons.append("RSI overbought")
+            dimensions.momentum = -1
+            warnings.append("RSI overbought (exhaustion risk)")
         
-        # Divergences
-        for div in analysis['divergences']:
+        # ADX strength bonus
+        if analysis.get('regime') == 'TRENDING':
+            if dimensions.trend_alignment > 0:
+                dimensions.momentum += 1
+            elif dimensions.trend_alignment < 0:
+                dimensions.momentum -= 1
+        
+        dimensions.momentum = max(-2, min(2, dimensions.momentum))
+        
+        # DIMENSION 4: Structure (-2 to +2)
+        # Patterns
+        for pattern in analysis.get('patterns', []):
+            if "BULLISH" in pattern.upper() or "HAMMER" in pattern or "BOTTOM" in pattern:
+                dimensions.structure += 1
+                catalysts.append(f"Bullish pattern: {pattern}")
+            elif "BEARISH" in pattern.upper() or "STAR" in pattern or "TOP" in pattern:
+                dimensions.structure -= 1
+                catalysts.append(f"Bearish pattern: {pattern}")
+        
+        # Divergences (bias-aware)
+        for div in analysis.get('divergences', []):
             if "BULLISH" in div:
-                score += 2
-                reasons.append("Bullish divergence")
+                if dimensions.trend_alignment >= 0:
+                    dimensions.structure += 1  # Confirming
+                    catalysts.append("Bullish divergence (confirmation)")
+                else:
+                    dimensions.structure -= 1  # Contradicting
+                    warnings.append("Bullish divergence contradicts downtrend")
             elif "BEARISH" in div:
-                score -= 2
-                reasons.append("Bearish divergence")
+                if dimensions.trend_alignment <= 0:
+                    dimensions.structure += 1  # Confirming
+                    catalysts.append("Bearish divergence (confirmation)")
+                else:
+                    dimensions.structure -= 1  # Contradicting
+                    warnings.append("Bearish divergence contradicts uptrend")
         
-        # Determine signal
-        if score >= 3:
-            signal = "🟢 STRONG BUY"
-        elif score >= 1:
-            signal = "🟢 BUY"
-        elif score <= -3:
-            signal = "🔴 STRONG SELL"
-        elif score <= -1:
-            signal = "🔴 SELL"
+        dimensions.structure = max(-2, min(2, dimensions.structure))
+        
+        # DIMENSION 5: Volatility (-1 to +1)
+        # Good volatility conditions
+        if analysis.get('regime') == 'TRENDING':
+            dimensions.volatility = +1
+        elif analysis.get('regime') == 'VOLATILE':
+            dimensions.volatility = -1
+            warnings.append("High volatility environment")
+        
+        # Create SignalScore object
+        total_score = dimensions.total()
+        
+        # Determine direction
+        if total_score >= 1:
+            direction = "LONG"
+        elif total_score <= -1:
+            direction = "SHORT"
         else:
-            signal = "🟡 NEUTRAL"
+            direction = "NEUTRAL"
+        
+        # Build signal object
+        signal_obj = SignalScore(
+            symbol=self.symbol,
+            direction=direction,
+            dimensions=dimensions,
+            catalysts=catalysts[:5],  # Top 5
+            warnings=warnings
+        )
+        
+        # Legacy signal format for backward compatibility
+        if total_score >= 3:
+            legacy_signal = "🟢 STRONG BUY"
+        elif total_score >= 1:
+            legacy_signal = "🟢 BUY"
+        elif total_score <= -3:
+            legacy_signal = "🔴 STRONG SELL"
+        elif total_score <= -1:
+            legacy_signal = "🔴 SELL"
+        else:
+            legacy_signal = "🟡 NEUTRAL"
         
         return {
-            'signal': signal,
-            'score': score,
-            'reasons': reasons,
+            'signal': legacy_signal,
+            'score': total_score,
+            'grade': signal_obj.calculate_grade().value,
+            'confidence': signal_obj.calculate_confidence(),
+            'quality': signal_obj.get_quality_label(),
+            'dimensions': dimensions.to_dict(),
+            'catalysts': catalysts,
+            'warnings': warnings,
+            'direction': direction
         }
     
     def find_confluence_zones(self):
@@ -637,10 +729,10 @@ class InstitutionalMarketAnalyst:
             # Signal
             sig = analysis['signal']
             report += f"**Trading Signal**: {sig['signal']} (Score: {sig['score']})\n"
-            if sig['reasons']:
-                report += f"**Reasons**:\n"
-                for reason in sig['reasons']:
-                    report += f"- {reason}\n"
+            if sig.get('catalysts'):
+                report += f"**Catalysts**:\n"
+                for catalyst in sig['catalysts']:
+                    report += f"- {catalyst}\n"
             
             report += "\n---\n\n"
         
