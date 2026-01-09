@@ -22,14 +22,73 @@ class AdvancedSymbolProfiler:
     def __init__(self, symbol):
         self.symbol = symbol.upper()
         self.initialize_mt5()
+        self.resolved_symbol = self._resolve_symbol_name()
         
     def initialize_mt5(self):
         if not mt5.initialize():
             raise RuntimeError("MT5 initialization failed")
     
+    def _resolve_symbol_name(self):
+        """Smart symbol name resolution - tries common variations"""
+        print(f"🔍 Resolving symbol name for: {self.symbol}")
+        
+        # Common symbol naming variations
+        variations = [
+            self.symbol,  # Original
+            f"{self.symbol}Cash",  # e.g., US100Cash
+            f"{self.symbol}.cash",  # e.g., US100.cash
+            f"{self.symbol}cash",  # lowercase
+        ]
+        
+        # Add specific known aliases
+        aliases = {
+            'US100': ['NAS100', 'USTEC', 'NDX', 'US100Cash', 'NQ100'],
+            'US30': ['DJ30', 'DJI', 'US30Cash', 'YM'],
+            'NASDAQ': ['NAS100', 'US100', 'USTEC'],
+            'DOW': ['US30', 'DJ30', 'DJI'],
+            'SPX': ['US500', 'SP500', 'SPX500'],
+        }
+        
+        if self.symbol in aliases:
+            variations.extend(aliases[self.symbol])
+        
+        # Try each variation
+        for variant in variations:
+            symbol_info = mt5.symbol_info(variant)
+            if symbol_info is not None:
+                # Verify we can get data
+                test_data = mt5.copy_rates_from_pos(variant, mt5.TIMEFRAME_D1, 0, 1)
+                if test_data is not None and len(test_data) > 0:
+                    if variant != self.symbol:
+                        print(f"✅ Resolved '{self.symbol}' → '{variant}'")
+                    return variant
+        
+        # If no variation worked, search all available symbols
+        print(f"⚠️ Symbol '{self.symbol}' not found, searching available symbols...")
+        all_symbols = mt5.symbols_get()
+        if all_symbols:
+            # Case-insensitive search
+            matches = [s.name for s in all_symbols if self.symbol.lower() in s.name.lower()]
+            if matches:
+                print(f"📋 Found similar symbols: {', '.join(matches[:5])}")
+                print(f"❌ Please use one of these exact names instead")
+            else:
+                print(f"❌ No symbols found matching '{self.symbol}'")
+                print(f"💡 Tip: Check your MT5 Market Watch for available symbols")
+        
+        return None
+    
     def generate_profile(self):
         """Generate comprehensive institutional-grade profile"""
-        print(f"\n🔬 Generating Advanced Intelligence Profile for {self.symbol}...")
+        
+        if self.resolved_symbol is None:
+            print(f"\n❌ Cannot generate profile - symbol '{self.symbol}' not available")
+            return None
+        
+        print(f"\n🔬 Generating Advanced Intelligence Profile for {self.resolved_symbol}...")
+        
+        # Use resolved symbol for all data fetching
+        actual_symbol = self.resolved_symbol
         
         # Fetch comprehensive data
         data = self._fetch_comprehensive_data()
@@ -82,27 +141,28 @@ class AdvancedSymbolProfiler:
         print("📊 Fetching comprehensive historical data...")
         
         data = {}
+        symbol = self.resolved_symbol
         
         # Weekly for macro trend
-        weekly = mt5.copy_rates_from_pos(self.symbol, mt5.TIMEFRAME_W1, 0, 52)
+        weekly = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_W1, 0, 52)
         if weekly is not None:
             data['weekly'] = pd.DataFrame(weekly)
             data['weekly']['time'] = pd.to_datetime(data['weekly']['time'], unit='s')
         
         # Daily for main analysis
-        daily = mt5.copy_rates_from_pos(self.symbol, mt5.TIMEFRAME_D1, 0, 365)
+        daily = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_D1, 0, 365)
         if daily is not None:
             data['daily'] = pd.DataFrame(daily)
             data['daily']['time'] = pd.to_datetime(data['daily']['time'], unit='s')
         
         # 4H for regime analysis
-        h4 = mt5.copy_rates_from_pos(self.symbol, mt5.TIMEFRAME_H4, 0, 500)
+        h4 = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_H4, 0, 500)
         if h4 is not None:
             data['h4'] = pd.DataFrame(h4)
             data['h4']['time'] = pd.to_datetime(data['h4']['time'], unit='s')
         
         # 1H for intraday patterns
-        h1 = mt5.copy_rates_from_pos(self.symbol, mt5.TIMEFRAME_H1, 0, 1000)
+        h1 = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_H1, 0, 1000)
         if h1 is not None:
             data['h1'] = pd.DataFrame(h1)
             data['h1']['time'] = pd.to_datetime(data['h1']['time'], unit='s')
