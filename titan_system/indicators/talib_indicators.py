@@ -64,6 +64,7 @@ class TitanIndicators:
         self.add_trend()
         self.add_volatility()
         self.add_volume()
+        self.add_kalman()
         self.add_candlestick_patterns()
         return self.df
     
@@ -196,11 +197,52 @@ class TitanIndicators:
         return self.df
     
     # =========================================================================
-    # VOLUME INDICATORS  
+    # ADVANCED QUANT INDICATORS
     # =========================================================================
     
+    def add_kalman(self, process_variance: float = 0.0001, measurement_variance: float = 0.005) -> pd.DataFrame:
+        """
+        Add Kalman Filter for dynamic mean estimation.
+        Effectively a 'smart' adaptive moving average that filters noise.
+        """
+        # Kalman filter variables
+        posteri_estimate = self.close[0]
+        posteri_error_estimate = 1.0
+        
+        kalman_values = []
+        for z in self.close:
+            # Time update (Prediction)
+            priori_estimate = posteri_estimate
+            priori_error_estimate = posteri_error_estimate + process_variance
+            
+            # Measurement update (Correction)
+            gain = priori_error_estimate / (priori_error_estimate + measurement_variance)
+            posteri_estimate = priori_estimate + gain * (z - priori_estimate)
+            posteri_error_estimate = (1 - gain) * priori_error_estimate
+            kalman_values.append(posteri_estimate)
+            
+        self.df['KALMAN'] = kalman_values
+        return self.df
+
+    def add_vwap(self) -> pd.DataFrame:
+        """
+        Add Volume-Weighted Average Price (VWAP).
+        Crucial for institutional order flow analysis.
+        """
+        # Standard VWAP: Cumulative (Price * Volume) / Cumulative Volume
+        # For intra-day, it's usually reset daily. Here we do it over the whole series or window.
+        if np.any(self.volume > 0):
+            v = self.volume
+            p = (self.high + self.low + self.close) / 3
+            self.df['VWAP'] = (p * v).cumsum() / v.cumsum()
+        else:
+            # Fallback to SMA if no volume
+            self.df['VWAP'] = pd.Series(self.close).rolling(20).mean()
+            
+        return self.df
+
     def add_volume(self) -> pd.DataFrame:
-        """Add volume indicators: OBV, AD, ADOSC"""
+        """Add volume indicators: OBV, AD, ADOSC, VWAP"""
         
         if TALIB_AVAILABLE and np.any(self.volume > 0):
             # On-Balance Volume
@@ -211,6 +253,9 @@ class TitanIndicators:
             
             # Chaikin A/D Oscillator
             self.df['ADOSC'] = talib.ADOSC(self.high, self.low, self.close, self.volume)
+            
+            # VWAP
+            self.add_vwap()
         
         return self.df
     

@@ -8,7 +8,13 @@ import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
 import sys
+import os
 from pathlib import Path
+
+# Add project root to path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from titan_system.core.symbol_mapper import mapper
 
 # Technical Analysis
 from scipy.signal import argrelextrema
@@ -857,7 +863,12 @@ def main():
         print("Example: python institutional_market_analyst.py XAUUSD")
         sys.exit(1)
     
-    symbol = sys.argv[1].upper()
+    raw_symbol = sys.argv[1]
+    symbol, method = mapper.resolve(raw_symbol)
+    
+    if not symbol:
+        print(f"❌ Could not resolve symbol: {raw_symbol}")
+        sys.exit(1)
     
     print(f"\n{'='*60}")
     print(f"  INSTITUTIONAL MARKET ANALYST")

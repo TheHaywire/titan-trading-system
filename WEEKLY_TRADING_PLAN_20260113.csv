@@ -1,0 +1,26 @@
+Asset Class,Sub-Group,Instrument,Ticker,Seasonal,Trend (D/W),HTF Trend,OI Change,Positioning,Primary Bias,Conviction,Net Score,Environment,Focus,Risk Guidance,Notes
+Treasuries,2Y-10Y,2Y US Notes,ZT,Neutral,N/A/N/A,N/A,+0.0%,Mixed,Bearish,Low,-1,Range,Stand Aside,Reduced,-
+Treasuries,10Y+,10Y US Notes,ZN,Neutral,N/A/N/A,N/A,+0.0%,Mixed,Bearish,Low,-1,Range,Stand Aside,Reduced,-
+Treasuries,10Y+,30Y US Bonds,ZB,Neutral,N/A/N/A,N/A,+0.0%,Mixed,Bearish,Low,-1,Range,Stand Aside,Reduced,-
+Equities,US Large,S&P 500,ES,Neutral,N/A/N/A,N/A,+0.0%,Net Short,Neutral,Low,0,Uncertain,Stand Aside,Reduced,-
+Equities,US Large,Nasdaq 100,NQ,Neutral,N/A/N/A,N/A,+0.0%,Mixed,Bearish,Low,-1,Range,Stand Aside,Reduced,-
+Equities,US Large,Dow Jones,YM,Neutral,N/A/N/A,N/A,+0.0%,Mixed,Bearish,Low,-1,Range,Stand Aside,Reduced,-
+Equities,US Small,Russell 2000,RTY,Neutral,N/A/N/A,N/A,+0.0%,Mixed,Bearish,Low,-1,Range,Stand Aside,Reduced,-
+Equities,Europe,DAX,FDAX,Neutral,N/A/N/A,N/A,+0.0%,Mixed,Bearish,Low,-1,Range,Stand Aside,Reduced,-
+Equities,Europe,FTSE,Z,Neutral,N/A/N/A,N/A,+0.0%,Mixed,Bearish,Low,-1,Range,Stand Aside,Reduced,-
+Currencies,G10 Majors,EUR/USD,EUR,Neutral,↓/↓,Bearish,+39314473420663504.0%,Extreme Long,Bearish,High,-5,Trend,Short,Aggressive,"Positioning Extreme Long, OI Extreme"
+Currencies,G10 Majors,GBP/USD,GBP,Neutral,↑/↑,Bullish,+26992601805252432.0%,Mixed,Bullish,Medium,3,Trend,Long,Normal,OI Extreme
+Currencies,G10 Majors,USD/JPY,JPY,Positive,↑/↑,Bullish,+23426816786098296.0%,Mixed,Bullish,Medium,4,Trend,Long,Aggressive,OI Extreme
+Currencies,G10 Minors,AUD/USD,AUD,Neutral,↑/↓,Mixed,+41370616236537096.0%,Mixed,Bullish,Medium,2,Range,Long,Normal,OI Extreme
+Currencies,G10 Minors,NZD/USD,NZD,Negative,↓/↓,Bearish,+53870116735419016.0%,Mixed,Bearish,Medium,-4,Trend,Short,Aggressive,OI Extreme
+Currencies,EM,USD/TRY,TRY,Strong Positive,↑/↑,Bullish,+397131196420011840.0%,Mixed,Bullish,Medium,4,Trend,Long,Aggressive,"Seasonality Strong Positive, OI Extreme"
+Currencies,EM,USD/ZAR,ZAR,Neutral,↓/↓,Bearish,+29954766122746108.0%,Mixed,Bearish,Medium,-3,Trend,Short,Normal,OI Extreme
+Energies,Crude,WTI Crude,CL,Neutral,N/A/N/A,N/A,+0.0%,Mixed,Bearish,Low,-1,Range,Stand Aside,Reduced,-
+Energies,Crude,Brent Crude,BZ,Neutral,N/A/N/A,N/A,+0.0%,Mixed,Bearish,Low,-1,Range,Stand Aside,Reduced,-
+Energies,Gas,Natural Gas,NG,Neutral,N/A/N/A,N/A,+0.0%,Mixed,Bearish,Low,-1,Range,Stand Aside,Reduced,-
+Energies,Gas,Heating Oil,HO,Neutral,N/A/N/A,N/A,+0.0%,Mixed,Bearish,Low,-1,Range,Stand Aside,Reduced,-
+Metals,Precious,Gold,GC,Neutral,N/A/N/A,N/A,+0.0%,Mixed,Bearish,Low,-1,Range,Stand Aside,Reduced,-
+Metals,Precious,Silver,SI,Neutral,N/A/N/A,N/A,+0.0%,Mixed,Bearish,Low,-1,Range,Stand Aside,Reduced,-
+Metals,Industrial,Copper,HG,Neutral,N/A/N/A,N/A,+0.0%,Mixed,Bearish,Low,-1,Range,Stand Aside,Reduced,-
+Crypto,Major,Bitcoin,BTC,Strong Positive,↑/↑,Bullish,+39112745316687912.0%,Mixed - Retail Long,Bullish,Medium,4,Trend,Long,Aggressive,"Seasonality Strong Positive, OI Extreme"
+Crypto,Major,Ethereum,ETH,Positive,↑/↓,Mixed,+27083752861120984.0%,Mixed,Bullish,Medium,3,Trend,Long,Normal,OI Extreme

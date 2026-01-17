@@ -35,6 +35,9 @@ from titan_system.multi_symbol.orb_strategy import ORBStrategy
 from titan_system.multi_symbol.position_sizer import calculate_position_size
 from titan_system.multi_symbol.portfolio_manager import PortfolioManager
 from titan_system.strategies.mean_reversion import MeanReversionStrategy
+from titan_system.skills.registry import SkillRegistry
+from titan_system.execution.trade_manager import TradeManager
+from titan_system.db.database import Database
 
 logger = logging.getLogger("Titan.MultiSymbol.AsyncEngine")
 
@@ -107,6 +110,9 @@ class AsyncExecutionEngine:
         self.max_positions = max_positions
         self.scan_interval = scan_interval
         
+        # Intelligence Layer (NEW)
+        self.skill_registry = SkillRegistry()
+        
         # Thread pool for blocking MT5 calls
         self.executor = ThreadPoolExecutor(max_workers=max_concurrent)
         
@@ -116,6 +122,8 @@ class AsyncExecutionEngine:
         # Components
         self.scanner = UniverseScanner(max_workers=max_concurrent // 2)
         self.portfolio = PortfolioManager(max_positions=max_positions)
+        self.manager = TradeManager(managed_magics=[self.MAGIC_NUMBER])
+        self.db = Database("data/titan.db")
         
         # Strategies
         self.strategies = [
@@ -225,21 +233,42 @@ class AsyncExecutionEngine:
                             risk_percent=self.risk_percent,
                             symbol=symbol.symbol
                         )
-                        
                         if size_result.is_valid:
+                            # --- INTELLIGENCE SKILLS CHECK ---
+                            # Check skills before adding signal to execution queue
+                            skill_results = await self.skill_registry.evaluate_all(symbol.symbol)
+                            if skill_results['status'] == 'BLOCK':
+                                logger.info(f"🚫 [SKILL BLOCK] {symbol.symbol} rejected: {', '.join(skill_results['reasons'])}")
+                                
+                                # Record Decision
+                                self.db.record_decision(
+                                    symbol=symbol.symbol,
+                                    decision="REJECTED_SKILL",
+                                    reason=", ".join(skill_results['reasons']),
+                                    score=result.get('confidence', 0.5),
+                                    strategy=strategy.name,
+                                    metadata={"rvol": symbol.rvol, "spread": symbol.spread}
+                                )
+                                continue
+                                
+                            # Apply risk adjustments if any
+                            adj_lot = size_result.lot_size * skill_results['adjustment']
+                            if adj_lot < 0.01: adj_lot = 0.01
+
                             signal = TradeSignal(
                                 symbol=symbol.symbol,
                                 direction=result['signal'],
                                 entry_price=result.get('entry', symbol.last_price),
                                 stop_loss=result['stop_loss'],
                                 take_profit=result['take_profit'],
-                                lot_size=size_result.lot_size,
+                                lot_size=adj_lot,
                                 strategy=strategy.name,
                                 confidence=result.get('confidence', 0.5),
                                 metadata={
                                     'rvol': symbol.rvol,
                                     'atr': symbol.atr,
                                     'spread': symbol.spread,
+                                    'skill_reasons': skill_results['reasons'],
                                     **result.get('metadata', {})
                                 }
                             )
@@ -392,6 +421,23 @@ class AsyncExecutionEngine:
                 
                 logger.info(f"\n--- CYCLE {self.cycle_count} ---")
                 
+                # 0. MANAGE: Apply tiered protection and adaptive exits
+                # Fetch recent context for active positions
+                current_pos = mt5.positions_get(magic=self.MAGIC_NUMBER)
+                if current_pos:
+                    # Provide simple context for adaptive logic
+                    # In a full impl, we'd fetch H1 data for all 1500, but here we focusing on active
+                    mgmt_scans = []
+                    for p in current_pos:
+                        # Fetch minimal context for active trades
+                        rates = await self.fetch_ohlcv(p.symbol, timeframe=mt5.TIMEFRAME_H1, bars=50)
+                        if rates is not None:
+                            sma20 = rates['close'].rolling(20).mean().iloc[-1]
+                            bias = 'BULLISH' if p.price_current > sma20 else 'BEARISH'
+                            mgmt_scans.append({'symbol': p.symbol, 'bias': bias, 'regime': {'current': 'TRENDING'}})
+                    
+                    self.manager.monitor_active_trades(market_scans=mgmt_scans)
+
                 # 1. SCAN: Get active symbols (run in executor to not block)
                 loop = asyncio.get_event_loop()
                 active_symbols = await loop.run_in_executor(

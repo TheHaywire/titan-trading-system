@@ -90,15 +90,18 @@ class ProfileEngine:
         
         price_bins = np.linspace(min_price, max_price, bins + 1)
         
-        tpo_counts = np.zeros(bins)
+        # Vectorized TPO calculation
+        lows = df['low'].values
+        highs = df['high'].values
         
-        for _, row in df.iterrows():
-            # For each bar, mark all price bins it covered
-            b_low = row['low']
-            b_high = row['high']
-            
-            indices = np.where((price_bins[:-1] <= b_high) & (price_bins[1:] >= b_low))[0]
-            tpo_counts[indices] += 1
+        # Create a matrix of [bins, bars] to check coverage
+        # price_bins[:-1] is bin low, price_bins[1:] is bin high
+        bin_lows = price_bins[:-1][:, np.newaxis]
+        bin_highs = price_bins[1:][:, np.newaxis]
+        
+        # Coverage check: bin covers bar if (bin_low <= bar_high) AND (bin_high >= bar_low)
+        coverage = (bin_lows <= highs) & (bin_highs >= lows)
+        tpo_counts = coverage.sum(axis=1)
             
         prices = (price_bins[:-1] + price_bins[1:]) / 2
         

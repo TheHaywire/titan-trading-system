@@ -21,6 +21,7 @@ Generate a complete multi-timeframe market analysis report with embedded visual 
 
 Complete analysis package including:
 
+### Core Analysis
 ✅ **Multi-Timeframe Analysis** (1M, 5M, 15M, 30M, 1H, 4H, 1D, 1W)
 ✅ **Visual Charts** - Embedded charts for key timeframes (1W, 1D, 4H, 1H)
 ✅ **Technical Indicators** - RSI, Moving Averages, ATR, ADX, Bollinger Bands
@@ -28,16 +29,23 @@ Complete analysis package including:
 ✅ **Support & Resistance** - Auto-detected levels
 ✅ **Fibonacci Levels** - Auto-calculated retracements
 ✅ **Confluence Zones** - Multi-timeframe overlap areas
-✅ **Action Plans** - IF-THEN trading scenarios
 ✅ **Trader Recommendations** - Position/Swing/Day strategies
-✅ **Ready Setups** -Entry/SL/TP with R:R ratios
+
+### Output Includes
+- MTF alignment matrix with RSI, ADX, regime for each TF
+- Key levels with confluence count
+- Divergence detection (bullish/bearish)
+- Ascending/Descending patterns
+- Entry/SL/TP recommendations
+
+> **TIP**: For FULL 7-layer institutional setup with order flow, probability matrices, and professional assessment, use `/pro [SYMBOL]` instead.
 
 ## How to Run
 
 // turbo
-1. Set encoding and run the complete analyst
+1. Run the Professional 'Master Setup' Analyst v2.0
 ```powershell
-$env:PYTHONIOENCODING='utf-8'; python scripts/institutional_market_analyst.py GOLD
+$env:PYTHONIOENCODING='utf-8'; python scripts/institutional_market_analyst_v2.py GOLD
 ```
 
 2. Generate visual charts for key timeframes

@@ -50,6 +50,7 @@ class SignalFilter:
     """
     
     MODEL_PATH = "titan_system/ml/signal_model.pkl"
+    GENERAL_MODEL_PATH = "titan_system/ml/general_model.pkl"
     
     def __init__(self, confidence_threshold: float = 0.55):
         """
@@ -60,6 +61,7 @@ class SignalFilter:
         """
         self.threshold = confidence_threshold
         self.model = None
+        self.general_model = None
         self.feature_names = None
         self.is_trained = False
         
@@ -70,95 +72,53 @@ class SignalFilter:
         # Try to load existing model
         self._load_model()
     
-    def _create_features(self, signal_data: Dict) -> np.ndarray:
-        """
-        Create feature vector from signal data.
-        
-        Expected signal_data keys:
-        - rsi: RSI value (0-100)
-        - adx: ADX value
-        - ema_diff: EMA9 - EMA21 (normalized)
-        - atr_pct: ATR as % of price
-        - regime: 'TRENDING', 'MEAN_REVERTING', 'HIGH_VOLATILITY'
-        - direction: 'BUY' or 'SELL'
-        - score: Signal score (50-100)
-        - hour: Hour of day (0-23)
-        - candlestick_score: Net candlestick pattern score
-        - range_position: Position in 20-bar range (0-1)
-        """
+    def _normalize_row(self, row: Dict) -> np.ndarray:
+        """Normalize a single row of features (for predict)"""
         features = []
+        features.append(row.get('rsi', 50) / 100)
+        features.append(row.get('adx', 20) / 50)
+        features.append(row.get('ema_diff', 0))
+        features.append(row.get('atr_pct', 0.01))
+        features.append(row.get('range_position', 0.5))
         
-        # Momentum features
-        features.append(signal_data.get('rsi', 50) / 100)  # Normalized 0-1
-        features.append(signal_data.get('adx', 20) / 50)   # Normalized
-        features.append(signal_data.get('ema_diff', 0))    # Already normalized
-        
-        # Volatility features
-        features.append(signal_data.get('atr_pct', 0.01))  # ATR as % of price
-        features.append(signal_data.get('range_position', 0.5))
-        
-        # Regime encoding (one-hot)
-        regime = signal_data.get('regime', 'UNKNOWN')
+        regime = row.get('regime', 'UNKNOWN')
         features.append(1 if regime == 'TRENDING' else 0)
         features.append(1 if regime == 'MEAN_REVERTING' else 0)
         features.append(1 if regime == 'HIGH_VOLATILITY' else 0)
         
-        # Direction encoding
-        direction = signal_data.get('direction', 'BUY')
-        features.append(1 if direction == 'BUY' else 0)
+        features.append(1 if row.get('direction', 'BUY') == 'BUY' else 0)
+        features.append(row.get('score', 50) / 100)
         
-        # Score (normalized)
-        features.append(signal_data.get('score', 50) / 100)
-        
-        # Time features
-        hour = signal_data.get('hour', datetime.now().hour)
-        # Encode as sin/cos for cyclical nature
+        hour = row.get('hour', datetime.now().hour)
         features.append(np.sin(2 * np.pi * hour / 24))
         features.append(np.cos(2 * np.pi * hour / 24))
-        
-        # Session encoding (London, NY, Asian)
-        features.append(1 if 7 <= hour <= 16 else 0)  # London
-        features.append(1 if 13 <= hour <= 22 else 0)  # NY
-        
-        # Candlestick features
-        features.append(signal_data.get('candlestick_score', 0) / 5)  # Normalized
+        features.append(1 if 7 <= hour <= 16 else 0)
+        features.append(1 if 13 <= hour <= 22 else 0)
+        features.append(row.get('candlestick_score', 0) / 5)
         
         return np.array(features).reshape(1, -1)
-    
+
     def _get_feature_names(self) -> list:
-        """Get list of feature names for interpretability"""
         return [
-            'rsi_norm', 'adx_norm', 'ema_diff',
-            'atr_pct', 'range_position',
+            'rsi_norm', 'adx_norm', 'ema_diff', 'atr_pct', 'range_position',
             'regime_trending', 'regime_mean_rev', 'regime_high_vol',
-            'direction_buy',
-            'score_norm',
-            'hour_sin', 'hour_cos',
-            'session_london', 'session_ny',
-            'candlestick_score'
+            'direction_buy', 'score_norm', 'hour_sin', 'hour_cos',
+            'session_london', 'session_ny', 'candlestick_score'
         ]
-    
-    def train(self, trades_df: pd.DataFrame, target_col: str = 'profitable'):
+
+    def train(self, df: pd.DataFrame, target_col: str = 'outcome', model_type: str = 'personal'):
         """
-        Train the signal filter on historical trades.
-        
-        Args:
-            trades_df: DataFrame with trade features and outcome
-            target_col: Column name for binary target (1=profitable, 0=loss)
+        Train the model. Expects a dataframe with columns from _get_feature_names().
+        model_type: 'personal' or 'general'
         """
-        if not LIGHTGBM_AVAILABLE:
-            logger.warning("[ML] Cannot train - LightGBM not available")
-            return
+        if not LIGHTGBM_AVAILABLE: return
         
-        logger.info("[ML] Training signal filter...")
+        feature_names = self._get_feature_names()
+        self.feature_names = feature_names
         
-        # Create feature matrix
-        feature_cols = self._get_feature_names()
-        self.feature_names = feature_cols
-        
-        # Prepare data
-        X = trades_df[feature_cols].values
-        y = trades_df[target_col].values
+        # Ensure only required columns are used
+        X = df[feature_names].values
+        y = df[target_col].values
         
         # Train/test split (80/20)
         n_train = int(len(X) * 0.8)
@@ -166,7 +126,7 @@ class SignalFilter:
         y_train, y_test = y[:n_train], y[n_train:]
         
         # Create LightGBM dataset
-        train_data = lgb.Dataset(X_train, label=y_train, feature_name=feature_cols)
+        train_data = lgb.Dataset(X_train, label=y_train, feature_name=feature_names)
         test_data = lgb.Dataset(X_test, label=y_test, reference=train_data)
         
         # Training parameters
@@ -184,7 +144,8 @@ class SignalFilter:
         }
         
         # Train model
-        self.model = lgb.train(
+        # Train model
+        trained_model = lgb.train(
             params,
             train_data,
             num_boost_round=200,
@@ -192,15 +153,21 @@ class SignalFilter:
             callbacks=[lgb.early_stopping(50)]
         )
         
+        if model_type == 'general':
+            self.general_model = trained_model
+        else:
+            self.model = trained_model
+        
         self.is_trained = True
         
         # Evaluate
-        y_pred = self.model.predict(X_test)
+        model_to_test = self.general_model if model_type == 'general' else self.model
+        y_pred = model_to_test.predict(X_test)
         accuracy = np.mean((y_pred > 0.5) == y_test)
         logger.info(f"[ML] Model trained - Test accuracy: {accuracy:.1%}")
         
         # Save model
-        self._save_model()
+        self._save_model(model_type)
         
         return accuracy
     
@@ -219,8 +186,26 @@ class SignalFilter:
             return 0.5, True
         
         try:
-            features = self._create_features(signal_data)
-            probability = self.model.predict(features)[0]
+            features = self._normalize_row(signal_data)
+            
+            # Personal Model Prediction
+            prob_personal = self.model.predict(features)[0] if self.model else 0.5
+            
+            # General Model Prediction (if available)
+            prob_general = self.general_model.predict(features)[0] if self.general_model else prob_personal
+            
+            # Weighted Ensemble (40% Personal, 60% General)
+            # If no general model, use personal. If no personal, use general.
+            if self.model and self.general_model:
+                probability = (0.4 * prob_personal) + (0.6 * prob_general)
+                logger.info(f"[ML] DUAL-BRAIN: Personal={prob_personal:.2%} | General={prob_general:.2%} -> Fused={probability:.2%}")
+            elif self.general_model:
+                probability = prob_general
+                logger.info(f"[ML] GENERAL-ONLY: Prob={probability:.2%}")
+            else:
+                probability = prob_personal
+                logger.info(f"[ML] PERSONAL-ONLY: Prob={probability:.2%}")
+                
             should_trade = probability >= self.threshold
             
             return probability, should_trade
@@ -237,40 +222,49 @@ class SignalFilter:
         importance = self.model.feature_importance(importance_type='gain')
         return dict(zip(self.feature_names, importance))
     
-    def _save_model(self):
+    def _save_model(self, model_type: str = 'personal'):
         """Save trained model to disk"""
-        if not self.is_trained:
-            return
+        target_path = self.GENERAL_MODEL_PATH if model_type == 'general' else self.MODEL_PATH
+        target_model = self.general_model if model_type == 'general' else self.model
         
-        os.makedirs(os.path.dirname(self.MODEL_PATH), exist_ok=True)
+        if not target_model: return
         
-        with open(self.MODEL_PATH, 'wb') as f:
+        os.makedirs(os.path.dirname(target_path), exist_ok=True)
+        
+        with open(target_path, 'wb') as f:
             pickle.dump({
-                'model': self.model,
+                'model': target_model,
                 'feature_names': self.feature_names,
                 'threshold': self.threshold
             }, f)
         
-        logger.info(f"[ML] Model saved to {self.MODEL_PATH}")
+        logger.info(f"[ML] {model_type.title()} Model saved to {target_path}")
     
     def _load_model(self):
-        """Load trained model from disk"""
-        if not os.path.exists(self.MODEL_PATH):
-            return
-        
-        try:
-            with open(self.MODEL_PATH, 'rb') as f:
-                data = pickle.load(f)
-            
-            self.model = data['model']
-            self.feature_names = data['feature_names']
-            self.threshold = data.get('threshold', 0.55)
-            self.is_trained = True
-            
-            logger.info(f"[ML] Model loaded from {self.MODEL_PATH}")
-            
-        except Exception as e:
-            logger.warning(f"[ML] Failed to load model: {e}")
+        """Load trained models from disk"""
+        # Load Personal Model
+        if os.path.exists(self.MODEL_PATH):
+            try:
+                with open(self.MODEL_PATH, 'rb') as f:
+                    data = pickle.load(f)
+                self.model = data['model']
+                self.feature_names = data['feature_names']
+                self.threshold = data.get('threshold', 0.55)
+                self.is_trained = True
+                logger.info(f"[ML] Personal Model loaded from {self.MODEL_PATH}")
+            except Exception as e:
+                logger.warning(f"[ML] Failed to load Personal model: {e}")
+
+        # Load General Model
+        if os.path.exists(self.GENERAL_MODEL_PATH):
+            try:
+                with open(self.GENERAL_MODEL_PATH, 'rb') as f:
+                    data = pickle.load(f)
+                self.general_model = data['model']
+                # Assume feature names match for now
+                logger.info(f"[ML] General Model loaded from {self.GENERAL_MODEL_PATH}")
+            except Exception as e:
+                logger.warning(f"[ML] Failed to load General model: {e}")
 
 
 class QuickSignalScorer:

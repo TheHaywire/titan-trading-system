@@ -1,0 +1,32 @@
+﻿python : Traceback (most recent call last):
+At line:1 char:1
++ python scripts/strategy_council.py 2>&1 | 
+Out-File -Encoding UTF8 dat ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Trac 
+   eback (most recent call last)::String) [], Re  
+  moteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File 
+"C:\Users\manan\OneDrive\Documents\Metatrader 
+Trading System 
+7-12-2025\scripts\strategy_council.py", line 535, 
+in <module>
+    main()
+  File 
+"C:\Users\manan\OneDrive\Documents\Metatrader 
+Trading System 
+7-12-2025\scripts\strategy_council.py", line 526, 
+in main
+    print(report)
+  File "C:\Users\manan\AppData\Local\Programs\Pyth
+on\Python311\Lib\encodings\cp1252.py", line 19, 
+in encode
+    return codecs.charmap_encode(input,self.errors
+,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode 
+characters in position 2-3: character maps to 
+<undefined>

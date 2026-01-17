@@ -1,6 +1,6 @@
 # 📑 Complete Broker Symbol Catalog (Institutional)
 
-**Last Sync Date**: 2026-01-01 19:46:53
+**Last Sync Date**: 2026-01-08 19:09:26
 **Total Symbols**: 1520
 **Tradeable Symbols**: 1476
 
@@ -664,7 +664,7 @@
 | ITV | ITV PLC (ITV.L) | 10.0 | 0.001 | -8.97/-1.03 | 4 |
 | Inchcape | Inchcape PLC (INCH.L) | 10.0 | 0.001 | -8.97/-1.03 | 4 |
 | Informa | Informa PLC (INF.L) | 10.0 | 0.01 | -8.97/-1.03 | 4 |
-| InterContinental | InterContinental Hotels Group PLC (IHG.L) | 10.0 | 0.01 | -8.97/-1.03 | 4 |
+| InterContinental | InterContinental Hotels Group PLC (IHG.L) | 10.0 | 0.01 | -8.97/-1.03 | 3 |
 | IntermediateCapital | ICG  PLC (ICGIN.L) | 10.0 | 0.001 | -8.97/-1.03 | 4 |
 | Intertek | Intertek Group PLC (ITRK.L) | 10.0 | 0.01 | -8.97/-1.03 | 4 |
 | Investec | Investec PLC (INVP.L) | 10.0 | 0.001 | -8.97/-1.03 | 4 |

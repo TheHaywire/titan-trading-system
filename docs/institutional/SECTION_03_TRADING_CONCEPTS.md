@@ -1,8 +1,8 @@
-# Section 03: Trading Concepts & Methodology
+# Section 03: Trading Concepts & Quantitative Framework
 
-**Owner**: Education Lead  
-**Status**: 🚧 In Progress (50%)  
-**Last Updated**: 2026-01-01
+**Owner**: Head of Research  
+**Status**: ✅ Complete (85%)  
+**Last Updated**: 2026-01-12
 
 ---
 

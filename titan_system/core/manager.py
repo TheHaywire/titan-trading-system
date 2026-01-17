@@ -16,26 +16,43 @@ logger = logging.getLogger("Titan.Manager")
 class TradeManager:
     def __init__(self, execution_client):
         self.execution = execution_client
+        self._commentary = []
 
-    def manage_active_trades(self):
+    def manage_active_trades(self, market_scans=None):
         """Main entry point called by the engine heartbeat."""
+        self._commentary = [] # Clear for this cycle
         if not self.execution.connected:
-            return
+            return []
 
         positions = mt5.positions_get()
         if not positions:
             return
 
-        for pos in positions:
-            self._process_position(pos)
+        # Prepare market context map for fast lookup
+        context_map = {}
+        if market_scans:
+            context_map = {scan['symbol']: scan for scan in market_scans if scan}
 
-    def _process_position(self, pos):
-        """Evaluates a single position for lifecycle updates."""
+        for pos in positions:
+            # Get current context for this symbol if available
+            symbol_context = context_map.get(pos.symbol)
+            self._process_position(pos, symbol_context)
+            
+        return self._commentary
+
+    def _process_position(self, pos, context=None):
+        """Evaluates a single position for lifecycle updates and alignment."""
         try:
             # 2. Skip positions not managed by Titan (based on magic number)
-            # Magic number 234000 is used in execution.py
-            if pos.magic != 234000:
+            # Both core (234000) and multi-symbol (234001) are tracked
+            if pos.magic not in [234000, 234001]:
                 return
+
+            # A. Adaptive Invalidation Check (Unalignment)
+            # If we have market context, check if the trade still makes sense
+            if context:
+                if self._eval_contextual_alignment(pos, context):
+                    return # Position was closed due to invalidation
 
             # 3. Calculate Risk:Reward Metrics
             entry = pos.price_open
@@ -43,36 +60,78 @@ class TradeManager:
             sl = pos.sl
             
             # State Management: Is it already at Break-Even?
-            # Buffer for BE: sl within 1 or 2 ticks of entry
             tick_size = mt5.symbol_info(pos.symbol).trade_tick_size
-            is_be = abs(sl - entry) <= (10 * tick_size) # 10 ticks margin for BE
+            is_be = abs(sl - entry) <= (10 * tick_size) if sl > 0 else False
             
-            # A. If at BE, handle Trailing Stop
+            # 1:1 RR Trigger Logic (if not at BE)
+            if not is_be and sl > 0:
+                risk_dist = abs(entry - sl)
+                profit_dist = (current - entry) if pos.type == mt5.POSITION_TYPE_BUY else (entry - current)
+                
+                if profit_dist >= risk_dist:
+                    self._trigger_lifecycle_alpha(pos)
+                    return
+
+            # Trailing Stop (if at BE or as requested)
             if is_be:
                 self._handle_trailing_stop(pos)
-                return
-
-            # B. If not at BE, check for 1:1 RR Trigger (Operational Alpha)
-            if sl == 0:
-                # No Stop Loss? Cannot calculate RR.
-                return
-
-            # Risk Distance (Initial)
-            risk_dist = abs(entry - sl)
-            if risk_dist == 0: return
-
-            # Current Profit Distance
-            if pos.type == mt5.POSITION_TYPE_BUY:
-                profit_dist = current - entry
-            else:
-                profit_dist = entry - current
-
-            # 4. Check for 1:1 RR Trigger
-            if profit_dist >= risk_dist:
-                self._trigger_lifecycle_alpha(pos)
 
         except Exception as e:
             logger.error(f"Error managing position {pos.ticket}: {e}")
+
+    def _eval_contextual_alignment(self, pos, context):
+        """
+        Adaptive Exit Logic: Proactively closes trades that lose alignment.
+        Returns True if position was closed.
+        """
+        bias = context.get('bias', 'NEUTRAL')
+        regime = context.get('regime', {}).get('current', 'UNKNOWN')
+        symbol = pos.symbol
+        
+        # 1. Bias Flip (The "Zombie Trade" Killer)
+        # If in a BUY but bias is now BEARISH
+        should_exit = False
+        reason = ""
+        
+        if pos.type == mt5.POSITION_TYPE_BUY and bias == 'BEARISH':
+            should_exit = True
+            reason = "Bias Flip (BULL -> BEAR)"
+        elif pos.type == mt5.POSITION_TYPE_SELL and bias == 'BULLISH':
+            should_exit = True
+            reason = "Bias Flip (BEAR -> BULL)"
+            
+        # 2. Regime Shift Analysis
+        # If in a Trend trade but regime is now LOW_VOLATILITY or SQUEEZE
+        if regime in ['LOW_VOLATILITY', 'RANGE']:
+            # For Trend trades, range periods are dangerous "zombie" zones
+            if pos.profit < 0: # Only exit losers in chop, give winners a chance to trail
+                should_exit = True
+                reason = f"Regime Shift to {regime} (Edge Evaporated)"
+
+        if should_exit:
+            logger.warning(f"🚨 [ADAPTIVE EXIT] {symbol} {pos.ticket}: {reason}")
+            self._commentary.append(f"PROTECTION: Closing {symbol} loser early. {reason}")
+            
+            # Record Decision in Ledger
+            try:
+                from titan_system.db.database import Database
+                db = Database(self.execution.config.db_path)
+                db.record_decision(
+                    symbol=symbol,
+                    decision="ADAPTIVE_EXIT",
+                    reason=reason,
+                    score=0.0,
+                    metadata={"ticket": pos.ticket, "profit": pos.profit, "type": pos.type}
+                )
+            except Exception as e:
+                logger.error(f"Failed to record adaptive exit decision: {e}")
+
+            success = self.execution.close_position(pos.ticket, comment=f"Titan-AdaptiveExit")
+            if success:
+                logger.info(f"✅ Closed {symbol} ({pos.ticket}) proactively to prevent 'Zombie Trade'.")
+                return True
+        
+        return False
 
     def _trigger_lifecycle_alpha(self, pos):
         """Executes Partial Close and Move to Break-Even."""
@@ -89,6 +148,7 @@ class TradeManager:
             success_close = self.execution.close_partial(pos.ticket, normalized_half)
             if success_close:
                 logger.info(f"💰 Scaled out 50% ({normalized_half} lots) on {pos.symbol}")
+                self._commentary.append(f"PROFIT: Scaled out 50% on {pos.symbol} at 1:1 RR.")
             else:
                 logger.warning(f"❌ Failed to scale out on {pos.symbol}")
                 return # If partial close fails, we might not want to move SL yet? (Actually usually we still do)
@@ -109,6 +169,7 @@ class TradeManager:
         success_mod = self.execution.modify_position(pos.ticket, sl=be_price)
         if success_mod:
             logger.info(f"🛡️ Position {pos.ticket} moved to Break-Even.")
+            self._commentary.append(f"SAFETY: Moved {pos.symbol} to Break-Even. Risk is now Zero.")
             # Note: We can't update the comment via modify_position in MT5 easily without a new order,
             # but my modify_position uses TRADE_ACTION_SLTP which doesn't support comments.
             # To track state, we'll rely on the logic that sl == be_price in the next loop.

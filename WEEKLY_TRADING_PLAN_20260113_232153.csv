@@ -1,0 +1,21 @@
+Asset Class,Sub-Group,Instrument,Ticker,Seasonal,Trend (D/W),HTF Trend,OI Change,Positioning,Primary Bias,Conviction,Net Score,Environment,Focus,Risk Guidance,Notes
+Equities,US Large,S&P 500,ES,Strong Positive,↑/↑,Bullish,-37.9%,Net Short,Bullish,High,5,Trend,Long,Aggressive,"Seasonality Strong Positive, OI Extreme"
+Equities,US Large,Nasdaq 100,NQ,Strong Positive,↑/↑,Bullish,-46.5%,Mixed,Bullish,Medium,4,Trend,Long,Aggressive,"Seasonality Strong Positive, OI Extreme"
+Equities,US Large,Dow Jones,YM,Strong Positive,↑/↑,Bullish,-28.1%,Mixed,Bullish,Medium,4,Trend,Long,Aggressive,"Seasonality Strong Positive, OI Extreme"
+Equities,US Small,Russell 2000,RTY,Positive,↑/↑,Bullish,-51.0%,Mixed,Bullish,Medium,4,Trend,Long,Aggressive,OI Extreme
+Equities,Europe,DAX,FDAX,Strong Positive,↑/↑,Bullish,+2.3%,Mixed,Bullish,Medium,4,Trend,Long,Aggressive,Seasonality Strong Positive
+Equities,Europe,FTSE,FTSE,Strong Positive,↑/↑,Bullish,-31.9%,Mixed,Bullish,Medium,4,Trend,Long,Aggressive,"Seasonality Strong Positive, OI Extreme"
+Currencies,G10 Majors,EUR/USD,EUR,Neutral,↓/↓,Bearish,-18.8%,Extreme Long,Bearish,High,-5,Trend,Short,Aggressive,Positioning Extreme Long
+Currencies,G10 Majors,GBP/USD,GBP,Neutral,↓/↓,Bearish,-10.8%,Mixed,Bearish,Medium,-3,Trend,Short,Normal,-
+Currencies,G10 Majors,USD/JPY,JPY,Positive,↑/↑,Bullish,+13.2%,Mixed,Bullish,Medium,4,Trend,Long,Aggressive,-
+Currencies,G10 Minors,AUD/USD,AUD,Neutral,↑/↓,Mixed,-5.7%,Mixed,Bullish,Medium,2,Range,Long,Normal,-
+Currencies,G10 Minors,NZD/USD,NZD,Strong Negative,↓/↓,Bearish,-9.9%,Mixed,Bearish,Medium,-4,Trend,Short,Aggressive,Seasonality Strong Negative
+Currencies,EM,USD/TRY,TRY,Strong Positive,↑/↑,Bullish,-14.6%,Mixed,Bullish,Medium,4,Trend,Long,Aggressive,Seasonality Strong Positive
+Currencies,EM,USD/ZAR,ZAR,Neutral,↓/↓,Bearish,-40.2%,Mixed,Bearish,Medium,-3,Trend,Short,Normal,OI Extreme
+Energies,Crude,WTI Crude,CL,Strong Positive,↑/↑,Bullish,-21.9%,Mixed,Bullish,Medium,4,Trend,Long,Aggressive,"Seasonality Strong Positive, OI Extreme"
+Energies,Crude,Natural Gas,NG,Strong Negative,↓/↓,Bearish,-42.5%,Mixed,Bearish,Medium,-4,Trend,Short,Aggressive,"Seasonality Strong Negative, OI Extreme"
+Metals,Precious,Gold,GC,Strong Positive,↑/↑,Bullish,-24.9%,Deep Speculative Long,Bullish,Medium,3,Trend,Long,Normal,"Seasonality Strong Positive, OI Extreme"
+Metals,Precious,Silver,SI,Positive,↑/↑,Bullish,-23.9%,Mixed,Bullish,Medium,4,Trend,Long,Aggressive,OI Extreme
+Metals,Industrial,Copper,HG,Strong Positive,↑/↑,Bullish,-80.0%,Mixed,Bullish,Medium,4,Trend,Long,Aggressive,"Seasonality Strong Positive, OI Extreme"
+Crypto,Major,Bitcoin,BTC,Strong Positive,↑/↑,Bullish,-26.7%,Mixed - Retail Long,Bullish,Medium,4,Trend,Long,Aggressive,"Seasonality Strong Positive, OI Extreme"
+Crypto,Major,Ethereum,ETH,Positive,↑/↑,Bullish,-34.3%,Mixed,Bullish,Medium,4,Trend,Long,Aggressive,OI Extreme

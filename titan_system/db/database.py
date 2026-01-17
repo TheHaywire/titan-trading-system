@@ -123,6 +123,20 @@ class Database:
         )
         ''')
 
+        # 5. Signal Decisions (Invalidation Database)
+        cursor.execute('''
+        CREATE TABLE IF NOT EXISTS signal_decisions (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+            symbol TEXT,
+            decision TEXT,
+            reason TEXT,
+            score REAL,
+            strategy TEXT,
+            metadata JSON
+        )
+        ''')
+
         conn.commit()
         print("Database: Storage Layer Initialized (SQLite + SharedConnection)")
 
@@ -164,6 +178,30 @@ class Database:
             results.append(dict(zip(columns, row)))
             
         return results
+
+    # --- Decision Methods ---
+    def record_decision(self, symbol: str, decision: str, reason: str, score: float, strategy: str = "", metadata: Dict = None):
+        """Records a trade decision (Skip, Execution, Exit)."""
+        conn = self._get_conn()
+        cursor = conn.cursor()
+        
+        meta_json = json.dumps(metadata) if metadata else None
+        
+        cursor.execute('''
+        INSERT INTO signal_decisions (symbol, decision, reason, score, strategy, metadata)
+        VALUES (?, ?, ?, ?, ?, ?)
+        ''', (symbol, decision, reason, score, strategy, meta_json))
+        
+        conn.commit()
+
+    def get_latest_decisions(self, limit=20) -> List[Dict]:
+        """Fetch latest signal decisions for real-time dashboard/audit."""
+        conn = self._get_conn()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM signal_decisions ORDER BY id DESC LIMIT ?", (limit,))
+        rows = cursor.fetchall()
+        columns = [description[0] for description in cursor.description]
+        return [dict(zip(columns, row)) for row in rows]
 
     # --- Log Methods ---
     def log(self, level: str, component: str, message: str, metadata: Dict = None):

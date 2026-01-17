@@ -1,26 +1,24 @@
 import MetaTrader5 as mt5
 import pandas as pd
 
-def check_symbols():
-    if not mt5.initialize():
-        print("MT5 Initialize failed")
-        return
+if not mt5.initialize():
+    print("MT5 initialization failed")
+    quit()
 
-    print("Searching for Gold-related symbols...")
-    symbols = mt5.symbols_get()
+symbols = mt5.symbols_get()
+if symbols is None:
+    print("No symbols found")
+else:
+    print(f"Total symbols found: {len(symbols)}")
+    # Print a few to see naming convention
+    symbol_names = [s.name for s in symbols]
+    print("Sample symbols:", symbol_names[:20])
     
-    found = []
-    for s in symbols:
-        if "GOLD" in s.name.upper() or "XAU" in s.name.upper():
-            found.append(s.name)
-            print(f"Found: {s.name} (Path: {s.path})")
-            
-    if not found:
-        print("No symbols matching GOLD or XAU found. Listing first 10 symbols:")
-        for s in symbols[:10]:
-            print(s.name)
-            
-    mt5.shutdown()
+    # Check for specific ones we need
+    targets = ["US100", "US500", "GOLD", "XAUUSD", "EURUSD", "GER40", "DE40", "ZN", "ZB"]
+    print("\nTarget Check:")
+    for t in targets:
+        matches = [s for s in symbol_names if t in s]
+        print(f"{t}: {matches}")
 
-if __name__ == "__main__":
-    check_symbols()
+mt5.shutdown()

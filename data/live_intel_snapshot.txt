@@ -1,0 +1,33 @@
+======================================================================
+REAL-TIME MARKET INTELLIGENCE - Key Symbols
+======================================================================
+
+GOLD:
+  Spread: 46 | ATR: 1717 | Ratio: 2.7% | Adrenaline: 37.3 | EXCELLENT
+SILVER:
+  Spread: 41 | ATR: 1315 | Ratio: 3.1% | Adrenaline: 32.1 | EXCELLENT
+EURUSD:
+  Spread: 20 | ATR: 89 | Ratio: 22.4% | Adrenaline: 4.5 | AVOID
+GBPUSD:
+  Spread: 24 | ATR: 116 | Ratio: 20.7% | Adrenaline: 4.8 | AVOID
+USDJPY:
+  Spread: 24 | ATR: 192 | Ratio: 12.5% | Adrenaline: 8.0 | FAIR
+US100Cash:
+  Spread: 220 | ATR: 5804 | Ratio: 3.8% | Adrenaline: 26.4 | EXCELLENT
+US30Cash:
+  Spread: 450 | ATR: 7089 | Ratio: 6.3% | Adrenaline: 15.8 | GOOD
+GER40Cash:
+  Spread: 200 | ATR: 3240 | Ratio: 6.2% | Adrenaline: 16.2 | GOOD
+JP225Cash:
+  Spread: 7 | ATR: 141 | Ratio: 5.0% | Adrenaline: 20.1 | EXCELLENT
+BTCUSD:
+  Spread: 5000 | ATR: 41252 | Ratio: 12.1% | Adrenaline: 8.3 | FAIR
+ETHUSD:
+  Spread: 490 | ATR: 2076 | Ratio: 23.6% | Adrenaline: 4.2 | AVOID
+OILCash:
+  Spread: 3 | ATR: 30 | Ratio: 10.1% | Adrenaline: 9.9 | FAIR
+BRENTCash:
+  Spread: 3 | ATR: 31 | Ratio: 9.6% | Adrenaline: 10.4 | GOOD
+
+Session: NEW_YORK (UTC 18:00)
+Time: 23:50:31

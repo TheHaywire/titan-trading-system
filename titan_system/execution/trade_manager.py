@@ -17,18 +17,93 @@ class TradeManager:
         self.managed_magics = managed_magics or [234001, 777777, 888888, 999001, 123456]
         self.heartbreak_threshold = 100.0 # $ amount identifying a "reversing" trade
 
-    def monitor_active_trades(self):
+    def monitor_active_trades(self, market_scans=None):
         """Polls MT5 for open positions and applies tiered de-risking."""
         positions = mt5.positions_get()
         if positions is None:
             return
+
+        # Prepare market context map for fast lookup
+        context_map = {}
+        if market_scans:
+            context_map = {scan['symbol']: scan for scan in market_scans if scan}
 
         for pos in positions:
             # Filter by magic number if specified
             if self.managed_magics and pos.magic not in self.managed_magics:
                 continue
             
+            # Get current context for this symbol if available
+            symbol_context = context_map.get(pos.symbol)
+            
+            # NEW: Adaptive Contextual Invalidation
+            if symbol_context:
+                if self._eval_contextual_alignment(pos, symbol_context):
+                    continue
+
             self.apply_tier_protection(pos)
+
+    def _eval_contextual_alignment(self, pos, context):
+        """Proactively closes trades that lose alignment with market bias/regime."""
+        bias = context.get('bias', 'NEUTRAL')
+        regime = context.get('regime', {}).get('current', 'UNKNOWN')
+        symbol = pos.symbol
+        
+        should_exit = False
+        reason = ""
+        
+        # 1. Bias Flip
+        if pos.type == 0 and bias == 'BEARISH': # BUY
+            should_exit = True
+            reason = "Bias Flip (BULL -> BEAR)"
+        elif pos.type == 1 and bias == 'BULLISH': # SELL
+            should_exit = True
+            reason = "Bias Flip (BEAR -> BULL)"
+            
+        # 2. Regime Shift
+        if regime in ['LOW_VOLATILITY', 'RANGE'] and pos.profit < 0:
+            should_exit = True
+            reason = f"Regime Shift to {regime} (Edge Evaporated)"
+
+        if should_exit:
+            logger.warning(f"🚨 [ADAPTIVE EXIT] {symbol} {pos.ticket}: {reason}")
+            
+            # Record Decision in Ledger
+            try:
+                from titan_system.db.database import Database
+                # Try to find config for DB path, default to data/titan.db for live
+                db_path = "data/titan.db" 
+                db = Database(db_path)
+                db.record_decision(
+                    symbol=symbol,
+                    decision="ADAPTIVE_EXIT",
+                    reason=reason,
+                    score=0.0,
+                    metadata={"ticket": pos.ticket, "profit": pos.profit, "type": "BUY" if pos.type == 0 else "SELL"}
+                )
+            except Exception as e:
+                logger.error(f"Failed to record adaptive exit: {e}")
+
+            # Close Position
+            tick = mt5.symbol_info_tick(symbol)
+            price = tick.bid if pos.type == 0 else tick.ask
+            request = {
+                "action": mt5.TRADE_ACTION_DEAL,
+                "symbol": symbol,
+                "volume": pos.volume,
+                "type": 1 if pos.type == 0 else 0,
+                "position": pos.ticket,
+                "price": price,
+                "deviation": 20,
+                "magic": pos.magic,
+                "comment": "Titan-AdaptiveExit",
+                "type_time": mt5.ORDER_TIME_GTC,
+                "type_filling": mt5.ORDER_FILLING_IOC,
+            }
+            res = mt5.order_send(request)
+            return res.retcode == mt5.TRADE_RETCODE_DONE
+        
+        return False
 
     def apply_tier_protection(self, pos):
         """Calculates R-Multiple and applies the appropriate protection tier."""

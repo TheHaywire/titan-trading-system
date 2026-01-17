@@ -57,7 +57,9 @@ def inject_charts_into_report(report_path, chart_paths):
                 next_newline = content.find('\n', insertion_point)
                 
                 if next_newline > 0:
-                    chart_md = f"\n\n![{tf} Visual Chart]({chart_path})\n"
+                    # Fix: Use relative path from 'analysis/' to 'charts/'
+                    rel_path = f"../{chart_path.replace('\\', '/')}"
+                    chart_md = f"\n\n![{tf} Visual Chart]({rel_path})\n"
                     content = content[:next_newline] + chart_md + content[next_newline:]
     
     with open(report_path, 'w', encoding='utf-8') as f:

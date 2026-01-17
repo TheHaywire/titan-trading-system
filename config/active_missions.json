@@ -1,0 +1,26 @@
+{
+    "GOLD": {
+        "symbol": "GOLD",
+        "direction": "BULLISH (on pullback)",
+        "entry": 4290.0,
+        "sl": 4210.0,
+        "tp1": 4549.9,
+        "tp2": 4750.0,
+        "risk_mult": 1.0,
+        "timestamp": "2026-01-12 14:03:47",
+        "source": "GOLD_MISSION_REPORT_20260112_032305.md",
+        "status_desc": "SEEDED FOR EXECUTION (BULLISH (on pullback))"
+    },
+    "BTCUSD": {
+        "symbol": "BTCUSD",
+        "direction": "BEARISH",
+        "entry": 91250.0,
+        "sl": 92050.0,
+        "tp1": 89615.2,
+        "tp2": 86600.37,
+        "risk_mult": 1.0,
+        "timestamp": "2026-01-12 14:03:47",
+        "source": "BTCUSD_MISSION_REPORT_20260112_031447.md",
+        "status_desc": "SEEDED FOR EXECUTION (BEARISH)"
+    }
+}

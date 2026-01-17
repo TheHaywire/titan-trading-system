@@ -47,7 +47,8 @@ class USDCADChampionBot:
     
     def __init__(self):
         self.symbol = "USDCAD"
-        self.risk_percent = 0.05  # 5% risk per trade
+        # DOUBLING DOWN: Increased from 5% to 7.5% due to 85.7% win rate in Jan Forensic analysis
+        self.risk_percent = 0.075  
         self.max_positions = 3
         
         # Strategy configuration

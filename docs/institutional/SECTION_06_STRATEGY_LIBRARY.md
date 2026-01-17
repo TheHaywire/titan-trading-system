@@ -1,8 +1,8 @@
 # Section 06: Strategy Library & Research Process
 
 **Owner**: Head of Research  
-**Status**: 🚧 In Progress (55%)  
-**Last Updated**: 2026-01-01
+**Status**: ✅ Complete (95%)  
+**Last Updated**: 2026-01-12
 
 ---
 
@@ -14,31 +14,72 @@ Document all trading strategies, their hypotheses, risk models, and research wor
 
 ## 1. Strategy Catalog
 
-### Active Strategies
+### Core Production Strategies (titan_system/strategies/)
 
 #### BookTechnical Strategy
+- **File**: `book_strategies.py`
 - **Hypothesis**: Technical indicators (MA, RSI, Bollinger) capture institutional order flow
-- **Timeframe**: H1, H4
-- **Symbols**: XAUUSD, GBPUSD, US100
-- **Entry**: MA crossover + RSI confirmation
-- **Exit**: Take profit at 2.5R, trailing stop with SMA 50
-- **Win Rate**: 45%
-- **Expectancy**: 0.57R
-- **Risk Model**: 1% per trade
-
-**Code**: `titan_system/strategies/book_strategies.py`
+- **Signals**: MA Golden/Death Cross, RSI Extremes, Bollinger Breakout
+- **Win Rate**: 45% | **Expectancy**: 0.57R
 
 #### InstitutionalGold Strategy
-- **Hypothesis**: Gold follows multi-timeframe trend alignment (H4 bias → H1 zones → M15 trigger)
-- **Timeframe**: M15 entry, H1/H4 confirmation
-- **Symbols**: XAUUSD only
-- **Entry**: H4 trend + H1 support/resistance + M15 breakout
-- **Exit**: 3:1 R:R minimum
-- **Win Rate**: 35%
-- **Expectancy**: 0.40R
-- **Risk Model**: 0.75% per trade
+- **File**: `institutional_gold.py`
+- **Hypothesis**: Gold follows MTF trend alignment (H4 bias → H1 zones → M15 trigger)
+- **Win Rate**: 35% | **Expectancy**: 0.40R
 
-**Code**: `titan_system/strategies/institutional_gold.py`
+#### ProvenStrategy (Backtested Winners)
+- **File**: `proven_strategy.py`
+- **Strategies**: EMA 9/21 Cross, EMA Pullback
+- **Best Performance**: USDJPY 63.3% win rate, 0.79R expectancy
+
+#### Additional Production Strategies
+| Strategy | File | Type |
+|----------|------|------|
+| DualMomentum | `dual_momentum.py` | Cross-asset momentum |
+| MeanReversion | `mean_reversion.py` | BB/RSI extremes |
+| TrendSurfer | `trend_surfer.py` | Trend following |
+| DivergenceHunter | `divergence_hunter.py` | RSI/MACD divergence |
+| LiquidityHunter | `liquidity_hunter.py` | SMC liquidity sweeps |
+| RegressionSurfer | `regression_surfer.py` | Linear regression |
+| MomentumScalper | `scalper.py` | Scalping |
+| ScalperPro | `scalper_pro.py` | Advanced scalping |
+| LiveGoldBreakout | `live_gold_breakout.py` | Gold breakouts |
+| LiveCryptoTrend | `live_crypto_trend.py` | Crypto trends |
+
+---
+
+### Smart Money Concepts (titan_system/smc/)
+
+| Module | File | Purpose |
+|--------|------|---------|
+| Fair Value Gaps | `fvg.py` | FVG detection and entry |
+| Liquidity Analysis | `liquidity.py` | Liquidity sweep detection |
+| Market Structure | `market_structure.py` | BOS/CHoCH identification |
+| Institutional Engine | `institutional_engine.py` | Complete SMC orchestration |
+| VWAP Engine | `vwap_engine.py` | VWAP-based strategies |
+| Momentum Engine | `momentum_engine.py` | Momentum analysis |
+| Trend Engine | `trend_engine.py` | Trend detection |
+| Volatility Engine | `volatility_engine.py` | Volatility analysis |
+
+---
+
+### Backtest Strategy Library (titan_system/backtest/)
+
+**26 strategy files covering 50+ strategies:**
+
+| Category | File | Strategies Included |
+|----------|------|---------------------|
+| Momentum | `strategies_momentum.py` | MACD, Stochastic, ADX |
+| Mean Reversion | `strategies_meanreversion.py` | BB reversals, RSI extremes |
+| Breakout | `strategies_breakout.py` | ORB, London breakout, range breaks |
+| Patterns | `strategies_patterns.py` | Engulfing, Hammer, Doji, Pin Bar |
+| Volume | `strategies_volume.py` | OBV, Volume spikes, VWAP |
+| Time-Based | `strategies_timebased.py` | Session opens, time filters |
+| Volatility | `strategies_volatility.py` | ATR breakouts, Keltner |
+| SMC | `strategies_smc.py` | Order blocks, FVG, liquidity |
+| Professional 1-5 | `strategies_professional_*.py` | Advanced institutional setups |
+| Advanced | `strategies_advanced.py` | Complex multi-factor strategies |
+| MTF | `strategies_mtf.py` | Multi-timeframe alignment |
 
 ---
 

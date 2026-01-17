@@ -1,0 +1,27 @@
+{
+    "EURUSD": {
+        "positioning": "Extreme Long",
+        "details": "Speculative longs near multi-year extremes, commercials net short.",
+        "last_updated": "2026-01-13"
+    },
+    "GOLD": {
+        "positioning": "Deep Speculative Long",
+        "details": "Commercials net short, speculators net long but slightly decreasing.",
+        "last_updated": "2026-01-13"
+    },
+    "US500": {
+        "positioning": "Net Short",
+        "details": "Speculative net positions at -106K, slightly more bearish than previous week.",
+        "last_updated": "2026-01-13"
+    },
+    "ZN": {
+        "positioning": "Extreme Short",
+        "details": "10Y Treasury Note COT index deeply negative, crowded short side.",
+        "last_updated": "2026-01-13"
+    },
+    "BTCUSD": {
+        "positioning": "Mixed - Retail Long",
+        "details": "Leveraged funds net short, small traders net long.",
+        "last_updated": "2026-01-13"
+    }
+}

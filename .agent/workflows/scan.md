@@ -29,13 +29,20 @@ Scans multiple symbols simultaneously:
 ## How to Run
 
 // turbo
-1. Run the opportunity scanner
+1. Run the opportunity scanner via the **Unified Orchestrator**
+```bash
+python titan_orchestrator.py --action scan
+```
+
+Or use the legacy scanner for more detailed output:
 ```bash
 python scripts/opportunity_scanner.py
 ```
 
 The scanner will:
-- Analyze 10+ symbols from your watchlist
+- **Check system health** via Infrastructure skills first
+- **Filter by macro environment** (blocks during high-impact news)
+- Analyze 10+ symbols using Data Intelligence + Alpha Research skills
 - Score each setup based on confluence, R:R, trends
 - Generate a ranked list of opportunities
 - Save detailed report to `analysis/OPPORTUNITIES_YYYYMMDD.md`

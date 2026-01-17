@@ -173,6 +173,7 @@ class TitanEngine:
         self.last_audit_time = time.time()
         self.last_report_date = None
         self.scan_results = {} # For API/Dashboard
+        self.live_commentary = [] # NEW: For "Glass Box" Transparency
 
     def get_status(self):
         """Returns the current system status for the API"""
@@ -270,7 +271,9 @@ class TitanEngine:
                 "open_positions": len(self.execution.get_positions()),
                 "profit_today": 0.0, # TODO: Calc from DB
                 "active_universe": len(self.trading_symbols),
-                "running": self.running
+                "running": self.running,
+                "commentary": self.live_commentary[-10:] if self.live_commentary else [],
+                "latest_decisions": self.db.get_latest_decisions(limit=5)
             }
             
             # Update Cloud Logger & Sync Settings
@@ -312,10 +315,7 @@ class TitanEngine:
     async def run_analysis_cycle(self):
         logger.info("🔎 Starting Market Analysis Cycle...")
         
-        # 0. Manage Active Trades (Partial Profits & Break-even)
-        self.manager.manage_active_trades()
-        
-        # 0.b Periodic Self-Audit (Every 4 hours)
+        # 0. Periodic Self-Audit (Every 4 hours)
         if time.time() - self.last_audit_time > 14400:
             try:
                 optimizer = PerformanceOptimizer()
@@ -330,11 +330,18 @@ class TitanEngine:
         
         # 1. Parallel Market Analysis (The Brain)
         tasks = [self.brain.analyze_symbol(s) for s in self.trading_symbols]
-        market_states = await asyncio.gather(*tasks)
+        market_results = await asyncio.gather(*tasks)
+        # Filter None results
+        market_states = [res for res in market_results if res]
         
-        for symbol, market_state in zip(self.trading_symbols, market_states):
-            if not market_state:
-                continue
+        # 2. ADAPTIVE TRADE MANAGEMENT: Proactive Exits based on Context
+        # We now pass the latest market context to the manager
+        mgmt_commentary = self.manager.manage_active_trades(market_states)
+        if mgmt_commentary:
+            self.live_commentary.extend(mgmt_commentary)
+        
+        for market_state in market_states:
+            symbol = market_state['symbol']
 
             # 2. Analyze with ALL Strategies (Passing Market State if adaptable, or raw DF for now)
             # Short-term: Fetch H1 DF again for legacy strategies until they are upgraded
@@ -458,6 +465,7 @@ class TitanEngine:
                 can_trade, block_reason = self.kill_switch.can_trade(symbol)
                 if not can_trade:
                     logger.warning(f"  🛑 Trade Blocked by Kill Switch: {block_reason}")
+                    self.db.record_decision(symbol, "REJECTED", f"Kill Switch: {block_reason}", market_state['score'], best_result.get('strategy'))
                     continue
                 
                 # Risk Check
@@ -466,11 +474,13 @@ class TitanEngine:
                 
                 if not safe:
                     logger.warning(f"  🛑 Trade Rejected by Circuit Breaker: {reason}")
+                    self.db.record_decision(symbol, "REJECTED", f"Circuit Breaker: {reason}", market_state['score'], best_result.get('strategy'))
                     self.db.log("WARNING", "Engine", f"Trade rejected: {reason}", {"symbol": symbol})
                     continue
 
                 if not Config.enable_trading:
                     logger.info("  🔒 Trading Disabled in Settings. Skipping execution.")
+                    self.db.record_decision(symbol, "SKIPPED", "Trading Disabled", market_state['score'], best_result.get('strategy'))
                     continue
 
                 # Calculate Optimal Position Size (Kelly Criterion)
@@ -494,7 +504,8 @@ class TitanEngine:
 
                 # Get Scaling Multiplier based on performance (Account Growth Use Case)
                 perf_metrics = self.db.get_symbol_performance(symbol)
-                scaling_mult = self.alpha_opt.get_scaling_multiplier(symbol, perf_metrics)
+                active_positions = self.execution.get_positions()
+                scaling_mult = self.alpha_opt.get_scaling_multiplier(symbol, perf_metrics, account_info, active_positions)
 
                 lot_size = self.allocator.calculate_lots(
                     symbol=symbol,
@@ -502,6 +513,12 @@ class TitanEngine:
                     stop_loss_pips=sl_pips,
                     scaling_multiplier=scaling_mult
                 )
+                
+                # Add Scaling Commentary
+                if scaling_mult > 1.05:
+                    self.live_commentary.append(f"CONVICTION: Scaling UP {symbol} by {scaling_mult:.1f}x (Streak/Growth Phase).")
+                elif scaling_mult < 0.95:
+                    self.live_commentary.append(f"PROTECTION: Scaling DOWN {symbol} by {scaling_mult:.1f}x (Drawdown Defense).")
                 
                 # Fallback safeguard
                 if lot_size < 0.01:
@@ -527,9 +544,20 @@ class TitanEngine:
                     logger.info(f"  ✅ Order Success: {trade_result}")
                     self.db.record_trade(trade_result)
                     
+                    # Record execution in Ledger
+                    self.db.record_decision(
+                        symbol=symbol, 
+                        decision="EXECUTED", 
+                        reason=f"Confidence: {confidence*100:.0f}%", 
+                        score=market_state['score'],
+                        strategy=best_result.get('strategy'),
+                        metadata={"lot_size": lot_size, "scaling": scaling_mult}
+                    )
+                    
                     if self.cloud_logger:
                         self.cloud_logger.log_trade(trade_result)
                         
+                    self.live_commentary.append(f"EXECUTION: Opened {best_result['signal']} on {symbol} via {best_result['strategy']}.")
                     self.notifier.send_trade_alert(trade_result, market_analysis=market_state)
                     # Use asyncio task for telegram to not block
                     asyncio.create_task(self.telegram.send_trade_alert(trade_result, market_state))

@@ -8,6 +8,11 @@ google_credentials.json
 *.json
 !package.json
 !package-lock.json
+!config/alpha_registry.json
+!config/active_missions.json
+!bot_startup_verify.log
+!logs/bot_live.log
+!scripts/cot_data.json
 *.sqlite
 *.sqlite3
 

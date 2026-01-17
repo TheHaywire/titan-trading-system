@@ -1,0 +1,223 @@
+﻿====================================================================================================
+INSTITUTIONAL ASSET CLASS ANALYSIS
+====================================================================================================
+
+====================================================================================================
+ASSET CLASS DISTRIBUTION
+====================================================================================================
+Stock               : 5,009 strategies ( 92.8%) - 273 symbols
+Index               :   123 strategies (  2.3%) - 7 symbols
+Forex Major         :   101 strategies (  1.9%) - 7 symbols
+Forex Minor         :    80 strategies (  1.5%) - 7 symbols
+Forex Exotic        :    59 strategies (  1.1%) - 3 symbols
+Commodity           :    27 strategies (  0.5%) - 2 symbols
+
+====================================================================================================
+PERFORMANCE BY ASSET CLASS
+====================================================================================================
+
+Stock:
+  Average Profit Factor: 1.38
+  Average Win Rate: 52.9%
+  Average Sharpe: 0.29
+  Perfect Robustness (5/5): 1175 strategies
+
+Index:
+  Average Profit Factor: 1.07
+  Average Win Rate: 51.3%
+  Average Sharpe: 0.10
+  Perfect Robustness (5/5): 22 strategies
+
+Forex Major:
+  Average Profit Factor: 1.07
+  Average Win Rate: 51.5%
+  Average Sharpe: 0.14
+  Perfect Robustness (5/5): 30 strategies
+
+Forex Minor:
+  Average Profit Factor: 1.04
+  Average Win Rate: 50.8%
+  Average Sharpe: 0.06
+  Perfect Robustness (5/5): 16 strategies
+
+Forex Exotic:
+  Average Profit Factor: 3.37
+  Average Win Rate: 54.7%
+  Average Sharpe: 0.83
+  Perfect Robustness (5/5): 27 strategies
+
+Commodity:
+  Average Profit Factor: 1.06
+  Average Win Rate: 50.8%
+  Average Sharpe: 0.07
+  Perfect Robustness (5/5): 4 strategies
+
+====================================================================================================
+BEST STRATEGY TYPE PER ASSET CLASS
+====================================================================================================
+
+Stock:
+  MeanReversion            : 3,650 strategies (Avg PF: 1.51)
+  TrendFollowing           :  788 strategies (Avg PF: 1.01)
+  VolatilityExpansion      :  571 strategies (Avg PF: 1.08)
+
+Index:
+  MeanReversion            :   57 strategies (Avg PF: 1.13)
+  TrendFollowing           :   35 strategies (Avg PF: 1.00)
+  VolatilityExpansion      :   31 strategies (Avg PF: 1.05)
+
+Forex Major:
+  MeanReversion            :   62 strategies (Avg PF: 1.11)
+  TrendFollowing           :   25 strategies (Avg PF: 1.00)
+  VolatilityExpansion      :   14 strategies (Avg PF: 1.03)
+
+Forex Minor:
+  TrendFollowing           :   40 strategies (Avg PF: 0.99)
+  MeanReversion            :   26 strategies (Avg PF: 1.18)
+  VolatilityExpansion      :   14 strategies (Avg PF: 0.95)
+
+Forex Exotic:
+  MeanReversion            :   50 strategies (Avg PF: 3.78)
+  TrendFollowing           :    7 strategies (Avg PF: 1.11)
+  VolatilityExpansion      :    2 strategies (Avg PF: 1.12)
+
+Commodity:
+  MeanReversion            :   23 strategies (Avg PF: 1.06)
+  VolatilityExpansion      :    3 strategies (Avg PF: 1.11)
+  TrendFollowing           :    1 strategies (Avg PF: 1.05)
+
+====================================================================================================
+BEST TIMEFRAME PER ASSET CLASS
+====================================================================================================
+
+Stock:
+  H1   : 1,687 strategies (Avg PF: 1.23)
+  H4   : 1,666 strategies (Avg PF: 1.13)
+  M15  : 1,656 strategies (Avg PF: 1.80)
+
+Index:
+  H4   :   52 strategies (Avg PF: 1.03)
+  H1   :   45 strategies (Avg PF: 1.11)
+  M15  :   26 strategies (Avg PF: 1.09)
+
+Forex Major:
+  H4   :   44 strategies (Avg PF: 1.07)
+  H1   :   38 strategies (Avg PF: 1.02)
+  M15  :   19 strategies (Avg PF: 1.16)
+
+Forex Minor:
+  H4   :   39 strategies (Avg PF: 1.02)
+  M15  :   25 strategies (Avg PF: 1.03)
+  H1   :   16 strategies (Avg PF: 1.11)
+
+Forex Exotic:
+  H1   :   34 strategies (Avg PF: 4.23)
+  M15  :   14 strategies (Avg PF: 2.11)
+  H4   :   11 strategies (Avg PF: 2.32)
+
+Commodity:
+  H1   :   14 strategies (Avg PF: 1.03)
+  M15  :    7 strategies (Avg PF: 1.13)
+  H4   :    6 strategies (Avg PF: 1.04)
+
+====================================================================================================
+TOP 5 PERFORMERS PER MAJOR ASSET CLASS
+====================================================================================================
+
+Forex Major:
+----------------------------------------------------------------------------------------------------
+  NZDUSD               H4    MeanReversion        PF:  1.47 WR: 53.2% Robust:5/5
+  GBPUSD               H4    MeanReversion        PF:  1.44 WR: 57.1% Robust:4/5
+  NZDUSD               H4    MeanReversion        PF:  1.36 WR: 53.6% Robust:5/5
+  EURUSD               M15   MeanReversion        PF:  1.29 WR: 53.8% Robust:4/5
+  AUDUSD               M15   MeanReversion        PF:  1.29 WR: 52.7% Robust:4/5
+
+Forex Exotic:
+----------------------------------------------------------------------------------------------------
+  USDTRY               H1    MeanReversion        PF: 13.13 WR: 73.3% Robust:4/5
+  USDTRY               H4    MeanReversion        PF: 12.27 WR: 68.9% Robust:5/5
+  USDTRY               H1    MeanReversion        PF: 11.34 WR: 72.4% Robust:4/5
+  USDTRY               H1    MeanReversion        PF:  9.03 WR: 68.3% Robust:5/5
+  USDTRY               H1    MeanReversion        PF:  8.94 WR: 57.6% Robust:5/5
+
+Stock:
+----------------------------------------------------------------------------------------------------
+python : Traceback (most recent call last):
+At line:1 char:1
++ python strategy_mining/institutional_analysis.py 2>&1 | Out-File -Enc ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [] 
+   , RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\manan\OneDrive\Documents\Metatrader Trading System 
+7-12-2025\strategy_mining\institutional_analysis.py", line 208, in <module>
+    print("\n\u2705 Analysis complete!")
+  File "C:\Users\manan\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", 
+line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 2: 
+character maps to <undefined>
+  Atos                 M15   MeanReversion        PF:327.14 WR: 62.0% Robust:4/5
+  Atos                 M15   MeanReversion        PF:284.67 WR: 54.0% Robust:4/5
+  AarealBank           M15   MeanReversion        PF: 21.34 WR: 88.3% Robust:4/5
+  AarealBank           M15   MeanReversion        PF: 14.31 WR: 85.9% Robust:4/5
+  AarealBank           M15   MeanReversion        PF: 13.21 WR: 83.6% Robust:4/5
+
+Index:
+----------------------------------------------------------------------------------------------------
+  AUS200Cash           H1    MeanReversion        PF:  1.83 WR: 61.9% Robust:4/5
+  FRA40Cash            H1    MeanReversion        PF:  1.76 WR: 50.8% Robust:4/5
+  US500Cash            H1    MeanReversion        PF:  1.46 WR: 54.4% Robust:4/5
+  AUS200Cash           H1    MeanReversion        PF:  1.45 WR: 58.2% Robust:5/5
+  FRA40Cash            H1    MeanReversion        PF:  1.36 WR: 52.4% Robust:4/5
+
+Commodity:
+----------------------------------------------------------------------------------------------------
+  GOLD                 M15   MeanReversion        PF:  1.37 WR: 55.9% Robust:4/5
+  GOLD                 H1    MeanReversion        PF:  1.30 WR: 50.0% Robust:4/5
+  SILVER               H1    MeanReversion        PF:  1.26 WR: 53.8% Robust:4/5
+  GOLD                 M15   MeanReversion        PF:  1.23 WR: 55.9% Robust:4/5
+  GOLD                 M15   MeanReversion        PF:  1.13 WR: 54.2% Robust:4/5
+
+====================================================================================================
+KEY INSIGHTS & PATTERNS
+====================================================================================================
+
+1. BEST ASSET CLASS: Forex Exotic (Avg PF: 3.37)
+2. BEST STRATEGY TYPE: MeanReversion (Avg PF: 1.52)
+3. BEST TIMEFRAME: M15 (Avg PF: 1.77)
+
+4. MEAN REVERSION VS TREND FOLLOWING:
+   Forex Major         : Mean Reversion wins (MR:1.11 vs TF:1.00)
+   Stock               : Mean Reversion wins (MR:1.51 vs TF:1.01)
+   Index               : Mean Reversion wins (MR:1.13 vs TF:1.00)
+
+====================================================================================================
+PORTFOLIO RECOMMENDATIONS
+====================================================================================================
+
+DIVERSIFIED PORTFOLIO BLUEPRINT:
+
+Based on the analysis, here's an optimal 10-strategy portfolio:
+
+ 1. [Forex Exotic   ] USDTRY          H1    MeanReversion        PF: 13.13 WR: 73.3%
+
+ 2. [Forex Exotic   ] USDTRY          H4    MeanReversion        PF: 12.27 WR: 68.9%
+
+ 3. [Forex Major    ] NZDUSD          H4    MeanReversion        PF:  1.47 WR: 53.2%
+
+ 4. [Forex Major    ] GBPUSD          H4    MeanReversion        PF:  1.44 WR: 57.1%
+
+ 5. [Stock          ] Atos            M15   MeanReversion        PF:327.14 WR: 62.0%
+
+ 6. [Stock          ] Atos            M15   MeanReversion        PF:284.67 WR: 54.0%
+
+ 7. [Index          ] AUS200Cash      H1    MeanReversion        PF:  1.83 WR: 61.9%
+
+ 8. [Index          ] FRA40Cash       H1    MeanReversion        PF:  1.76 WR: 50.8%
+
+ 9. [Commodity      ] GOLD            M15   MeanReversion        PF:  1.37 WR: 55.9%
+
+10. [Commodity      ] GOLD            H1    MeanReversion        PF:  1.30 WR: 50.0%

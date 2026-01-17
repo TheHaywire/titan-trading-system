@@ -1,0 +1,139 @@
+win_rate,avg_win,avg_loss,profit_factor,expectancy,sharpe_ratio,sortino_ratio,max_drawdown,calmar_ratio,total_return,strategy,symbol,timeframe,total_trades
+100.0,12.71,0.0,12708.17,12.708,0.0,0.0,0.0,0.0,12.71,Top Gainers + Volume,BarrickGold,D1,1
+100.0,7.23,0.0,7231.9,7.232,0.0,0.0,0.0,0.0,7.23,New High Continuation,BarrickGold,D1,1
+56.25,7.81,-5.6,1.79,1.943,4.48,22.52,-19.45,1.6,31.09,Channel Breakout,BarrickGold,D1,16
+83.33,10.29,-5.04,10.2,7.732,20.38,0.0,-5.04,9.2,46.39,ADX Trend Following,BarrickGold,D1,6
+83.33,7.56,-5.64,6.7,5.359,16.68,0.0,-5.64,5.7,32.15,Adrenaline + SMC,BarrickGold,D1,6
+50.0,3.12,-2.16,1.45,0.483,2.77,15.41,-11.26,1.98,22.24,Top Gainers + Volume,BarrickGold,H1,46
+47.5,2.75,-1.72,1.44,0.402,2.77,17.44,-13.2,6.09,80.42,New High Continuation,BarrickGold,H1,200
+44.44,2.76,-1.73,1.28,0.265,1.82,11.47,-25.77,0.92,23.81,RSI Oversold Bounce,BarrickGold,H1,90
+52.08,2.82,-1.76,1.74,0.623,4.18,20.05,-7.48,4.0,29.92,Bollinger Mean Reversion,BarrickGold,H1,48
+40.0,2.82,-1.86,1.01,0.013,0.09,0.64,-17.69,0.02,0.33,SMA Golden Cross,BarrickGold,H1,25
+45.19,2.74,-1.78,1.27,0.264,1.79,9.02,-28.78,3.71,106.74,Channel Breakout,BarrickGold,H1,405
+46.15,2.78,-1.85,1.29,0.286,1.91,9.9,-29.33,1.9,55.82,ADX Trend Following,BarrickGold,H1,195
+46.06,2.78,-1.83,1.3,0.293,1.95,10.11,-20.5,3.63,74.36,Adrenaline + SMC,BarrickGold,H1,254
+55.56,6.57,-4.05,2.03,1.85,5.24,28.4,-13.71,2.43,33.29,Top Gainers + Volume,BarrickGold,H4,18
+50.0,5.07,-2.95,1.72,1.059,4.13,35.14,-25.21,1.01,25.41,New High Continuation,BarrickGold,H4,24
+45.45,6.1,-3.78,1.34,0.708,2.21,14.62,-26.47,0.59,15.57,RSI Oversold Bounce,BarrickGold,H4,22
+55.56,6.15,-4.23,1.82,1.539,4.57,42.75,-9.21,1.5,13.85,Bollinger Mean Reversion,BarrickGold,H4,9
+80.0,5.49,-2.95,7.46,3.807,17.15,0.0,-2.95,6.46,19.03,SMA Golden Cross,BarrickGold,H4,5
+52.27,5.45,-3.48,1.72,1.19,4.11,19.18,-29.1,3.6,104.73,Channel Breakout,BarrickGold,H4,88
+40.43,5.89,-3.66,1.09,0.201,0.65,2.87,-41.98,0.23,9.46,ADX Trend Following,BarrickGold,H4,47
+48.0,5.29,-3.55,1.38,0.697,2.43,12.34,-17.72,1.97,34.86,Adrenaline + SMC,BarrickGold,H4,50
+27.78,1.96,-1.22,0.62,-0.34,-3.54,-10.4,-18.82,-0.65,-12.25,Top Gainers + Volume,BarrickGold,M15,36
+41.05,1.18,-0.81,1.01,0.003,0.05,0.17,-31.83,0.11,3.64,New High Continuation,BarrickGold,M15,1128
+44.19,1.23,-0.84,1.16,0.076,1.1,3.67,-13.35,2.01,26.81,RSI Oversold Bounce,BarrickGold,M15,353
+42.73,1.24,-0.77,1.2,0.089,1.34,5.36,-8.53,2.36,20.14,Bollinger Mean Reversion,BarrickGold,M15,227
+43.16,1.37,-0.94,1.11,0.059,0.73,2.2,-12.49,0.45,5.57,SMA Golden Cross,BarrickGold,M15,95
+42.36,1.31,-0.87,1.1,0.049,0.67,2.6,-54.28,1.74,94.37,Channel Breakout,BarrickGold,M15,1943
+39.54,1.33,-0.9,0.97,-0.018,-0.24,-0.89,-57.12,-0.24,-13.85,ADX Trend Following,BarrickGold,M15,779
+41.62,1.25,-0.86,1.03,0.014,0.2,0.68,-21.84,0.55,11.98,Adrenaline + SMC,BarrickGold,M15,865
+0.0,0.0,-5.59,0.0,-5.588,0.0,0.0,0.0,0.0,-5.59,New High Continuation,GoldenOcean,D1,1
+33.33,8.65,-5.96,0.73,-1.087,-2.49,-34.17,-19.7,-0.5,-9.78,Channel Breakout,GoldenOcean,D1,9
+0.0,0.0,-6.4,0.0,-6.404,-142.7,-142.7,-37.28,-1.2,-44.83,ADX Trend Following,GoldenOcean,D1,7
+0.0,0.0,-6.16,0.0,-6.16,-170.96,-170.96,-5.59,-2.2,-12.32,Adrenaline + SMC,GoldenOcean,D1,2
+44.44,4.03,-2.76,1.17,0.255,1.15,3.87,-17.76,0.52,9.18,Top Gainers + Volume,GoldenOcean,H1,36
+37.7,3.19,-2.09,0.92,-0.101,-0.6,-2.59,-37.91,-0.51,-19.29,New High Continuation,GoldenOcean,H1,191
+54.55,3.46,-2.24,1.86,0.871,4.6,21.19,-11.61,6.6,76.63,RSI Oversold Bounce,GoldenOcean,H1,88
+54.35,3.24,-2.37,1.63,0.679,3.67,16.15,-13.86,2.25,31.21,Bollinger Mean Reversion,GoldenOcean,H1,46
+34.62,4.02,-2.54,0.84,-0.27,-1.32,-6.36,-20.88,-0.34,-7.02,SMA Golden Cross,GoldenOcean,H1,26
+38.81,3.5,-2.26,0.98,-0.024,-0.13,-0.53,-90.75,-0.1,-8.87,Channel Breakout,GoldenOcean,H1,371
+45.02,3.63,-2.34,1.27,0.346,1.76,7.51,-37.13,1.97,72.98,ADX Trend Following,GoldenOcean,H1,211
+39.06,3.33,-2.19,0.97,-0.036,-0.21,-0.83,-38.04,-0.22,-8.45,Adrenaline + SMC,GoldenOcean,H1,233
+14.29,6.46,-4.09,0.26,-2.578,-10.63,-34.35,-14.52,-1.24,-18.05,Top Gainers + Volume,GoldenOcean,H4,7
+50.0,5.16,-3.61,1.43,0.776,2.76,21.28,-14.67,0.74,10.87,New High Continuation,GoldenOcean,H4,14
+62.5,5.27,-3.72,2.36,1.897,6.82,52.61,-4.53,3.35,15.18,RSI Oversold Bounce,GoldenOcean,H4,8
+33.33,4.55,-3.73,0.61,-0.97,-3.89,-21.79,-7.6,-0.77,-5.82,Bollinger Mean Reversion,GoldenOcean,H4,6
+33.33,6.22,-3.95,0.79,-0.558,-1.81,-7.46,-15.78,-0.21,-3.35,SMA Golden Cross,GoldenOcean,H4,6
+41.18,5.51,-3.63,1.06,0.13,0.45,2.3,-32.16,0.27,8.81,Channel Breakout,GoldenOcean,H4,68
+57.78,5.56,-3.93,1.94,1.558,5.16,24.5,-15.66,4.48,70.1,ADX Trend Following,GoldenOcean,H4,45
+40.0,5.31,-3.61,0.98,-0.042,-0.15,-1.01,-19.69,-0.05,-1.05,Adrenaline + SMC,GoldenOcean,H4,25
+45.31,2.37,-1.65,1.19,0.173,1.26,4.82,-18.62,0.59,11.04,Top Gainers + Volume,GoldenOcean,M15,64
+38.89,1.45,-0.97,0.95,-0.028,-0.34,-1.01,-101.03,-0.32,-32.63,New High Continuation,GoldenOcean,M15,1170
+36.36,2.83,-1.49,1.08,0.079,0.55,1.45,-5.8,0.15,0.87,Volatility Breakout,GoldenOcean,M15,11
+35.06,1.64,-1.15,0.77,-0.172,-1.85,-4.52,-63.08,-0.95,-59.89,RSI Oversold Bounce,GoldenOcean,M15,348
+41.44,1.79,-1.15,1.1,0.068,0.68,1.91,-24.36,0.62,14.99,Bollinger Mean Reversion,GoldenOcean,M15,222
+40.74,1.85,-1.23,1.04,0.027,0.25,0.78,-9.46,0.31,2.91,SMA Golden Cross,GoldenOcean,M15,108
+38.69,1.75,-1.18,0.94,-0.044,-0.45,-1.39,-194.03,-0.42,-82.1,Channel Breakout,GoldenOcean,M15,1848
+39.1,1.81,-1.21,0.96,-0.028,-0.27,-0.84,-55.45,-0.39,-21.63,ADX Trend Following,GoldenOcean,M15,780
+39.36,1.59,-1.06,0.97,-0.018,-0.2,-0.6,-74.77,-0.22,-16.25,Adrenaline + SMC,GoldenOcean,M15,902
+100.0,5.89,0.0,11775.2,5.888,1977.13,0.0,0.0,0.0,11.78,New High Continuation,GoldmSachs,D1,2
+100.0,6.85,0.0,6854.66,6.855,0.0,0.0,0.0,0.0,6.85,Bollinger Mean Reversion,GoldmSachs,D1,1
+100.0,5.73,0.0,5728.93,5.729,0.0,0.0,0.0,0.0,5.73,SMA Golden Cross,GoldmSachs,D1,1
+72.73,7.12,-4.55,4.17,3.934,11.86,163.41,-5.04,8.58,43.27,Channel Breakout,GoldmSachs,D1,11
+66.67,6.42,-3.76,3.41,3.025,9.88,160.61,-4.18,6.51,27.22,ADX Trend Following,GoldmSachs,D1,9
+66.67,5.89,-4.67,2.52,2.37,7.56,0.0,0.0,0.0,7.11,Adrenaline + SMC,GoldmSachs,D1,3
+100.0,5.76,0.0,11526.31,5.763,26.8,0.0,0.0,0.0,11.53,Top Gainers + Volume,GoldmSachs,H1,2
+45.21,2.23,-1.5,1.23,0.185,1.55,8.84,-15.41,2.26,34.81,New High Continuation,GoldmSachs,H1,188
+51.25,2.23,-1.37,1.71,0.477,4.07,24.48,-6.94,5.5,38.15,RSI Oversold Bounce,GoldmSachs,H1,80
+52.38,2.25,-1.51,1.64,0.459,3.76,21.39,-10.34,2.8,28.94,Bollinger Mean Reversion,GoldmSachs,H1,63
+42.31,2.41,-1.64,1.08,0.072,0.55,3.71,-10.62,0.18,1.86,SMA Golden Cross,GoldmSachs,H1,26
+43.47,2.49,-1.65,1.16,0.149,1.1,4.39,-21.21,2.8,59.3,Channel Breakout,GoldmSachs,H1,398
+41.15,2.53,-1.55,1.14,0.131,0.98,5.3,-19.87,1.27,25.22,ADX Trend Following,GoldmSachs,H1,192
+47.13,2.29,-1.61,1.27,0.226,1.77,5.8,-14.06,2.8,39.39,Adrenaline + SMC,GoldmSachs,H1,174
+50.0,6.44,-2.27,2.83,2.085,7.55,119.34,-2.55,3.27,8.34,Top Gainers + Volume,GoldmSachs,H4,4
+60.0,3.7,-2.53,2.2,1.208,6.22,63.98,-3.02,6.01,18.12,New High Continuation,GoldmSachs,H4,15
+47.62,5.07,-2.96,1.56,0.865,3.35,22.43,-7.2,2.52,18.16,RSI Oversold Bounce,GoldmSachs,H4,21
+50.0,5.2,-2.72,1.91,1.238,4.83,46.68,-5.76,3.87,22.28,Bollinger Mean Reversion,GoldmSachs,H4,18
+40.0,3.74,-2.48,1.01,0.008,0.04,0.2,-7.44,0.01,0.04,SMA Golden Cross,GoldmSachs,H4,5
+46.15,4.55,-2.82,1.39,0.585,2.41,13.38,-22.28,2.05,45.61,Channel Breakout,GoldmSachs,H4,78
+47.83,4.02,-2.89,1.27,0.412,1.85,9.0,-13.54,1.4,18.97,ADX Trend Following,GoldmSachs,H4,46
+50.0,3.93,-2.84,1.38,0.543,2.47,13.82,-8.57,1.65,14.13,Adrenaline + SMC,GoldmSachs,H4,26
+66.67,4.5,-2.63,3.43,2.124,9.96,0.0,0.0,0.0,6.37,New High Continuation,GOLD,D1,3
+100.0,8.18,0.0,8176.04,8.176,0.0,0.0,0.0,0.0,8.18,RSI Oversold Bounce,GOLD,D1,1
+72.22,4.41,-3.41,3.36,2.236,9.66,32.86,-5.32,7.56,40.25,Channel Breakout,GOLD,D1,18
+71.43,6.55,-2.97,5.52,3.829,13.23,222.1,-3.24,8.27,26.8,ADX Trend Following,GOLD,D1,7
+66.67,4.5,-2.63,3.43,2.124,9.96,0.0,0.0,0.0,6.37,Adrenaline + SMC,GOLD,D1,3
+48.3,0.91,-0.6,1.42,0.129,2.59,10.98,-8.07,5.62,45.35,New High Continuation,GOLD,H1,352
+49.45,0.9,-0.67,1.32,0.106,1.95,5.0,-7.16,1.35,9.68,RSI Oversold Bounce,GOLD,H1,91
+50.82,0.98,-0.73,1.39,0.14,2.35,6.29,-4.76,1.79,8.51,Bollinger Mean Reversion,GOLD,H1,61
+41.67,1.04,-0.51,1.45,0.134,2.65,17.11,-3.11,1.03,3.21,SMA Golden Cross,GOLD,H1,24
+49.03,0.94,-0.65,1.4,0.132,2.47,8.38,-7.99,7.64,61.04,Channel Breakout,GOLD,H1,463
+47.85,0.87,-0.62,1.3,0.096,1.92,5.84,-5.67,3.55,20.15,ADX Trend Following,GOLD,H1,209
+50.42,0.88,-0.58,1.54,0.155,3.2,13.09,-8.37,4.36,36.52,Adrenaline + SMC,GOLD,H1,236
+50.65,1.7,-1.1,1.59,0.318,3.51,17.41,-5.17,4.73,24.45,New High Continuation,GOLD,H4,77
+36.36,3.02,-1.48,1.17,0.161,1.1,3.62,-14.53,0.24,3.54,RSI Oversold Bounce,GOLD,H4,22
+53.85,2.12,-2.22,1.11,0.116,0.82,2.71,-7.05,0.21,1.51,Bollinger Mean Reversion,GOLD,H4,13
+37.5,1.33,-1.08,0.74,-0.175,-2.34,-12.27,-2.0,-0.7,-1.4,SMA Golden Cross,GOLD,H4,8
+54.24,1.84,-1.26,1.72,0.417,4.06,15.33,-7.05,6.98,49.21,Channel Breakout,GOLD,H4,118
+47.06,1.91,-1.32,1.28,0.197,1.83,5.86,-11.07,0.91,10.06,ADX Trend Following,GOLD,H4,51
+50.0,1.76,-1.08,1.63,0.34,3.7,22.47,-4.47,4.86,21.73,Adrenaline + SMC,GOLD,H4,64
+0.0,0.0,-1.43,0.0,-1.432,0.0,0.0,0.0,0.0,-1.43,Top Gainers + Volume,GOLD,M15,1
+42.83,0.43,-0.3,1.08,0.013,0.54,1.49,-15.28,1.24,18.89,New High Continuation,GOLD,M15,1422
+0.0,0.0,-0.42,0.0,-0.424,0.0,0.0,0.0,0.0,-0.42,Volatility Breakout,GOLD,M15,1
+42.76,0.42,-0.27,1.17,0.026,1.09,3.33,-3.59,2.16,7.73,RSI Oversold Bounce,GOLD,M15,297
+42.33,0.42,-0.29,1.04,0.007,0.29,0.74,-7.49,0.21,1.54,Bollinger Mean Reversion,GOLD,M15,215
+38.78,0.45,-0.3,0.94,-0.012,-0.46,-1.45,-4.98,-0.23,-1.14,SMA Golden Cross,GOLD,M15,98
+44.2,0.51,-0.34,1.17,0.032,1.09,3.08,-11.68,4.35,50.81,Channel Breakout,GOLD,M15,1586
+44.9,0.45,-0.3,1.21,0.036,1.38,3.63,-5.54,5.09,28.22,ADX Trend Following,GOLD,M15,784
+42.34,0.41,-0.27,1.11,0.017,0.72,2.01,-6.94,2.03,14.12,Adrenaline + SMC,GOLD,M15,855
+100.0,13.92,0.0,13915.3,13.915,0.0,0.0,0.0,0.0,13.92,Top Gainers + Volume,KinrossGold,D1,1
+50.0,9.76,-6.56,1.49,1.598,3.11,0.0,0.0,0.0,3.2,New High Continuation,KinrossGold,D1,2
+55.56,10.02,-5.93,2.11,2.935,5.75,62.76,-17.69,2.99,52.83,Channel Breakout,KinrossGold,D1,18
+53.85,10.59,-7.25,1.7,2.353,4.14,39.49,-35.86,0.85,30.59,ADX Trend Following,KinrossGold,D1,13
+50.0,10.35,-6.13,1.69,2.11,3.97,78.9,-11.95,1.41,16.88,Adrenaline + SMC,KinrossGold,D1,8
+53.57,4.44,-2.35,2.18,1.288,5.74,31.73,-10.23,3.52,36.06,Top Gainers + Volume,KinrossGold,H1,28
+44.83,3.13,-2.1,1.21,0.245,1.47,8.21,-34.48,1.03,35.6,New High Continuation,KinrossGold,H1,145
+47.31,3.41,-2.12,1.45,0.497,2.76,13.93,-23.03,2.01,46.18,RSI Oversold Bounce,KinrossGold,H1,93
+39.13,3.66,-2.12,1.11,0.146,0.79,4.18,-14.05,0.48,6.72,Bollinger Mean Reversion,KinrossGold,H1,46
+41.38,3.27,-2.42,0.95,-0.065,-0.35,-1.52,-11.73,-0.16,-1.87,SMA Golden Cross,KinrossGold,H1,29
+44.53,3.33,-2.15,1.24,0.289,1.62,8.7,-36.47,2.97,108.37,Channel Breakout,KinrossGold,H1,375
+50.49,3.43,-2.27,1.54,0.606,3.23,16.45,-25.8,4.84,124.79,ADX Trend Following,KinrossGold,H1,206
+46.52,3.31,-2.13,1.35,0.403,2.28,12.4,-27.98,2.7,75.44,Adrenaline + SMC,KinrossGold,H1,187
+58.33,7.68,-5.12,2.1,2.344,5.68,43.95,-14.62,1.92,28.12,Top Gainers + Volume,KinrossGold,H4,12
+50.0,6.59,-3.74,1.76,1.424,4.16,44.84,-11.92,2.39,28.48,New High Continuation,KinrossGold,H4,20
+54.55,6.78,-4.01,2.03,1.879,5.4,53.32,-21.08,1.96,41.34,RSI Oversold Bounce,KinrossGold,H4,22
+41.67,6.07,-3.86,1.13,0.282,0.91,8.98,-8.28,0.41,3.39,Bollinger Mean Reversion,KinrossGold,H4,12
+33.33,6.04,-4.33,0.7,-0.875,-2.83,-24.39,-7.55,-0.7,-5.25,SMA Golden Cross,KinrossGold,H4,6
+45.0,6.66,-4.24,1.29,0.668,1.89,12.1,-46.04,1.16,53.47,Channel Breakout,KinrossGold,H4,80
+50.0,6.62,-4.43,1.49,1.095,3.05,15.45,-25.5,2.4,61.33,ADX Trend Following,KinrossGold,H4,56
+46.94,6.46,-4.34,1.32,0.727,2.07,10.93,-19.41,1.84,35.65,Adrenaline + SMC,KinrossGold,H4,49
+47.06,2.33,-1.37,1.51,0.368,2.89,14.67,-17.52,1.43,25.03,Top Gainers + Volume,KinrossGold,M15,68
+42.3,1.36,-0.89,1.12,0.061,0.82,2.93,-19.1,3.22,61.45,New High Continuation,KinrossGold,M15,1007
+71.43,1.87,-0.88,5.32,1.087,12.95,69.08,-1.13,6.74,7.61,Volatility Breakout,KinrossGold,M15,7
+45.01,1.37,-0.94,1.19,0.1,1.28,4.09,-13.34,2.93,39.06,RSI Oversold Bounce,KinrossGold,M15,391
+50.0,1.33,-0.9,1.49,0.218,2.89,9.77,-7.28,7.17,52.21,Bollinger Mean Reversion,KinrossGold,M15,240
+37.38,1.7,-1.08,0.94,-0.043,-0.47,-1.74,-23.57,-0.2,-4.61,SMA Golden Cross,KinrossGold,M15,107
+42.52,1.63,-1.09,1.11,0.066,0.74,2.91,-49.14,1.94,95.15,Channel Breakout,KinrossGold,M15,1437
+39.52,1.75,-1.1,1.04,0.028,0.3,1.28,-46.4,0.37,17.34,ADX Trend Following,KinrossGold,M15,620
+39.63,1.44,-0.95,0.99,-0.005,-0.06,-0.22,-51.03,-0.09,-4.38,Adrenaline + SMC,KinrossGold,M15,873

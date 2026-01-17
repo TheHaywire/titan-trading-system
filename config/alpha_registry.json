@@ -1,0 +1,487 @@
+{
+    "version": "1.0",
+    "last_updated": "2026-01-16",
+    "alphas": [
+        {
+            "symbol": "UNIQA",
+            "strategy": "VolBreakout",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 4.85,
+                "win_rate": "62.5%",
+                "return": "87.4%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 26
+        },
+        {
+            "symbol": "AarealBank",
+            "strategy": "MeanReversion",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 4.22,
+                "win_rate": "95.0%",
+                "return": "12.7%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 70
+        },
+        {
+            "symbol": "SILVER",
+            "strategy": "VolBreakout",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 3.98,
+                "win_rate": "55.6%",
+                "return": "97.5%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 40
+        },
+        {
+            "symbol": "SMASolar",
+            "strategy": "VolBreakout",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 3.57,
+                "win_rate": "77.8%",
+                "return": "253.4%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 63
+        },
+        {
+            "symbol": "Salzgitter",
+            "strategy": "TrendFollowing",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 2.98,
+                "win_rate": "50.0%",
+                "return": "191.2%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 62
+        },
+        {
+            "symbol": "Software",
+            "strategy": "VolBreakout",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 2.86,
+                "win_rate": "50.0%",
+                "return": "45.1%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 71
+        },
+        {
+            "symbol": "OesterreichischePost",
+            "strategy": "MeanReversion",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 2.78,
+                "win_rate": "91.7%",
+                "return": "17.8%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 55
+        },
+        {
+            "symbol": "WienerBerger",
+            "strategy": "MeanReversion",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 2.77,
+                "win_rate": "72.7%",
+                "return": "25.3%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 35
+        },
+        {
+            "symbol": "MontedeiPaschi",
+            "strategy": "VolBreakout",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 2.74,
+                "win_rate": "65.0%",
+                "return": "65.5%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 67
+        },
+        {
+            "symbol": "Thyssenkrupp",
+            "strategy": "TrendFollowing",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 2.63,
+                "win_rate": "50.0%",
+                "return": "143.8%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 17
+        },
+        {
+            "symbol": "A2A",
+            "strategy": "VolBreakout",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 2.49,
+                "win_rate": "41.2%",
+                "return": "31.9%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 36
+        },
+        {
+            "symbol": "GBPJPY",
+            "strategy": "MeanReversion",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 2.46,
+                "win_rate": "90.0%",
+                "return": "2.7%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 37
+        },
+        {
+            "symbol": "Enel",
+            "strategy": "VolBreakout",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 2.45,
+                "win_rate": "60.0%",
+                "return": "24.8%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 57
+        },
+        {
+            "symbol": "Korian",
+            "strategy": "TrendFollowing",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 2.39,
+                "win_rate": "54.5%",
+                "return": "107.7%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 94
+        },
+        {
+            "symbol": "Voestalpine",
+            "strategy": "VolBreakout",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 2.3,
+                "win_rate": "50.0%",
+                "return": "51.6%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 49
+        },
+        {
+            "symbol": "Bouygues",
+            "strategy": "VolBreakout",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 2.3,
+                "win_rate": "76.5%",
+                "return": "32.2%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 62
+        },
+        {
+            "symbol": "Salzgitter",
+            "strategy": "VolBreakout",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 2.28,
+                "win_rate": "26.3%",
+                "return": "91.5%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 62
+        },
+        {
+            "symbol": "GOLD",
+            "strategy": "TrendFollowing",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 2.26,
+                "win_rate": "40.0%",
+                "return": "19.3%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 46
+        },
+        {
+            "symbol": "Iren",
+            "strategy": "VolBreakout",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 2.23,
+                "win_rate": "55.6%",
+                "return": "26.7%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 47
+        },
+        {
+            "symbol": "GOLD",
+            "strategy": "VolBreakout",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 2.23,
+                "win_rate": "64.7%",
+                "return": "19.0%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 46
+        },
+        {
+            "symbol": "Thyssenkrupp",
+            "strategy": "VolBreakout",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 2.22,
+                "win_rate": "47.8%",
+                "return": "100.2%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 17
+        },
+        {
+            "symbol": "Outokumpu",
+            "strategy": "TrendFollowing",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 2.11,
+                "win_rate": "63.6%",
+                "return": "45.4%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 60
+        },
+        {
+            "symbol": "IT40Cash",
+            "strategy": "VolBreakout",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 2.06,
+                "win_rate": "50.0%",
+                "return": "16.3%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 12
+        },
+        {
+            "symbol": "JP225Cash",
+            "strategy": "VolBreakout",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 2.02,
+                "win_rate": "43.5%",
+                "return": "16.5%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 7
+        },
+        {
+            "symbol": "SES",
+            "strategy": "TrendFollowing",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 2.02,
+                "win_rate": "70.0%",
+                "return": "58.0%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 99
+        },
+        {
+            "symbol": "Aixtron",
+            "strategy": "TrendFollowing",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 1.97,
+                "win_rate": "46.2%",
+                "return": "61.4%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 19
+        },
+        {
+            "symbol": "AUDNZD",
+            "strategy": "TrendFollowing",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 1.9,
+                "win_rate": "50.0%",
+                "return": "3.7%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 39
+        },
+        {
+            "symbol": "Eurobank",
+            "strategy": "VolBreakout",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 1.88,
+                "win_rate": "59.1%",
+                "return": "31.4%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 42
+        },
+        {
+            "symbol": "Sanofi",
+            "strategy": "MeanReversion",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 1.86,
+                "win_rate": "71.4%",
+                "return": "16.4%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 49
+        },
+        {
+            "symbol": "Hera",
+            "strategy": "MeanReversion",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 1.83,
+                "win_rate": "90.9%",
+                "return": "11.1%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 49
+        },
+        {
+            "symbol": "Iren",
+            "strategy": "MeanReversion",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 1.74,
+                "win_rate": "80.0%",
+                "return": "10.8%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 47
+        },
+        {
+            "symbol": "Fresenius",
+            "strategy": "TrendFollowing",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 1.72,
+                "win_rate": "60.0%",
+                "return": "22.2%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 47
+        },
+        {
+            "symbol": "Andritz",
+            "strategy": "TrendFollowing",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 1.71,
+                "win_rate": "40.0%",
+                "return": "25.6%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 80
+        },
+        {
+            "symbol": "Ceconomy",
+            "strategy": "VolBreakout",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 1.63,
+                "win_rate": "42.9%",
+                "return": "45.6%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 10
+        },
+        {
+            "symbol": "UnitedInternet",
+            "strategy": "TrendFollowing",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 1.61,
+                "win_rate": "40.0%",
+                "return": "34.6%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 47
+        },
+        {
+            "symbol": "NETH25Cash",
+            "strategy": "TrendFollowing",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 1.58,
+                "win_rate": "40.0%",
+                "return": "8.9%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 38
+        },
+        {
+            "symbol": "SES",
+            "strategy": "VolBreakout",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 1.58,
+                "win_rate": "40.0%",
+                "return": "40.2%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 99
+        },
+        {
+            "symbol": "BayerAG",
+            "strategy": "VolBreakout",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 1.57,
+                "win_rate": "55.6%",
+                "return": "31.2%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 26
+        },
+        {
+            "symbol": "Continental",
+            "strategy": "MeanReversion",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 1.55,
+                "win_rate": "60.0%",
+                "return": "18.5%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 90
+        },
+        {
+            "symbol": "Jungheinrich",
+            "strategy": "VolBreakout",
+            "tf": "H4",
+            "metrics": {
+                "sharpe": 1.54,
+                "win_rate": "38.9%",
+                "return": "33.9%"
+            },
+            "last_validated": "2026-01-12",
+            "spread": 55
+        }
+    ],
+    "note": "Cleaned: removed illiquid symbols (spread >= 100)"
+}
